@@ -50,7 +50,7 @@ header.top .date{color:var(--muted);margin-top:4px}
 .hint{color:var(--muted);font-size:13px;margin:0 0 10px}
 /* schedule */
 .sched{list-style:none;margin:0;padding:0}
-.blk{display:grid;grid-template-columns:96px 1fr auto;gap:10px;align-items:start;padding:9px 8px;border-radius:8px;border-left:3px solid transparent}
+.blk{display:grid;grid-template-columns:auto 96px 1fr auto;gap:10px;align-items:start;padding:9px 8px;border-radius:8px;border-left:3px solid transparent}
 .blk+.blk{margin-top:2px}
 .blk .t{font-variant-numeric:tabular-nums;color:var(--muted);font-size:13px;padding-top:2px;white-space:nowrap}
 .blk .title{font-weight:500}
@@ -61,6 +61,10 @@ header.top .date{color:var(--muted);margin-top:4px}
 .blk.done{opacity:.7}
 .chk{width:20px;height:20px;margin:2px 0 0;accent-color:var(--accent)}
 .nowtag{display:inline-block;font-size:11px;font-weight:600;color:var(--accent);margin-left:6px;vertical-align:middle}
+.drag{align-self:center;width:18px;padding:2px 0;border:0;background:none;color:var(--muted);font-size:13px;line-height:1;cursor:grab;touch-action:none;opacity:.55}
+.drag:hover{opacity:1}
+.blk.dragging{opacity:.6;background:var(--accent-soft);cursor:grabbing}
+.blk.dragging .drag{cursor:grabbing}
 /* check-in */
 .checkin{margin-top:16px;padding-top:14px;border-top:1px dashed var(--line)}
 .checkin form,.addrow{display:flex;gap:8px;flex-wrap:wrap}
@@ -678,6 +682,85 @@ footer{margin-top:22px;color:var(--muted);font-size:13px}
       '<button type="button" data-view="week"'+(view==="week"?' class="on"':'')+'>Week</button></div>';
   }
 
+  /* ---------- drag to reschedule within a day ---------- */
+  /* Dropping a block re-times the day in the new order, keeping every
+     block its original length. Meetings do not move: they stay put and
+     everything else flows around them. */
+  var drag=null;
+  function reflow(order){
+    var day=state.days[state.today];
+    if(!day||!day.blocks.length)return false;
+    var byId={};
+    day.blocks.forEach(function(b){byId[b.id]=b;});
+    var seq=[];
+    order.forEach(function(id){if(byId[id]){seq.push(byId[id]);delete byId[id];}});
+    if(seq.length!==day.blocks.length)return false;          /* lost a row: do nothing */
+    var unchanged=true;
+    for(var i=0;i<seq.length;i++)if(seq[i]!==day.blocks[i]){unchanged=false;break;}
+    if(unchanged)return false;
+
+    var meetings=day.blocks.filter(function(b){return b.meeting;});
+    var cursor=toMin(day.blocks[0].start);
+    day.blocks.forEach(function(b){if(toMin(b.start)<cursor)cursor=toMin(b.start);});
+
+    seq.forEach(function(b){
+      var len=toMin(b.end)-toMin(b.start);
+      if(b.meeting){if(toMin(b.end)>cursor)cursor=toMin(b.end);return;}
+      for(var guard=0;guard<64;guard++){
+        var hit=null;
+        for(var i=0;i<meetings.length;i++){
+          var ms=toMin(meetings[i].start),me=toMin(meetings[i].end);
+          if(cursor<me&&cursor+len>ms){hit=me;break;}
+        }
+        if(hit===null)break;
+        cursor=hit;
+      }
+      if(cursor+len>1439)cursor=Math.max(0,1439-len);
+      b.start=hhmm(cursor); b.end=hhmm(cursor+len); cursor+=len;
+    });
+    day.blocks=seq.slice().sort(function(x,y){return toMin(x.start)-toMin(y.start);});
+    return true;
+  }
+
+  function endDrag(){
+    if(!drag)return;
+    var list=drag.list;
+    drag.li.classList.remove("dragging");
+    try{drag.handle.releasePointerCapture(drag.ptr);}catch(e){}
+    drag=null;
+    var order=[];
+    for(var i=0;i<list.children.length;i++){
+      var n=list.children[i];
+      if(n.dataset&&n.dataset.id)order.push(n.dataset.id);
+    }
+    if(reflow(order))save(); else render();   /* render puts a no-op drag back */
+  }
+
+  document.addEventListener("pointerdown",function(e){
+    if(readOnly||view!=="today")return;
+    var hd=e.target.closest&&e.target.closest("[data-drag]");
+    if(!hd)return;
+    var li=hd.closest(".blk"); if(!li||!li.parentNode)return;
+    e.preventDefault();
+    drag={li:li,list:li.parentNode,handle:hd,ptr:e.pointerId};
+    li.classList.add("dragging");
+    try{hd.setPointerCapture(e.pointerId);}catch(err){}
+  });
+  document.addEventListener("pointermove",function(e){
+    if(!drag)return;
+    var before=null;
+    for(var i=0;i<drag.list.children.length;i++){
+      var n=drag.list.children[i];
+      if(n===drag.li||!n.getBoundingClientRect)continue;
+      var r=n.getBoundingClientRect();
+      if(e.clientY<r.top+r.height/2){before=n;break;}
+    }
+    if(before){if(drag.li.nextSibling!==before)drag.list.insertBefore(drag.li,before);}
+    else if(drag.list.lastChild!==drag.li)drag.list.appendChild(drag.li);
+  });
+  document.addEventListener("pointerup",endDrag);
+  document.addEventListener("pointercancel",endDrag);
+
   function diffHTML(){
     if(!pending)return '';
     var h='<div class="diff"><h3>'+(pending.ops.length?pending.ops.length+(pending.ops.length===1?' change':' changes')+' proposed — nothing is applied yet':'No change could be applied')+'</h3><ul>';
@@ -738,6 +821,7 @@ footer{margin-top:22px;color:var(--muted);font-size:13px}
   function nowMin(){var d=new Date();return d.getHours()*60+d.getMinutes();}
   function toMin(t){var p=t.split(":");return (+p[0])*60+(+p[1]);}
   function uid(p){return p+Math.random().toString(36).slice(2,7);}
+  function hhmm(m){return pad(Math.floor(m/60))+":"+pad(m%60);}
 
   function dueBadge(t){
     var today=todayISO();
@@ -781,6 +865,7 @@ footer{margin-top:22px;color:var(--muted);font-size:13px}
       var isNow=isToday&&!nowFound&&nm>=toMin(b.start)&&nm<toMin(b.end);
       if(isNow)nowFound=true;
       h+='<li class="blk'+(b.meeting?' meeting':'')+(b.done?' done':'')+(isNow?' now':'')+'" data-id="'+esc(b.id)+'">';
+      h+=readOnly?'<span class="drag" aria-hidden="true"></span>':'<button type="button" class="drag" data-drag="'+esc(b.id)+'" aria-label="Reorder '+esc(b.title)+'" title="Drag to reschedule">\u283F</button>';
       h+='<div class="t">'+h12(b.start)+'\u2013'+h12(b.end)+'</div>';
       h+='<div><div class="title">'+esc(b.title)+(isNow?'<span class="nowtag">now</span>':'')+'</div>'+(b.sub?'<div class="sub">'+esc(b.sub)+'</div>':'')+'</div>';
       h+='<input class="chk" type="checkbox" data-blk="'+esc(b.id)+'"'+(b.done?' checked':'')+' aria-label="Done">';
@@ -918,7 +1003,6 @@ footer{margin-top:22px;color:var(--muted);font-size:13px}
         var last=0;
         dst.blocks.forEach(function(b){if(toMin(b.end)>last)last=toMin(b.end);});
         var st=Math.min(last,24*60-len-1), en=st+len;
-        function hhmm(m){return pad(Math.floor(m/60))+":"+pad(m%60);}
         state.days[src.day].blocks.splice(src.i,1);
         src.block.start=hhmm(st); src.block.end=hhmm(en);
         dst.blocks.push(src.block);
@@ -959,7 +1043,7 @@ footer{margin-top:22px;color:var(--muted);font-size:13px}
      flight, or a proposal is waiting for a decision. */
   function tick(){
     var a=document.activeElement;
-    if(ask.busy||tAsk.busy||pending||draftBox)return;
+    if(ask.busy||tAsk.busy||pending||draftBox||drag)return;
     if(a&&a.closest&&a.closest("#root")&&/^(INPUT|TEXTAREA|SELECT)$/.test(a.tagName))return;
     render();
   }
