@@ -123,6 +123,23 @@ header.top .date{color:var(--muted);margin-top:4px}
 .draft{margin-top:10px}
 .draft textarea{width:100%;min-height:120px;padding:9px 11px;border:1px solid var(--line);border-radius:8px;background:var(--bg);font-size:13px;resize:vertical}
 .draft .acts{display:flex;gap:8px;margin-top:6px;align-items:center}
+/* per-task threads */
+.tbadge{display:inline-flex;align-items:center;gap:4px;font-size:11px;font-weight:600;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:2px 7px;margin-left:6px;vertical-align:middle;white-space:nowrap}
+.tbadge.unread{color:var(--accent);border-color:var(--accent);background:var(--accent-soft)}
+.tbadge .dot{width:6px;height:6px;border-radius:50%;background:var(--accent)}
+.thread{flex:1 1 100%;margin-top:8px;padding-top:10px;border-top:1px dashed var(--line)}
+.thread h4{margin:0 0 8px;font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+.msgs{list-style:none;margin:0 0 8px;padding:0;max-height:340px;overflow-y:auto}
+.msgs li{padding:8px 10px;border-radius:8px;margin-bottom:6px;font-size:14px;white-space:pre-wrap;overflow-wrap:anywhere}
+.msgs li.user{background:var(--bg);border:1px solid var(--line)}
+.msgs li.claude{background:var(--accent-soft);border-left:3px solid var(--accent)}
+.msgs .who{display:block;font-size:11px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);margin-bottom:3px}
+.msgs li.claude .who{color:var(--accent)}
+.msgs .acts{margin-top:6px}
+.msgs .acts button{font-size:12px;padding:4px 9px;border:1px solid var(--line);background:var(--panel);border-radius:6px;font-weight:600}
+.threadrow{display:flex;gap:8px;align-items:flex-start;flex-wrap:wrap}
+.threadrow textarea{flex:1 1 220px;min-width:0;min-height:38px;max-height:160px;padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:var(--bg);font-size:13px;resize:vertical}
+.threadrow .btn{padding:8px 12px}
 /* status chip */
 .chip{position:fixed;right:14px;bottom:14px;background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:13px;color:var(--muted);box-shadow:0 2px 10px rgba(0,0,0,.08);display:none}
 .chip.show{display:block}
@@ -400,6 +417,144 @@ footer{margin-top:22px;color:var(--muted);font-size:13px}
     });
   }
 
+
+  /* ---------- per-task Q&A threads ---------- */
+  var openTasks={};                 /* task id -> true, survives re-render */
+  var tAsk={id:null,text:"",busy:false,err:"",refocus:false};
+
+  function threadOf(t){return (t.thread&&t.thread.length)?t.thread:null;}
+  function unreadCount(t){
+    var th=threadOf(t); if(!th)return 0;
+    var seen=t.threadSeen?Date.parse(t.threadSeen):0;
+    var n=0;
+    for(var i=0;i<th.length;i++){
+      if(th[i].role!=="claude")continue;
+      var when=Date.parse(th[i].t);
+      if(!(when<=seen))n++;
+    }
+    return n;
+  }
+  function threadBadge(t){
+    var th=threadOf(t); if(!th)return '';
+    var u=unreadCount(t);
+    return '<span class="tbadge'+(u?' unread':'')+'" title="'+th.length+' message'+(th.length===1?'':'s')+
+      (u?', '+u+' unread':'')+'">'+(u?'<span class="dot"></span>':'')+th.length+'</span>';
+  }
+  /* Stamp past the newest message, not merely "now": the morning Claude run
+     appends from a different clock, and a reply stamped even slightly ahead
+     of this browser would otherwise read as unread forever. */
+  function stampRead(t){
+    var th=threadOf(t)||[],newest=0;
+    for(var i=0;i<th.length;i++){var w=Date.parse(th[i].t);if(w>newest)newest=w;}
+    t.threadSeen=new Date(Math.max(Date.now(),newest)).toISOString();
+  }
+  function markRead(t){
+    /* Not published on its own — a publish per panel-open would be wasteful.
+       It rides along on the next real save. */
+    if(unreadCount(t))stampRead(t);
+  }
+
+  /* Only the current task's thread goes out in full. Everything else is
+     titles, groups and dues, so the request does not grow with the board. */
+  function slimBoard(){
+    var d=state.days[state.today]||{blocks:[],log:[]};
+    return {
+      today:todayISO(),showing:state.today,hours:state.hours,quarterEnd:state.quarterEnd,
+      blocksToday:(d.blocks||[]).map(function(b){
+        return {id:b.id,start:b.start,end:b.end,title:b.title,meeting:!!b.meeting,done:!!b.done};}),
+      otherTasks:state.tasks.map(function(t){
+        return {id:t.id,group:t.group,title:t.title,due:t.due,done:t.done};})
+    };
+  }
+
+  function taskPrompt(t,q){
+    var th=threadOf(t)||[];
+    return [
+      "You are the assistant inside Brody’s board, answering about ONE task.",
+      "Today is "+todayISO()+". Working hours "+state.hours+". Quarter ends "+state.quarterEnd+".",
+      "",
+      "THE TASK:",
+      JSON.stringify({id:t.id,title:t.title,group:t.group,groupLabel:groupLabel(t.group),
+        due:t.due,done:t.done,note:t.note}),
+      "",
+      "CONVERSATION SO FAR (oldest first):",
+      th.length?th.map(function(m){return (m.role==="user"?"Brody":"You")+": "+m.text;}).join("\n\n"):"(nothing yet)",
+      "",
+      "REST OF THE BOARD (titles, groups and dues only, for context):",
+      JSON.stringify(slimBoard()),
+      "",
+      "Reply with ONLY one JSON object, no prose around it:",
+      '{"reply":"<your answer to Brody>","ops":[ ... ]}',
+      "",
+      "\"reply\" is advice, an answer, or a full draft if he asked for one. It never edits the task by itself.",
+      "If your answer implies a change to the board, put that change in \"ops\" — Brody approves it separately.",
+      "Return \"ops\":[] when no change is implied.",
+      "",
+      OPS_SPEC,
+      "",
+      "BRODY ASKED:",
+      q
+    ].join("\n");
+  }
+
+  function runTaskAsk(id){
+    var t=findTask(id); if(!t||!sampler||tAsk.busy)return;
+    var q=(tAsk.text||"").trim(); if(!q)return;
+    if(!t.thread)t.thread=[];
+    t.thread.push({role:"user",text:clip(q,2000),t:new Date().toISOString()});
+    tAsk={id:id,text:"",busy:true,err:"",refocus:true};
+    pending=null; draftBox=null;
+    render();
+    sampler.json(taskPrompt(t,q),{modelTier:"default",cache:false}).then(function(res){
+      var tt=findTask(id); if(!tt){tAsk.busy=false;render();return;}
+      var reply=(res&&typeof res.reply==="string")?clip(res.reply,6000):"";
+      if(!tt.thread)tt.thread=[];
+      if(reply)tt.thread.push({role:"claude",text:reply,t:new Date().toISOString()});
+      stampRead(tt);   /* panel is open, so it is read */
+      var v=validateOps(res&&res.ops);
+      pending=(v.ops.length||v.rejected.length)?{ops:v.ops,rejected:v.rejected,origin:id}:null;
+      tAsk.busy=false; tAsk.err=reply?"":"Claude sent an empty answer.";
+      save();   /* persists the thread */
+    }).catch(function(e){
+      tAsk.busy=false; tAsk.err=sampleErr(e);
+      save();   /* the question is already in the thread; keep it */
+    });
+  }
+
+  function threadHTML(t){
+    if(samplerTried&&!sampler)return '';
+    var th=threadOf(t)||[];
+    var busy=(tAsk.busy&&tAsk.id===t.id);
+    var h='<div class="thread"><h4>Ask Claude about this</h4>';
+    if(th.length){
+      h+='<ul class="msgs">';
+      var lastClaude=-1;
+      for(var i=0;i<th.length;i++)if(th[i].role==="claude")lastClaude=i;
+      th.forEach(function(m,i){
+        h+='<li class="'+(m.role==="claude"?"claude":"user")+'">';
+        h+='<span class="who">'+(m.role==="claude"?"Claude":"You")+' · '+esc(msgTime(m.t))+'</span>';
+        h+=esc(m.text);
+        if(i===lastClaude)h+='<div class="acts"><button type="button" data-draft="'+esc(t.id)+'">Draft</button></div>';
+        h+='</li>';
+      });
+      h+='</ul>';
+    }
+    if(busy)h+='<div class="thinking">Thinking… this can take up to a minute.</div>';
+    if(tAsk.err&&tAsk.id===t.id)h+='<div class="askerr">'+esc(tAsk.err)+'</div>';
+    h+='<div class="threadrow"><textarea data-task-ask="'+esc(t.id)+'" placeholder="what did Daniel actually ask for here?"'+(sampler?'':' disabled')+'>'+esc(tAsk.id===t.id?tAsk.text:"")+'</textarea>';
+    h+='<button class="btn" type="button" data-act="taskask" data-id="'+esc(t.id)+'"'+(sampler&&!tAsk.busy?'':' disabled')+'>'+(busy?'Thinking…':'Ask')+'</button></div>';
+    if(pending&&pending.origin===t.id)h+=diffHTML();
+    if(draftBox&&draftBox.origin===t.id)h+=draftHTML();
+    h+='</div>';
+    return h;
+  }
+
+  function msgTime(iso){
+    var d=new Date(iso);
+    if(isNaN(d))return "";
+    return d.toLocaleString(undefined,{month:"short",day:"numeric",hour:"numeric",minute:"2-digit"});
+  }
+
   function diffHTML(){
     if(!pending)return '';
     var h='<div class="diff"><h3>'+(pending.ops.length?pending.ops.length+(pending.ops.length===1?' change':' changes')+' proposed — nothing is applied yet':'No change could be applied')+'</h3><ul>';
@@ -435,14 +590,14 @@ footer{margin-top:22px;color:var(--muted);font-size:13px}
     if(ask.busy)h+='<div class="thinking">Thinking… this can take up to a minute.</div>';
     if(ask.err)h+='<div class="askerr">'+esc(ask.err)+'</div>';
     if(ask.reply)h+='<div class="saidit">'+esc(ask.reply)+'</div>';
-    h+=diffHTML();
-    h+=draftHTML();
+    if(pending&&pending.origin==="ask")h+=diffHTML();
+    if(draftBox&&draftBox.origin==="ask")h+=draftHTML();
     h+='</section>';
     return h;
   }
 
-  function copyText(t,label){
-    draftBox={text:t,label:label||""};
+  function copyText(t,label,origin){
+    draftBox={text:t,label:label||"",origin:origin||"ask"};
     if(navigator.clipboard&&navigator.clipboard.writeText){
       navigator.clipboard.writeText(t).then(function(){chip("Copied");},function(){});
     }
@@ -517,15 +672,17 @@ footer{margin-top:22px;color:var(--muted);font-size:13px}
       if(!list.length&&g.key!=="coverage") return;
       h+='<div class="group '+g.key+'"><h3>'+esc(g.label)+(g.sub?'<span class="due">'+esc(g.sub)+'</span>':'')+'</h3><ul class="tasks">';
       list.forEach(function(t){
-        h+='<li class="task'+(t.done?' done':'')+'" data-task="'+esc(t.id)+'">';
+        h+='<li class="task'+(t.done?' done':'')+(openTasks[t.id]?' open':'')+'" data-task="'+esc(t.id)+'">';
         h+='<input class="chk" type="checkbox" data-tchk="'+esc(t.id)+'"'+(t.done?' checked':'')+' aria-label="Done">';
         h+='<div><div class="title" data-toggle="'+esc(t.id)+'">'+esc(t.title)+'</div>'+(t.note?'<div class="note">'+esc(t.note)+'</div>':'')+'</div>';
-        h+='<div>'+dueBadge(t)+'</div>';
+        h+='<div>'+dueBadge(t)+threadBadge(t)+'</div>';
         h+='<div class="details"><input type="text" data-edit="title" data-id="'+esc(t.id)+'" value="'+esc(t.title)+'" style="flex:1 1 100%;padding:6px 8px;border:1px solid var(--line);border-radius:6px;background:var(--bg);font-size:13px">';
         h+='<input type="date" data-edit="due" data-id="'+esc(t.id)+'" value="'+esc(t.due||"")+'">';
         h+='<select data-edit="group" data-id="'+esc(t.id)+'">'+GROUPS.map(function(x){return '<option value="'+x.key+'"'+(x.key===t.group?' selected':'')+'>'+esc(x.label)+'</option>';}).join("")+'</select>';
         h+='<button class="del" type="button" data-del="'+esc(t.id)+'">Remove</button>';
-        h+='<textarea data-edit="note" data-id="'+esc(t.id)+'" placeholder="Note">'+esc(t.note||"")+'</textarea></div>';
+        h+='<textarea data-edit="note" data-id="'+esc(t.id)+'" placeholder="Note">'+esc(t.note||"")+'</textarea>';
+        h+=threadHTML(t);
+        h+='</div>';
         h+='</li>';
       });
       if(!list.length) h+='<li class="task"><div></div><div class="empty">Nothing here yet.</div><div></div></li>';
@@ -540,6 +697,11 @@ footer{margin-top:22px;color:var(--muted);font-size:13px}
       var ab=document.querySelector("[data-ask]");
       if(ab&&!ab.disabled){ab.focus();ab.setSelectionRange(ab.value.length,ab.value.length);}
       ask.refocus=false;
+    }
+    if(tAsk.refocus&&tAsk.id){
+      var tb=document.querySelector('[data-task-ask="'+tAsk.id+'"]');
+      if(tb&&!tb.disabled){tb.focus();tb.setSelectionRange(tb.value.length,tb.value.length);}
+      tAsk.refocus=false;
     }
   }
 
@@ -598,20 +760,36 @@ footer{margin-top:22px;color:var(--muted);font-size:13px}
         }
         return;
       }
-      if(a==="export"){copyText(JSON.stringify(state,null,2),"Full board state — paste this into a chat.");return;}
+      if(a==="taskask"){tAsk.refocus=true;runTaskAsk(act.dataset.id);return;}
+      if(a==="export"){copyText(JSON.stringify(state,null,2),"Full board state \u2014 paste this into a chat.","ask");return;}
     }
     var el=e.target.closest("[data-toggle]");
-    if(el){var li=el.closest(".task");li.classList.toggle("open");return;}
+    if(el){
+      var tid=el.dataset.toggle;
+      if(openTasks[tid]){delete openTasks[tid];}
+      else{openTasks[tid]=true;var ot=findTask(tid);if(ot)markRead(ot);}
+      render();return;
+    }
+    var dr=e.target.closest("[data-draft]");
+    if(dr){
+      var dt=findTask(dr.dataset.draft),th=dt&&threadOf(dt),last=null;
+      if(th)for(var di=0;di<th.length;di++)if(th[di].role==="claude")last=th[di];
+      if(last)copyText(last.text,"Draft \u2014 copy into an email, Slack or Asana.",dt.id);
+      return;
+    }
     var d=e.target.closest("[data-del]");
     if(d){var id=d.dataset.del;state.tasks=state.tasks.filter(function(t){return t.id!==id;});save();return;}
   });
   document.addEventListener("input",function(e){
-    if(e.target.dataset&&e.target.dataset.ask)ask.text=e.target.value;
+    var d=e.target.dataset; if(!d)return;
+    if(d.ask)ask.text=e.target.value;
+    if(d.taskAsk){tAsk.id=d.taskAsk;tAsk.text=e.target.value;}
   });
   document.addEventListener("keydown",function(e){
-    if(e.target.dataset&&e.target.dataset.ask&&e.key==="Enter"&&(e.metaKey||e.ctrlKey)){
-      e.preventDefault();ask.text=e.target.value;ask.refocus=true;runAsk();
-    }
+    var d=e.target.dataset; if(!d)return;
+    if(!(e.key==="Enter"&&(e.metaKey||e.ctrlKey)))return;
+    if(d.ask){e.preventDefault();ask.text=e.target.value;ask.refocus=true;runAsk();return;}
+    if(d.taskAsk){e.preventDefault();tAsk.id=d.taskAsk;tAsk.text=e.target.value;tAsk.refocus=true;runTaskAsk(d.taskAsk);}
   });
 
   document.addEventListener("submit",function(e){
@@ -624,7 +802,7 @@ footer{margin-top:22px;color:var(--muted);font-size:13px}
      flight, or a proposal is waiting for a decision. */
   function tick(){
     var a=document.activeElement;
-    if(ask.busy||pending||draftBox)return;
+    if(ask.busy||tAsk.busy||pending||draftBox)return;
     if(a&&a.closest&&a.closest("#root")&&/^(INPUT|TEXTAREA|SELECT)$/.test(a.tagName))return;
     render();
   }
