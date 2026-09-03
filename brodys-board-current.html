@@ -140,6 +140,16 @@ header.top .date{color:var(--muted);margin-top:4px}
 .threadrow{display:flex;gap:8px;align-items:flex-start;flex-wrap:wrap}
 .threadrow textarea{flex:1 1 220px;min-width:0;min-height:38px;max-height:160px;padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:var(--bg);font-size:13px;resize:vertical}
 .threadrow .btn{padding:8px 12px}
+/* missed rollup */
+.missed{background:var(--panel);border:1px solid var(--amber);border-radius:var(--radius);padding:14px 16px;margin-bottom:18px}
+.missed h2{font-size:15px;font-weight:600;margin:0 0 4px;color:var(--amber);display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.missed h2 small{color:var(--muted);font-weight:400;font-size:13px}
+.missed ul{list-style:none;margin:8px 0 0;padding:0}
+.missed li{display:grid;grid-template-columns:auto 84px 1fr auto;gap:10px;align-items:start;padding:7px 0;border-top:1px solid var(--line);font-size:14px}
+.missed li:first-child{border-top:0}
+.missed .d{color:var(--muted);font-size:13px;white-space:nowrap;padding-top:1px}
+.missed .pull{font-size:12px;padding:4px 9px;border:1px solid var(--line);background:var(--bg);border-radius:6px;font-weight:600;white-space:nowrap}
+.missed .more{color:var(--muted);font-size:13px;font-style:italic;padding-top:8px}
 /* status chip */
 .chip{position:fixed;right:14px;bottom:14px;background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:13px;color:var(--muted);box-shadow:0 2px 10px rgba(0,0,0,.08);display:none}
 .chip.show{display:block}
@@ -555,6 +565,42 @@ footer{margin-top:22px;color:var(--muted);font-size:13px}
     return d.toLocaleString(undefined,{month:"short",day:"numeric",hour:"numeric",minute:"2-digit"});
   }
 
+  /* ---------- missed rollup ---------- */
+  /* Anything unticked on a day before the one being shown. Meetings are left
+     out: an unticked past meeting is not a carry-over, it just happened. */
+  var MISSED_SHOWN=25;
+  function missedBlocks(){
+    var keys=[];
+    for(var k in state.days){
+      if(!Object.prototype.hasOwnProperty.call(state.days,k))continue;
+      if(k<state.today)keys.push(k);
+    }
+    keys.sort();
+    var out=[];
+    keys.forEach(function(k){
+      (state.days[k].blocks||[]).forEach(function(b){
+        if(!b.done&&!b.meeting)out.push({day:k,block:b});
+      });
+    });
+    return out;
+  }
+
+  function missedHTML(){
+    var m=missedBlocks();
+    if(!m.length)return '';
+    var h='<section class="missed"><h2>Missed <small>'+m.length+' unticked from earlier days</small></h2>';
+    h+='<ul>';
+    m.slice(0,MISSED_SHOWN).forEach(function(x){
+      h+='<li><input class="chk" type="checkbox" data-missed="'+esc(x.block.id)+'" aria-label="Done">';
+      h+='<span class="d">'+esc(shortDate(x.day))+'</span>';
+      h+='<span>'+esc(x.block.title)+'</span>';
+      h+='<button type="button" class="pull" data-pull="'+esc(x.block.id)+'">Pull into '+(state.today===todayISO()?'today':shortDate(state.today))+'</button></li>';
+    });
+    if(m.length>MISSED_SHOWN)h+='<li class="more">and '+(m.length-MISSED_SHOWN)+' more</li>';
+    h+='</ul></section>';
+    return h;
+  }
+
   function diffHTML(){
     if(!pending)return '';
     var h='<div class="diff"><h3>'+(pending.ops.length?pending.ops.length+(pending.ops.length===1?' change':' changes')+' proposed — nothing is applied yet':'No change could be applied')+'</h3><ul>';
@@ -642,6 +688,7 @@ footer{margin-top:22px;color:var(--muted);font-size:13px}
     h+='<div class="stats"><div class="stat q"><b>'+qLeft+'</b><span>days left in Q3</span></div><div class="stat"><b>'+open.length+'</b><span>open</span></div><div class="stat'+(overdue.length?' warn':'')+'"><b>'+overdue.length+'</b><span>overdue</span></div></div></header>';
 
     h+=askHTML();
+    h+=missedHTML();
 
     h+='<div class="grid">';
     // Today
@@ -737,6 +784,7 @@ footer{margin-top:22px;color:var(--muted);font-size:13px}
   document.addEventListener("change",function(e){
     var el=e.target;
     if(el.dataset.blk){var b=findBlock(el.dataset.blk);if(b){b.done=el.checked;save();}return;}
+    if(el.dataset.missed){var mb=locateBlock(el.dataset.missed);if(mb){mb.block.done=el.checked;save();}return;}
     if(el.dataset.tchk){var t=findTask(el.dataset.tchk);if(t){t.done=el.checked;save();}return;}
     if(el.dataset.edit){var tt=findTask(el.dataset.id);if(!tt)return;tt[el.dataset.edit]=el.value;save();return;}
   });
@@ -769,6 +817,24 @@ footer{margin-top:22px;color:var(--muted);font-size:13px}
       if(openTasks[tid]){delete openTasks[tid];}
       else{openTasks[tid]=true;var ot=findTask(tid);if(ot)markRead(ot);}
       render();return;
+    }
+    var pl=e.target.closest("[data-pull]");
+    if(pl){
+      var src=locateBlock(pl.dataset.pull);
+      if(src){
+        var dst=state.days[state.today]||(state.days[state.today]={blocks:[],log:[]});
+        var len=toMin(src.block.end)-toMin(src.block.start);
+        var last=0;
+        dst.blocks.forEach(function(b){if(toMin(b.end)>last)last=toMin(b.end);});
+        var st=Math.min(last,24*60-len-1), en=st+len;
+        function hhmm(m){return pad(Math.floor(m/60))+":"+pad(m%60);}
+        state.days[src.day].blocks.splice(src.i,1);
+        src.block.start=hhmm(st); src.block.end=hhmm(en);
+        dst.blocks.push(src.block);
+        dst.blocks.sort(function(x,y){return toMin(x.start)-toMin(y.start);});
+        save();
+      }
+      return;
     }
     var dr=e.target.closest("[data-draft]");
     if(dr){
