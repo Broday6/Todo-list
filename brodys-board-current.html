@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Brody's board</title>
+<!-- Publish with capabilities {"artifact":{},"sample":{}} - the Ask Claude box and the per-task threads need "sample", self-publish needs "artifact". Omitting either makes them fail silently. -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap">
 <style id="style">
@@ -99,6 +100,29 @@ header.top .date{color:var(--muted);margin-top:4px}
 .details textarea{flex:1 1 100%;min-height:52px;padding:8px;border:1px solid var(--line);border-radius:6px;background:var(--bg);font-size:13px;resize:vertical}
 .details .del{color:var(--red);background:none;border:0;font-size:13px;padding:6px 4px}
 .addrow{margin-top:14px;padding-top:12px;border-top:1px dashed var(--line)}
+/* ask claude */
+.ask{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px;margin-bottom:18px}
+.ask h2{font-size:15px;font-weight:600;margin:0 0 8px;display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.ask h2 small{color:var(--muted);font-weight:400;font-size:13px}
+.askrow{display:flex;gap:8px;align-items:flex-start;flex-wrap:wrap}
+.askrow textarea{flex:1 1 320px;min-width:0;min-height:42px;max-height:180px;padding:9px 11px;border:1px solid var(--line);border-radius:8px;background:var(--bg);resize:vertical}
+.askrow .btn{flex:0 0 auto}
+.thinking{display:inline-block;color:var(--accent);font-size:13px;margin-top:8px}
+.askerr{color:var(--red);font-size:13px;margin-top:8px}
+.saidit{margin-top:10px;padding:10px 12px;border-left:3px solid var(--accent);background:var(--accent-soft);border-radius:0 8px 8px 0;font-size:14px;white-space:pre-wrap}
+/* proposal diff card */
+.diff{margin-top:12px;border:1px solid var(--accent);border-radius:var(--radius);overflow:hidden}
+.diff h3{margin:0;padding:9px 12px;font-size:13px;font-weight:600;background:var(--accent-soft);color:var(--accent)}
+.diff ul{list-style:none;margin:0;padding:0}
+.diff li{padding:8px 12px;border-top:1px solid var(--line);font-size:14px;display:grid;grid-template-columns:auto 1fr;gap:9px;align-items:start}
+.diff li .verb{font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);padding-top:3px;white-space:nowrap}
+.diff li.rej{color:var(--muted)}
+.diff li.rej .verb{color:var(--red)}
+.diff .acts{display:flex;gap:8px;padding:10px 12px;border-top:1px solid var(--line);background:var(--bg)}
+/* copyable draft block */
+.draft{margin-top:10px}
+.draft textarea{width:100%;min-height:120px;padding:9px 11px;border:1px solid var(--line);border-radius:8px;background:var(--bg);font-size:13px;resize:vertical}
+.draft .acts{display:flex;gap:8px;margin-top:6px;align-items:center}
 /* status chip */
 .chip{position:fixed;right:14px;bottom:14px;background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:13px;color:var(--muted);box-shadow:0 2px 10px rgba(0,0,0,.08);display:none}
 .chip.show{display:block}
@@ -112,7 +136,7 @@ footer{margin-top:22px;color:var(--muted);font-size:13px}
 <div id="chip" class="chip"></div>
 
 <script id="state" type="application/json">
-{"updated": "2026-09-03T08:10:00-05:00", "hours": "8:00–5:00", "quarterEnd": "2026-09-30", "today": "2026-09-03", "days": {"2026-09-02": {"blocks": [{"id": "b1", "start": "08:00", "end": "08:20", "title": "Check and respond to emails", "sub": "Daily · 20 min", "meeting": false, "done": true}, {"id": "b2", "start": "08:20", "end": "08:40", "title": "Review daily metrics & KPIs", "sub": "Daily · 20 min", "meeting": false, "done": true}, {"id": "b3", "start": "08:40", "end": "09:00", "title": "Team check-in", "sub": "Daily · 20 min", "meeting": false, "done": true}, {"id": "b4", "start": "09:00", "end": "09:20", "title": "Google Ads: raise the target on the 10x / 30x campaign", "sub": "Set target ~25x or switch to Max Conversion Value. Write the loss number down.", "meeting": false, "done": true}, {"id": "b5", "start": "09:30", "end": "12:00", "title": "Asana — Wednesday meetings", "sub": "", "meeting": true, "done": true}, {"id": "b6", "start": "12:00", "end": "12:20", "title": "Bug Herds — complete 5", "sub": "Daily · 20 min", "meeting": false, "done": false}, {"id": "b7", "start": "12:20", "end": "12:40", "title": "Cases — complete 10", "sub": "Daily · 20 min", "meeting": false, "done": false}, {"id": "b8", "start": "12:40", "end": "13:40", "title": "Focus: Labor Day sale emails — draft", "sub": "Labor Day is Monday. Nail the offer, dates, and code; draft the announcement and the last-chance version. Send Claude the offer details for copy.", "meeting": false, "done": true}, {"id": "b9", "start": "13:40", "end": "14:20", "title": "Focus: find candidates", "sub": "Work the applicant list, book first screens. Log who you reached out to.", "meeting": false, "done": true}, {"id": "b10", "start": "14:20", "end": "14:40", "title": "Strety", "sub": "Daily · 20 min", "meeting": false, "done": false}, {"id": "b11", "start": "14:40", "end": "15:00", "title": "Follow up with Andrew's ads", "sub": "Daily · 20 min", "meeting": false, "done": false}, {"id": "b12", "start": "15:00", "end": "15:30", "title": "Focus: Ceiling & Wall Motifs — completion dates", "sub": "Just the dates today. Jonathan's emails move to tomorrow.", "meeting": false, "done": false}, {"id": "b13", "start": "15:30", "end": "15:50", "title": "Search terms: export both reports and upload", "sub": "Both accounts, last 30 days, all campaigns. The review itself moves to Thu/Fri.", "meeting": false, "done": false}, {"id": "b14", "start": "15:50", "end": "16:00", "title": "Wrap", "sub": "Log what got done. Tomorrow gets built from this.", "meeting": false, "done": false}], "log": [{"t": "07:21", "text": "i was pulled into a meeting from 3 - 5"}]}, "2026-09-03": {"blocks": [{"id": "c1", "start": "08:00", "end": "08:20", "title": "Check and respond to emails", "sub": "Daily · 20 min. Priority people first: Daniel (16 emails yesterday — badge question, Email #2 content, field name for Tory, mantels, checklist), Hayden (Motif SKU updates with Procurement, 2 unread), Ethan and Lauren (sale product picks). Then Marc Tillery's screen, Timeline Wood promos, Case 0960930. Also ask Hayden for the Motif completion date so it's ready for the L-10. Book Marc Tillery's screen in this block — candidates has no separate slot today.", "meeting": false, "done": false}, {"id": "c2", "start": "08:20", "end": "08:40", "title": "Review daily metrics & KPIs", "sub": "Daily · 20 min. NetSuite lead landed: Products Without Marketing Category (sent to you and Daniel).", "meeting": false, "done": false}, {"id": "c3", "start": "08:40", "end": "09:00", "title": "Team check-in", "sub": "Daily · 20 min", "meeting": false, "done": false}, {"id": "c4", "start": "09:00", "end": "10:00", "title": "Focus: Labor Day sale emails — build Email #1, hand Daniel Email #2 content", "sub": "Inputs are in: Daniel needs text + images for Email #2 (New Products — Wall/Ceiling Motif Kits, plus what else). Ethan: lean into Ekena, PVC and Timberthane. Lauren: new shutter styles, SteelTek hardware, custom wood shutters — she's working images. Build Email #1 and hand Daniel Email #2 content today.", "meeting": false, "done": false}, {"id": "c5", "start": "10:00", "end": "10:20", "title": "Bug Herds — complete 5 (Rock: under 10)", "sub": "Daily · 20 min. This block is Rock time — hold it every day and the Rock holds itself.", "meeting": false, "done": false}, {"id": "c6", "start": "10:20", "end": "10:40", "title": "Cases — complete 10", "sub": "Daily · 20 min. Case 0960930 needs the AFCO answer.", "meeting": false, "done": false}, {"id": "c7", "start": "10:40", "end": "11:00", "title": "L-10 prep", "sub": "You're running it. Issues list: nav redesign decision (due tomorrow), Daniel's Accessories question (HomeOver/Millwork), Offset Mullion fields (Ethan asked Sam to re-add), scorecards in Strety by next L-10.", "meeting": false, "done": false}, {"id": "c8", "start": "11:00", "end": "12:00", "title": "E-Commerce L-10", "sub": "Hayden's in the room — get the Motif completion date there. Decide the nav site before you leave.", "meeting": true, "done": false}, {"id": "c9", "start": "12:00", "end": "12:40", "title": "Rock: navigation redesign — first working block", "sub": "Fresh from the decision. Audit the current top-level nav on the chosen site, list what's broken on mobile, sketch the target structure. Output: a one-page nav map to react to tomorrow.", "meeting": false, "done": false}, {"id": "c10", "start": "12:40", "end": "13:00", "title": "Strety", "sub": "Daily · 20 min. Scorecards need to be in before next L-10.", "meeting": false, "done": false}, {"id": "c11", "start": "13:00", "end": "13:30", "title": "Google <> Arch Depot | Hayden's cohort", "sub": "Google Meet. Tentative — accept or decline this morning. If you decline, the stain asset gets this slot too.", "meeting": true, "done": false}, {"id": "c12", "start": "13:30", "end": "14:15", "title": "Focus: Jonathan's Motifs emails — both lines", "sub": "Due today. Launch tomorrow if Hayden gave you a date.", "meeting": false, "done": false}, {"id": "c13", "start": "14:15", "end": "15:30", "title": "Rock: AD Ads — search term audit", "sub": "75 min. Export search terms for both accounts (last 30 days, all campaigns), upload to Claude for the recommend-only negative-exact list, then start Group 1 while it builds.", "meeting": false, "done": false}, {"id": "c14", "start": "15:30", "end": "16:00", "title": "Brody / Kody sync", "sub": "Teams invite sent to Kody. Add an agenda line in the invite if you want him prepped.", "meeting": true, "done": false}, {"id": "c15", "start": "16:00", "end": "16:40", "title": "Stain asset", "sub": "40 min. Work the stain asset here — if it needs more, tell me and I'll give it a full block Friday.", "meeting": false, "done": false}, {"id": "c16", "start": "16:40", "end": "17:00", "title": "Follow up with Andrew's ads + log the day", "sub": "Daily · 20 min. Last five minutes: log what got done so Friday builds from it.", "meeting": false, "done": false}], "log": []}}, "tasks": [{"id": "s1", "group": "now", "title": "Stain asset", "note": "40-min block today at 4:00. Say if it needs a full block Friday.", "due": "2026-09-04", "done": false}, {"id": "w4", "group": "now", "title": "Labor Day sale emails", "note": "Labor Day is Mon Sep 7. Announcement + last-chance, both sites.", "due": "2026-09-04", "done": false}, {"id": "w4a", "group": "now", "title": "Draft the sale emails (offer, dates, code locked)", "note": "", "due": "2026-09-02", "done": true}, {"id": "w4b", "group": "now", "title": "Build and schedule the emails", "note": "", "due": "2026-09-03", "done": false}, {"id": "w4c", "group": "now", "title": "Last-chance send goes out", "note": "", "due": "2026-09-07", "done": false}, {"id": "w1", "group": "now", "title": "Find candidates for the e-comm team", "note": "Daily 60-min block until filled. Log every outreach.", "due": "2026-09-04", "done": false}, {"id": "w1a", "group": "now", "title": "Job posted / applicant outreach first batch done", "note": "", "due": "2026-09-03", "done": true}, {"id": "w1b", "group": "now", "title": "First screens booked", "note": "", "due": "2026-09-04", "done": false}, {"id": "w2", "group": "now", "title": "Search term audit — all of e-comm", "note": "Recommend-only negative-exact list; no match-type tightening (keeps AI Overview eligibility).", "due": "2026-09-04", "done": false}, {"id": "w2a", "group": "now", "title": "Export search terms reports, both accounts, last 30 days", "note": "Upload to Claude for the ranked candidate list.", "due": "2026-09-03", "done": false}, {"id": "w2b", "group": "now", "title": "Review Groups 1–5 candidates and apply", "note": "", "due": "2026-09-04", "done": false}, {"id": "w3", "group": "now", "title": "Ceiling & Wall Motifs — confirm completion dates", "note": "Hayden has the SKU/description update with Procurement (sent 9/2, revised last night). Get the completion date from him.", "due": "2026-09-02", "done": false}, {"id": "w3a", "group": "now", "title": "Finish Jonathan's emails for both lines", "note": "", "due": "2026-09-03", "done": false}, {"id": "w3b", "group": "now", "title": "Launch the emails", "note": "Depends on confirmed dates.", "due": "2026-09-04", "done": false}, {"id": "t1", "group": "now", "title": "Raise the target on the 10x / 30x campaign", "note": "Two weeks of drift already. Same budget, a third of the revenue if it lands at 10x.", "due": "2026-09-02", "done": true}, {"id": "t2", "group": "now", "title": "Fix the carousel board-scan trigger", "note": "Moved to Friday to make room today (carried four days now). Approve the pending edit in Cowork, rebind device access — or disable it.", "due": "2026-09-04", "done": false}, {"id": "t6", "group": "now", "title": "Decide: which navigation redesign stays in Q3", "note": "Decide it in today's L-10. The other site moves to Q4 in writing.", "due": "2026-09-04", "done": false}, {"id": "t7", "group": "rocks", "title": "Refine AD Ads — includes the Google target audit across Groups 1–5", "note": "Google target audit across Groups 1–5: export Jul 18–Aug 16 and Aug 17–31 CSVs (both accounts), upload for the ranked target-change list, apply. Monitor spend vs the 7.5% cap weekly.", "due": "2026-09-30", "done": false}, {"id": "t8", "group": "rocks", "title": "Bugherds under 10 — held through quarter end", "note": "", "due": "2026-09-30", "done": false}, {"id": "t9", "group": "rocks", "title": "Navigation redesign — one site", "note": "Site to be chosen by Sep 4.", "due": "2026-09-30", "done": false}, {"id": "t10", "group": "hire", "title": "Interviews complete", "note": "", "due": "2026-09-18", "done": false}, {"id": "t11", "group": "hire", "title": "Offer out", "note": "", "due": "2026-09-25", "done": false}, {"id": "t12", "group": "coverage", "title": "List the departed employee's tasks here", "note": "Tap to edit. Each one: cover now, wait for hire, or drop.", "due": "2026-09-03", "done": false}, {"id": "t13", "group": "frozen", "title": "Second navigation redesign", "note": "", "due": "2026-10-01", "done": false}, {"id": "t14", "group": "frozen", "title": "Kit item tool", "note": "", "due": "2026-10-01", "done": false}, {"id": "t15", "group": "frozen", "title": "Hero video / carousel automation", "note": "", "due": "2026-10-01", "done": false}, {"id": "e1", "group": "hire", "title": "Book a screen with Marc Tillery", "note": "He answered your screening question last night.", "due": "2026-09-03", "done": false}, {"id": "e2", "group": "now", "title": "Timeline Wood: answer how they get included in promos", "note": "Matt Stroud asked on the New Product Additions thread. Daniel owns it; you're cc'd — worth a Labor Day tie-in?", "due": "2026-09-04", "done": false}, {"id": "e3", "group": "now", "title": "Products Without Marketing Category — work the NetSuite lead", "note": "Sent to you and Daniel this morning.", "due": "2026-09-04", "done": false}, {"id": "d1", "group": "now", "title": "Answer Daniel: sale badge functionality with Ethan — done or pivot?", "note": "He asked at 7am yesterday and flagged the time crunch. Answer before anything else today.", "due": "2026-09-03", "done": false}, {"id": "d2", "group": "now", "title": "Labor Day Email #2 content + images for Daniel", "note": "New Products: Wall/Ceiling Motif Kits + PVC/Timberthane (Ethan) + shutters/SteelTek (Lauren, images in progress).", "due": "2026-09-03", "done": false}, {"id": "d3", "group": "now", "title": "Reply to Daniel/Tory: name for the NetSuite 'why discontinued' field", "note": "Two-minute answer.", "due": "2026-09-03", "done": false}, {"id": "d4", "group": "now", "title": "Do we carry these Pearl Mantels? (Daniel)", "note": "", "due": "2026-09-04", "done": false}, {"id": "d5", "group": "now", "title": "Beams donation for North Canton HS — check warehouse returns", "note": "Daniel: 4 Heritage, 4 Industrial, some slat wall kits. He's drafting the list; you check what's returnable stock.", "due": "2026-09-04", "done": false}, {"id": "d6", "group": "now", "title": "Read Daniel's two catch-up emails: 'Stuff to make sure the team is doing' + 'Notes from recent meetings'", "note": "Miva inaccurate items alert is in there. Pull anything assigned to you onto this board.", "due": "2026-09-04", "done": false}, {"id": "d7", "group": "now", "title": "Scorecards into Strety before next week's L-10", "note": "Daniel's ask.", "due": "2026-09-09", "done": false}, {"id": "d8", "group": "now", "title": "FRP column cross-reference: CW Ohio vs HB&G vs AFCO pricing", "note": "Daniel: 'when you get back.' Not this week.", "due": "2026-09-11", "done": false}]}
+{"_note": "Schema v2. Each task may carry thread: [{role:\"user\"|\"claude\", text, t}] \u2014 per-task Q&A with Claude. Read every task.thread before rebuilding the day; it holds decisions and drafts that are not in note. task.threadSeen is an ISO stamp of when Brody last opened that thread.", "updated": "2026-09-03T08:10:00-05:00", "hours": "8:00–5:00", "quarterEnd": "2026-09-30", "today": "2026-09-03", "days": {"2026-09-02": {"blocks": [{"id": "b1", "start": "08:00", "end": "08:20", "title": "Check and respond to emails", "sub": "Daily · 20 min", "meeting": false, "done": true}, {"id": "b2", "start": "08:20", "end": "08:40", "title": "Review daily metrics & KPIs", "sub": "Daily · 20 min", "meeting": false, "done": true}, {"id": "b3", "start": "08:40", "end": "09:00", "title": "Team check-in", "sub": "Daily · 20 min", "meeting": false, "done": true}, {"id": "b4", "start": "09:00", "end": "09:20", "title": "Google Ads: raise the target on the 10x / 30x campaign", "sub": "Set target ~25x or switch to Max Conversion Value. Write the loss number down.", "meeting": false, "done": true}, {"id": "b5", "start": "09:30", "end": "12:00", "title": "Asana — Wednesday meetings", "sub": "", "meeting": true, "done": true}, {"id": "b6", "start": "12:00", "end": "12:20", "title": "Bug Herds — complete 5", "sub": "Daily · 20 min", "meeting": false, "done": false}, {"id": "b7", "start": "12:20", "end": "12:40", "title": "Cases — complete 10", "sub": "Daily · 20 min", "meeting": false, "done": false}, {"id": "b8", "start": "12:40", "end": "13:40", "title": "Focus: Labor Day sale emails — draft", "sub": "Labor Day is Monday. Nail the offer, dates, and code; draft the announcement and the last-chance version. Send Claude the offer details for copy.", "meeting": false, "done": true}, {"id": "b9", "start": "13:40", "end": "14:20", "title": "Focus: find candidates", "sub": "Work the applicant list, book first screens. Log who you reached out to.", "meeting": false, "done": true}, {"id": "b10", "start": "14:20", "end": "14:40", "title": "Strety", "sub": "Daily · 20 min", "meeting": false, "done": false}, {"id": "b11", "start": "14:40", "end": "15:00", "title": "Follow up with Andrew's ads", "sub": "Daily · 20 min", "meeting": false, "done": false}, {"id": "b12", "start": "15:00", "end": "15:30", "title": "Focus: Ceiling & Wall Motifs — completion dates", "sub": "Just the dates today. Jonathan's emails move to tomorrow.", "meeting": false, "done": false}, {"id": "b13", "start": "15:30", "end": "15:50", "title": "Search terms: export both reports and upload", "sub": "Both accounts, last 30 days, all campaigns. The review itself moves to Thu/Fri.", "meeting": false, "done": false}, {"id": "b14", "start": "15:50", "end": "16:00", "title": "Wrap", "sub": "Log what got done. Tomorrow gets built from this.", "meeting": false, "done": false}], "log": [{"t": "07:21", "text": "i was pulled into a meeting from 3 - 5"}]}, "2026-09-03": {"blocks": [{"id": "c1", "start": "08:00", "end": "08:20", "title": "Check and respond to emails", "sub": "Daily · 20 min. Priority people first: Daniel (16 emails yesterday — badge question, Email #2 content, field name for Tory, mantels, checklist), Hayden (Motif SKU updates with Procurement, 2 unread), Ethan and Lauren (sale product picks). Then Marc Tillery's screen, Timeline Wood promos, Case 0960930. Also ask Hayden for the Motif completion date so it's ready for the L-10. Book Marc Tillery's screen in this block — candidates has no separate slot today.", "meeting": false, "done": false}, {"id": "c2", "start": "08:20", "end": "08:40", "title": "Review daily metrics & KPIs", "sub": "Daily · 20 min. NetSuite lead landed: Products Without Marketing Category (sent to you and Daniel).", "meeting": false, "done": false}, {"id": "c3", "start": "08:40", "end": "09:00", "title": "Team check-in", "sub": "Daily · 20 min", "meeting": false, "done": false}, {"id": "c4", "start": "09:00", "end": "10:00", "title": "Focus: Labor Day sale emails — build Email #1, hand Daniel Email #2 content", "sub": "Inputs are in: Daniel needs text + images for Email #2 (New Products — Wall/Ceiling Motif Kits, plus what else). Ethan: lean into Ekena, PVC and Timberthane. Lauren: new shutter styles, SteelTek hardware, custom wood shutters — she's working images. Build Email #1 and hand Daniel Email #2 content today.", "meeting": false, "done": false}, {"id": "c5", "start": "10:00", "end": "10:20", "title": "Bug Herds — complete 5 (Rock: under 10)", "sub": "Daily · 20 min. This block is Rock time — hold it every day and the Rock holds itself.", "meeting": false, "done": false}, {"id": "c6", "start": "10:20", "end": "10:40", "title": "Cases — complete 10", "sub": "Daily · 20 min. Case 0960930 needs the AFCO answer.", "meeting": false, "done": false}, {"id": "c7", "start": "10:40", "end": "11:00", "title": "L-10 prep", "sub": "You're running it. Issues list: nav redesign decision (due tomorrow), Daniel's Accessories question (HomeOver/Millwork), Offset Mullion fields (Ethan asked Sam to re-add), scorecards in Strety by next L-10.", "meeting": false, "done": false}, {"id": "c8", "start": "11:00", "end": "12:00", "title": "E-Commerce L-10", "sub": "Hayden's in the room — get the Motif completion date there. Decide the nav site before you leave.", "meeting": true, "done": false}, {"id": "c9", "start": "12:00", "end": "12:40", "title": "Rock: navigation redesign — first working block", "sub": "Fresh from the decision. Audit the current top-level nav on the chosen site, list what's broken on mobile, sketch the target structure. Output: a one-page nav map to react to tomorrow.", "meeting": false, "done": false}, {"id": "c10", "start": "12:40", "end": "13:00", "title": "Strety", "sub": "Daily · 20 min. Scorecards need to be in before next L-10.", "meeting": false, "done": false}, {"id": "c11", "start": "13:00", "end": "13:30", "title": "Google <> Arch Depot | Hayden's cohort", "sub": "Google Meet. Tentative — accept or decline this morning. If you decline, the stain asset gets this slot too.", "meeting": true, "done": false}, {"id": "c12", "start": "13:30", "end": "14:15", "title": "Focus: Jonathan's Motifs emails — both lines", "sub": "Due today. Launch tomorrow if Hayden gave you a date.", "meeting": false, "done": false}, {"id": "c13", "start": "14:15", "end": "15:30", "title": "Rock: AD Ads — search term audit", "sub": "75 min. Export search terms for both accounts (last 30 days, all campaigns), upload to Claude for the recommend-only negative-exact list, then start Group 1 while it builds.", "meeting": false, "done": false}, {"id": "c14", "start": "15:30", "end": "16:00", "title": "Brody / Kody sync", "sub": "Teams invite sent to Kody. Add an agenda line in the invite if you want him prepped.", "meeting": true, "done": false}, {"id": "c15", "start": "16:00", "end": "16:40", "title": "Stain asset", "sub": "40 min. Work the stain asset here — if it needs more, tell me and I'll give it a full block Friday.", "meeting": false, "done": false}, {"id": "c16", "start": "16:40", "end": "17:00", "title": "Follow up with Andrew's ads + log the day", "sub": "Daily · 20 min. Last five minutes: log what got done so Friday builds from it.", "meeting": false, "done": false}], "log": []}}, "tasks": [{"id": "s1", "group": "now", "title": "Stain asset", "note": "40-min block today at 4:00. Say if it needs a full block Friday.", "due": "2026-09-04", "done": false}, {"id": "w4", "group": "now", "title": "Labor Day sale emails", "note": "Labor Day is Mon Sep 7. Announcement + last-chance, both sites.", "due": "2026-09-04", "done": false}, {"id": "w4a", "group": "now", "title": "Draft the sale emails (offer, dates, code locked)", "note": "", "due": "2026-09-02", "done": true}, {"id": "w4b", "group": "now", "title": "Build and schedule the emails", "note": "", "due": "2026-09-03", "done": false}, {"id": "w4c", "group": "now", "title": "Last-chance send goes out", "note": "", "due": "2026-09-07", "done": false}, {"id": "w1", "group": "now", "title": "Find candidates for the e-comm team", "note": "Daily 60-min block until filled. Log every outreach.", "due": "2026-09-04", "done": false}, {"id": "w1a", "group": "now", "title": "Job posted / applicant outreach first batch done", "note": "", "due": "2026-09-03", "done": true}, {"id": "w1b", "group": "now", "title": "First screens booked", "note": "", "due": "2026-09-04", "done": false}, {"id": "w2", "group": "now", "title": "Search term audit — all of e-comm", "note": "Recommend-only negative-exact list; no match-type tightening (keeps AI Overview eligibility).", "due": "2026-09-04", "done": false}, {"id": "w2a", "group": "now", "title": "Export search terms reports, both accounts, last 30 days", "note": "Upload to Claude for the ranked candidate list.", "due": "2026-09-03", "done": false}, {"id": "w2b", "group": "now", "title": "Review Groups 1–5 candidates and apply", "note": "", "due": "2026-09-04", "done": false}, {"id": "w3", "group": "now", "title": "Ceiling & Wall Motifs — confirm completion dates", "note": "Hayden has the SKU/description update with Procurement (sent 9/2, revised last night). Get the completion date from him.", "due": "2026-09-02", "done": false}, {"id": "w3a", "group": "now", "title": "Finish Jonathan's emails for both lines", "note": "", "due": "2026-09-03", "done": false}, {"id": "w3b", "group": "now", "title": "Launch the emails", "note": "Depends on confirmed dates.", "due": "2026-09-04", "done": false}, {"id": "t1", "group": "now", "title": "Raise the target on the 10x / 30x campaign", "note": "Two weeks of drift already. Same budget, a third of the revenue if it lands at 10x.", "due": "2026-09-02", "done": true}, {"id": "t2", "group": "now", "title": "Fix the carousel board-scan trigger", "note": "Moved to Friday to make room today (carried four days now). Approve the pending edit in Cowork, rebind device access — or disable it.", "due": "2026-09-04", "done": false}, {"id": "t6", "group": "now", "title": "Decide: which navigation redesign stays in Q3", "note": "Decide it in today's L-10. The other site moves to Q4 in writing.", "due": "2026-09-04", "done": false}, {"id": "t7", "group": "rocks", "title": "Refine AD Ads — includes the Google target audit across Groups 1–5", "note": "Google target audit across Groups 1–5: export Jul 18–Aug 16 and Aug 17–31 CSVs (both accounts), upload for the ranked target-change list, apply. Monitor spend vs the 7.5% cap weekly.", "due": "2026-09-30", "done": false}, {"id": "t8", "group": "rocks", "title": "Bugherds under 10 — held through quarter end", "note": "", "due": "2026-09-30", "done": false}, {"id": "t9", "group": "rocks", "title": "Navigation redesign — one site", "note": "Site to be chosen by Sep 4.", "due": "2026-09-30", "done": false}, {"id": "t10", "group": "hire", "title": "Interviews complete", "note": "", "due": "2026-09-18", "done": false}, {"id": "t11", "group": "hire", "title": "Offer out", "note": "", "due": "2026-09-25", "done": false}, {"id": "t12", "group": "coverage", "title": "List the departed employee's tasks here", "note": "Tap to edit. Each one: cover now, wait for hire, or drop.", "due": "2026-09-03", "done": false}, {"id": "t13", "group": "frozen", "title": "Second navigation redesign", "note": "", "due": "2026-10-01", "done": false}, {"id": "t14", "group": "frozen", "title": "Kit item tool", "note": "", "due": "2026-10-01", "done": false}, {"id": "t15", "group": "frozen", "title": "Hero video / carousel automation", "note": "", "due": "2026-10-01", "done": false}, {"id": "e1", "group": "hire", "title": "Book a screen with Marc Tillery", "note": "He answered your screening question last night.", "due": "2026-09-03", "done": false}, {"id": "e2", "group": "now", "title": "Timeline Wood: answer how they get included in promos", "note": "Matt Stroud asked on the New Product Additions thread. Daniel owns it; you're cc'd — worth a Labor Day tie-in?", "due": "2026-09-04", "done": false}, {"id": "e3", "group": "now", "title": "Products Without Marketing Category — work the NetSuite lead", "note": "Sent to you and Daniel this morning.", "due": "2026-09-04", "done": false}, {"id": "d1", "group": "now", "title": "Answer Daniel: sale badge functionality with Ethan — done or pivot?", "note": "He asked at 7am yesterday and flagged the time crunch. Answer before anything else today.", "due": "2026-09-03", "done": false}, {"id": "d2", "group": "now", "title": "Labor Day Email #2 content + images for Daniel", "note": "New Products: Wall/Ceiling Motif Kits + PVC/Timberthane (Ethan) + shutters/SteelTek (Lauren, images in progress).", "due": "2026-09-03", "done": false}, {"id": "d3", "group": "now", "title": "Reply to Daniel/Tory: name for the NetSuite 'why discontinued' field", "note": "Two-minute answer.", "due": "2026-09-03", "done": false}, {"id": "d4", "group": "now", "title": "Do we carry these Pearl Mantels? (Daniel)", "note": "", "due": "2026-09-04", "done": false}, {"id": "d5", "group": "now", "title": "Beams donation for North Canton HS — check warehouse returns", "note": "Daniel: 4 Heritage, 4 Industrial, some slat wall kits. He's drafting the list; you check what's returnable stock.", "due": "2026-09-04", "done": false}, {"id": "d6", "group": "now", "title": "Read Daniel's two catch-up emails: 'Stuff to make sure the team is doing' + 'Notes from recent meetings'", "note": "Miva inaccurate items alert is in there. Pull anything assigned to you onto this board.", "due": "2026-09-04", "done": false}, {"id": "d7", "group": "now", "title": "Scorecards into Strety before next week's L-10", "note": "Daniel's ask.", "due": "2026-09-09", "done": false}, {"id": "d8", "group": "now", "title": "FRP column cross-reference: CW Ohio vs HB&G vs AFCO pricing", "note": "Daniel: 'when you get back.' Not this week.", "due": "2026-09-11", "done": false}]}
 </script>
 
 <script id="app">
@@ -126,6 +150,304 @@ footer{margin-top:22px;color:var(--muted);font-size:13px}
   ];
   var state=JSON.parse(document.getElementById("state").textContent);
   var art=null, readOnly=false, saveTimer=null;
+
+  /* ---------- Claude ("sample" capability, runtime contract 0.2.x) ---------- */
+  var sampler=null, samplerTried=false;
+  var ask={text:"",busy:false,err:"",reply:"",refocus:false};
+  var pending=null;   /* {ops:[],rejected:[],origin:"ask"|task id} */
+  var draftBox=null;  /* {text:"",label:""} copyable block */
+
+  var MAXOPS=25;
+  function isTime(v){return typeof v==="string"&&/^([01][0-9]|2[0-3]):[0-5][0-9]$/.test(v);}
+  function isDate(v){return typeof v==="string"&&/^\d{4}-\d{2}-\d{2}$/.test(v);}
+  function isStr(v){return typeof v==="string"&&v.trim().length>0;}
+  function groupOK(v){for(var i=0;i<GROUPS.length;i++)if(GROUPS[i].key===v)return true;return false;}
+  function clip(s,n){s=String(s==null?"":s);return s.length>n?s.slice(0,n-1)+"…":s;}
+  function groupLabel(k){for(var i=0;i<GROUPS.length;i++)if(GROUPS[i].key===k)return GROUPS[i].label;return k;}
+
+  function locateBlock(id){
+    for(var k in state.days){
+      if(!Object.prototype.hasOwnProperty.call(state.days,k))continue;
+      var bl=state.days[k].blocks||[];
+      for(var i=0;i<bl.length;i++)if(bl[i].id===id)return {day:k,block:bl[i],i:i};
+    }
+    return null;
+  }
+  function dayOf(op){
+    if(op.day===undefined||op.day===null||op.day==="")return state.today;
+    return isDate(op.day)?op.day:null;
+  }
+
+  /* Every mutation Claude proposes is checked here before it can be shown or
+     applied. Anything unrecognised is rejected, never guessed at. */
+  function validateOp(o){
+    if(!o||typeof o!=="object")return {ok:false,why:"Not an object."};
+    var op=String(o.op||"");
+    var t,b,day;
+    if(op==="block.add"){
+      day=dayOf(o); if(!day)return {ok:false,why:"Bad day."};
+      if(!isTime(o.start)||!isTime(o.end))return {ok:false,why:"Bad start/end time."};
+      if(toMin(o.end)<=toMin(o.start))return {ok:false,why:"End is not after start."};
+      if(!isStr(o.title))return {ok:false,why:"Missing title."};
+      return {ok:true,op:{op:op,day:day,start:o.start,end:o.end,title:clip(o.title,140),
+        sub:clip(o.sub||"",400),meeting:o.meeting===true}};
+    }
+    if(op==="block.move"){
+      b=locateBlock(o.id); if(!b)return {ok:false,why:"No block with that id."};
+      day=(o.day===undefined||o.day===null||o.day==="")?b.day:(isDate(o.day)?o.day:null);
+      if(!day)return {ok:false,why:"Bad day."};
+      var st=o.start===undefined?b.block.start:o.start;
+      var en=o.end===undefined?b.block.end:o.end;
+      if(!isTime(st)||!isTime(en))return {ok:false,why:"Bad start/end time."};
+      if(toMin(en)<=toMin(st))return {ok:false,why:"End is not after start."};
+      return {ok:true,op:{op:op,id:o.id,day:day,start:st,end:en}};
+    }
+    if(op==="block.done"){
+      b=locateBlock(o.id); if(!b)return {ok:false,why:"No block with that id."};
+      if(typeof o.done!=="boolean")return {ok:false,why:"done must be true or false."};
+      return {ok:true,op:{op:op,id:o.id,done:o.done}};
+    }
+    if(op==="block.remove"){
+      b=locateBlock(o.id); if(!b)return {ok:false,why:"No block with that id."};
+      return {ok:true,op:{op:op,id:o.id}};
+    }
+    if(op==="task.add"){
+      if(!isStr(o.title))return {ok:false,why:"Missing title."};
+      if(!groupOK(o.group))return {ok:false,why:"Unknown group."};
+      if(o.due!==undefined&&o.due!==""&&!isDate(o.due))return {ok:false,why:"Bad due date."};
+      return {ok:true,op:{op:op,group:o.group,title:clip(o.title,160),
+        note:clip(o.note||"",600),due:o.due||""}};
+    }
+    if(op==="task.edit"){
+      t=findTask(o.id); if(!t)return {ok:false,why:"No task with that id."};
+      var f={};
+      if(o.title!==undefined){if(!isStr(o.title))return {ok:false,why:"Bad title."};f.title=clip(o.title,160);}
+      if(o.note!==undefined){if(typeof o.note!=="string")return {ok:false,why:"Bad note."};f.note=clip(o.note,600);}
+      if(o.due!==undefined){if(o.due!==""&&!isDate(o.due))return {ok:false,why:"Bad due date."};f.due=o.due;}
+      if(o.group!==undefined){if(!groupOK(o.group))return {ok:false,why:"Unknown group."};f.group=o.group;}
+      var keys=[];for(var k in f)if(Object.prototype.hasOwnProperty.call(f,k))keys.push(k);
+      if(!keys.length)return {ok:false,why:"Nothing to change."};
+      return {ok:true,op:{op:op,id:o.id,fields:f}};
+    }
+    if(op==="task.done"){
+      t=findTask(o.id); if(!t)return {ok:false,why:"No task with that id."};
+      if(typeof o.done!=="boolean")return {ok:false,why:"done must be true or false."};
+      return {ok:true,op:{op:op,id:o.id,done:o.done}};
+    }
+    if(op==="task.remove"){
+      t=findTask(o.id); if(!t)return {ok:false,why:"No task with that id."};
+      return {ok:true,op:{op:op,id:o.id}};
+    }
+    if(op==="log.add"){
+      if(!isStr(o.text))return {ok:false,why:"Missing text."};
+      return {ok:true,op:{op:op,text:clip(o.text,300)}};
+    }
+    return {ok:false,why:"Unknown change type “"+clip(op,40)+"”."};
+  }
+
+  function validateOps(list){
+    var ok=[],bad=[];
+    if(!Array.isArray(list))return {ops:[],rejected:[]};
+    list.slice(0,MAXOPS).forEach(function(raw){
+      var r=validateOp(raw);
+      if(r.ok)ok.push(r.op);else bad.push({why:r.why,raw:raw});
+    });
+    return {ops:ok,rejected:bad};
+  }
+
+  function describeOp(o){
+    var b,t;
+    if(o.op==="block.add")return {verb:"Add block",text:o.title+" · "+h12(o.start)+"–"+h12(o.end)+(o.day!==state.today?" on "+shortDate(o.day):"")};
+    if(o.op==="block.move"){b=locateBlock(o.id);
+      return {verb:"Move",text:(b?b.block.title:o.id)+" → "+(o.day!==b.day?shortDate(o.day)+" ":"")+h12(o.start)+"–"+h12(o.end)};}
+    if(o.op==="block.done"){b=locateBlock(o.id);
+      return {verb:o.done?"Tick":"Untick",text:b?b.block.title:o.id};}
+    if(o.op==="block.remove"){b=locateBlock(o.id);
+      return {verb:"Drop block",text:b?b.block.title:o.id};}
+    if(o.op==="task.add")return {verb:"Add task",text:o.title+" · "+groupLabel(o.group)+(o.due?" · due "+shortDate(o.due):"")};
+    if(o.op==="task.edit"){t=findTask(o.id);var bits=[];
+      if(o.fields.title!==undefined)bits.push("title → “"+o.fields.title+"”");
+      if(o.fields.due!==undefined)bits.push("due → "+(o.fields.due?shortDate(o.fields.due):"none"));
+      if(o.fields.group!==undefined)bits.push("group → "+groupLabel(o.fields.group));
+      if(o.fields.note!==undefined)bits.push("note updated");
+      return {verb:"Edit",text:(t?t.title:o.id)+": "+bits.join(", ")};}
+    if(o.op==="task.done"){t=findTask(o.id);
+      return {verb:o.done?"Complete":"Reopen",text:t?t.title:o.id};}
+    if(o.op==="task.remove"){t=findTask(o.id);
+      return {verb:"Remove task",text:t?t.title:o.id};}
+    if(o.op==="log.add")return {verb:"Log",text:o.text};
+    return {verb:"?",text:JSON.stringify(o)};
+  }
+
+  function applyOps(ops){
+    ops.forEach(function(o){
+      var b,t,d;
+      if(o.op==="block.add"){
+        d=state.days[o.day]||(state.days[o.day]={blocks:[],log:[]});
+        d.blocks.push({id:uid("b"),start:o.start,end:o.end,title:o.title,sub:o.sub,meeting:o.meeting,done:false});
+        d.blocks.sort(function(x,y){return toMin(x.start)-toMin(y.start);});
+      } else if(o.op==="block.move"){
+        b=locateBlock(o.id); if(!b)return;
+        b.block.start=o.start; b.block.end=o.end;
+        if(o.day!==b.day){
+          state.days[b.day].blocks.splice(b.i,1);
+          d=state.days[o.day]||(state.days[o.day]={blocks:[],log:[]});
+          d.blocks.push(b.block);
+          d.blocks.sort(function(x,y){return toMin(x.start)-toMin(y.start);});
+        } else {
+          state.days[b.day].blocks.sort(function(x,y){return toMin(x.start)-toMin(y.start);});
+        }
+      } else if(o.op==="block.done"){
+        b=locateBlock(o.id); if(b)b.block.done=o.done;
+      } else if(o.op==="block.remove"){
+        b=locateBlock(o.id); if(b)state.days[b.day].blocks.splice(b.i,1);
+      } else if(o.op==="task.add"){
+        state.tasks.push({id:uid("t"),group:o.group,title:o.title,note:o.note,due:o.due,done:false});
+      } else if(o.op==="task.edit"){
+        t=findTask(o.id); if(!t)return;
+        for(var k in o.fields)if(Object.prototype.hasOwnProperty.call(o.fields,k))t[k]=o.fields[k];
+      } else if(o.op==="task.done"){
+        t=findTask(o.id); if(t)t.done=o.done;
+      } else if(o.op==="task.remove"){
+        state.tasks=state.tasks.filter(function(x){return x.id!==o.id;});
+      } else if(o.op==="log.add"){
+        d=state.days[state.today]||(state.days[state.today]={blocks:[],log:[]});
+        var n=new Date();
+        d.log.push({t:pad(n.getHours())+":"+pad(n.getMinutes()),text:o.text});
+      }
+    });
+  }
+
+  /* ---------- prompts ---------- */
+  var OPS_SPEC=[
+    'Allowed objects in "ops" (use these shapes exactly, no others):',
+    '{"op":"block.add","day":"YYYY-MM-DD","start":"HH:MM","end":"HH:MM","title":"...","sub":"...","meeting":false}',
+    '{"op":"block.move","id":"<existing block id>","day":"YYYY-MM-DD","start":"HH:MM","end":"HH:MM"}',
+    '{"op":"block.done","id":"<block id>","done":true}',
+    '{"op":"block.remove","id":"<block id>"}',
+    '{"op":"task.add","group":"now|rocks|hire|coverage|frozen","title":"...","note":"...","due":"YYYY-MM-DD"}',
+    '{"op":"task.edit","id":"<task id>","title":"...","note":"...","due":"YYYY-MM-DD","group":"..."}',
+    '{"op":"task.done","id":"<task id>","done":true}',
+    '{"op":"task.remove","id":"<task id>"}',
+    '{"op":"log.add","text":"..."}',
+    'Times are 24-hour "HH:MM". Dates are "YYYY-MM-DD". "day" defaults to the board’s current day.',
+    'Every id must already exist in the state. Never invent an id. Omit "ops" fields you are not changing.'
+  ].join("\n");
+
+  function askPrompt(q){
+    return [
+      "You are the planning assistant built into Brody’s board, a personal project-management page.",
+      "Today is "+todayISO()+". The board is currently showing "+state.today+". Working hours "+state.hours+". Quarter ends "+state.quarterEnd+".",
+      "",
+      "Reply with ONLY one JSON object, no prose around it:",
+      '{"reply":"<at most two short sentences for Brody>","ops":[ ... ]}',
+      "",
+      OPS_SPEC,
+      "",
+      "If he asked a question rather than for a change, answer it in \"reply\" and return \"ops\":[].",
+      "Only propose changes he actually asked for. Keep \"reply\" short — the page renders the changes itself.",
+      "",
+      "BOARD STATE:",
+      JSON.stringify(stateForPrompt()),
+      "",
+      "BRODY ASKED:",
+      q
+    ].join("\n");
+  }
+
+  /* Full state, minus the per-task threads (they are sent only for the one
+     task being discussed) so the request does not grow with every Q&A. */
+  function stateForPrompt(){
+    var days={};
+    for(var k in state.days){
+      if(!Object.prototype.hasOwnProperty.call(state.days,k))continue;
+      days[k]={blocks:state.days[k].blocks,log:state.days[k].log};
+    }
+    return {
+      updated:state.updated,hours:state.hours,quarterEnd:state.quarterEnd,
+      today:state.today,days:days,
+      tasks:state.tasks.map(function(t){
+        return {id:t.id,group:t.group,title:t.title,note:t.note,due:t.due,done:t.done,
+          threadLength:(t.thread&&t.thread.length)||0};
+      })
+    };
+  }
+
+  function sampleErr(e){
+    var c=e&&e.code;
+    if(c==="not_granted")return "Claude access was declined for this view.";
+    if(c==="rate_limited")return "Too many questions at once — wait a moment.";
+    if(c==="prompt_too_large")return "The board is too large to send. Trim old days.";
+    if(c==="invalid_json")return "Claude’s answer wasn’t usable. Try rephrasing.";
+    if(c==="cancelled")return "";
+    if(c==="refused")return "Claude declined to answer that.";
+    if(c==="session_expired")return "Your Claude session expired — reload the page.";
+    return "Couldn’t reach Claude. Try again.";
+  }
+
+  function runAsk(){
+    var q=(ask.text||"").trim();
+    if(!sampler||ask.busy||!q)return;
+    ask.busy=true; ask.err=""; ask.reply=""; pending=null; draftBox=null; render();
+    sampler.json(askPrompt(q),{modelTier:"default",cache:false}).then(function(res){
+      ask.busy=false; ask.text="";
+      ask.reply=(res&&typeof res.reply==="string")?clip(res.reply,600):"";
+      var v=validateOps(res&&res.ops);
+      pending=(v.ops.length||v.rejected.length)?{ops:v.ops,rejected:v.rejected,origin:"ask"}:null;
+      render();
+    }).catch(function(e){
+      ask.busy=false; ask.err=sampleErr(e); render();
+    });
+  }
+
+  function diffHTML(){
+    if(!pending)return '';
+    var h='<div class="diff"><h3>'+(pending.ops.length?pending.ops.length+(pending.ops.length===1?' change':' changes')+' proposed — nothing is applied yet':'No change could be applied')+'</h3><ul>';
+    pending.ops.forEach(function(o){
+      var d=describeOp(o);
+      h+='<li><span class="verb">'+esc(d.verb)+'</span><span>'+esc(d.text)+'</span></li>';
+    });
+    pending.rejected.forEach(function(r){
+      h+='<li class="rej"><span class="verb">Skipped</span><span>'+esc(r.why)+'</span></li>';
+    });
+    h+='</ul><div class="acts">';
+    if(pending.ops.length)h+='<button class="btn" type="button" data-act="apply">Apply</button>';
+    h+='<button class="btn ghost" type="button" data-act="cancel">'+(pending.ops.length?'Cancel':'Dismiss')+'</button>';
+    h+='</div></div>';
+    return h;
+  }
+
+  function draftHTML(){
+    if(!draftBox)return '';
+    return '<div class="draft"><textarea readonly>'+esc(draftBox.text)+'</textarea>'+
+      '<div class="acts"><button class="btn ghost" type="button" data-act="copydraft">Copy</button>'+
+      '<button class="btn ghost" type="button" data-act="closedraft">Close</button>'+
+      '<span class="empty">'+esc(draftBox.label||"Select and copy if the button is blocked.")+'</span></div></div>';
+  }
+
+  function askHTML(){
+    if(samplerTried&&!sampler)return '';
+    var ready=!!sampler;
+    var h='<section class="ask"><h2>Ask Claude <small>'+(ready?'proposes changes — you apply them':'connecting…')+'</small></h2>';
+    h+='<div class="askrow"><textarea data-ask="1" rows="1" placeholder="push nav to tomorrow and give the stain asset an hour"'+(ready?'':' disabled')+'>'+esc(ask.text)+'</textarea>';
+    h+='<button class="btn" type="button" data-act="ask"'+(ready&&!ask.busy?'':' disabled')+'>'+(ask.busy?'Thinking…':'Ask')+'</button>';
+    h+='<button class="btn ghost" type="button" data-act="export">Copy state</button></div>';
+    if(ask.busy)h+='<div class="thinking">Thinking… this can take up to a minute.</div>';
+    if(ask.err)h+='<div class="askerr">'+esc(ask.err)+'</div>';
+    if(ask.reply)h+='<div class="saidit">'+esc(ask.reply)+'</div>';
+    h+=diffHTML();
+    h+=draftHTML();
+    h+='</section>';
+    return h;
+  }
+
+  function copyText(t,label){
+    draftBox={text:t,label:label||""};
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(t).then(function(){chip("Copied");},function(){});
+    }
+    render();
+  }
 
   function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];});}
   function pad(n){return (n<10?"0":"")+n;}
@@ -163,6 +485,8 @@ footer{margin-top:22px;color:var(--muted);font-size:13px}
     var h='';
     h+='<header class="top"><div><h1>Brody\u2019s board</h1><div class="date">'+esc(fmtDate(state.today))+(isToday?'':' \u2014 plan not yet rebuilt for today')+'</div></div>';
     h+='<div class="stats"><div class="stat q"><b>'+qLeft+'</b><span>days left in Q3</span></div><div class="stat"><b>'+open.length+'</b><span>open</span></div><div class="stat'+(overdue.length?' warn':'')+'"><b>'+overdue.length+'</b><span>overdue</span></div></div></header>';
+
+    h+=askHTML();
 
     h+='<div class="grid">';
     // Today
@@ -212,13 +536,18 @@ footer{margin-top:22px;color:var(--muted);font-size:13px}
 
     h+='<footer>Last saved '+esc(new Date(state.updated).toLocaleString(undefined,{month:"short",day:"numeric",hour:"numeric",minute:"2-digit"}))+'. Claude reads this board each morning and rebuilds the day from it.'+(readOnly?' This view is read-only.':'')+'</footer>';
     document.getElementById("root").innerHTML=h;
+    if(ask.refocus){
+      var ab=document.querySelector("[data-ask]");
+      if(ab&&!ab.disabled){ab.focus();ab.setSelectionRange(ab.value.length,ab.value.length);}
+      ask.refocus=false;
+    }
   }
 
   function pageSource(){
     var json=JSON.stringify(state).replace(/<\//g,"<\\/");
     var style=document.getElementById("style").textContent;
     var app=document.getElementById("app").textContent;
-    return '<!doctype html>\n<html lang="en">\n<head>\n<meta charset="utf-8">\n<meta name="viewport" content="width=device-width, initial-scale=1">\n<title>Brody\'s board</title>\n<link rel="preconnect" href="https://fonts.googleapis.com">\n<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap">\n<style id="style">'+style+'</style>\n</head>\n<body>\n<div id="root" class="wrap"></div>\n<div id="chip" class="chip"></div>\n\n<script id="state" type="application/json">\n'+json+'\n<\/script>\n\n<script id="app">'+app+'<\/script>\n</body>\n</html>\n';
+    return '<!doctype html>\n<html lang="en">\n<head>\n<meta charset="utf-8">\n<meta name="viewport" content="width=device-width, initial-scale=1">\n<title>Brody\'s board</title>\n<!-- Publish with capabilities {"artifact":{},"sample":{}} - the Ask Claude box and the per-task threads need "sample", self-publish needs "artifact". Omitting either makes them fail silently. -->\n<link rel="preconnect" href="https://fonts.googleapis.com">\n<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap">\n<style id="style">'+style+'</style>\n</head>\n<body>\n<div id="root" class="wrap"></div>\n<div id="chip" class="chip"></div>\n\n<script id="state" type="application/json">\n'+json+'\n<\/script>\n\n<script id="app">'+app+'<\/script>\n</body>\n</html>\n';
   }
 
   function chip(msg,err){var c=document.getElementById("chip");c.textContent=msg;c.className="chip show"+(err?" err":"");if(!err){clearTimeout(chip._t);chip._t=setTimeout(function(){c.className="chip";},2500);}}
@@ -250,22 +579,64 @@ footer{margin-top:22px;color:var(--muted);font-size:13px}
     if(el.dataset.edit){var tt=findTask(el.dataset.id);if(!tt)return;tt[el.dataset.edit]=el.value;save();return;}
   });
   document.addEventListener("click",function(e){
+    var act=e.target.closest("[data-act]");
+    if(act){
+      var a=act.dataset.act;
+      if(a==="ask"){ask.refocus=true;runAsk();return;}
+      if(a==="apply"){
+        if(pending&&pending.ops.length){applyOps(pending.ops);pending=null;ask.reply="";save();}
+        return;
+      }
+      if(a==="cancel"){pending=null;render();return;}
+      if(a==="closedraft"){draftBox=null;render();return;}
+      if(a==="copydraft"){
+        var ta=document.querySelector(".draft textarea");
+        if(ta){ta.focus();ta.select();
+          if(navigator.clipboard&&navigator.clipboard.writeText){
+            navigator.clipboard.writeText(ta.value).then(function(){chip("Copied");},function(){chip("Select the text and copy it manually.",true);});
+          }else{chip("Select the text and copy it manually.",true);}
+        }
+        return;
+      }
+      if(a==="export"){copyText(JSON.stringify(state,null,2),"Full board state — paste this into a chat.");return;}
+    }
     var el=e.target.closest("[data-toggle]");
     if(el){var li=el.closest(".task");li.classList.toggle("open");return;}
     var d=e.target.closest("[data-del]");
     if(d){var id=d.dataset.del;state.tasks=state.tasks.filter(function(t){return t.id!==id;});save();return;}
   });
+  document.addEventListener("input",function(e){
+    if(e.target.dataset&&e.target.dataset.ask)ask.text=e.target.value;
+  });
+  document.addEventListener("keydown",function(e){
+    if(e.target.dataset&&e.target.dataset.ask&&e.key==="Enter"&&(e.metaKey||e.ctrlKey)){
+      e.preventDefault();ask.text=e.target.value;ask.refocus=true;runAsk();
+    }
+  });
+
   document.addEventListener("submit",function(e){
     var f=e.target;if(!f.dataset.form)return;e.preventDefault();
     if(f.dataset.form==="log"){var v=f.text.value.trim();if(!v)return;var d=state.days[state.today]||(state.days[state.today]={blocks:[],log:[]});var n=new Date();d.log.push({t:pad(n.getHours())+":"+pad(n.getMinutes()),text:v});save();return;}
     if(f.dataset.form==="add"){var title=f.title.value.trim();if(!title)return;state.tasks.push({id:uid("t"),group:f.group.value,title:title,note:"",due:f.due.value||"",done:false});save();return;}
   });
 
+  /* Re-render on the clock, but never while a field is focused, a call is in
+     flight, or a proposal is waiting for a decision. */
+  function tick(){
+    var a=document.activeElement;
+    if(ask.busy||pending||draftBox)return;
+    if(a&&a.closest&&a.closest("#root")&&/^(INPUT|TEXTAREA|SELECT)$/.test(a.tagName))return;
+    render();
+  }
+
   render();
-  setInterval(render,60000);
+  setInterval(tick,60000);
   if(window.claude&&typeof window.claude.use==="function"){
-    window.claude.use("artifact").then(function(ns){art=ns;if(!ns){readOnly=true;render();}});
-  }else{readOnly=true;render();}
+    window.claude.use("artifact").then(function(ns){art=ns;if(!ns){readOnly=true;}render();});
+    window.claude.use("sample").then(function(fn){
+      sampler=(typeof fn==="function")?fn:null; samplerTried=true; render();
+    },function(){samplerTried=true;render();});
+  }else{readOnly=true;samplerTried=true;render();}
 })();
 </script>
 </body>
