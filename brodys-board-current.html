@@ -315,7 +315,8 @@ footer{margin-top:22px;color:var(--muted);font-size:13px}
     var b,t;
     if(o.op==="block.add")return {verb:"Add block",text:o.title+" · "+h12(o.start)+"–"+h12(o.end)+(o.day!==state.today?" on "+shortDate(o.day):"")};
     if(o.op==="block.move"){b=locateBlock(o.id);
-      return {verb:"Move",text:(b?b.block.title:o.id)+" → "+(o.day!==b.day?shortDate(o.day)+" ":"")+h12(o.start)+"–"+h12(o.end)};}
+      var moved=b&&o.day!==b.day;
+      return {verb:"Move",text:(b?b.block.title:o.id)+" → "+(moved?shortDate(o.day)+" ":"")+h12(o.start)+"–"+h12(o.end)};}
     if(o.op==="block.done"){b=locateBlock(o.id);
       return {verb:o.done?"Tick":"Untick",text:b?b.block.title:o.id};}
     if(o.op==="block.remove"){b=locateBlock(o.id);
@@ -506,6 +507,20 @@ footer{margin-top:22px;color:var(--muted);font-size:13px}
     };
   }
 
+  var THREAD_BUDGET=24000;
+  function threadForPrompt(th){
+    var lines=th.map(function(m){return (m.role==="user"?"Brody":"You")+": "+m.text;});
+    var total=0,keep=[];
+    for(var i=lines.length-1;i>=0;i--){
+      total+=lines[i].length+2;
+      if(total>THREAD_BUDGET&&keep.length)break;
+      keep.unshift(lines[i]);
+    }
+    var body=keep.join("\n\n");
+    if(keep.length<lines.length)body="(earlier messages in this thread omitted for length)\n\n"+body;
+    return body;
+  }
+
   function taskPrompt(t,q){
     var th=threadOf(t)||[];
     return [
@@ -517,7 +532,7 @@ footer{margin-top:22px;color:var(--muted);font-size:13px}
         due:t.due,done:t.done,note:t.note}),
       "",
       "CONVERSATION SO FAR (oldest first):",
-      th.length?th.map(function(m){return (m.role==="user"?"Brody":"You")+": "+m.text;}).join("\n\n"):"(nothing yet)",
+      th.length?threadForPrompt(th):"(nothing yet)",
       "",
       "REST OF THE BOARD (titles, groups and dues only, for context):",
       JSON.stringify(slimBoard()),
