@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brody's board</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap">
+<style id="style">
+:root{
+  --bg:#F7F6F2; --panel:#FFFFFF; --ink:#1B1D21; --muted:#6B6E76; --line:#DAD8D0;
+  --accent:#1F4FD6; --accent-soft:#E6ECFB; --red:#C8331F; --red-soft:#FBE7E3;
+  --amber:#B8720A; --amber-soft:#FBEFD9; --green:#2E7D4F; --green-soft:#E1F2E7;
+  --frozen:#8A8D95; --radius:10px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#15171B; --panel:#1E2126; --ink:#EDEBE6; --muted:#9A9DA6; --line:#2C2F36;
+    --accent:#7C9BFF; --accent-soft:#1F2740; --red:#FF7A66; --red-soft:#3A2220;
+    --amber:#F0B34B; --amber-soft:#3A2E17; --green:#6FCF97; --green-soft:#193324; --frozen:#6D7079;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#15171B; --panel:#1E2126; --ink:#EDEBE6; --muted:#9A9DA6; --line:#2C2F36;
+  --accent:#7C9BFF; --accent-soft:#1F2740; --red:#FF7A66; --red-soft:#3A2220;
+  --amber:#F0B34B; --amber-soft:#3A2E17; --green:#6FCF97; --green-soft:#193324; --frozen:#6D7079;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font-family:"Instrument Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-size:15px;line-height:1.45;-webkit-font-smoothing:antialiased}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+a{color:var(--accent)}
+.wrap{max-width:1120px;margin:0 auto;padding:20px 16px 60px}
+header.top{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:12px 24px;padding-bottom:14px;border-bottom:2px solid var(--ink);margin-bottom:18px}
+header.top h1{font-size:30px;font-weight:700;letter-spacing:-.02em;margin:0;line-height:1.05}
+header.top .date{color:var(--muted);margin-top:4px}
+.stats{display:flex;gap:18px;flex-wrap:wrap;font-variant-numeric:tabular-nums}
+.stat{display:flex;flex-direction:column;align-items:flex-end}
+.stat b{font-size:24px;font-weight:700;line-height:1;letter-spacing:-.02em}
+.stat span{color:var(--muted);font-size:13px}
+.stat.warn b{color:var(--red)}
+.stat.q b{color:var(--accent)}
+.grid{display:grid;grid-template-columns:1fr;gap:20px}
+@media(min-width:900px){.grid{grid-template-columns:5fr 6fr;align-items:start}}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:16px}
+.panel h2{font-size:17px;font-weight:600;margin:0 0 10px;display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.panel h2 small{color:var(--muted);font-weight:400;font-size:13px}
+.hint{color:var(--muted);font-size:13px;margin:0 0 10px}
+/* schedule */
+.sched{list-style:none;margin:0;padding:0}
+.blk{display:grid;grid-template-columns:96px 1fr auto;gap:10px;align-items:start;padding:9px 8px;border-radius:8px;border-left:3px solid transparent}
+.blk+.blk{margin-top:2px}
+.blk .t{font-variant-numeric:tabular-nums;color:var(--muted);font-size:13px;padding-top:2px;white-space:nowrap}
+.blk .title{font-weight:500}
+.blk .sub{color:var(--muted);font-size:13px;margin-top:2px}
+.blk.meeting{background:var(--accent-soft);border-left-color:var(--accent)}
+.blk.now{outline:2px solid var(--accent);outline-offset:-2px}
+.blk.done .title{text-decoration:line-through;color:var(--muted)}
+.blk.done{opacity:.7}
+.chk{width:20px;height:20px;margin:2px 0 0;accent-color:var(--accent)}
+.nowtag{display:inline-block;font-size:11px;font-weight:600;color:var(--accent);margin-left:6px;vertical-align:middle}
+/* check-in */
+.checkin{margin-top:16px;padding-top:14px;border-top:1px dashed var(--line)}
+.checkin form,.addrow{display:flex;gap:8px;flex-wrap:wrap}
+.checkin input[type=text],.addrow input[type=text]{flex:1 1 200px;min-width:0;padding:9px 11px;border:1px solid var(--line);border-radius:8px;background:var(--bg)}
+.addrow input[type=date],.addrow select{padding:9px 10px;border:1px solid var(--line);border-radius:8px;background:var(--bg)}
+.btn{padding:9px 14px;border:1px solid var(--ink);background:var(--ink);color:var(--bg);border-radius:8px;font-weight:600}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+.btn:disabled{opacity:.5;cursor:default}
+.log{list-style:none;margin:10px 0 0;padding:0}
+.log li{display:grid;grid-template-columns:52px 1fr;gap:10px;padding:5px 0;border-top:1px solid var(--line);font-size:14px}
+.log li:first-child{border-top:0}
+.log .lt{color:var(--muted);font-variant-numeric:tabular-nums;font-size:13px}
+.empty{color:var(--muted);font-size:13px;font-style:italic}
+/* tasks */
+.group{margin-top:14px}
+.group:first-of-type{margin-top:0}
+.group h3{font-size:14px;font-weight:600;margin:0 0 6px;display:flex;justify-content:space-between;align-items:baseline}
+.group h3 .due{font-weight:400;color:var(--muted);font-size:13px}
+.group.frozen h3{color:var(--frozen)}
+.tasks{list-style:none;margin:0;padding:0}
+.task{display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:start;padding:8px 6px;border-top:1px solid var(--line)}
+.task:first-child{border-top:0}
+.task .title{font-weight:500;cursor:pointer}
+.task .note{color:var(--muted);font-size:13px;margin-top:2px}
+.task.done .title{text-decoration:line-through;color:var(--muted)}
+.task.done{opacity:.65}
+.group.frozen .task .title{color:var(--frozen);font-weight:400}
+.badge{font-size:12px;font-weight:600;padding:3px 8px;border-radius:999px;white-space:nowrap;font-variant-numeric:tabular-nums}
+.badge.over{background:var(--red-soft);color:var(--red)}
+.badge.soon{background:var(--amber-soft);color:var(--amber)}
+.badge.ok{background:var(--bg);color:var(--muted);border:1px solid var(--line)}
+.badge.done{background:var(--green-soft);color:var(--green)}
+.badge.frozen{background:transparent;color:var(--frozen);border:1px solid var(--line)}
+.details{grid-column:2/4;display:none;gap:8px;flex-wrap:wrap;align-items:center;margin-top:4px}
+.task.open .details{display:flex}
+.details input[type=date],.details select{padding:6px 8px;border:1px solid var(--line);border-radius:6px;background:var(--bg);font-size:13px}
+.details textarea{flex:1 1 100%;min-height:52px;padding:8px;border:1px solid var(--line);border-radius:6px;background:var(--bg);font-size:13px;resize:vertical}
+.details .del{color:var(--red);background:none;border:0;font-size:13px;padding:6px 4px}
+.addrow{margin-top:14px;padding-top:12px;border-top:1px dashed var(--line)}
+/* status chip */
+.chip{position:fixed;right:14px;bottom:14px;background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:13px;color:var(--muted);box-shadow:0 2px 10px rgba(0,0,0,.08);display:none}
+.chip.show{display:block}
+.chip.err{color:var(--red);border-color:var(--red)}
+footer{margin-top:22px;color:var(--muted);font-size:13px}
+@media (prefers-reduced-motion:no-preference){.chk,.btn{transition:opacity .15s}}
+</style>
+</head>
+<body>
+<div id="root" class="wrap"></div>
+<div id="chip" class="chip"></div>
+
+<script id="state" type="application/json">
+{"updated": "2026-09-03T08:10:00-05:00", "hours": "8:00–5:00", "quarterEnd": "2026-09-30", "today": "2026-09-03", "days": {"2026-09-02": {"blocks": [{"id": "b1", "start": "08:00", "end": "08:20", "title": "Check and respond to emails", "sub": "Daily · 20 min", "meeting": false, "done": true}, {"id": "b2", "start": "08:20", "end": "08:40", "title": "Review daily metrics & KPIs", "sub": "Daily · 20 min", "meeting": false, "done": true}, {"id": "b3", "start": "08:40", "end": "09:00", "title": "Team check-in", "sub": "Daily · 20 min", "meeting": false, "done": true}, {"id": "b4", "start": "09:00", "end": "09:20", "title": "Google Ads: raise the target on the 10x / 30x campaign", "sub": "Set target ~25x or switch to Max Conversion Value. Write the loss number down.", "meeting": false, "done": true}, {"id": "b5", "start": "09:30", "end": "12:00", "title": "Asana — Wednesday meetings", "sub": "", "meeting": true, "done": true}, {"id": "b6", "start": "12:00", "end": "12:20", "title": "Bug Herds — complete 5", "sub": "Daily · 20 min", "meeting": false, "done": false}, {"id": "b7", "start": "12:20", "end": "12:40", "title": "Cases — complete 10", "sub": "Daily · 20 min", "meeting": false, "done": false}, {"id": "b8", "start": "12:40", "end": "13:40", "title": "Focus: Labor Day sale emails — draft", "sub": "Labor Day is Monday. Nail the offer, dates, and code; draft the announcement and the last-chance version. Send Claude the offer details for copy.", "meeting": false, "done": true}, {"id": "b9", "start": "13:40", "end": "14:20", "title": "Focus: find candidates", "sub": "Work the applicant list, book first screens. Log who you reached out to.", "meeting": false, "done": true}, {"id": "b10", "start": "14:20", "end": "14:40", "title": "Strety", "sub": "Daily · 20 min", "meeting": false, "done": false}, {"id": "b11", "start": "14:40", "end": "15:00", "title": "Follow up with Andrew's ads", "sub": "Daily · 20 min", "meeting": false, "done": false}, {"id": "b12", "start": "15:00", "end": "15:30", "title": "Focus: Ceiling & Wall Motifs — completion dates", "sub": "Just the dates today. Jonathan's emails move to tomorrow.", "meeting": false, "done": false}, {"id": "b13", "start": "15:30", "end": "15:50", "title": "Search terms: export both reports and upload", "sub": "Both accounts, last 30 days, all campaigns. The review itself moves to Thu/Fri.", "meeting": false, "done": false}, {"id": "b14", "start": "15:50", "end": "16:00", "title": "Wrap", "sub": "Log what got done. Tomorrow gets built from this.", "meeting": false, "done": false}], "log": [{"t": "07:21", "text": "i was pulled into a meeting from 3 - 5"}]}, "2026-09-03": {"blocks": [{"id": "c1", "start": "08:00", "end": "08:20", "title": "Check and respond to emails", "sub": "Daily · 20 min. Priority people first: Daniel (16 emails yesterday — badge question, Email #2 content, field name for Tory, mantels, checklist), Hayden (Motif SKU updates with Procurement, 2 unread), Ethan and Lauren (sale product picks). Then Marc Tillery's screen, Timeline Wood promos, Case 0960930. Also ask Hayden for the Motif completion date so it's ready for the L-10. Book Marc Tillery's screen in this block — candidates has no separate slot today.", "meeting": false, "done": false}, {"id": "c2", "start": "08:20", "end": "08:40", "title": "Review daily metrics & KPIs", "sub": "Daily · 20 min. NetSuite lead landed: Products Without Marketing Category (sent to you and Daniel).", "meeting": false, "done": false}, {"id": "c3", "start": "08:40", "end": "09:00", "title": "Team check-in", "sub": "Daily · 20 min", "meeting": false, "done": false}, {"id": "c4", "start": "09:00", "end": "10:00", "title": "Focus: Labor Day sale emails — build Email #1, hand Daniel Email #2 content", "sub": "Inputs are in: Daniel needs text + images for Email #2 (New Products — Wall/Ceiling Motif Kits, plus what else). Ethan: lean into Ekena, PVC and Timberthane. Lauren: new shutter styles, SteelTek hardware, custom wood shutters — she's working images. Build Email #1 and hand Daniel Email #2 content today.", "meeting": false, "done": false}, {"id": "c5", "start": "10:00", "end": "10:20", "title": "Bug Herds — complete 5 (Rock: under 10)", "sub": "Daily · 20 min. This block is Rock time — hold it every day and the Rock holds itself.", "meeting": false, "done": false}, {"id": "c6", "start": "10:20", "end": "10:40", "title": "Cases — complete 10", "sub": "Daily · 20 min. Case 0960930 needs the AFCO answer.", "meeting": false, "done": false}, {"id": "c7", "start": "10:40", "end": "11:00", "title": "L-10 prep", "sub": "You're running it. Issues list: nav redesign decision (due tomorrow), Daniel's Accessories question (HomeOver/Millwork), Offset Mullion fields (Ethan asked Sam to re-add), scorecards in Strety by next L-10.", "meeting": false, "done": false}, {"id": "c8", "start": "11:00", "end": "12:00", "title": "E-Commerce L-10", "sub": "Hayden's in the room — get the Motif completion date there. Decide the nav site before you leave.", "meeting": true, "done": false}, {"id": "c9", "start": "12:00", "end": "12:40", "title": "Rock: navigation redesign — first working block", "sub": "Fresh from the decision. Audit the current top-level nav on the chosen site, list what's broken on mobile, sketch the target structure. Output: a one-page nav map to react to tomorrow.", "meeting": false, "done": false}, {"id": "c10", "start": "12:40", "end": "13:00", "title": "Strety", "sub": "Daily · 20 min. Scorecards need to be in before next L-10.", "meeting": false, "done": false}, {"id": "c11", "start": "13:00", "end": "13:30", "title": "Google <> Arch Depot | Hayden's cohort", "sub": "Google Meet. Tentative — accept or decline this morning. If you decline, the stain asset gets this slot too.", "meeting": true, "done": false}, {"id": "c12", "start": "13:30", "end": "14:15", "title": "Focus: Jonathan's Motifs emails — both lines", "sub": "Due today. Launch tomorrow if Hayden gave you a date.", "meeting": false, "done": false}, {"id": "c13", "start": "14:15", "end": "15:30", "title": "Rock: AD Ads — search term audit", "sub": "75 min. Export search terms for both accounts (last 30 days, all campaigns), upload to Claude for the recommend-only negative-exact list, then start Group 1 while it builds.", "meeting": false, "done": false}, {"id": "c14", "start": "15:30", "end": "16:00", "title": "Brody / Kody sync", "sub": "Teams invite sent to Kody. Add an agenda line in the invite if you want him prepped.", "meeting": true, "done": false}, {"id": "c15", "start": "16:00", "end": "16:40", "title": "Stain asset", "sub": "40 min. Work the stain asset here — if it needs more, tell me and I'll give it a full block Friday.", "meeting": false, "done": false}, {"id": "c16", "start": "16:40", "end": "17:00", "title": "Follow up with Andrew's ads + log the day", "sub": "Daily · 20 min. Last five minutes: log what got done so Friday builds from it.", "meeting": false, "done": false}], "log": []}}, "tasks": [{"id": "s1", "group": "now", "title": "Stain asset", "note": "40-min block today at 4:00. Say if it needs a full block Friday.", "due": "2026-09-04", "done": false}, {"id": "w4", "group": "now", "title": "Labor Day sale emails", "note": "Labor Day is Mon Sep 7. Announcement + last-chance, both sites.", "due": "2026-09-04", "done": false}, {"id": "w4a", "group": "now", "title": "Draft the sale emails (offer, dates, code locked)", "note": "", "due": "2026-09-02", "done": true}, {"id": "w4b", "group": "now", "title": "Build and schedule the emails", "note": "", "due": "2026-09-03", "done": false}, {"id": "w4c", "group": "now", "title": "Last-chance send goes out", "note": "", "due": "2026-09-07", "done": false}, {"id": "w1", "group": "now", "title": "Find candidates for the e-comm team", "note": "Daily 60-min block until filled. Log every outreach.", "due": "2026-09-04", "done": false}, {"id": "w1a", "group": "now", "title": "Job posted / applicant outreach first batch done", "note": "", "due": "2026-09-03", "done": true}, {"id": "w1b", "group": "now", "title": "First screens booked", "note": "", "due": "2026-09-04", "done": false}, {"id": "w2", "group": "now", "title": "Search term audit — all of e-comm", "note": "Recommend-only negative-exact list; no match-type tightening (keeps AI Overview eligibility).", "due": "2026-09-04", "done": false}, {"id": "w2a", "group": "now", "title": "Export search terms reports, both accounts, last 30 days", "note": "Upload to Claude for the ranked candidate list.", "due": "2026-09-03", "done": false}, {"id": "w2b", "group": "now", "title": "Review Groups 1–5 candidates and apply", "note": "", "due": "2026-09-04", "done": false}, {"id": "w3", "group": "now", "title": "Ceiling & Wall Motifs — confirm completion dates", "note": "Hayden has the SKU/description update with Procurement (sent 9/2, revised last night). Get the completion date from him.", "due": "2026-09-02", "done": false}, {"id": "w3a", "group": "now", "title": "Finish Jonathan's emails for both lines", "note": "", "due": "2026-09-03", "done": false}, {"id": "w3b", "group": "now", "title": "Launch the emails", "note": "Depends on confirmed dates.", "due": "2026-09-04", "done": false}, {"id": "t1", "group": "now", "title": "Raise the target on the 10x / 30x campaign", "note": "Two weeks of drift already. Same budget, a third of the revenue if it lands at 10x.", "due": "2026-09-02", "done": true}, {"id": "t2", "group": "now", "title": "Fix the carousel board-scan trigger", "note": "Moved to Friday to make room today (carried four days now). Approve the pending edit in Cowork, rebind device access — or disable it.", "due": "2026-09-04", "done": false}, {"id": "t6", "group": "now", "title": "Decide: which navigation redesign stays in Q3", "note": "Decide it in today's L-10. The other site moves to Q4 in writing.", "due": "2026-09-04", "done": false}, {"id": "t7", "group": "rocks", "title": "Refine AD Ads — includes the Google target audit across Groups 1–5", "note": "Google target audit across Groups 1–5: export Jul 18–Aug 16 and Aug 17–31 CSVs (both accounts), upload for the ranked target-change list, apply. Monitor spend vs the 7.5% cap weekly.", "due": "2026-09-30", "done": false}, {"id": "t8", "group": "rocks", "title": "Bugherds under 10 — held through quarter end", "note": "", "due": "2026-09-30", "done": false}, {"id": "t9", "group": "rocks", "title": "Navigation redesign — one site", "note": "Site to be chosen by Sep 4.", "due": "2026-09-30", "done": false}, {"id": "t10", "group": "hire", "title": "Interviews complete", "note": "", "due": "2026-09-18", "done": false}, {"id": "t11", "group": "hire", "title": "Offer out", "note": "", "due": "2026-09-25", "done": false}, {"id": "t12", "group": "coverage", "title": "List the departed employee's tasks here", "note": "Tap to edit. Each one: cover now, wait for hire, or drop.", "due": "2026-09-03", "done": false}, {"id": "t13", "group": "frozen", "title": "Second navigation redesign", "note": "", "due": "2026-10-01", "done": false}, {"id": "t14", "group": "frozen", "title": "Kit item tool", "note": "", "due": "2026-10-01", "done": false}, {"id": "t15", "group": "frozen", "title": "Hero video / carousel automation", "note": "", "due": "2026-10-01", "done": false}, {"id": "e1", "group": "hire", "title": "Book a screen with Marc Tillery", "note": "He answered your screening question last night.", "due": "2026-09-03", "done": false}, {"id": "e2", "group": "now", "title": "Timeline Wood: answer how they get included in promos", "note": "Matt Stroud asked on the New Product Additions thread. Daniel owns it; you're cc'd — worth a Labor Day tie-in?", "due": "2026-09-04", "done": false}, {"id": "e3", "group": "now", "title": "Products Without Marketing Category — work the NetSuite lead", "note": "Sent to you and Daniel this morning.", "due": "2026-09-04", "done": false}, {"id": "d1", "group": "now", "title": "Answer Daniel: sale badge functionality with Ethan — done or pivot?", "note": "He asked at 7am yesterday and flagged the time crunch. Answer before anything else today.", "due": "2026-09-03", "done": false}, {"id": "d2", "group": "now", "title": "Labor Day Email #2 content + images for Daniel", "note": "New Products: Wall/Ceiling Motif Kits + PVC/Timberthane (Ethan) + shutters/SteelTek (Lauren, images in progress).", "due": "2026-09-03", "done": false}, {"id": "d3", "group": "now", "title": "Reply to Daniel/Tory: name for the NetSuite 'why discontinued' field", "note": "Two-minute answer.", "due": "2026-09-03", "done": false}, {"id": "d4", "group": "now", "title": "Do we carry these Pearl Mantels? (Daniel)", "note": "", "due": "2026-09-04", "done": false}, {"id": "d5", "group": "now", "title": "Beams donation for North Canton HS — check warehouse returns", "note": "Daniel: 4 Heritage, 4 Industrial, some slat wall kits. He's drafting the list; you check what's returnable stock.", "due": "2026-09-04", "done": false}, {"id": "d6", "group": "now", "title": "Read Daniel's two catch-up emails: 'Stuff to make sure the team is doing' + 'Notes from recent meetings'", "note": "Miva inaccurate items alert is in there. Pull anything assigned to you onto this board.", "due": "2026-09-04", "done": false}, {"id": "d7", "group": "now", "title": "Scorecards into Strety before next week's L-10", "note": "Daniel's ask.", "due": "2026-09-09", "done": false}, {"id": "d8", "group": "now", "title": "FRP column cross-reference: CW Ohio vs HB&G vs AFCO pricing", "note": "Daniel: 'when you get back.' Not this week.", "due": "2026-09-11", "done": false}]}
+</script>
+
+<script id="app">
+(function(){
+  var GROUPS=[
+    {key:"now",label:"This week",sub:""},
+    {key:"rocks",label:"Rocks",sub:"Due Sep 30"},
+    {key:"hire",label:"Hire",sub:"Daily 30 min until filled"},
+    {key:"coverage",label:"Coverage until the hire lands",sub:""},
+    {key:"frozen",label:"Frozen until Oct 1",sub:"Not lower priority. Frozen."}
+  ];
+  var state=JSON.parse(document.getElementById("state").textContent);
+  var art=null, readOnly=false, saveTimer=null;
+
+  function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];});}
+  function pad(n){return (n<10?"0":"")+n;}
+  function todayISO(){var d=new Date();return d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate());}
+  function parseISO(s){var p=s.split("-");return new Date(+p[0],+p[1]-1,+p[2]);}
+  function daysBetween(a,b){return Math.round((parseISO(b)-parseISO(a))/86400000);}
+  function fmtDate(iso){var d=parseISO(iso);return d.toLocaleDateString(undefined,{weekday:"long",month:"long",day:"numeric"});}
+  function shortDate(iso){var d=parseISO(iso);return d.toLocaleDateString(undefined,{month:"short",day:"numeric"});}
+  function h12(t){var p=t.split(":"),h=+p[0],m=p[1];var ap=h>=12?"pm":"am";h=h%12;if(h===0)h=12;return h+(m==="00"?"":":"+m)+ap;}
+  function nowMin(){var d=new Date();return d.getHours()*60+d.getMinutes();}
+  function toMin(t){var p=t.split(":");return (+p[0])*60+(+p[1]);}
+  function uid(p){return p+Math.random().toString(36).slice(2,7);}
+
+  function dueBadge(t){
+    var today=todayISO();
+    if(t.done) return '<span class="badge done">Done</span>';
+    if(t.group==="frozen") return '<span class="badge frozen">Oct 1</span>';
+    if(!t.due) return '<span class="badge ok">No date</span>';
+    var n=daysBetween(today,t.due);
+    if(n<0) return '<span class="badge over">'+(-n)+'d overdue</span>';
+    if(n===0) return '<span class="badge over">Today</span>';
+    if(n===1) return '<span class="badge soon">Tomorrow</span>';
+    if(n<=3) return '<span class="badge soon">'+n+' days · '+shortDate(t.due)+'</span>';
+    return '<span class="badge ok">'+shortDate(t.due)+' · '+n+'d</span>';
+  }
+
+  function render(){
+    var today=todayISO();
+    var day=state.days[state.today]||{blocks:[],log:[]};
+    var qLeft=daysBetween(today,state.quarterEnd);
+    var open=state.tasks.filter(function(t){return !t.done&&t.group!=="frozen";});
+    var overdue=open.filter(function(t){return t.due&&daysBetween(today,t.due)<0;});
+    var nm=nowMin(), isToday=(state.today===today);
+
+    var h='';
+    h+='<header class="top"><div><h1>Brody\u2019s board</h1><div class="date">'+esc(fmtDate(state.today))+(isToday?'':' \u2014 plan not yet rebuilt for today')+'</div></div>';
+    h+='<div class="stats"><div class="stat q"><b>'+qLeft+'</b><span>days left in Q3</span></div><div class="stat"><b>'+open.length+'</b><span>open</span></div><div class="stat'+(overdue.length?' warn':'')+'"><b>'+overdue.length+'</b><span>overdue</span></div></div></header>';
+
+    h+='<div class="grid">';
+    // Today
+    h+='<section class="panel"><h2>Today <small>'+esc(state.hours)+'</small></h2>';
+    if(!day.blocks.length) h+='<p class="empty">No blocks yet. Open a chat and say \u201cplan my day.\u201d</p>';
+    h+='<ul class="sched">';
+    var nowFound=false;
+    day.blocks.forEach(function(b){
+      var isNow=isToday&&!nowFound&&nm>=toMin(b.start)&&nm<toMin(b.end);
+      if(isNow)nowFound=true;
+      h+='<li class="blk'+(b.meeting?' meeting':'')+(b.done?' done':'')+(isNow?' now':'')+'" data-id="'+esc(b.id)+'">';
+      h+='<div class="t">'+h12(b.start)+'\u2013'+h12(b.end)+'</div>';
+      h+='<div><div class="title">'+esc(b.title)+(isNow?'<span class="nowtag">now</span>':'')+'</div>'+(b.sub?'<div class="sub">'+esc(b.sub)+'</div>':'')+'</div>';
+      h+='<input class="chk" type="checkbox" data-blk="'+esc(b.id)+'"'+(b.done?' checked':'')+' aria-label="Done">';
+      h+='</li>';
+    });
+    h+='</ul>';
+    h+='<div class="checkin"><form data-form="log"><input type="text" name="text" placeholder="What are you working on right now?" autocomplete="off"><button class="btn" type="submit">Log it</button></form>';
+    h+='<ul class="log">';
+    if(!day.log.length) h+='<li class="empty">Nothing logged yet today.</li>';
+    day.log.forEach(function(l){h+='<li><span class="lt">'+esc(l.t)+'</span><span>'+esc(l.text)+'</span></li>';});
+    h+='</ul></div></section>';
+
+    // Tasks
+    h+='<section class="panel"><h2>Tasks <small>tap a title to edit</small></h2>';
+    GROUPS.forEach(function(g){
+      var list=state.tasks.filter(function(t){return t.group===g.key;});
+      if(!list.length&&g.key!=="coverage") return;
+      h+='<div class="group '+g.key+'"><h3>'+esc(g.label)+(g.sub?'<span class="due">'+esc(g.sub)+'</span>':'')+'</h3><ul class="tasks">';
+      list.forEach(function(t){
+        h+='<li class="task'+(t.done?' done':'')+'" data-task="'+esc(t.id)+'">';
+        h+='<input class="chk" type="checkbox" data-tchk="'+esc(t.id)+'"'+(t.done?' checked':'')+' aria-label="Done">';
+        h+='<div><div class="title" data-toggle="'+esc(t.id)+'">'+esc(t.title)+'</div>'+(t.note?'<div class="note">'+esc(t.note)+'</div>':'')+'</div>';
+        h+='<div>'+dueBadge(t)+'</div>';
+        h+='<div class="details"><input type="text" data-edit="title" data-id="'+esc(t.id)+'" value="'+esc(t.title)+'" style="flex:1 1 100%;padding:6px 8px;border:1px solid var(--line);border-radius:6px;background:var(--bg);font-size:13px">';
+        h+='<input type="date" data-edit="due" data-id="'+esc(t.id)+'" value="'+esc(t.due||"")+'">';
+        h+='<select data-edit="group" data-id="'+esc(t.id)+'">'+GROUPS.map(function(x){return '<option value="'+x.key+'"'+(x.key===t.group?' selected':'')+'>'+esc(x.label)+'</option>';}).join("")+'</select>';
+        h+='<button class="del" type="button" data-del="'+esc(t.id)+'">Remove</button>';
+        h+='<textarea data-edit="note" data-id="'+esc(t.id)+'" placeholder="Note">'+esc(t.note||"")+'</textarea></div>';
+        h+='</li>';
+      });
+      if(!list.length) h+='<li class="task"><div></div><div class="empty">Nothing here yet.</div><div></div></li>';
+      h+='</ul></div>';
+    });
+    h+='<form class="addrow" data-form="add"><input type="text" name="title" placeholder="Add a task" autocomplete="off" required><input type="date" name="due"><select name="group">'+GROUPS.map(function(x){return '<option value="'+x.key+'">'+esc(x.label)+'</option>';}).join("")+'</select><button class="btn ghost" type="submit">Add</button></form>';
+    h+='</section></div>';
+
+    h+='<footer>Last saved '+esc(new Date(state.updated).toLocaleString(undefined,{month:"short",day:"numeric",hour:"numeric",minute:"2-digit"}))+'. Claude reads this board each morning and rebuilds the day from it.'+(readOnly?' This view is read-only.':'')+'</footer>';
+    document.getElementById("root").innerHTML=h;
+  }
+
+  function pageSource(){
+    var json=JSON.stringify(state).replace(/<\//g,"<\\/");
+    var style=document.getElementById("style").textContent;
+    var app=document.getElementById("app").textContent;
+    return '<!doctype html>\n<html lang="en">\n<head>\n<meta charset="utf-8">\n<meta name="viewport" content="width=device-width, initial-scale=1">\n<title>Brody\'s board</title>\n<link rel="preconnect" href="https://fonts.googleapis.com">\n<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap">\n<style id="style">'+style+'</style>\n</head>\n<body>\n<div id="root" class="wrap"></div>\n<div id="chip" class="chip"></div>\n\n<script id="state" type="application/json">\n'+json+'\n<\/script>\n\n<script id="app">'+app+'<\/script>\n</body>\n</html>\n';
+  }
+
+  function chip(msg,err){var c=document.getElementById("chip");c.textContent=msg;c.className="chip show"+(err?" err":"");if(!err){clearTimeout(chip._t);chip._t=setTimeout(function(){c.className="chip";},2500);}}
+
+  function save(){
+    state.updated=new Date().toISOString();
+    render();
+    if(readOnly||!art){chip("Saving isn\u2019t available in this view. Changes will be lost on reload.",true);return;}
+    clearTimeout(saveTimer);
+    chip("Saving\u2026");
+    saveTimer=setTimeout(function(){
+      art.publish(pageSource()).then(function(){chip("Saved");}).catch(function(e){
+        var code=e&&e.code;
+        if(code==="conflict") return; // view reloads to the winner
+        if(code==="not_writer"||code==="not_granted"||code==="not_declared"){readOnly=true;chip("This view is read-only.",true);render();return;}
+        if(code==="rate_limited"){chip("Saving too fast \u2014 try again in a moment.",true);return;}
+        chip("Couldn\u2019t save. Try again.",true);
+      });
+    },900);
+  }
+
+  function findTask(id){for(var i=0;i<state.tasks.length;i++)if(state.tasks[i].id===id)return state.tasks[i];}
+  function findBlock(id){var d=state.days[state.today];if(!d)return null;for(var i=0;i<d.blocks.length;i++)if(d.blocks[i].id===id)return d.blocks[i];}
+
+  document.addEventListener("change",function(e){
+    var el=e.target;
+    if(el.dataset.blk){var b=findBlock(el.dataset.blk);if(b){b.done=el.checked;save();}return;}
+    if(el.dataset.tchk){var t=findTask(el.dataset.tchk);if(t){t.done=el.checked;save();}return;}
+    if(el.dataset.edit){var tt=findTask(el.dataset.id);if(!tt)return;tt[el.dataset.edit]=el.value;save();return;}
+  });
+  document.addEventListener("click",function(e){
+    var el=e.target.closest("[data-toggle]");
+    if(el){var li=el.closest(".task");li.classList.toggle("open");return;}
+    var d=e.target.closest("[data-del]");
+    if(d){var id=d.dataset.del;state.tasks=state.tasks.filter(function(t){return t.id!==id;});save();return;}
+  });
+  document.addEventListener("submit",function(e){
+    var f=e.target;if(!f.dataset.form)return;e.preventDefault();
+    if(f.dataset.form==="log"){var v=f.text.value.trim();if(!v)return;var d=state.days[state.today]||(state.days[state.today]={blocks:[],log:[]});var n=new Date();d.log.push({t:pad(n.getHours())+":"+pad(n.getMinutes()),text:v});save();return;}
+    if(f.dataset.form==="add"){var title=f.title.value.trim();if(!title)return;state.tasks.push({id:uid("t"),group:f.group.value,title:title,note:"",due:f.due.value||"",done:false});save();return;}
+  });
+
+  render();
+  setInterval(render,60000);
+  if(window.claude&&typeof window.claude.use==="function"){
+    window.claude.use("artifact").then(function(ns){art=ns;if(!ns){readOnly=true;render();}});
+  }else{readOnly=true;render();}
+})();
+</script>
+</body>
+</html>
