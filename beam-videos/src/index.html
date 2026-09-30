@@ -1,0 +1,52 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Beam Studio</title>
+<style>html,body{margin:0;background:#000}canvas{display:block}</style></head>
+<body><canvas id="c" width="1920" height="1080"></canvas>
+<script src="core.js"></script>
+<script src="sets.js"></script>
+<script src="gfx.js"></script>
+<script src="cav.js"></script>
+<script src="cev.js"></script>
+<script src="mov.js"></script>
+<script>
+const cv = document.getElementById('c'), ctx = cv.getContext('2d');
+let TL = null;
+window.setup = (id, variant) => { TL = VIDEOS[id](variant); return { duration: TL.duration, shots: TL.shots.map(s => ({ t0: s.t0, d: s.d, label: s.label || '' })) }; };
+const buf = document.createElement('canvas'); buf.width = W; buf.height = H; const bctx = buf.getContext('2d');
+const buf2 = document.createElement('canvas'); buf2.width = W; buf2.height = H; const b2 = buf2.getContext('2d');
+function drawShot(c, s, T) {
+  c.save(); c.setTransform(1, 0, 0, 1, 0, 0); c.globalAlpha = 1; c.globalCompositeOperation = 'source-over'; c.filter = 'none';
+  c.fillStyle = '#000'; c.fillRect(0, 0, W, H);
+  s.draw(c, T - s.t0, s, T);
+  c.restore();
+}
+window.frame = (i, fmt = 'image/png') => {
+  const T = i / FPS, s = TL.at(T), k = TL.shots.indexOf(s), prev = TL.shots[k - 1], lt = T - s.t0;
+  drawShot(ctx, s, T);
+  if (s.tr && prev && lt < s.tr.d) {
+    const p = lt / s.tr.d;
+    ctx.save();
+    if (s.tr.type === 'fade') { drawShot(bctx, prev, T); ctx.globalAlpha = 1 - E.inOutSine(p); ctx.drawImage(buf, 0, 0); }
+    else if (s.tr.type === 'beam') { beamWipe(ctx, p, () => { drawShot(bctx, prev, T); ctx.drawImage(buf, 0, 0); }); }
+    else if (s.tr.type === 'push') {
+      drawShot(bctx, prev, T); const e = E.inOutExpo(p);
+      b2.drawImage(ctx.canvas, 0, 0); // current shot slides in from the right
+      ctx.fillStyle = '#000'; ctx.fillRect(0, 0, W, H);
+      ctx.drawImage(buf, -W * e, 0); ctx.drawImage(buf2, W * (1 - e), 0);
+    }
+    else if (s.tr.type === 'flash') { ctx.fillStyle = `rgba(255,244,228,${Math.pow(1 - p, 2) * .85})`; ctx.fillRect(0, 0, W, H); }
+    else if (s.tr.type === 'zoom') {
+      drawShot(bctx, prev, T); const e = E.inExpo(1 - p);
+      ctx.globalAlpha = 1 - E.inOutSine(p); ctx.translate(W / 2, H / 2); ctx.scale(1 + (1 - e) * .25 + p * .3, 1 + (1 - e) * .25 + p * .3); ctx.drawImage(buf, -W / 2, -H / 2);
+    }
+    ctx.restore();
+  }
+  if (TL.overlay) { ctx.save(); TL.overlay(ctx, T); ctx.restore(); }
+  post(ctx, T, TL.post || {});
+  // global fade in/out
+  const fi = TL.fadeIn ?? .5, fo = TL.fadeOut ?? .8;
+  const a = Math.max(1 - clamp(T / fi), clamp((T - (TL.duration - fo)) / fo));
+  if (a > 0) { ctx.fillStyle = `rgba(0,0,0,${a})`; ctx.fillRect(0, 0, W, H); }
+  return cv.toDataURL(fmt);
+};
+</script></body></html>
