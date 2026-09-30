@@ -89,7 +89,7 @@ function greatRoom(o = {}) {
     const pi = E.outBack(clamp(drop * (n + 2) / 2 - i * .5)); // staggered drop
     const bh = .28, bw = .22;
     const y = Hc - bh / 2 + (1 - pi) * -1.6;
-    if (pi <= 0) continue;
+    if (pi <= 1e-4) continue;
     beams.push(...beam([0, y, z], Wd, bw, bh, style, finish, 'x', { uOff: (i * .13) % .6 }));
     if (pi > .9) ao.push(...ceilingAO(-Wd / 2, Wd / 2, z, bw / 2, Hc - .002, 'x', .3 * inv(.9, 1, pi)));
   }
@@ -124,11 +124,11 @@ function cofferRoom(o = {}) {
   const xs = [-2.7, -.9, .9, 2.7], zs = [-.6, -3.4, -6.2, -9];
   xs.forEach((x, i) => {
     const pi = E.outCubic(clamp(p * 2.2 - i * .25));
-    if (pi > 0) { beams.push(...beam([x, Hc - bh / 2 - (1 - pi) * 1.2, -D / 2 + .5], D + 1, bw, bh, style, finish, 'z', { uOff: i * .1 })); ao.push(...ceilingAO(-D, 1, x, bw / 2, Hc - .002, 'z', .22 * pi)); }
+    if (pi > 1e-4) { beams.push(...beam([x, Hc - bh / 2 - (1 - pi) * 1.2, -D / 2 + .5], D + 1, bw, bh, style, finish, 'z', { uOff: i * .1 })); ao.push(...ceilingAO(-D, 1, x, bw / 2, Hc - .002, 'z', .22 * pi)); }
   });
   zs.forEach((z, i) => {
     const pi = E.outCubic(clamp(p * 2.2 - .6 - i * .25));
-    if (pi > 0) { beams.push(...beam([0, Hc - bh / 2 + .01 - (1 - pi) * 1.2, z], Wd, bw * .9, bh * .95, style, finish, 'x', { uOff: .3 + i * .1 })); ao.push(...ceilingAO(-Wd / 2, Wd / 2, z, bw / 2, Hc - .002, 'x', .22 * pi)); }
+    if (pi > 1e-4) { beams.push(...beam([0, Hc - bh / 2 + .01 - (1 - pi) * 1.2, z], Wd, bw * .9, bh * .95, style, finish, 'x', { uOff: .3 + i * .1 })); ao.push(...ceilingAO(-Wd / 2, Wd / 2, z, bw / 2, Hc - .002, 'x', .22 * pi)); }
   });
   const props = [
     ...box([0, .38, -5.2], [3, .06, 1.2], { color: '#3b2c22' }),
@@ -160,13 +160,13 @@ function vaultRoom(o = {}) {
   const decals = [...windowPanel(0, 3.4, -D + .01, 1.6, 1.3, 'z', 1.1), ...windowPanel(-1.6, 1.4, -D + .01, 1.2, 2, 'z'), ...windowPanel(1.6, 1.4, -D + .01, 1.2, 2, 'z')];
   const beams = [], p = o.drop ?? 1;
   const pr = E.outCubic(clamp(p * 2));
-  if (pr > 0) beams.push(...beam([0, Hr - .18 - (1 - pr) * 1.5, -D / 2 + .5], D + 1, .26, .32, style, finish, 'z'));
+  if (pr > 1e-4) beams.push(...beam([0, Hr - .18 - (1 - pr) * 1.5, -D / 2 + .5], D + 1, .26, .32, style, finish, 'z'));
   // rafters follow the slope: build as rotated quads manually
   const n = 7;
   for (let i = 0; i < n; i++) {
     const z = -.5 - i * (D - 1) / (n - 1);
     const pi = E.outCubic(clamp(p * 2 - .4 - i * .12));
-    if (pi <= 0) continue;
+    if (pi <= 1e-4) continue;
     for (const s of [-1, 1]) {
       const a = [s * (Wd / 2), Hw - .02, z], b = [s * .15, Hr - .05, z];
       const dn = v3.norm([s * (Hr - Hw), -(Wd / 2), 0].map((q, k) => k === 1 ? -Math.abs(q) : q));
@@ -200,7 +200,7 @@ function mantelWall(o = {}) {
   const opening = [{ p: [[-.6, .15, -2.69], [.6, .15, -2.69], [.6, 1.05, -2.69], [-.6, 1.05, -2.69]], n: [0, 0, 1], color: '#1b1410', lum: 1 }];
   const glow = [{ p: [[-.45, .18, -2.68], [.45, .18, -2.68], [.45, .42, -2.68], [-.45, .42, -2.68]], n: [0, 0, 1], color: '#ff9440', emit: true, bloom: 'rgba(255,140,50,.9)', bloomR: 50 }];
   const p = o.drop ?? 1, pi = E.outBack(clamp(p));
-  const mantel = pi > 0 ? beam([0, 1.72 + (1 - pi) * .8, -2.75], 2.9, .3, .26, style, finish, 'x', { skip: [] }) : [];
+  const mantel = pi > 1e-4 ? beam([0, 1.72 + (1 - pi) * .8, -2.75], 2.9, .3, .26, style, finish, 'x', { skip: [] }) : [];
   const decor = [...box([-.9, 2.3, -2.95], [.5, .7, .04], { color: '#b8ad98' }), ...box([.7, 1.98, -2.8], [.18, .26, .18], { color: '#6d7a6a' })];
   const L = { ambient: .6, sun: v3.norm([.4, .5, .8]), sunI: .3, tint: '#fff1de', points: [{ p: [0, .4, -2.3], i: .25, k: 3 }, { p: [2.5, 2.4, 1], i: .5, k: .15 }] };
   return { layers: [shell, [], [], [...surround, ...decor, ...mantel], [...opening, ...glow]], L };
