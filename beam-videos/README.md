@@ -76,6 +76,8 @@ node render.mjs mov
 node render.mjs cev --still 12,40.5 --list 1   # review single frames + print shot list
 ```
 
+`./deliver.sh out/<file>.mp4` makes a sub-28 MB copy (`*_share.mp4`) for chat or email; the masters are high-bitrate for editing and upload.
+
 The renderer opens `src/index.html` in headless Chromium, steps the timeline one frame at a time, and pipes the PNG frames into ffmpeg across 4 parallel workers. It then runs `audio.py` to synthesise the soundtrack and muxes the result.
 
 ## Code map
