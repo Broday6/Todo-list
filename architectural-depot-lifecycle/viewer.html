@@ -1,0 +1,519 @@
+<title>Architectural Depot Lifecycle Map</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=IBM+Plex+Mono:wght@400;500&family=Public+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<style>
+/* Layout: a working blueprint. Flow list | the selected flow's schedule | a live preview of the selected message.
+   Program view holds launch order, rules, segments, data needs and QA. Email = patina, SMS = brass. */
+:root{
+  --bg:#ECEFEC; --panel:#FAFBFA; --sunk:#E2E7E3; --ink:#17201D; --muted:#56635E; --line:#CFD7D2;
+  --email:#2A6A5D; --email-soft:#D8E9E3; --sms:#8F5E10; --sms-soft:#F2E4CA;
+  --warn:#94570A; --warn-soft:#F6E9D2; --bad:#B0301D; --bad-soft:#F7DFDA; --ok:#2B6E46;
+  --hl:#FFF1C9; --hl-ink:#3A2C06;
+  --display:"Archivo","Arial Narrow",system-ui,sans-serif;
+  --sans:"Public Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+  --r:8px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#111614; --panel:#18201D; --sunk:#141B18; --ink:#E4EBE7; --muted:#93A39C; --line:#2A3531;
+    --email:#71C3AE; --email-soft:#17302A; --sms:#E3AB4E; --sms-soft:#33270F;
+    --warn:#EDB04C; --warn-soft:#33270F; --bad:#FF8270; --bad-soft:#3A1E1A; --ok:#71C895;
+    --hl:#4A3B12; --hl-ink:#FFE7A8;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#111614; --panel:#18201D; --sunk:#141B18; --ink:#E4EBE7; --muted:#93A39C; --line:#2A3531;
+  --email:#71C3AE; --email-soft:#17302A; --sms:#E3AB4E; --sms-soft:#33270F;
+  --warn:#EDB04C; --warn-soft:#33270F; --bad:#FF8270; --bad-soft:#3A1E1A; --ok:#71C895;
+  --hl:#4A3B12; --hl-ink:#FFE7A8;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased}
+button{font:inherit;color:inherit;cursor:pointer}
+a{color:var(--email)}
+:focus-visible{outline:2px solid var(--email);outline-offset:2px}
+.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.wrap{max-width:1560px;margin:0 auto;padding-inline:16px;padding-block:18px 56px;display:flex;flex-direction:column;gap:18px}
+
+/* top */
+header.top{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:12px 24px;padding-bottom:14px;border-bottom:2px solid var(--ink)}
+.kicker{margin:0 0 4px;font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+h1{margin:0;font-family:var(--display);font-stretch:118%;font-weight:750;font-size:clamp(26px,3.4vw,38px);line-height:1.05;letter-spacing:-.01em;text-wrap:balance}
+.stats{display:flex;flex-wrap:wrap;gap:6px 18px;font-family:var(--mono);font-size:13px;color:var(--muted)}
+.stats b{color:var(--ink);font-weight:500}
+.tabs{display:flex;gap:4px;background:var(--sunk);border:1px solid var(--line);border-radius:var(--r);padding:3px}
+.tabs button{border:0;background:none;padding:6px 14px;border-radius:6px;font-weight:600;font-size:14px;color:var(--muted)}
+.tabs button[aria-selected="true"]{background:var(--panel);color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.08)}
+
+/* flows view */
+.flows{display:grid;grid-template-columns:232px minmax(0,1fr) minmax(0,660px);gap:18px;align-items:start}
+.rail{display:flex;flex-direction:column;gap:16px;position:sticky;top:calc(env(safe-area-inset-top,0px) + 12px)}
+.phase h3{margin:0 0 6px;font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.phase .list{display:flex;flex-direction:column;gap:2px}
+.fbtn{display:grid;grid-template-columns:42px minmax(0,1fr);gap:2px 8px;align-items:baseline;text-align:left;border:1px solid transparent;background:none;border-radius:6px;padding:7px 8px}
+.fbtn:hover{background:var(--sunk)}
+.fbtn[aria-current="true"]{background:var(--panel);border-color:var(--line)}
+.fbtn .code{font-family:var(--mono);font-size:11px;color:var(--muted)}
+.fbtn .nm{font-weight:600;font-size:14px;line-height:1.3}
+.fbtn .ct{grid-column:2;font-family:var(--mono);font-size:11px;color:var(--muted)}
+
+.flow{display:flex;flex-direction:column;gap:16px;min-width:0}
+.fhead h2{margin:0;font-family:var(--display);font-stretch:112%;font-weight:700;font-size:26px;line-height:1.15;text-wrap:balance}
+.fhead p{margin:6px 0 0;max-width:62ch;color:var(--muted)}
+.pill{display:inline-block;font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;padding:2px 7px;border-radius:4px;border:1px solid var(--line);color:var(--muted);vertical-align:middle;margin-left:8px}
+.facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.fact{background:var(--panel);padding:10px 12px;min-width:0}
+.fact.wide{grid-column:1/-1}
+.fact dt{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:3px}
+.fact dd{margin:0;font-size:14px}
+.fact ul{margin:0;padding-left:18px}
+.fact li+li{margin-top:2px}
+
+.sched h3,.notes h3,.sec h3{margin:0 0 8px;font-family:var(--display);font-stretch:108%;font-weight:700;font-size:17px}
+.day{display:grid;grid-template-columns:82px minmax(0,1fr);gap:0 12px;border-top:1px solid var(--line);padding-top:8px;margin-top:8px}
+.day:first-of-type{border-top:0;margin-top:0;padding-top:0}
+.day .dl{font-family:var(--mono);font-size:12px;color:var(--muted);padding-top:9px}
+.day .items{display:flex;flex-direction:column;gap:6px;min-width:0}
+.sbtn{display:grid;grid-template-columns:auto auto minmax(0,1fr) auto;gap:3px 10px;align-items:center;text-align:left;width:100%;background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:9px 11px}
+.sbtn:hover{border-color:var(--muted)}
+.sbtn[aria-current="true"]{border-color:var(--ink);box-shadow:inset 3px 0 0 var(--ink)}
+.chan{font-family:var(--mono);font-size:10.5px;font-weight:500;letter-spacing:.06em;padding:2px 6px;border-radius:4px}
+.chan.email{background:var(--email-soft);color:var(--email)}
+.chan.sms{background:var(--sms-soft);color:var(--sms)}
+.sbtn .sid{font-family:var(--mono);font-size:12px;color:var(--muted)}
+.sbtn .snm{font-weight:600;font-size:14px;min-width:0}
+.sbtn .off{font-family:var(--mono);font-size:12px;color:var(--muted);justify-self:end}
+.sbtn .line2{grid-column:1/-1;font-size:13px;color:var(--muted);min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.tag{display:inline-block;font-family:var(--mono);font-size:11px;padding:0 5px;border-radius:3px;background:var(--sunk);color:var(--muted);margin-right:6px}
+.dot{display:inline-block;width:7px;height:7px;border-radius:50%;margin-left:6px;vertical-align:middle}
+.dot.error{background:var(--bad)} .dot.warn{background:var(--warn)}
+details.notes{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:10px 14px}
+details.notes summary{cursor:pointer;font-weight:600}
+details.notes ul{margin:8px 0 2px;padding-left:18px;font-size:14px}
+
+/* preview */
+.preview{display:flex;flex-direction:column;gap:12px;min-width:0;position:sticky;top:calc(env(safe-area-inset-top,0px) + 12px)}
+.phead{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px}
+.phead h3{margin:0;font-family:var(--display);font-stretch:108%;font-weight:700;font-size:19px;line-height:1.2}
+.pmeta{font-size:13px;color:var(--muted)}
+.pmeta b{color:var(--ink);font-weight:600}
+.purpose{margin:0;font-size:14px;color:var(--muted);max-width:70ch}
+.inbox{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:11px 14px;display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 10px;font-size:14px}
+.inbox .k{font-family:var(--mono);font-size:11px;color:var(--muted);padding-top:2px}
+.inbox .from{font-weight:700}
+.inbox .sub{font-weight:600}
+.inbox .pre{color:var(--muted)}
+.frame-bar{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
+.seg{display:inline-flex;gap:2px;background:var(--sunk);border:1px solid var(--line);border-radius:6px;padding:2px}
+.seg button{border:0;background:none;padding:3px 10px;border-radius:4px;font-size:12px;font-family:var(--mono);color:var(--muted)}
+.seg button[aria-pressed="true"]{background:var(--panel);color:var(--ink)}
+.hint{font-size:12px;color:var(--muted)}
+.hint mark{background:var(--hl);color:var(--hl-ink);padding:0 3px;border-radius:2px}
+.frame{border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:#EDEAE4;margin-inline:auto;width:100%;transition:max-width .2s}
+.frame.phone{max-width:390px}
+.frame iframe{display:block;width:100%;height:1200px;border:0;background:#EDEAE4}
+.alts,.issues{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:10px 14px;font-size:14px}
+.alts h4,.issues h4{margin:0 0 6px;font-size:13px;font-family:var(--mono);font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+.alts p{margin:0 0 6px}
+.issues ul{margin:0;padding-left:18px}
+.issues li.error{color:var(--bad)} .issues li.warn{color:var(--warn)}
+.ok{color:var(--ok);font-size:13px;margin:0}
+
+.phone-mock{align-self:center;width:min(340px,100%);background:var(--panel);border:1px solid var(--line);border-radius:28px;padding:16px 14px 22px}
+.phone-mock .who{text-align:center;font-size:12px;color:var(--muted);margin-bottom:12px}
+.phone-mock .who b{display:block;color:var(--ink);font-size:14px}
+.bubble{background:var(--sunk);border-radius:18px 18px 18px 4px;padding:10px 13px;font-size:15px;line-height:1.4;max-width:92%;overflow-wrap:anywhere}
+.bubble .tok{background:var(--hl);color:var(--hl-ink);border-radius:2px;padding:0 2px}
+.bubble .lnk{color:var(--email);text-decoration:underline}
+.media{margin-top:8px;max-width:92%;border:1px dashed var(--line);border-radius:12px;padding:10px;font-size:12px;color:var(--muted)}
+.smsstats{display:flex;flex-wrap:wrap;gap:6px 16px;font-family:var(--mono);font-size:12px;color:var(--muted)}
+.smsstats b{color:var(--ink);font-weight:500}
+.raw{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:10px 12px}
+.raw pre{margin:0 0 8px;white-space:pre-wrap;overflow-wrap:anywhere;font-family:var(--mono);font-size:12.5px}
+.raw .url{font-family:var(--mono);font-size:11.5px;color:var(--muted);overflow-wrap:anywhere;margin:6px 0 0}
+.btn{border:1px solid var(--line);background:var(--sunk);border-radius:6px;padding:4px 10px;font-size:12px;font-weight:600}
+
+/* program view */
+.program{display:flex;flex-direction:column;gap:26px}
+.sec{min-width:0}
+.sec > p.lede{margin:0 0 10px;color:var(--muted);max-width:75ch}
+.phases{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.pcard{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px;min-width:0}
+.pcard h4{margin:0;font-family:var(--display);font-stretch:108%;font-size:16px}
+.pcard .win{font-family:var(--mono);font-size:12px;color:var(--muted)}
+.pcard p{margin:6px 0 8px;font-size:13px;color:var(--muted)}
+.pcard ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:4px}
+.pcard li button{border:0;background:none;padding:0;text-align:left;color:var(--email);font-weight:600;font-size:14px;text-decoration:underline;text-underline-offset:2px}
+.pcard li span{font-family:var(--mono);font-size:11.5px;color:var(--muted);margin-left:6px}
+ol.prio{margin:0;padding-left:22px;columns:2;column-gap:32px;font-size:14px}
+ol.prio li{break-inside:avoid;padding:2px 0}
+.rules{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.rule{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:10px 14px;font-size:14px}
+.rule b{display:block;margin-bottom:2px}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--r);background:var(--panel)}
+table.t{width:100%;border-collapse:collapse;font-size:13.5px}
+table.t th{text-align:left;font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);padding:8px 12px;border-bottom:1px solid var(--line);white-space:nowrap}
+table.t td{padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+table.t tr:last-child td{border-bottom:0}
+table.t code{font-family:var(--mono);font-size:12.5px}
+.qa{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.qa .box{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:10px 14px;font-size:13.5px;min-width:0}
+.qa .box h4{margin:0 0 6px;font-size:14px}
+.qa .box ul{margin:0;padding-left:18px;max-height:340px;overflow:auto}
+.qa .box li{margin-bottom:4px;overflow-wrap:anywhere}
+.qa .n{font-family:var(--mono);font-weight:500}
+.qa .n.bad{color:var(--bad)} .qa .n.warn{color:var(--warn)}
+
+.disc{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px;display:flex;flex-direction:column;gap:8px;align-items:flex-start;max-width:85ch}
+.disc p{margin:0;font-size:14px}
+.places{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.place{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px;font-size:13.5px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.place h4{margin:0;font-family:var(--display);font-stretch:106%;font-size:15px}
+.place .where{color:var(--muted);margin:0}
+.place .mock{border:1px dashed var(--line);border-radius:6px;padding:8px 10px}
+.place .mock b{display:block}
+.place .mock .cta{display:inline-block;margin-top:6px;font-size:12px;font-weight:600;padding:3px 10px;border-radius:4px;background:var(--ink);color:var(--bg)}
+.place .fine{font-size:12px;color:var(--muted);margin:0}
+.place .target{font-family:var(--mono);font-size:11.5px;color:var(--sms);margin:0}
+.sysgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.sys{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.sys h4{margin:0;font-size:14px}
+.sys .when{margin:0;font-size:12.5px;color:var(--muted)}
+.sys .bubble{max-width:100%;font-size:14px}
+.cal{display:flex;flex-direction:column;gap:10px}
+.camp{display:grid;grid-template-columns:120px minmax(0,1fr) minmax(0,1.2fr);gap:8px 16px;background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px;align-items:start}
+.camp .date{font-family:var(--mono);font-size:13px}
+.camp .date b{display:block;font-size:15px;color:var(--ink)}
+.camp .date span{color:var(--muted);font-size:12px}
+.camp h4{margin:0 0 4px;font-size:15px}
+.camp .aud{margin:0;font-size:13px;color:var(--muted)}
+.camp .note{margin:6px 0 0;font-size:12.5px;color:var(--muted)}
+.linkbtn{border:0;background:none;padding:0;color:var(--email);font-family:var(--mono);font-size:12.5px;text-decoration:underline;text-underline-offset:2px}
+@media (max-width:1180px){
+  .flows{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .rail{grid-column:1/-1;position:static;flex-direction:row;flex-wrap:wrap;gap:10px 18px}
+  .phase .list{flex-direction:row;flex-wrap:wrap}
+  .fbtn{grid-template-columns:auto auto}
+  .fbtn .ct{display:none}
+}
+@media (max-width:1180px) and (min-width:821px){ .places,.sysgrid{grid-template-columns:repeat(2,minmax(0,1fr))} .camp{grid-template-columns:110px minmax(0,1fr)} .camp .bubble-col{grid-column:2} }
+@media (max-width:820px){
+  .flows{grid-template-columns:minmax(0,1fr)}
+  .preview{position:static}
+  .facts,.rules,.qa,.phases,.places,.sysgrid{grid-template-columns:minmax(0,1fr)}
+  .camp{grid-template-columns:minmax(0,1fr)}
+  ol.prio{columns:1}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <div>
+      <p class="kicker">Architectural Depot &middot; Klaviyo email + SMS &middot; draft for review</p>
+      <h1>Lifecycle program</h1>
+    </div>
+    <div class="stats" id="stats"></div>
+    <div class="tabs" role="tablist">
+      <button id="tab-flows" role="tab" aria-selected="true" data-view="flows">Flows</button>
+      <button id="tab-sms" role="tab" aria-selected="false" data-view="sms">SMS program</button>
+      <button id="tab-program" role="tab" aria-selected="false" data-view="program">Launch &amp; rules</button>
+    </div>
+  </header>
+
+  <main class="flows" id="view-flows">
+    <nav class="rail" id="rail" aria-label="Flows"></nav>
+    <section class="flow" id="flow"></section>
+    <section class="preview" id="preview" aria-live="polite"></section>
+  </main>
+
+  <main class="program" id="view-sms" hidden></main>
+  <main class="program" id="view-program" hidden></main>
+</div>
+
+<script type="application/json" id="data">__DATA__</script>
+<script>
+(function(){
+  const D = JSON.parse(document.getElementById('data').textContent);
+  const flows = D.flows;
+  const byId = Object.fromEntries(flows.map(f => [f.id, f]));
+  const samples = D.samples || {};
+  let state = {view:'flows', flow: flows[0] && flows[0].id, step:null, width:'desktop'};
+
+  const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const md = s => esc(s).replace(/\*\*(.+?)\*\*/g,'<b>$1</b>').replace(/\[([^\]]+)\]\(([^)\s]+)\)/g,'$1');
+  const plural = (n, w) => `${n} ${w}${n === 1 ? '' : 's'}`;
+  const countStr = c => [c.email ? `${c.email} email` : '', c.sms ? `${c.sms} SMS` : ''].filter(Boolean).join(' · ');
+
+  function dayLabel(h){
+    if (h < 0){ const d = -h/24; return d >= 1 ? `${+d.toFixed(1)} day${d === 1 ? '' : 's'} before` : `${-h}h before`; }
+    return `Day ${Math.floor(h/24)}`;
+  }
+  function worst(issues){
+    if (!issues || !issues.length) return '';
+    return issues.some(i => i.level === 'error') ? 'error' : 'warn';
+  }
+
+  /* ---------- header ---------- */
+  const totals = flows.reduce((a, f) => (a.email += f.counts.email, a.sms += f.counts.sms, a), {email:0, sms:0});
+  document.getElementById('stats').innerHTML =
+    `<span><b>${flows.length}</b> flows</span><span><b>${totals.email}</b> emails</span><span><b>${totals.sms}</b> SMS</span>` +
+    `<span><b>${D.qa.errors.length}</b> QA errors · <b>${D.qa.warnings.length}</b> warnings</span>`;
+
+  /* ---------- rail ---------- */
+  function renderRail(){
+    const phases = D.program.phases || [];
+    document.getElementById('rail').innerHTML = phases.map(p => {
+      const fs = flows.filter(f => f.phase === p.phase);
+      if (!fs.length) return '';
+      return `<div class="phase"><h3>Phase ${p.phase} · ${esc(p.label)}</h3><div class="list">` +
+        fs.map(f => `<button class="fbtn" data-flow="${f.id}" aria-current="${f.id === state.flow}">
+          <span class="code">${esc(f.code)}</span><span class="nm">${esc(f.name)}</span><span class="ct">${countStr(f.counts)}</span></button>`).join('') +
+        `</div></div>`;
+    }).join('');
+  }
+
+  /* ---------- flow ---------- */
+  function list(items){ return items && items.length ? `<ul>${items.map(i => `<li>${md(i)}</li>`).join('')}</ul>` : '<span class="pmeta">None</span>'; }
+
+  function renderFlow(){
+    const f = byId[state.flow]; if (!f) return;
+    const steps = f.steps;
+    if (!state.step || !steps.find(s => s.id === state.step)) state.step = steps[0] && steps[0].id;
+    const groups = [];
+    steps.forEach(s => {
+      const lab = dayLabel(s.offset_hours || 0);
+      if (!groups.length || groups[groups.length-1].lab !== lab) groups.push({lab, items:[]});
+      groups[groups.length-1].items.push(s);
+    });
+    const branches = (f.branches || []).map(b => `<b>${esc(b.id)}</b> ${esc(b.label)}: ${md(b.rule)}`);
+    const kpis = (f.kpis || []).map(k => `${md(k.metric)} → <b>${esc(k.target)}</b>`);
+    document.getElementById('flow').innerHTML = `
+      <div class="fhead"><h2>${esc(f.name)}<span class="pill">Phase ${f.phase}</span><span class="pill">${esc(f.code)}</span></h2>
+        <p>${md(f.goal)}</p></div>
+      <dl class="facts">
+        <div class="fact wide"><dt>Trigger</dt><dd>${md(f.trigger)}</dd></div>
+        <div class="fact"><dt>Flow filters</dt><dd>${list(f.flow_filters)}</dd></div>
+        <div class="fact"><dt>Exits</dt><dd>${list(f.exit_conditions)}</dd></div>
+        ${branches.length ? `<div class="fact wide"><dt>Branches</dt><dd><ul>${branches.map(b => `<li>${b}</li>`).join('')}</ul></dd></div>` : ''}
+        <div class="fact"><dt>Smart sending</dt><dd>${md(f.smart_sending)}</dd></div>
+        <div class="fact"><dt>KPIs</dt><dd><ul>${kpis.map(k => `<li>${k}</li>`).join('')}</ul></dd></div>
+      </dl>
+      <div class="sched"><h3>Schedule · ${countStr(f.counts)}</h3>
+        ${groups.map(g => `<div class="day"><div class="dl">${esc(g.lab)}</div><div class="items">${g.items.map(stepBtn).join('')}</div></div>`).join('')}
+      </div>
+      ${(f.build_notes || []).length ? `<details class="notes"><summary>Build notes (${f.build_notes.length})</summary><ul>${f.build_notes.map(n => `<li>${md(n)}</li>`).join('')}</ul></details>` : ''}`;
+  }
+  function stepBtn(s){
+    const line2 = s.channel === 'email' ? s.subject : s.text;
+    const w = worst(s.issues);
+    return `<button class="sbtn" data-step="${s.id}" aria-current="${s.id === state.step}">
+      <span class="chan ${s.channel}">${s.channel === 'email' ? 'EMAIL' : 'SMS'}</span>
+      <span class="sid">${esc(s.id)}</span>
+      <span class="snm">${esc(s.name)}${w ? `<span class="dot ${w}" title="${w === 'error' ? 'Has QA errors' : 'Has QA warnings'}"></span>` : ''}</span>
+      <span class="off">${esc(s.offset_label)}</span>
+      <span class="line2">${s.branch && s.branch !== 'All' ? `<span class="tag">${esc(s.branch)}</span>` : ''}${esc(line2)}</span>
+    </button>`;
+  }
+
+  /* ---------- preview ---------- */
+  function smsHtml(text){
+    return esc(text)
+      .replace(/\{\{.*?\}\}|\{%.*?%\}/g, m => {
+        const raw = m.replace(/&#39;/g,"'").replace(/&quot;/g,'"');
+        const inner = raw.replace(/^\{[{%]\s*|\s*[}%]\}$/g,'');
+        const name = inner.split('|')[0].trim();
+        return `<span class="tok" title="${m}">${esc(samples[name] || '[' + name + ']')}</span>`;
+      })
+      .replace(/\{link\}/g, '<span class="lnk">[short link]</span>');
+  }
+  function issuesBox(s){
+    if (!s.issues || !s.issues.length) return `<p class="ok">Passes QA checks.</p>`;
+    return `<div class="issues"><h4>QA</h4><ul>${s.issues.map(i => `<li class="${i.level}">${esc(i.msg)}</li>`).join('')}</ul></div>`;
+  }
+  function renderPreview(){
+    const f = byId[state.flow]; const s = f && f.steps.find(x => x.id === state.step);
+    const el = document.getElementById('preview');
+    if (!s){ el.innerHTML = ''; return; }
+    const head = `<div class="phead"><span class="chan ${s.channel}">${s.channel === 'email' ? 'EMAIL' : 'SMS'}</span><h3>${esc(s.id)} · ${esc(s.name)}</h3></div>
+      <div class="pmeta"><b>${esc(s.timing)}</b> · branch: ${esc(s.branch || 'All')} · condition: ${md(s.condition || 'None')}</div>
+      <p class="purpose">${md(s.purpose)}</p>`;
+    if (s.channel === 'email'){
+      const alts = (s.alt_versions || []).map(a => `<p><b>${esc(a.label)}</b> — subject “${esc(a.subject)}”; headline “${esc(a.headline)}”. ${md(a.notes || '')}</p>`).join('');
+      el.innerHTML = head + `
+        <div class="inbox">
+          <span class="k">FROM</span><span class="from">Architectural Depot</span>
+          <span class="k">A</span><span class="sub">${esc(s.subject)}</span>
+          ${s.subject_b ? `<span class="k">B</span><span class="sub">${esc(s.subject_b)}</span>` : ''}
+          <span class="k">PRE</span><span class="pre">${esc(s.preheader)}</span>
+        </div>
+        <div class="frame-bar">
+          <span class="hint"><mark>Highlighted</mark> text is a merge token shown with a sample value. Gray boxes are image and product slots.</span>
+          <span class="seg" role="group" aria-label="Preview width">
+            <button id="w-desktop" data-width="desktop" aria-pressed="${state.width === 'desktop'}">Desktop</button>
+            <button id="w-phone" data-width="phone" aria-pressed="${state.width === 'phone'}">Phone</button>
+          </span>
+        </div>
+        <div class="frame ${state.width === 'phone' ? 'phone' : ''}"><iframe id="emailframe" title="Email preview ${esc(s.id)}"></iframe></div>
+        ${alts ? `<div class="alts"><h4>Alternate versions</h4>${alts}</div>` : ''}
+        ${issuesBox(s)}`;
+      const fr = document.getElementById('emailframe');
+      fr.addEventListener('load', () => {
+        try { fr.style.height = (fr.contentDocument.documentElement.scrollHeight + 4) + 'px'; } catch (e) {}
+      });
+      fr.srcdoc = s.html;
+    } else {
+      el.innerHTML = head + `
+        <div class="phone-mock"><div class="who"><b>Architectural Depot</b>Text message</div>
+          <div class="bubble">${smsHtml(s.text)}</div>
+          ${s.media ? `<div class="media"><b>MMS image:</b> ${esc(s.media)}</div>` : ''}
+        </div>
+        <div class="smsstats"><span><b>${s.chars}</b> chars (est.)</span><span><b>${s.segments}</b> ${s.segments === 1 ? 'segment' : 'segments'}</span><span><b>${esc(s.encoding)}</b></span><span>1 segment = 160 GSM-7 chars</span></div>
+        <div class="raw"><pre id="rawtext">${esc(s.text)}</pre>
+          <button class="btn" id="copy">Copy text</button>
+          ${s.link ? `<p class="url">Link with tracking: ${esc(s.link)}</p>` : ''}
+        </div>
+        ${issuesBox(s)}`;
+      document.getElementById('copy').addEventListener('click', e => {
+        const b = e.currentTarget;
+        const done = () => { b.textContent = 'Copied'; setTimeout(() => b.textContent = 'Copy text', 1600); };
+        const fallback = () => { const r = document.createRange(); r.selectNodeContents(document.getElementById('rawtext')); const sel = getSelection(); sel.removeAllRanges(); sel.addRange(r); b.textContent = 'Selected, press Ctrl+C'; };
+        try { navigator.clipboard.writeText(s.text).then(done, fallback); } catch (err) { fallback(); }
+      });
+    }
+  }
+
+  /* ---------- program ---------- */
+  function renderProgram(){
+    const P = D.program;
+    const flowsIn = ph => flows.filter(f => f.phase === ph);
+    const tc = Object.fromEntries((D.tokens || []).map(t => [t.token, t.count]));
+    const prio = (P.priority_order || []).map(id => byId[id]).filter(Boolean);
+    const qa = D.qa;
+    const openClaims = qa.claims.reduce((n, c) => n + c.hits.filter(h => !h.verified).length, 0);
+    document.getElementById('view-program').innerHTML = `
+      <section class="sec"><h3>Launch plan</h3>
+        <p class="lede">Build in this order. Each phase goes live after its QA list is clear and a test send to the team looks right on phone and desktop.</p>
+        <div class="phases">${(P.phases || []).map(p => `<div class="pcard"><h4>Phase ${p.phase} · ${esc(p.label)}</h4><div class="win">${esc(p.window)}</div><p>${esc(p.note)}</p>
+          <ul>${flowsIn(p.phase).map(f => `<li><button data-goto="${f.id}">${esc(f.name)}</button><span>${countStr(f.counts)}</span></li>`).join('')}</ul></div>`).join('')}</div>
+      </section>
+      <section class="sec"><h3>Who wins when a customer qualifies for more than one flow</h3>
+        <ol class="prio">${prio.map(f => `<li>${esc(f.name)}</li>`).join('')}</ol>
+      </section>
+      <section class="sec"><h3>Program rules</h3>
+        <div class="rules">${(P.rules || []).map(r => `<div class="rule"><b>${esc(r.title)}</b>${esc(r.text)}</div>`).join('')}</div>
+      </section>
+      <section class="sec"><h3>Confirm before launch</h3>
+        <p class="lede">Every unknown in the copy is a token, so nothing ships on a guess. These need an owner's answer.</p>
+        <div class="tablewrap"><table class="t"><thead><tr><th>Item</th><th>Question</th><th>Working default</th><th>Messages</th></tr></thead><tbody>
+        ${(P.to_confirm || []).map(c => `<tr><td><code>${esc(c.token)}</code></td><td>${esc(c.question)}</td><td>${esc(c.default)}</td><td class="mono">${tc[c.token] || '—'}</td></tr>`).join('')}
+        </tbody></table></div>
+      </section>
+      <section class="sec"><h3>Data the flows depend on</h3>
+        <div class="tablewrap"><table class="t"><thead><tr><th>Data</th><th>Why</th><th>Status</th></tr></thead><tbody>
+        ${(P.data_requirements || []).map(d => `<tr><td>${esc(d.item)}</td><td>${esc(d.why)}</td><td>${esc(d.status)}</td></tr>`).join('')}
+        </tbody></table></div>
+      </section>
+      <section class="sec"><h3>Segments to create</h3>
+        <div class="tablewrap"><table class="t"><thead><tr><th>Segment</th><th>Definition</th></tr></thead><tbody>
+        ${(P.segments || []).map(s => `<tr><td><b>${esc(s.name)}</b></td><td>${esc(s.definition)}</td></tr>`).join('')}
+        </tbody></table></div>
+      </section>
+      <section class="sec"><h3>Merge tokens</h3>
+        <div class="tablewrap"><table class="t"><thead><tr><th>Token</th><th>Messages</th><th>Maps to</th></tr></thead><tbody>
+        ${(D.tokens || []).map(t => `<tr><td><code>${esc(t.token)}</code></td><td class="mono">${t.count}</td><td>${esc(t.mapping || (t.confirm ? 'Business decision (see Confirm before launch)' : 'Static value, replace before launch'))}</td></tr>`).join('')}
+        </tbody></table></div>
+      </section>
+      <section class="sec"><h3>QA from the last build</h3>
+        <div class="qa">
+          <div class="box"><h4><span class="n ${qa.errors.length ? 'bad' : ''}">${qa.errors.length}</span> errors</h4>${qa.errors.length ? `<ul>${qa.errors.map(i => `<li><code>${esc(i.id)}</code> ${esc(i.msg)}</li>`).join('')}</ul>` : '<p class="ok">None.</p>'}</div>
+          <div class="box"><h4><span class="n ${qa.warnings.length ? 'warn' : ''}">${qa.warnings.length}</span> warnings</h4>${qa.warnings.length ? `<ul>${qa.warnings.map(i => `<li><code>${esc(i.id)}</code> ${esc(i.msg)}</li>`).join('')}</ul>` : '<p class="ok">None.</p>'}</div>
+          <div class="box"><h4><span class="n">${qa.unverified.length}</span> links to verify</h4>${qa.unverified.length ? `<ul>${qa.unverified.map(u => `<li><code>${esc(u.path)}</code> in ${u.ids.map(esc).join(', ')}</li>`).join('')}</ul>` : '<p class="ok">All links use verified paths.</p>'}</div>
+          <div class="box"><h4><span class="n ${openClaims ? 'warn' : ''}">${openClaims}</span> claims to verify · ${qa.claims.reduce((n, c) => n + c.hits.length, 0) - openClaims} match verified facts</h4>${qa.claims.length ? `<ul>${qa.claims.flatMap(c => c.hits.map(h => `<li><code>${esc(c.id)}</code> ${h.verified ? '<span class="tag">verified</span>' : ''}${esc(h.text)}</li>`)).join('')}</ul>` : '<p class="ok">None flagged.</p>'}</div>
+        </div>
+      </section>`;
+  }
+
+  /* ---------- sms program ---------- */
+  function copyBtn(id, text){
+    return `<button class="btn" data-copy="${id}">Copy</button><span hidden id="copysrc-${id}">${esc(text)}</span>`;
+  }
+  function stats(m){ return `<div class="smsstats"><span><b>${m.chars}</b> chars</span><span><b>${m.segments}</b> ${m.segments === 1 ? 'segment' : 'segments'}</span><span><b>${esc(m.encoding)}</b></span></div>`; }
+  function renderSms(){
+    const S = D.sms; if (!S) return;
+    const disc = S.disclosure;
+    document.getElementById('view-sms').innerHTML = `
+      <section class="sec"><h3>Consent disclosure</h3>
+        <p class="lede">Shown under every web opt-in marked "full". Have counsel approve it before launch. Setup, registration and compliance steps are in SMS-PROGRAM.md.</p>
+        <div class="disc"><p>${esc(disc)}</p>${copyBtn('disc', disc)}</div>
+      </section>
+      <section class="sec"><h3>Where people opt in</h3>
+        <div class="places">${S.placements.map(p => `<div class="place"><h4>${esc(p.placement)}</h4><p class="where">${esc(p.where)}</p>
+          <div class="mock"><b>${esc(p.headline)}</b>${p.body ? esc(p.body) : ''}${p.button ? `<br><span class="cta">${esc(p.button)}</span>` : ''}</div>
+          <p class="fine">${p.disclosure === 'full' ? 'Full consent disclosure underneath.' : esc(p.disclosure)}</p>
+          <p class="target">${esc(p.target)}</p></div>`).join('')}</div>
+      </section>
+      <section class="sec"><h3>System replies</h3>
+        <p class="lede">Set these in the SMS settings, not in flows. They go out in reply to a keyword or a signup.</p>
+        <div class="sysgrid">${S.system.map(m => `<div class="sys"><h4>${esc(m.name)}</h4><p class="when">${esc(m.when)}</p>
+          <div class="bubble">${smsHtml(m.text)}</div>${stats(m)}${copyBtn(m.id, m.text)}</div>`).join('')}</div>
+      </section>
+      <section class="sec"><h3>Automated texts in flows</h3>
+        <div class="tablewrap"><table class="t"><thead><tr><th>Text</th><th>Flow</th><th>When</th><th>Chars</th><th>Segments</th></tr></thead><tbody>
+        ${S.flow_texts.map(f => `<tr><td><button class="linkbtn" data-goto="${f.flow}" data-gostep="${f.id}">${esc(f.id)}</button></td><td>${esc(f.flow_name)}</td><td>${esc(f.timing)}</td><td class="mono">${f.chars}</td><td class="mono">${f.segments}</td></tr>`).join('')}
+        </tbody></table></div>
+      </section>
+      <section class="sec"><h3>Campaign calendar, Q4 2026</h3>
+        <p class="lede">Two to four campaign texts a month, sent in the recipient's local time. Black Friday week holds three texts, so pause the Browse text that week.</p>
+        <div class="cal">${S.campaigns.map(c => `<div class="camp">
+          <div class="date"><b>${esc(c.date.slice(5).replace('-', '/'))}</b>${esc(c.day)} · ${esc(c.send)}<br><span>${esc(c.id)}</span></div>
+          <div><h4>${esc(c.name)}</h4><p class="aud">${esc(c.audience)}</p>${c.notes ? `<p class="note">${esc(c.notes)}</p>` : ''}${c.media ? `<p class="note">MMS image: ${esc(c.media)}</p>` : ''}</div>
+          <div class="bubble-col"><div class="bubble">${smsHtml(c.text)}</div>${stats(c)}</div>
+        </div>`).join('')}</div>
+      </section>`;
+  }
+
+  /* ---------- wiring ---------- */
+  function setHash(h){ try { history.replaceState(null, '', '#' + h); } catch (e) {} }
+  function show(view){
+    state.view = view;
+    document.getElementById('view-flows').hidden = view !== 'flows';
+    document.getElementById('view-program').hidden = view !== 'program';
+    document.getElementById('view-sms').hidden = view !== 'sms';
+    ['flows', 'sms', 'program'].forEach(v => document.getElementById('tab-' + v).setAttribute('aria-selected', view === v));
+    setHash(view === 'flows' ? state.flow : view);
+  }
+  function openFlow(id, stepId){
+    state.flow = id; state.step = stepId || null;
+    renderRail(); renderFlow(); renderPreview(); show('flows');
+  }
+  document.addEventListener('click', e => {
+    const t = e.target.closest('[data-flow],[data-step],[data-view],[data-goto],[data-width],[data-copy]');
+    if (!t) return;
+    if (t.dataset.copy){
+      const src = document.getElementById('copysrc-' + t.dataset.copy);
+      const text = src ? src.textContent : '';
+      const done = () => { t.textContent = 'Copied'; setTimeout(() => t.textContent = 'Copy', 1600); };
+      const fallback = () => { const r = document.createRange(); r.selectNodeContents(t.previousElementSibling || t); const sel = getSelection(); sel.removeAllRanges(); sel.addRange(r); t.textContent = 'Selected'; };
+      try { navigator.clipboard.writeText(text).then(done, fallback); } catch (err) { fallback(); }
+      return;
+    }
+    if (t.dataset.flow){ openFlow(t.dataset.flow); }
+    else if (t.dataset.step){ state.step = t.dataset.step; renderFlow(); renderPreview(); }
+    else if (t.dataset.view){ show(t.dataset.view); }
+    else if (t.dataset.goto){ openFlow(t.dataset.goto, t.dataset.gostep); window.scrollTo({top:0}); }
+    else if (t.dataset.width){ state.width = t.dataset.width; renderPreview(); }
+  });
+
+  renderProgram();
+  renderSms();
+  const h = (location.hash || '').slice(1);
+  if (h === 'program' || h === 'sms'){ renderRail(); renderFlow(); renderPreview(); show(h); }
+  else openFlow(byId[h] ? h : state.flow);
+})();
+</script>

@@ -1,0 +1,153 @@
+{
+  "id": "sunset",
+  "code": "SUN",
+  "name": "Sunset / Re-engagement",
+  "phase": 3,
+  "priority_rank": 11,
+  "goal": "Ask unengaged subscribers whether they still want our emails. Keep the ones who say yes, and quietly stop campaign sends to the ones who don't answer, to protect inbox placement for everyone else.",
+  "trigger": "Segment-triggered (Klaviyo 'Added to segment'): the profile enters the 'Unengaged 120d' segment. The segment is Clicked Email zero times in the last 120 days AND Active on Site zero times in the last 120 days AND Received Email at least 8 times in the last 120 days AND can receive email marketing. Opens are deliberately not used, because Apple Mail Privacy Protection inflates them.",
+  "flow_filters": [
+    "Clicked Email zero times since starting this flow.",
+    "Active on Site zero times since starting this flow.",
+    "Placed Order zero times since starting this flow.",
+    "Has been in Win-Back (WIN) zero times in the last 30 days, because Win-Back outranks Sunset.",
+    "email_sunset is not true."
+  ],
+  "exit_conditions": [
+    "Clicks any link in either email, including 'Keep me subscribed'. They stay fully subscribed and email_sunset is never set.",
+    "Visits the site or places an order.",
+    "Updates their choices on the Klaviyo preference page ('fewer emails'). See build_notes.",
+    "Unsubscribes.",
+    "Day 12 with no click: email_sunset = true is set and the profile leaves the flow. It is not unsubscribed."
+  ],
+  "smart_sending": "Email on (16h). This is the program default, and Sunset is last in the priority order. Email only: this flow never sends SMS and never changes SMS consent.",
+  "branches": [
+    {
+      "id": "All",
+      "label": "All unengaged email subscribers",
+      "rule": "No split."
+    }
+  ],
+  "kpis": [
+    {"metric": "Re-engagement rate (clicked any SUN email)", "target": "5% (starting benchmark; reset after 90 days of data)"},
+    {"metric": "Spam complaint rate per send", "target": "< 0.1%"},
+    {"metric": "Unsubscribe rate per send", "target": "Track it. A higher rate than other flows is expected and healthy here."},
+    {"metric": "Share of entrants set to email_sunset = true", "target": "Track monthly"},
+    {"metric": "Campaign click rate after sunset exclusion", "target": "Higher than the 30 days before launch"}
+  ],
+  "build_notes": [
+    "Exact post-flow step: after SUN-E2, add a 7-day time delay (day 12, offset_hours 288 from the trigger). Then add a conditional split: Clicked Email zero times since starting this flow AND Active on Site zero times since starting this flow AND Placed Order zero times since starting this flow AND has not updated preferences since starting this flow. YES path: Update Profile Property email_sunset = true, then end. NO path: end with no change. After 7 more days with no click, the profile has email_sunset = true and is excluded from campaign segments. Add 'email_sunset is not true' to the master sendable/engaged segment that every campaign audience is built from, or to each campaign audience if there is no master segment. Do not unsubscribe or suppress these profiles.",
+    "Segment 'Unengaged 120d': Clicked Email zero times in the last 120 days AND Active on Site zero times in the last 120 days AND Received Email at least 8 times in the last 120 days AND can receive email marketing. Never use Opened Email. Active on Site needs Klaviyo's onsite tracking on the Miva storefront.",
+    "Keep me subscribed: the link registers a click, and any click removes the profile from the flow and from the segment. It points to the verified /blogs/ page because the email offers project ideas. Optional: build a short 'You're still subscribed' landing page and swap the URL. Mark that new path for verification.",
+    "Fewer emails: set up the Klaviyo preference page with topic or frequency choices (for example project ideas, new products, sales). Anyone who submits it has answered, so exclude them from the day-12 sunset step. Do this with the 'has not updated preferences' condition: a list or property change made by the preference page since the flow started.",
+    "Tags: {% manage_preferences %} and {% unsubscribe %} render as complete links in Klaviyo. If the template needs a bare URL (for a card or button href), use the URL versions of these tags. Check Klaviyo's template tag reference for the exact names. Klaviyo may not count clicks on these two links as Clicked Email. That's fine: an unsubscribe ends the flow, and a preference update is handled by the condition above.",
+    "What email_sunset = true means: excluded from campaigns only. Flows that react to new activity (Browse, Cart, Back in Stock, Post-Purchase, Sample-to-Order) still send, because new activity means they're engaged again. Win-Back email steps skip email_sunset = true. SMS is unaffected.",
+    "Reactivation: build a small utility flow triggered by Active on Site, Placed Order or Clicked Email, filtered to email_sunset = true, with one action: Update Profile Property email_sunset = false. This lets returning customers back into campaigns automatically.",
+    "While a profile is in this flow (days 0-12), exclude it from campaigns ('Has been in flow SUN zero times in the last 12 days' in the master sendable segment), so the check-in is the only email they get from us in that window.",
+    "No offers, discounts or product grids in this flow. The point is an honest question, not one more sale email.",
+    "Optional, a business decision: profiles that stay email_sunset = true for 365 days with no activity can be suppressed to reduce Klaviyo profile costs. Don't do it automatically without sign-off."
+  ],
+  "steps": [
+    {
+      "id": "SUN-E1",
+      "channel": "email",
+      "branch": "All",
+      "timing": "Day 0 - when the profile enters the segment",
+      "offset_hours": 0,
+      "condition": "None",
+      "name": "Still want project ideas from us?",
+      "purpose": "An honest, low-pressure check-in. Give three clear one-click choices (stay, fewer emails, unsubscribe) so the reader is in control and any answer is a good one.",
+      "subject": "Still want project ideas from us?",
+      "subject_b": "Your inbox, your call",
+      "preheader": "One click to stay, get fewer emails or step away. No hard feelings either way.",
+      "hero": {
+        "eyebrow": "Quick check-in",
+        "headline": "Still want project ideas from us?",
+        "subhead": "Pick what works for you. It takes one click.",
+        "image": "Calm, simple image with plenty of white space: a single white ceiling medallion photographed straight up against a softly lit ceiling. Real Ekena product photography with no text in the image."
+      },
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Hi {{ first_name|default:'there' }}, we haven't heard from you in a while, so instead of guessing, we'd rather ask."
+        },
+        {
+          "type": "text",
+          "text": "Millwork projects come and go. Maybe the beams are up and the shutters are hung, or maybe the plans are on hold. Either way, tell us what you'd like from here."
+        },
+        {
+          "type": "cards",
+          "title": "Choose one",
+          "items": [
+            {"title": "Keep me subscribed", "text": "Keep getting project ideas, new products and sale news. One click here is all it takes.", "url": "https://www.architecturaldepot.com/blogs/"},
+            {"title": "Send me fewer emails", "text": "Pick the topics you care about and skip the rest: {% manage_preferences %}"},
+            {"title": "Unsubscribe", "text": "No hard feelings. You can stop all marketing emails here: {% unsubscribe %}. If you buy from us, you'll still get order and shipping emails."}
+          ]
+        },
+        {
+          "type": "text",
+          "text": "If we don't hear from you, we'll send one more note in a few days, then step back from our regular emails. You can always reach us at 1-888-573-3768 or cs@architecturaldepot.com."
+        }
+      ],
+      "cta": {"label": "Keep me subscribed", "url": "https://www.architecturaldepot.com/blogs/"},
+      "style": "designed"
+    },
+    {
+      "id": "SUN-E2",
+      "channel": "email",
+      "branch": "All",
+      "timing": "Day 5",
+      "offset_hours": 120,
+      "condition": "Clicked Email zero times since starting this flow (flow filter)",
+      "name": "Last note for now",
+      "purpose": "A plain, personal last email. Say clearly that regular emails stop unless they click, make staying one click, and leave the door open with what's still here when they're ready.",
+      "subject": "We'll pause our emails after this one",
+      "subject_b": "Should we stop emailing you?",
+      "preheader": "One click keeps the project ideas coming. Otherwise, we'll step back.",
+      "hero": {
+        "eyebrow": "Last note for now",
+        "headline": "We'll step back after this one",
+        "subhead": "Unless you'd like to stay. One click is all it takes.",
+        "image": "No image: this is a plain-text note. If the template requires an image slot, leave it empty."
+      },
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Hi {{ first_name|default:'there' }}, a few days ago we asked if you still want to hear from us. We didn't hear back, and that's okay."
+        },
+        {
+          "type": "text",
+          "text": "Unless you click a link in this email, this is the last of our regular emails you'll get. We'd rather send fewer, better notes to people who want them than crowd your inbox. Want to stay? Click below and nothing changes."
+        },
+        {
+          "type": "button",
+          "label": "Keep me subscribed",
+          "url": "https://www.architecturaldepot.com/blogs/"
+        },
+        {
+          "type": "text",
+          "text": "If you come back to a project later, we're still here:"
+        },
+        {
+          "type": "bullets",
+          "items": [
+            "The full Ekena Millwork collection: beams, corbels, shutters, mantels, moulding, columns and more",
+            "Design Your Own builders for custom corbels, brackets, flat trim and faux wood beams",
+            "5% back in Depot Dollars on every qualifying order",
+            "Real people on the phone at 1-888-573-3768, Mon-Fri 8am-6pm CT and Sat 8am-12pm CT"
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Want only some of our emails? {% manage_preferences %}. Done for good? {% unsubscribe %}."
+        },
+        {
+          "type": "text",
+          "text": "Thanks for being on our list.\nThe team at Architectural Depot"
+        }
+      ],
+      "cta": {"label": "Keep me subscribed", "url": "https://www.architecturaldepot.com/blogs/"},
+      "style": "plain"
+    }
+  ]
+}

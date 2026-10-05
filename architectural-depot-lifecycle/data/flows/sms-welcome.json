@@ -1,0 +1,108 @@
+{
+  "id": "sms-welcome",
+  "code": "SMW",
+  "name": "SMS Welcome",
+  "phase": 1,
+  "priority_rank": 2,
+  "goal": "Confirm SMS consent, deliver the SMS welcome code, help with one real decision (seeing the material before buying), and convert before the code expires.",
+  "trigger": "Consented to SMS from any source (popup step 2, footer form, checkout checkbox, keyword DEPOT, pro form). Klaviyo double opt-in is on, so the profile is added only after replying Y. Klaviyo: List trigger on the SMS subscriber list (fires after double opt-in confirmation).",
+  "flow_filters": [
+    "Placed Order zero times since starting this flow.",
+    "Placed Order zero times over all time. The SMS offer is for first orders; existing customers who opt in still get S0 (a system reply outside this flow) and then skip the flow.",
+    "Has been in this flow zero times over all time, so a STOP and re-join does not issue a second code.",
+    "Can receive SMS marketing (Klaviyo applies this automatically)."
+  ],
+  "exit_conditions": [
+    "Places an order.",
+    "Replies STOP (or any opt-out keyword) or is otherwise unsubscribed from SMS."
+  ],
+  "smart_sending": "SMS on (24h) for S1-S3. It cannot block S1 for a brand-new subscriber, and S0 is a system reply outside Smart Sending. Quiet hours 10am-8pm recipient local time apply to S1-S3; anything outside the window waits for the next one.",
+  "branches": [
+    {
+      "id": "All",
+      "label": "All new SMS subscribers",
+      "rule": "No split. Optional S2 variant for shutter browsers is in build_notes."
+    }
+  ],
+  "kpis": [
+    {
+      "metric": "Click rate per SMS",
+      "target": ">= 8%"
+    },
+    {
+      "metric": "Placed order rate (whole flow)",
+      "target": "4-5%"
+    },
+    {
+      "metric": "SMS welcome code redemption rate",
+      "target": "Baseline in first 60 days"
+    },
+    {
+      "metric": "Opt-out rate per send",
+      "target": "< 1.5%"
+    },
+    {
+      "metric": "Double opt-in completion rate (replied Y / prompted)",
+      "target": ">= 70%"
+    }
+  ],
+  "build_notes": [
+    "S0 is not a flow message: paste its text into Klaviyo SMS settings as the opt-in confirmation reply. It is listed here so the whole welcome sequence reads in one place. The double opt-in prompt itself lives in the SMS program doc.",
+    "SMS code: {{ welcome_code }} here is a separate coupon from the email welcome code (e.g. WELCOME_SMS) that expires 7 days after it is issued, so 'Expires in 7 days' in S1 and 'ends tomorrow' in S3 (day 6) are both true. S3 must show the code S1 issued, not a new one; use the same solution chosen for WEL-E4 (code written back to a profile property, or a static code with a per-customer window in Miva). Set both email and SMS codes to single-use and first-order-only so only one applies.",
+    "Offer scope: if the welcome code excludes made-to-order items, change S1 to '...with code {{ welcome_code }} (excl. made-to-order).' and re-check length.",
+    "Rendered length: {{ WELCOME_OFFER }} renders as '10% off your first order' (24 characters vs 19 literal) and a unique code is usually 8-12 characters (vs 18 literal), so S1 and S3 still land in one 160-character segment. Re-check if the offer wording gets longer.",
+    "Frequency cap: S1, S2 and S3 are 3 marketing texts inside 7 days, which is the whole cap on their own. Exclude profiles currently in this flow from SMS campaigns until day 7. Before S2 and S3, add a split: received 3 or more marketing texts in the last 7 days -> skip. If something has to give, skip S2 and keep S3.",
+    "Send times: S1 immediately after confirmation (quiet hours may hold a late-evening opt-in until 10am). S2 on day 2 at 2pm recipient local time. S3 on day 6 at 11am recipient local time. The phone line in S3 is staffed Mon-Fri 8am-6pm CT and Sat 8am-12pm CT; a Sunday send is fine because the code is the point.",
+    "Optional S2 variant for profiles who viewed a shutter product in the last 30 days (conditional split on Viewed Product category): 'Architectural Depot: Matching shutters to siding? Try a vinyl shutter color sample kit against the house: {link} Reply STOP to opt out' linking to https://www.architecturaldepot.com/LVSAMPLECOLORS.html (151 characters with the link).",
+    "Links: Klaviyo shortens {link} with the branded domain; one link per text, no other shorteners."
+  ],
+  "steps": [
+    {
+      "id": "SMW-S0",
+      "channel": "sms",
+      "branch": "All",
+      "timing": "Day 0 - instant reply when the subscriber confirms with Y",
+      "offset_hours": 0,
+      "condition": "System message: set in Klaviyo SMS settings as the opt-in confirmation reply, not built as a flow step.",
+      "name": "Opt-in confirmation",
+      "purpose": "Confirm the subscription with the required disclosures (brand, recurring automated marketing, frequency, rates, HELP, STOP) so consent is clean before any marketing text goes out.",
+      "text": "Architectural Depot: You'll get recurring automated marketing msgs. Msg frequency varies. Msg & data rates may apply. Reply HELP for help, STOP to cancel."
+    },
+    {
+      "id": "SMW-S1",
+      "channel": "sms",
+      "branch": "All",
+      "timing": "Day 0 - immediately after confirmation",
+      "offset_hours": 0,
+      "condition": "None beyond flow filters (never ordered before).",
+      "name": "Welcome code",
+      "purpose": "Deliver the code they signed up for, with its deadline, while interest is highest.",
+      "text": "Architectural Depot: Welcome. Here's {{ WELCOME_OFFER }} with code {{ welcome_code }}. Expires in 7 days. Shop: {link} Reply STOP to opt out",
+      "link": "https://www.architecturaldepot.com/"
+    },
+    {
+      "id": "SMW-S2",
+      "channel": "sms",
+      "branch": "All",
+      "timing": "Day 2 - 2pm recipient local time",
+      "offset_hours": 48,
+      "condition": "Received fewer than 3 marketing texts in the last 7 days (frequency-cap split).",
+      "name": "See it before you buy",
+      "purpose": "Help-first nudge that answers the biggest beam objection, 'will it look real?', with a low-risk next step: the 7 x 10 in. Timberthane faux wood sample.",
+      "text": "Architectural Depot: Will faux wood beams look real? Hold a 7x10 in. Timberthane sample up to your ceiling: {link} Reply STOP to opt out",
+      "link": "https://www.architecturaldepot.com/BM-MAT-SAMPLE.html"
+    },
+    {
+      "id": "SMW-S3",
+      "channel": "sms",
+      "branch": "All",
+      "timing": "Day 6 - 11am recipient local time",
+      "offset_hours": 144,
+      "condition": "Received fewer than 3 marketing texts in the last 7 days (frequency-cap split). Must show the code issued in S1.",
+      "name": "Code ends tomorrow",
+      "purpose": "Honest last reminder that the code ends tomorrow, with a phone line for anyone stuck on sizing.",
+      "text": "Architectural Depot: Code {{ welcome_code }} for {{ WELCOME_OFFER }} ends tomorrow: {link} Sizing help: 1-888-573-3768. Reply STOP to opt out",
+      "link": "https://www.architecturaldepot.com/"
+    }
+  ]
+}

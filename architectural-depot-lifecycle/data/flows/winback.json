@@ -1,0 +1,222 @@
+{
+  "id": "winback",
+  "code": "WIN",
+  "name": "Win-Back",
+  "phase": 3,
+  "priority_rank": 10,
+  "goal": "Bring past customers back for their next millwork project with ideas, what's new and help that answers their questions, and be honest about emailing less if they aren't ready.",
+  "trigger": "Segment-triggered (Klaviyo 'Added to segment'): the profile enters the 'Lapsed customers' segment. The segment is Placed Order at least once over all time AND Placed Order zero times in the last 180 days AND Active on Site zero times in the last 60 days. For pros (customer_type is contractor, builder, designer or architect) the window is zero times in the last 120 days.",
+  "flow_filters": [
+    "Placed Order zero times since starting this flow.",
+    "Has been in Cart & Checkout Abandonment (CRT), Browse Abandonment (BRW), Back in Stock + Price Drop (BIS), Sample-to-Order (SMP) and Depot Dollars Expiring (DD) zero times since starting this flow. If they're back on the site, the higher-priority flow takes over.",
+    "Has been in this flow zero times in the last 365 days."
+  ],
+  "exit_conditions": [
+    "Places any order.",
+    "Enters a higher-priority flow (CRT, BRW, BIS, SMP or DD).",
+    "Unsubscribes from email: the email steps stop but WIN-S1 still sends if SMS-consented. Replies STOP: S1 is skipped but the emails still send.",
+    "Completes WIN-E3. Profiles that don't click move to the lower-frequency campaign segment described in build_notes."
+  ],
+  "smart_sending": "Email on (16h) / SMS on (24h). This is the program default. Win-Back is near the bottom of the priority order, so it should always give way to higher-priority flows.",
+  "branches": [
+    {
+      "id": "All",
+      "label": "All lapsed customers",
+      "rule": "No split. Pros enter on a 120-day site-inactivity window instead of 60, which is set in the segment. Each email step has a conditional split that skips profiles with email_sunset = true."
+    }
+  ],
+  "kpis": [
+    {"metric": "Reactivation rate (order within 30 days of entry)", "target": "3% (starting benchmark; reset after 90 days of data)"},
+    {"metric": "Email click rate", "target": "2.5%"},
+    {"metric": "SMS click rate", "target": "6%"},
+    {"metric": "Revenue per recipient", "target": "Set a baseline in the first 90 days"},
+    {"metric": "Email unsubscribe rate per send", "target": "< 0.5%"},
+    {"metric": "SMS opt-out rate per send", "target": "< 1.5%"}
+  ],
+  "build_notes": [
+    "Segment 'Lapsed customers': (Placed Order at least once over all time) AND (Placed Order zero times in the last 180 days) AND ((customer_type is not in [contractor, builder, designer, architect] AND Active on Site zero times in the last 60 days) OR (customer_type is in [contractor, builder, designer, architect] AND Active on Site zero times in the last 120 days)). Active on Site needs Klaviyo's onsite tracking on the Miva storefront. If that isn't live, substitute Viewed Product zero times over the same windows.",
+    "Re-entry: a customer should go through Win-Back at most once every 365 days (flow filter). Confirm how Klaviyo handles re-entry for segment-triggered flows. If profiles can't re-enter, rebuild the trigger as a scheduled check or clone the flow each year.",
+    "Depot Dollars: everyone in this flow last ordered 180+ days ago, and Depot Dollars expire 90 days after they're earned, so their earned balance has expired. Never say 'you have Depot Dollars' and never show {{ depot_dollars_balance }} here. The copy only talks about what the next order earns (5% back).",
+    "{{ WINBACK_INCENTIVE }} (default 'bonus Depot Dollars') appears only in WIN-E3. Before launch, set the amount, an end date, exclusions and how bonus Depot Dollars are issued in Miva (manual credit, coupon or rule). If you add an end date, add it to the E3 callout. Under the discount guardrails, never use a percentage off on made-to-order items (vinyl and wood shutters, Design Your Own builder items, made-to-order beams). If the incentive is not approved, send the E3 no-incentive alt version.",
+    "Make E3's 'we'll write less often' promise true. After E3, wait 7 days, then use a conditional split on Clicked Email zero times since starting this flow AND Placed Order zero times since starting. On the YES path, use Update Profile Property winback_low_frequency = true. Recommendation: campaign segments send these profiles major sales and new-product launches only (about 2 a month). Clear the property when they click, visit or order. If they stay unengaged, the Sunset flow takes over at 120 days.",
+    "email_sunset: put a conditional split before each email (email_sunset is not true). Sunset profiles skip the emails but can still get WIN-S1 if SMS-consented.",
+    "WIN-E2 products block: needs a 'new' tag or a created date in the Klaviyo catalog feed. If neither exists, replace the block with Klaviyo's 'recommended for you' feed for the category they bought before, and change the block title to 'Picked for your next project'.",
+    "What's new is limited to verified items: the new generation of Timberthane faux wood ('even more realistic, still maintenance-free'), wall and ceiling motif kits, slat wall kits, new shutter styles and SteelTek hardware. Don't add sizes, finishes, prices or launch dates unless they're pulled from the live product pages. Point the kit and shutter cards at their category pages once those URLs are verified. For now they go to /ekena-millwork.html.",
+    "SMS: WIN-S1 goes out on day 10 at 1pm recipient local time, inside the 10am-8pm quiet-hours window, and counts toward the 3-per-rolling-7-days cap. It carries no incentive.",
+    "Images: real Ekena product photography only. The E1 hero should feature new-generation Timberthane beams."
+  ],
+  "steps": [
+    {
+      "id": "WIN-E1",
+      "channel": "email",
+      "branch": "All",
+      "timing": "Day 0 - when the profile enters the segment",
+      "offset_hours": 0,
+      "condition": "email_sunset is not true",
+      "name": "What's your next project?",
+      "purpose": "Reopen the conversation with ideas, not a sales pitch. Help them picture their next room or exterior, show what's new in the Ekena line, and remind them that a real person can help them choose size and material.",
+      "subject": "What's your next project?",
+      "subject_b": "Timberthane beams just got more realistic",
+      "preheader": "Ideas for a room, a ceiling or the front of the house, plus what's new.",
+      "hero": {
+        "eyebrow": "Ideas for what's next",
+        "headline": "What's your next project?",
+        "subhead": "A few ideas by room and by exterior, plus what's new in the Ekena Millwork line.",
+        "image": "Wide shot of a living room with new-generation Timberthane faux wood beams running across the ceiling and a mantel below, late-afternoon light. Real Ekena product photography with no AI-generated product."
+      },
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Hi {{ first_name|default:'there' }}, it's been a while since your last order. We hope that project came out the way you pictured it. If another one is on your list, here's where we'd start."
+        },
+        {
+          "type": "cards",
+          "title": "Ideas by room",
+          "items": [
+            {"title": "Living room", "text": "Faux wood beams across the ceiling, and a mantel with corbels to anchor the fireplace.", "url": "https://www.architecturaldepot.com/faux-wood-beams.html"},
+            {"title": "Kitchen", "text": "Corbels under an island overhang, or a beam over the range wall for warmth.", "url": "https://www.architecturaldepot.com/ekena-millwork.html"},
+            {"title": "Dining room and entry", "text": "A ceiling medallion over the light fixture and crown moulding to finish the room.", "url": "https://www.architecturaldepot.com/moulding.html"},
+            {"title": "Front of the house", "text": "Exterior shutters, gable vents, columns and balustrade railing for curb appeal.", "url": "https://www.architecturaldepot.com/ekena-millwork.html"}
+          ]
+        },
+        {
+          "type": "cards",
+          "title": "What's new",
+          "items": [
+            {"title": "Next-generation Timberthane", "text": "The new generation of Timberthane faux wood is even more realistic and still maintenance-free.", "url": "https://www.architecturaldepot.com/faux-wood-beams.html"},
+            {"title": "Wall and ceiling motif kits", "text": "A ready-made pattern for a feature wall or ceiling, all in one kit.", "url": "https://www.architecturaldepot.com/ekena-millwork.html"},
+            {"title": "Slat wall kits", "text": "The clean, linear look of a slat wall, packaged as a kit.", "url": "https://www.architecturaldepot.com/ekena-millwork.html"}
+          ]
+        },
+        {
+          "type": "review",
+          "source": "Pull one real customer review from https://www.architecturaldepot.com/architecturaldepot-customer-reviews.html that describes a finished room or exterior (beams, a mantel or shutters), ideally with a customer photo. Quote it word for word with the name exactly as published, and don't edit or combine reviews."
+        },
+        {
+          "type": "text",
+          "text": "Not sure what size or material fits? Call 1-888-573-3768 and talk it through with someone who knows millwork."
+        }
+      ],
+      "cta": {"label": "Get project ideas", "url": "https://www.architecturaldepot.com/blogs/"},
+      "ps": "Every qualifying order still earns 5% back in Depot Dollars, ready to use once it ships.",
+      "style": "designed"
+    },
+    {
+      "id": "WIN-E2",
+      "channel": "email",
+      "branch": "All",
+      "timing": "Day 7",
+      "offset_hours": 168,
+      "condition": "email_sunset is not true AND Placed Order zero times since starting this flow",
+      "name": "New arrivals + Depot Dollars",
+      "purpose": "Give them a concrete reason to look again with new exterior pieces and picks based on what they bought before. Remind them that the next order earns Depot Dollars, and handle made-to-order shutters honestly.",
+      "subject": "New shutter styles and SteelTek hardware",
+      "subject_b": "Your next project earns 5% back",
+      "preheader": "Fresh options for the outside of the house, and a reminder about Depot Dollars.",
+      "hero": {
+        "eyebrow": "New arrivals",
+        "headline": "New for the outside of the house",
+        "subhead": "New shutter styles and SteelTek hardware, plus a few picks based on your last order.",
+        "image": "Front elevation of a home with exterior shutters in one of the new styles and dark SteelTek shutter hardware, crisp morning light. Real Ekena product photography."
+      },
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Hi {{ first_name|default:'there' }}, the Ekena line keeps growing, and some of the newest pieces are for the outside of the house. If your windows or entry have been on the someday list, take a look."
+        },
+        {
+          "type": "cards",
+          "title": "New arrivals",
+          "items": [
+            {"title": "New shutter styles", "text": "More exterior shutter styles to frame your windows.", "url": "https://www.architecturaldepot.com/ekena-millwork.html"},
+            {"title": "SteelTek hardware", "text": "Metal hardware and brackets from Ekena's SteelTek line, for the finishing details.", "url": "https://www.architecturaldepot.com/ekena-millwork.html"}
+          ]
+        },
+        {
+          "type": "products",
+          "title": "New and picked for you",
+          "source": "Dynamic: Klaviyo catalog recommendations. Prefer new arrivals (catalog tag 'new' or created in the last 120 days) in the categories this customer bought before, and fall back to popular Ekena items in those categories. Exclude samples. Show image, name and link only, with no prices.",
+          "count": 4
+        },
+        {
+          "type": "callout",
+          "title": "Your next order earns Depot Dollars",
+          "text": "Every qualifying order earns 5% back, or $0.05 for every $1. Depot Dollars are ready once your order ships, take $1 off a future order each and are good for 90 days."
+        },
+        {
+          "type": "text",
+          "text": "A note on shutters: vinyl and wood shutters are built to order for your windows, which also means they can't be returned. Measure each opening twice, and call 1-888-573-3768 if you'd like a second set of eyes on your numbers."
+        }
+      ],
+      "cta": {"label": "See what's new", "url": "https://www.architecturaldepot.com/ekena-millwork.html"},
+      "ps": "Found the same product for less at another online home improvement store? Ask about our lower price guarantee.",
+      "style": "designed"
+    },
+    {
+      "id": "WIN-S1",
+      "channel": "sms",
+      "branch": "All",
+      "timing": "Day 10 - 1pm local",
+      "offset_hours": 240,
+      "condition": "Can receive SMS marketing AND Placed Order zero times since starting this flow",
+      "name": "New Timberthane nudge",
+      "purpose": "One short text with one piece of real news. No incentive, no pressure. It reaches customers who haven't been opening email.",
+      "text": "Architectural Depot: Next project? New Timberthane beams are even more realistic and still maintenance-free: {link} Reply STOP to opt out",
+      "link": "https://www.architecturaldepot.com/faux-wood-beams.html"
+    },
+    {
+      "id": "WIN-E3",
+      "channel": "email",
+      "branch": "All",
+      "timing": "Day 14",
+      "offset_hours": 336,
+      "condition": "email_sunset is not true AND Placed Order zero times since starting this flow",
+      "name": "Incentive + honest step-back",
+      "purpose": "The last nudge, with a thank-you incentive (bonus Depot Dollars by default) and answers to the questions that stall a project. Say plainly that we'll email less after this, so the relationship ends on good terms if they aren't ready.",
+      "subject": "A little extra for your next project",
+      "subject_b": "We'll stop emailing so often",
+      "preheader": "{{ WINBACK_INCENTIVE }} on your next order, and a promise to email less.",
+      "hero": {
+        "eyebrow": "A thank-you",
+        "headline": "A little extra for your next project",
+        "subhead": "{{ WINBACK_INCENTIVE }} on your next order at Architectural Depot.",
+        "image": "Close detail of hands fitting a corbel under a mantel shelf, warm interior light. Real Ekena product photography."
+      },
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Hi {{ first_name|default:'there' }}, we know a millwork project isn't something you buy every month. So here's one last nudge, with a thank-you attached for coming back to us."
+        },
+        {
+          "type": "callout",
+          "title": "Your thank-you",
+          "text": "{{ WINBACK_INCENTIVE }} on your next order. Bonus Depot Dollars work like regular ones: each takes $1 off a future order, not including shipping, handling or tax."
+        },
+        {
+          "type": "bullets",
+          "items": [
+            "**Not sure of the size?** Product pages list dimensions and specs, and we're glad to check your measurements by phone.",
+            "**Need a custom size?** Design Your Own builders handle corbels, brackets, flat trim and faux wood beams.",
+            "**Want to see it first?** Order a [material sample](https://www.architecturaldepot.com/SAMPLE-URETHANE.html) and hold it up in your own space.",
+            "**Found a lower price?** If another online home improvement store has the exact same product for less (shipping included, shippable within 10 business days), we'll refund the difference."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "And if now isn't the time, that's okay. After this email we'll write less often. Want to choose what you hear about? {% manage_preferences %}"
+        }
+      ],
+      "cta": {"label": "Start my next project", "url": "https://www.architecturaldepot.com/ekena-millwork.html"},
+      "ps": "Rather talk it through? Call 1-888-573-3768, Mon-Fri 8am-6pm CT and Sat 8am-12pm CT.",
+      "style": "designed",
+      "alt_versions": [
+        {
+          "label": "No-incentive version",
+          "subject": "Still planning your next project?",
+          "headline": "Here when you're ready",
+          "notes": "Send this if {{ WINBACK_INCENTIVE }} is not approved. Remove the callout and every offer mention in the subject, preheader and subhead. Subhead: 'Answers to the questions that stall a project, and a promise to email less.' Preheader: 'Help with sizing, custom sizes and samples, and a promise to email less.' Lead with the help bullets, add 'Every qualifying order earns 5% back in Depot Dollars' and keep the 'we'll write less often' paragraph."
+        }
+      ]
+    }
+  ]
+}

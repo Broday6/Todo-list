@@ -1,0 +1,211 @@
+{
+  "disclosure": "By entering your phone number and submitting this form, you agree to receive recurring automated marketing text messages (such as offers, restock alerts and cart reminders) from Architectural Depot at the number provided. Consent is not a condition of any purchase. Msg frequency varies. Msg & data rates may apply. Reply HELP for help or STOP to cancel at any time. See our Privacy Policy and SMS Terms.",
+  "consent_placements": [
+    {
+      "id": "popup",
+      "placement": "Signup popup, step 2",
+      "where": "Shown right after the email step submits, desktop and mobile. Phone field pre-set to +1.",
+      "headline": "Want first word by text?",
+      "body": "Early access to sales, restock alerts on the pieces you're watching, and quick help with your order.",
+      "button": "Text me",
+      "decline": "No thanks",
+      "disclosure": "full",
+      "target": "1 in 4 email signups also give a phone number"
+    },
+    {
+      "id": "footer",
+      "placement": "Site footer form",
+      "where": "Separate phone field under the email field, each with its own submit.",
+      "headline": "Get texts from Architectural Depot",
+      "body": "Sale early access and restock alerts.",
+      "button": "Sign up for texts",
+      "disclosure": "full",
+      "target": "Steady trickle; watch for spam submissions"
+    },
+    {
+      "id": "checkout",
+      "placement": "Checkout checkbox",
+      "where": "Next to the phone field in Miva checkout. Unchecked by default. Needs a checkout customization plus a call to Klaviyo's subscribe API; the standard integration does not pass SMS consent.",
+      "headline": "Text me offers and order help from Architectural Depot",
+      "body": "",
+      "button": "",
+      "disclosure": "Recurring automated marketing texts. Consent not required to buy. Msg frequency varies. Msg & data rates may apply. Reply STOP to cancel. SMS Terms and Privacy Policy.",
+      "target": "Highest-volume source once live"
+    },
+    {
+      "id": "thank-you",
+      "placement": "Order confirmation page",
+      "where": "Inline form below the order summary.",
+      "headline": "Questions on delivery day? Get help by text",
+      "body": "Plus early access to sales and restock alerts.",
+      "button": "Text me",
+      "disclosure": "full",
+      "target": "Buyers are the most valuable subscribers"
+    },
+    {
+      "id": "keyword",
+      "placement": "Keyword: DEPOT",
+      "where": "Packing-slip insert, printed catalogs, CS email signatures, the phone hold message. Phone agents send callers the keyword instead of signing them up by voice.",
+      "headline": "Text DEPOT to [number] for sale early access and restock alerts.",
+      "body": "",
+      "button": "",
+      "disclosure": "Msg frequency varies. Msg & data rates may apply. Reply STOP to cancel. Terms: architecturaldepot.com/sms-terms",
+      "target": "Turns offline buyers and catalog readers into subscribers"
+    },
+    {
+      "id": "pro",
+      "placement": "Pro signup form",
+      "where": "Checkbox on the pro form, unchecked by default.",
+      "headline": "Text me pro updates and restock alerts",
+      "body": "",
+      "button": "",
+      "disclosure": "full",
+      "target": "Small list, high value"
+    }
+  ],
+  "system_messages": [
+    {
+      "id": "SYS-DOI",
+      "name": "Double opt-in request",
+      "when": "Sent by Klaviyo after a web form collects a phone number. The person replies Y to confirm.",
+      "text": "Architectural Depot: Reply Y to confirm you want recurring automated marketing texts from us. Consent not required to buy. Msg & data rates may apply."
+    },
+    {
+      "id": "SYS-JOIN",
+      "name": "Keyword join reply (DEPOT)",
+      "when": "Reply to anyone who texts DEPOT. Their text is the opt-in, so this confirms it.",
+      "text": "Architectural Depot: You're in for recurring automated marketing texts. Msg frequency varies. Msg & data rates may apply. Reply HELP for help, STOP to cancel."
+    },
+    {
+      "id": "SYS-HELP",
+      "name": "HELP reply",
+      "when": "Reply to HELP, INFO.",
+      "text": "Architectural Depot: Call 1-888-573-3768 (M-F 8am-6pm, Sat 8am-12pm CT) or email cs@architecturaldepot.com. Msg & data rates may apply. Reply STOP to cancel."
+    },
+    {
+      "id": "SYS-STOP",
+      "name": "STOP reply",
+      "when": "Reply to STOP, END, CANCEL, UNSUBSCRIBE, QUIT, STOPALL. The only text sent after an opt-out.",
+      "text": "Architectural Depot: You're unsubscribed and won't get more marketing texts from us. Reply START to rejoin."
+    },
+    {
+      "id": "SYS-START",
+      "name": "START / UNSTOP reply",
+      "when": "Reply to START, UNSTOP, YES from someone who opted out.",
+      "text": "Architectural Depot: Welcome back to recurring automated marketing texts. Msg freq varies. Msg & data rates may apply. Reply HELP for help, STOP to cancel."
+    },
+    {
+      "id": "SYS-AUTO",
+      "name": "Auto-reply to other messages",
+      "when": "Only if nobody staffs the SMS inbox. If CS answers texts, skip this and set a response-time target.",
+      "text": "Architectural Depot: Thanks for your text. This number isn't monitored. For help, call 1-888-573-3768 or email cs@architecturaldepot.com. Reply STOP to opt out"
+    }
+  ],
+  "campaigns": [
+    {
+      "id": "C-1015",
+      "date": "2026-10-15",
+      "day": "Thu",
+      "send": "11am local",
+      "name": "Holiday-ready rooms",
+      "audience": "SMS subscribers engaged in 90 days, minus anyone texted 3+ times in 7 days",
+      "text": "Architectural Depot: Hosting this season? Get your mantel, beams or moulding in before guests arrive. Plan it: {link} Reply STOP to opt out",
+      "link": "https://www.architecturaldepot.com/ekena-millwork.html",
+      "notes": "If made-to-order lead times are confirmed, add an order-by date in a follow-up email, not this text."
+    },
+    {
+      "id": "C-1029",
+      "date": "2026-10-29",
+      "day": "Thu",
+      "send": "11am local",
+      "name": "Next-generation Timberthane",
+      "audience": "SMS subscribers who viewed beams in 180 days, or bought beams",
+      "text": "Architectural Depot: Next-gen Timberthane beams are here: even more realistic, still maintenance-free. See them: {link} Reply STOP to opt out",
+      "link": "https://www.architecturaldepot.com/blogs/introducing-the-next-generation-of-timberthane-even-more-realistic-still-maintenance-free/",
+      "media": "Close-up of the new Timberthane grain beside real oak, natural light.",
+      "notes": "Claim is quoted from the launch post title."
+    },
+    {
+      "id": "C-1112",
+      "date": "2026-11-12",
+      "day": "Thu",
+      "send": "11am local",
+      "name": "Black Friday early access heads-up",
+      "audience": "All SMS subscribers",
+      "text": "Architectural Depot: Texters shop Black Friday first. Watch for our text Tue 11/24 to get in early. Browse now: {link} Reply STOP to opt out",
+      "link": "https://www.architecturaldepot.com/all.html",
+      "notes": "Promote the same early access in email and the popup to grow the SMS list before the sale."
+    },
+    {
+      "id": "C-1124",
+      "date": "2026-11-24",
+      "day": "Tue",
+      "send": "6pm local",
+      "name": "Black Friday early access opens",
+      "audience": "All SMS subscribers",
+      "text": "Architectural Depot: Early access is open. {{ BFCM_OFFER }} starts now for texters only. Shop: {link} Reply STOP to opt out",
+      "link": "https://www.architecturaldepot.com/products-on-sale.html",
+      "notes": "Needs a sale page live for early access only (hidden link or code)."
+    },
+    {
+      "id": "C-1127",
+      "date": "2026-11-27",
+      "day": "Fri",
+      "send": "10am local",
+      "name": "Black Friday",
+      "audience": "SMS subscribers who have not ordered since 11/24",
+      "text": "Architectural Depot: Black Friday is on: {{ BFCM_OFFER }} on beams, mantels, shutters and more. Shop: {link} Reply STOP to opt out",
+      "link": "https://www.architecturaldepot.com/products-on-sale.html",
+      "notes": "Third text in 4 days for some people. Pause the Browse SMS step from 11/24 to 12/1."
+    },
+    {
+      "id": "C-1130",
+      "date": "2026-11-30",
+      "day": "Mon",
+      "send": "4pm local",
+      "name": "Cyber Monday last call",
+      "audience": "SMS subscribers who clicked a sale text but have not ordered",
+      "text": "Architectural Depot: Last call. {{ BFCM_OFFER }} ends at midnight CT tonight. Shop: {link} Reply STOP to opt out",
+      "link": "https://www.architecturaldepot.com/products-on-sale.html",
+      "notes": "Clickers only keeps this inside the 3-in-7-days cap for most people."
+    },
+    {
+      "id": "C-1208",
+      "date": "2026-12-08",
+      "day": "Tue",
+      "send": "11am local",
+      "name": "Holiday shipping cutoff",
+      "audience": "SMS subscribers engaged in 90 days",
+      "text": "Architectural Depot: Want it before the holidays? Order in-stock items by {{ HOLIDAY_SHIP_CUTOFF }}. Shop: {link} Reply STOP to opt out",
+      "link": "https://www.architecturaldepot.com/all.html",
+      "notes": "Only send once the cutoff date is confirmed with fulfillment. Cover made-to-order timing in the matching email."
+    },
+    {
+      "id": "C-0112",
+      "date": "2027-01-12",
+      "day": "Tue",
+      "send": "11am local",
+      "name": "2027 project planning",
+      "audience": "SMS subscribers engaged in 180 days",
+      "text": "Architectural Depot: Planning a 2027 project? Start with a material sample and see the finish in your own light: {link} Reply STOP to opt out",
+      "link": "https://www.architecturaldepot.com/BM-MAT-SAMPLE.html"
+    }
+  ],
+  "to_confirm": [
+    {
+      "token": "BFCM_OFFER",
+      "question": "What is the Black Friday / Cyber Monday offer, and what does it exclude?",
+      "default": "Set by the sale plan"
+    },
+    {
+      "token": "HOLIDAY_SHIP_CUTOFF",
+      "question": "Last order date for in-stock items to arrive before the holidays?",
+      "default": "Confirm with fulfillment"
+    },
+    {
+      "token": "SMS_TERMS_PAGE",
+      "question": "Publish an SMS Terms page (draft in SMS-PROGRAM.md) and link it from every opt-in.",
+      "default": "/sms-terms.html"
+    }
+  ]
+}

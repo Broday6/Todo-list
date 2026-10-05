@@ -1,0 +1,203 @@
+{
+  "name": "Architectural Depot Lifecycle Program",
+  "platform": "Klaviyo (email + SMS), fed by the Miva storefront",
+  "phases": [
+    {
+      "phase": 1,
+      "label": "Launch",
+      "window": "Weeks 1-2",
+      "note": "The revenue core: capture, recover, and look after first orders."
+    },
+    {
+      "phase": 2,
+      "label": "Within 30 days",
+      "window": "Weeks 3-4",
+      "note": "Brand-specific levers: Depot Dollars, samples, pros, catalog triggers."
+    },
+    {
+      "phase": 3,
+      "label": "Within 60 days",
+      "window": "Weeks 5-8",
+      "note": "Retention and list hygiene once there is enough history to segment."
+    }
+  ],
+  "priority_order": [
+    "post-purchase",
+    "cart",
+    "sample",
+    "depot-dollars",
+    "back-in-stock",
+    "browse",
+    "welcome",
+    "pro",
+    "sms-welcome",
+    "winback",
+    "sunset"
+  ],
+  "rules": [
+    {
+      "title": "Flow priority",
+      "text": "When a profile qualifies for several flows, the higher one wins: Post-Purchase > Cart > Sample-to-Order > Depot Dollars > Back in Stock > Browse > Welcome / Pro > Win-Back > Sunset. Klaviyo removes a profile from a flow the moment it fails a flow filter, so \"not in flow X\" filters go only on the short, low-priority flows (Browse, Welcome, Win-Back, Sunset). The revenue flows (Cart, Post-Purchase, Sample, Depot Dollars) never block each other; Smart Sending spaces their messages."
+    },
+    {
+      "title": "Email frequency",
+      "text": "Smart Sending at 16 hours on every marketing flow email, except Cart E1, Post-Purchase E1 and the back-in-stock alert, which always send. Campaigns respect the same window."
+    },
+    {
+      "title": "SMS frequency",
+      "text": "Smart Sending at 24 hours. No profile gets more than 3 marketing texts in any rolling 7 days across flows and campaigns, and never more than 3 in 24 hours (Florida, Oklahoma and Maryland law)."
+    },
+    {
+      "title": "SMS quiet hours",
+      "text": "Texts send only from 10am to 8pm in the recipient's local time. A step that lands outside the window waits for the next one. Set Klaviyo quiet hours and use send windows on each SMS step."
+    },
+    {
+      "title": "Discount guardrails",
+      "text": "The only standing discount is the welcome offer, if confirmed. Cart recovery and win-back use bonus Depot Dollars before any percentage off. No automated percentage-off on made-to-order items."
+    },
+    {
+      "title": "Made-to-order honesty",
+      "text": "Whenever a made-to-order item can appear, say plainly that it is built to the customer's specs, cannot be returned, and that measurements are worth a second check. Frame it as craftsmanship, never as a warning label."
+    },
+    {
+      "title": "Exits",
+      "text": "Every pre-purchase flow exits on Placed Order. Sample-to-Order exits on any non-sample order."
+    },
+    {
+      "title": "Tracking",
+      "text": "Every link carries utm_source=klaviyo, utm_medium=email or sms, utm_campaign=<flow id>, utm_content=<message id>. Turn off Klaviyo's automatic UTM parameters for these flows so they are not doubled."
+    },
+    {
+      "title": "Consent by country",
+      "text": "US buyers who never subscribed can receive cart and post-purchase email under CAN-SPAM. Canadian buyers need express consent (CASL): add a flow filter \"Country is not Canada OR email consent is subscribed\" to Cart, Browse and Post-Purchase."
+    }
+  ],
+  "segments": [
+    {
+      "name": "Engaged 90d (email)",
+      "definition": "Clicked email OR active on site in the last 90 days, OR subscribed in the last 30 days. Default audience for campaigns."
+    },
+    {
+      "name": "Pros",
+      "definition": "customer_type is contractor, builder, designer or architect."
+    },
+    {
+      "name": "Sample buyers, no full order",
+      "definition": "Placed Order where all items are samples at least once, and zero non-sample orders."
+    },
+    {
+      "name": "Lapsed customers",
+      "definition": "Placed Order at least once, last order 180+ days ago (pros 120+), no site activity in 60 days. Triggers Win-Back."
+    },
+    {
+      "name": "Unengaged 120d",
+      "definition": "No email clicks and no site activity in 120 days, and received at least 8 emails in that window. Opens are ignored because Apple Mail Privacy Protection inflates them. Triggers Sunset."
+    },
+    {
+      "name": "Sunset (suppressed)",
+      "definition": "email_sunset is true. Exclude from every campaign send."
+    },
+    {
+      "name": "SMS subscribers",
+      "definition": "Can receive SMS marketing. Exclude anyone texted 3 times in the last 7 days from SMS campaigns."
+    },
+    {
+      "name": "Depot Dollars holders",
+      "definition": "depot_dollars_balance > 0. Needs the Miva sync."
+    }
+  ],
+  "data_requirements": [
+    {
+      "item": "Viewed Product, Added to Cart, Started Checkout, Placed Order, Ordered Product events",
+      "why": "Triggers and dynamic blocks for Browse, Cart and Post-Purchase. Confirm the Miva integration sends Started Checkout; if not, Cart triggers on Added to Cart.",
+      "status": "Confirm"
+    },
+    {
+      "item": "Item properties: SKU, product name, category, image URL, price, made_to_order flag",
+      "why": "Branching on made-to-order items, sample detection (SKU contains SAMPLE), category-based tips and cross-sells.",
+      "status": "Confirm made_to_order flag exists or derive it from category/SKU."
+    },
+    {
+      "item": "Cart restore URL",
+      "why": "/BASK.html only restores a cart on the same browser. A restore link is needed for cross-device recovery.",
+      "status": "Confirm"
+    },
+    {
+      "item": "depot_dollars_balance and depot_dollars_expiration_date profile properties",
+      "why": "Depot Dollars Expiring flow. Fallback: trigger on Placed Order + 76 days without a balance.",
+      "status": "Needs a Miva to Klaviyo sync"
+    },
+    {
+      "item": "customer_type profile property",
+      "why": "Pro flow. Set by a popup question, the pro form, or the Welcome E3 link.",
+      "status": "Build in Klaviyo forms"
+    },
+    {
+      "item": "Klaviyo catalog sync",
+      "why": "Back in Stock and Price Drop triggers and product recommendation blocks.",
+      "status": "Confirm Miva catalog feed"
+    },
+    {
+      "item": "Unique coupon codes",
+      "why": "Welcome offer. Generate a code list in Miva and upload it to a Klaviyo coupon.",
+      "status": "If the offer is confirmed"
+    }
+  ],
+  "to_confirm": [
+    {
+      "token": "WELCOME_OFFER",
+      "question": "Is there a signup offer, and what is it? Public sources disagree on whether 10% off the first order is live.",
+      "default": "10% off your first order"
+    },
+    {
+      "token": "welcome_code",
+      "question": "Unique codes per subscriber (uploaded list) or one shared code? Exclusions (made-to-order, sale items)?",
+      "default": "Unique code list from Miva"
+    },
+    {
+      "token": "CART_INCENTIVE",
+      "question": "Can cart recovery offer bonus Depot Dollars (e.g. double, 10% back) on the third touch? Or no incentive at all?",
+      "default": "Double Depot Dollars, 48 hours"
+    },
+    {
+      "token": "WINBACK_INCENTIVE",
+      "question": "What can a lapsed customer be offered?",
+      "default": "Bonus Depot Dollars"
+    },
+    {
+      "token": "MTO_LEAD_TIME",
+      "question": "What production time should automated emails quote for made-to-order items, by line?",
+      "default": "Leave as a placeholder until confirmed"
+    },
+    {
+      "token": "SAMPLE_CREDIT",
+      "question": "Is the cost of a sample credited toward a full order?",
+      "default": "Omit the claim"
+    },
+    {
+      "token": "TRADE_PROGRAM",
+      "question": "Is there trade pricing or a pro account program?",
+      "default": "Omit the claim"
+    },
+    {
+      "token": "SPECIALIST_NAME",
+      "question": "Which real team member signs the high-value cart note and takes those calls?",
+      "default": "A named CS lead"
+    },
+    {
+      "token": "INSTAGRAM_HANDLE",
+      "question": "Which social handle should customers tag?",
+      "default": "Ask marketing"
+    },
+    {
+      "token": "BRAND_PALETTE",
+      "question": "Swap the template's placeholder colors and wordmark for the real logo and brand colors.",
+      "default": "Placeholder stone and bronze"
+    },
+    {
+      "token": "SMS_NUMBER",
+      "question": "Toll-free number or short code? Who owns the toll-free verification?",
+      "default": "Toll-free to launch"
+    }
+  ]
+}

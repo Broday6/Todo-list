@@ -1,0 +1,261 @@
+{
+  "id": "back-in-stock",
+  "code": "BIS",
+  "name": "Back in Stock + Price Drop",
+  "phase": 2,
+  "priority_rank": 9,
+  "goal": "Tell shoppers the moment an item they wanted is available again or costs less, and help them order the right size with confidence.",
+  "trigger": "Branch A: Subscribed to Back in Stock (Klaviyo catalog back-in-stock; messages go out when Klaviyo sees the item restocked). Branch B: Klaviyo Price Drop trigger on an item the profile viewed or added to cart in the last 30 days (requires catalog sync with prices).",
+  "flow_filters": [
+    "BIS-E1A and BIS-S1A: no priority suppression beyond consent, because the shopper asked for this alert",
+    "BIS-E2A: Placed Order zero times since starting this flow; not currently in the Cart or Post-Purchase flows",
+    "Branch B: Placed Order zero times since starting; not currently in the Post-Purchase, Cart, Sample-to-Order or Depot Dollars flows (all outrank Back in Stock); has not been in branch B in the last 7 days",
+    "Can receive email marketing; SMS steps also require SMS consent"
+  ],
+  "exit_conditions": [
+    "Placed Order: exits",
+    "Unsubscribes from email (email steps stop) or replies STOP (SMS steps stop)"
+  ],
+  "smart_sending": "BIS-E1A and BIS-S1A: Smart Sending OFF, because the shopper asked for this alert and it should arrive when the item is back (SMS still waits for quiet hours, 10am-8pm local). Everything else: email ON (16h), SMS ON (24h).",
+  "branches": [
+    {
+      "id": "A",
+      "label": "Back in stock",
+      "rule": "Subscribed to Back in Stock for an item; sends when the Klaviyo catalog shows inventory above the restock threshold."
+    },
+    {
+      "id": "B",
+      "label": "Price drop",
+      "rule": "Catalog price drops (by at least the agreed minimum) on an item the profile viewed or added to cart in the last 30 days."
+    }
+  ],
+  "kpis": [
+    {
+      "metric": "Branch A placed order rate (per recipient)",
+      "target": "8%"
+    },
+    {
+      "metric": "Branch A email click rate",
+      "target": "15%"
+    },
+    {
+      "metric": "Branch B placed order rate (per recipient)",
+      "target": "3%"
+    },
+    {
+      "metric": "Branch B email click rate",
+      "target": "6%"
+    },
+    {
+      "metric": "SMS click rate",
+      "target": "12%"
+    },
+    {
+      "metric": "Email unsubscribe rate",
+      "target": "< 0.3%"
+    },
+    {
+      "metric": "SMS opt-out rate per send",
+      "target": "< 1.5%"
+    }
+  ],
+  "build_notes": [
+    "Build as two Klaviyo flows that share the BIS code and reporting tag: 'BIS-A Back in Stock' (trigger: Subscribed to Back in Stock) and 'BIS-B Price Drop' (trigger: Price Drop).",
+    "Branch A needs: a Klaviyo catalog synced from Miva with inventory quantity; the Klaviyo back-in-stock form on out-of-stock product pages (email, plus optional SMS opt-in with the compliant disclosure from the SMS program doc); and back-in-stock settings (restock threshold, batch size) agreed with operations so alerts don't oversell what came in.",
+    "Made-to-order items are built to order and rarely show as out of stock, so branch A is mostly in-stock lines. Branch B can include made-to-order items, so BIS-E1B carries the made-to-order line as a show/hide bullet (show when is_made_to_order = true).",
+    "Branch B: Klaviyo Price Drop with a 30-day lookback on Viewed Product and Added to Cart. Agree a minimum drop with the business so tiny changes don't fire. Only real, standing catalog prices; QA the feed so a pricing error never triggers a send.",
+    "BIS-E1B shows previous and new prices exactly as the catalog supplies them. Do not compute or show a percent-off badge (made-to-order discount guardrail).",
+    "BIS-S1B goes only to profiles who added the item to cart: split on the Price Drop trigger's source event if Klaviyo exposes it; otherwise approximate with 'Added to Cart at least once in the last 30 days'.",
+    "BIS-E2A: skip it if the item is out of stock again at send time (catalog inventory check). If that can't be automated, the similar-pieces block keeps the email useful.",
+    "SMS: quiet hours 10am-8pm local; BIS-S1A waits for the next window if a restock lands overnight."
+  ],
+  "steps": [
+    {
+      "id": "BIS-E1A",
+      "channel": "email",
+      "branch": "A",
+      "timing": "Immediately when the item is restocked",
+      "offset_hours": 0,
+      "condition": "Branch A: item restocked (Klaviyo back-in-stock)",
+      "name": "It's back in stock",
+      "purpose": "Deliver the alert they asked for, fast: the item, a clear path to buy, and a quick check that it's the right size and finish before they order.",
+      "subject": "Good news: it's back in stock",
+      "subject_b": "The piece you were waiting on is here",
+      "preheader": "You asked us to let you know. Here it is, plus a quick size and finish check.",
+      "hero": {
+        "eyebrow": "Back in stock",
+        "headline": "The piece you were waiting for is back",
+        "subhead": "You asked us to tell you when it was available again. Here it is.",
+        "image": "Dynamic: the restocked product's main image on a clean background, with a same-category lifestyle shot beside it if available."
+      },
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Hi {{ first_name|default:'there' }}, good news: the item you asked about is back in stock and ready to order."
+        },
+        {
+          "type": "products",
+          "title": "Back in stock",
+          "source": "Dynamic: the product from the Back in Stock subscription (image, name, current price, link), pulled from the Klaviyo catalog at send time.",
+          "count": 1
+        },
+        {
+          "type": "bullets",
+          "items": [
+            "**Size:** check the listed dimensions against your space before you order. A tape measure now saves a return later.",
+            "**Material and finish:** not sure? We sell material samples, including polyurethane and a 7\" x 10\" Timberthane faux wood sample.",
+            "**Shipping:** if it's marked \"Free Shipping,\" it ships free to the lower 48 states.",
+            "**Rewards:** every qualifying order earns 5% back in Depot Dollars."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Questions before you buy? Call 1-888-573-3768, Mon-Fri 8am-6pm CT or Sat 8am-12pm CT, or email cs@architecturaldepot.com."
+        }
+      ],
+      "cta": {
+        "label": "Shop it now",
+        "url": "{{ product_url }}"
+      },
+      "style": "designed"
+    },
+    {
+      "id": "BIS-S1A",
+      "channel": "sms",
+      "branch": "A",
+      "timing": "Immediately when restocked, same time as BIS-E1A (10am-8pm local)",
+      "offset_hours": 0,
+      "condition": "Branch A AND SMS consent = subscribed",
+      "name": "Back-in-stock text",
+      "purpose": "The fastest way to deliver the alert they asked for, with one link to the product.",
+      "text": "Architectural Depot: Good news, the item you asked about is back in stock. See sizes and order here: {link} Reply STOP to opt out",
+      "link": "{{ product_url }}"
+    },
+    {
+      "id": "BIS-E2A",
+      "channel": "email",
+      "branch": "A",
+      "timing": "Day 2 - 48 hours after restock alert",
+      "offset_hours": 48,
+      "condition": "Branch A AND has not Placed Order since BIS-E1A AND item still in stock",
+      "name": "Still deciding? Help choosing",
+      "purpose": "A follow-up for those who didn't buy: clear the remaining doubt (size, look, install), show close alternatives, and offer a person to talk to.",
+      "subject": "Still a fit for your project?",
+      "subject_b": "Questions about the piece you wanted?",
+      "preheader": "Help with size, material and install, plus a few close alternatives to compare.",
+      "hero": {
+        "eyebrow": "Back in stock",
+        "headline": "Is it the right fit for your project?",
+        "subhead": "If you're still deciding, here's how to be sure, plus a few options in the same category.",
+        "image": "Dynamic: the product installed in context (e.g. corbels under a floating shelf, shutters flanking a window); fallback is a same-category lifestyle image."
+      },
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Hi {{ first_name|default:'there' }}, the item you were waiting on came back in stock a couple of days ago. If you haven't ordered yet, maybe a question is holding you up. Here are the usual ones."
+        },
+        {
+          "type": "products",
+          "title": "The item you asked about",
+          "source": "Dynamic: the same product as BIS-E1A (image, name, current price, link) from the Klaviyo catalog.",
+          "count": 1
+        },
+        {
+          "type": "cards",
+          "title": "Before you order",
+          "items": [
+            {
+              "title": "Will it fit?",
+              "text": "Compare the listed dimensions to your space. For corbels, check depth against the overhang; for shutters, height against the window."
+            },
+            {
+              "title": "Will it look right?",
+              "text": "Order a material sample and see the color and texture in your own light, next to your trim and paint.",
+              "url": "https://www.architecturaldepot.com/SAMPLE-URETHANE.html"
+            },
+            {
+              "title": "How does it install?",
+              "text": "The product page lists the specs, and many include an install guide. Have a read before you buy."
+            }
+          ]
+        },
+        {
+          "type": "products",
+          "title": "Similar pieces to compare",
+          "source": "Dynamic: Klaviyo catalog recommendations from the same category, in stock only, excluding the subscribed item.",
+          "count": 3
+        },
+        {
+          "type": "text",
+          "text": "Rather talk it through? Call 1-888-573-3768 (Mon-Fri 8am-6pm CT, Sat 8am-12pm CT) or email cs@architecturaldepot.com."
+        }
+      ],
+      "cta": {
+        "label": "Shop it now",
+        "url": "{{ product_url }}"
+      },
+      "style": "designed"
+    },
+    {
+      "id": "BIS-E1B",
+      "channel": "email",
+      "branch": "B",
+      "timing": "Immediately when the price drop is detected",
+      "offset_hours": 0,
+      "condition": "Branch B: price drop on an item viewed or carted in the last 30 days",
+      "name": "Price drop on a piece you viewed",
+      "purpose": "Tell them a real catalog price dropped on something they viewed or carted, show the new price, and help them act with confidence (size check, made-to-order honesty, price guarantee as the backstop).",
+      "subject": "A price dropped on a piece you viewed",
+      "subject_b": "Good news for your project budget",
+      "preheader": "The item you looked at now costs less. Here's the new price and a quick fit check.",
+      "hero": {
+        "eyebrow": "Price drop",
+        "headline": "Good news: it costs less now",
+        "subhead": "An item you looked at recently has a lower price. Here it is, with a quick check before you order.",
+        "image": "Dynamic: the product image with a simple previous/new price treatment from catalog data. No percent-off badge."
+      },
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Hi {{ first_name|default:'there' }}, the price just came down on something you looked at recently. If it was on your project list, now's a good time to take another look."
+        },
+        {
+          "type": "products",
+          "title": "New price",
+          "source": "Dynamic: the product from the Klaviyo Price Drop trigger (image, name, previous price struck through, new price, link). Catalog-supplied prices only; no computed percent-off badge.",
+          "count": 1
+        },
+        {
+          "type": "bullets",
+          "items": [
+            "**Measure first:** confirm the listed dimensions against your space before you order.",
+            "**Made to order?** If this piece is built to order, it's made to your size and finish and can't be returned, so double-check your measurements.",
+            "**Lower price guarantee:** find this exact product for less at another online home improvement store, shipping included, and we'll refund the difference.",
+            "**5% back:** every qualifying order earns Depot Dollars, ready to use once it ships."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Questions? Call 1-888-573-3768, Mon-Fri 8am-6pm CT or Sat 8am-12pm CT."
+        }
+      ],
+      "cta": {
+        "label": "See the new price",
+        "url": "{{ product_url }}"
+      },
+      "style": "designed"
+    },
+    {
+      "id": "BIS-S1B",
+      "channel": "sms",
+      "branch": "B",
+      "timing": "Hour 2 - 2 hours after the price drop (10am-8pm local)",
+      "offset_hours": 2,
+      "condition": "Branch B AND SMS consent = subscribed AND added the item to cart (carted only)",
+      "name": "Price drop text (carted items)",
+      "purpose": "They cared enough to add it to their cart; one short text that the price came down, with a link to the product.",
+      "text": "Architectural Depot: Good news, the price dropped on an item you added to your cart. See the new price: {link} Reply STOP to opt out",
+      "link": "{{ product_url }}"
+    }
+  ]
+}

@@ -1,0 +1,361 @@
+{
+  "id": "pro",
+  "code": "PRO",
+  "name": "Pro Welcome",
+  "phase": 2,
+  "priority_rank": 8,
+  "goal": "Show contractors, builders, designers and architects how to spec, sample, quote and order Ekena Millwork here, so their next project list comes to us.",
+  "trigger": "Profile property customer_type becomes contractor, builder, designer or architect (popup question, pro form, or a WEL-E3 pro link). Klaviyo: Segment trigger on a 'Pros' segment defined as customer_type is one of contractor, builder, designer, architect.",
+  "flow_filters": [
+    "Can receive email marketing (consent). No other filters: pros who have already ordered still get this flow."
+  ],
+  "exit_conditions": [
+    "Unsubscribes from email or is suppressed.",
+    "Placing an order does not end this flow: pros reorder, and the specs, samples and quoting help stay useful after a first purchase."
+  ],
+  "smart_sending": "Email on (16h) for all four emails, per the cross-flow rule. Higher-priority flows (Post-Purchase, Cart, Sample-to-Order, Depot Dollars, Back in Stock, Browse) win same-day collisions; a skipped Pro email is acceptable because each one stands on its own. PRO-E1 has a split so it is not lost to WEL-E1 (see build_notes).",
+  "branches": [
+    {
+      "id": "All",
+      "label": "All pros",
+      "rule": "No split by trade. Contractors, builders, designers and architects get the same four emails."
+    }
+  ],
+  "kpis": [
+    {
+      "metric": "Click rate per email",
+      "target": ">= 5%"
+    },
+    {
+      "metric": "Placed order rate within 30 days of entry",
+      "target": "6%"
+    },
+    {
+      "metric": "Project lists emailed to cs@ from this flow (help-desk tag)",
+      "target": "Baseline in first 60 days"
+    },
+    {
+      "metric": "Sample orders attributed to PRO-E3",
+      "target": "Baseline in first 60 days"
+    },
+    {
+      "metric": "Repeat order rate at 180 days, pros vs. all customers",
+      "target": "Pros above the all-customer rate"
+    },
+    {
+      "metric": "Unsubscribe rate per email",
+      "target": "< 0.3%"
+    }
+  ],
+  "build_notes": [
+    "Segment-triggered flows only pick up profiles who join the segment after the flow goes live. To reach pros already on file, send PRO-E1 once as a campaign to the current Pros segment.",
+    "customer_type values must match exactly (lowercase): contractor, builder, designer, architect. The popup question, the pro form and the WEL-E3 helper flow must all write the same values.",
+    "Collision with Welcome: a pro who signs up through a form that also adds them to the Newsletter list gets WEL-E1 (and any welcome code) first. Put a trigger split before PRO-E1: received WEL-E1 in the last 1 day -> 1-day time delay -> PRO-E1; otherwise send immediately. Without it, Smart Sending would skip PRO-E1. The Welcome Series stops sending to pros from E2 on.",
+    "{{ TRADE_PROGRAM }}: the 'Trade pricing' callout in PRO-E1 is a placeholder. Delete the whole callout unless a trade or pro pricing program is confirmed, and never imply trade discounts that don't exist.",
+    "{{ MTO_LEAD_TIME }} in PRO-E2 must be replaced with the real made-to-order production time before launch. Write it as a noun phrase that reads after a colon, e.g. 'X-Y business days', the same wording used in Cart, Browse and Post-Purchase.",
+    "Reply-to: set to cs@architecturaldepot.com so replies with project lists reach the team. Ask CS to tag inbound project lists 'PRO-flow' so the KPI can be counted.",
+    "PRO-E4 cards for shutters, gable vents, columns, balustrades, mantels and ceiling medallions have no links yet because no category URL is verified. Add verified category URLs before launch; until then those cards are text and the CTA carries the click.",
+    "PRO-E3 vinyl shutter color kit links to /LVSAMPLECOLORS.html; /BESAMPLECOLORS.html is a second kit. Confirm which shutter line each kit matches and add the second link if useful.",
+    "No SMS in this flow by design (spec: 4 emails). Pros who consent to SMS go through SMS Welcome."
+  ],
+  "steps": [
+    {
+      "id": "PRO-E1",
+      "channel": "email",
+      "branch": "All",
+      "timing": "Day 0 - immediately",
+      "offset_hours": 0,
+      "condition": "If received WEL-E1 in the last 1 day, wait 1 day first. 'Trade pricing' callout shows only if {{ TRADE_PROGRAM }} is confirmed (delete otherwise).",
+      "name": "What pros get here",
+      "purpose": "Thank them for identifying as a pro and lay out, plainly, why a pro should source Ekena Millwork here: one catalog, custom sizes, a team to call, price match, and Depot Dollars that add up on volume.",
+      "subject": "What pros get at Architectural Depot",
+      "subject_b": "The full Ekena catalog, one number to call",
+      "preheader": "Custom sizes, specs, price match and 5% back on every order, all in one place.",
+      "hero": {
+        "eyebrow": "For contractors, builders, designers and architects",
+        "headline": "The full Ekena Millwork catalog, in one place",
+        "subhead": "Custom sizes, real people on the phone, and Depot Dollars on every job.",
+        "image": "Finished craftsman exterior at golden hour: porch columns with a balustrade, louvered shutters, a gable vent and corbels under the eaves. A tape measure and folded plans on the porch rail in the foreground."
+      },
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Hi {{ first_name|default:'there' }}, thanks for telling us you work in the trade. We're the largest provider of Ekena Millwork products anywhere, with more than 20 years supplying architectural millwork. Here's what that means for your projects."
+        },
+        {
+          "type": "cards",
+          "title": "What you get here",
+          "items": [
+            {
+              "title": "The whole catalog, one order",
+              "text": "Shutters, beams, corbels, mantels, columns, balustrades, moulding, medallions and gable vents, all Ekena.",
+              "url": "https://www.architecturaldepot.com/ekena-millwork.html"
+            },
+            {
+              "title": "Custom without a custom shop",
+              "text": "Design Your Own builders for faux wood beams, corbels, brackets and flat trim. Custom sizes at off-the-shelf prices."
+            },
+            {
+              "title": "People who pick up the phone",
+              "text": "Call 1-888-573-3768 (Mon-Fri 8am-6pm CT, Sat 8am-12pm CT) or email cs@architecturaldepot.com with sizes and quantities."
+            },
+            {
+              "title": "Price match",
+              "text": "Find the exact same product for less at another online home improvement store, shipping included and shippable within 10 business days, and we refund the difference."
+            },
+            {
+              "title": "5% back on every order",
+              "text": "Depot Dollars add up on volume: $1 earned is $1 off a future order, available once an order ships. They expire 90 days after they're earned."
+            }
+          ]
+        },
+        {
+          "type": "callout",
+          "title": "Trade pricing",
+          "text": "{{ TRADE_PROGRAM }}"
+        }
+      ],
+      "cta": {
+        "label": "Shop the full catalog",
+        "url": "https://www.architecturaldepot.com/ekena-millwork.html"
+      },
+      "ps": "P.S. Save 1-888-573-3768 in your phone, and call with dimensions before you spec a custom piece.",
+      "style": "designed"
+    },
+    {
+      "id": "PRO-E2",
+      "channel": "email",
+      "branch": "All",
+      "timing": "Day 3 - 72 hours after entry",
+      "offset_hours": 72,
+      "condition": "None",
+      "name": "Specs and custom",
+      "purpose": "Answer the pro's working questions (where are the dimensions and drawings, can I get a custom size, how long will made-to-order take) so they can write the spec with confidence.",
+      "subject": "Specs, drawings and custom sizes",
+      "subject_b": "Spec it right before the client signs",
+      "preheader": "Where to find dimensions and install guides, and how to plan made-to-order time.",
+      "hero": {
+        "eyebrow": "Specs and custom",
+        "headline": "Spec it once, order it right",
+        "subhead": "Dimensions, drawings and install guides on the product page, plus builders for sizes off the standard chart.",
+        "image": "Designer's desk: laptop open to an Ekena corbel product page with a dimensioned line drawing, printed elevations with the corbel location marked in red, and the actual primed corbel beside the keyboard."
+      },
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Hi {{ first_name|default:'there' }}, when you're writing a spec or a quote, the details matter more than the photo. Here's where to find them and how to plan custom work."
+        },
+        {
+          "type": "steps",
+          "title": "From spec to order",
+          "items": [
+            {
+              "title": "Pull specs from the product page",
+              "text": "Product pages list dimensions, and many include drawings and install guides for your submittal or client packet."
+            },
+            {
+              "title": "Go custom with a builder",
+              "text": "Set your own size or profile for faux wood beams, corbels, brackets and flat trim, at off-the-shelf prices."
+            },
+            {
+              "title": "Plan made-to-order time",
+              "text": "Builder pieces and vinyl and wood shutters are made to order: {{ MTO_LEAD_TIME }}. They can't be returned, so confirm field measurements first."
+            },
+            {
+              "title": "Need beams sooner?",
+              "text": "Heritage Series beams ship in 24-72 hours."
+            }
+          ]
+        },
+        {
+          "type": "cards",
+          "title": "Design Your Own builders",
+          "items": [
+            {
+              "title": "Faux wood beams",
+              "text": "Custom beam sizes.",
+              "url": "https://www.architecturaldepot.com/BM.html"
+            },
+            {
+              "title": "Corbels",
+              "text": "Custom corbel sizes and profiles.",
+              "url": "https://www.architecturaldepot.com/BUILDER-COR.html"
+            },
+            {
+              "title": "Brackets",
+              "text": "Custom bracket sizes and profiles.",
+              "url": "https://www.architecturaldepot.com/BUILDER-BKT.html"
+            },
+            {
+              "title": "Flat trim",
+              "text": "Custom flat trim sizes.",
+              "url": "https://www.architecturaldepot.com/BUILDER-FLT.html"
+            }
+          ]
+        },
+        {
+          "type": "callout",
+          "title": "Catalogs and brochures",
+          "text": "Keep Ekena catalogs on hand for client meetings and your own reference. They're all on our catalogs page."
+        }
+      ],
+      "cta": {
+        "label": "Get the catalogs",
+        "url": "https://www.architecturaldepot.com/catalogs.html"
+      },
+      "ps": "P.S. Not sure a size can be built? Email the dimensions to cs@architecturaldepot.com before it goes in the spec.",
+      "style": "designed"
+    },
+    {
+      "id": "PRO-E3",
+      "channel": "email",
+      "branch": "All",
+      "timing": "Day 7 - 168 hours after entry",
+      "offset_hours": 168,
+      "condition": "None",
+      "name": "Samples for clients + quoting help",
+      "purpose": "Give pros two tools that move a job forward: material samples that settle 'will it look real?' in a client presentation, and a simple way to send a whole project list to cs@ for help quoting.",
+      "subject": "Put the real material in your client's hands",
+      "subject_b": "Send us your list, we'll help you quote it",
+      "preheader": "Samples for client presentations, and a simple way to price a whole project.",
+      "hero": {
+        "eyebrow": "Samples and quoting",
+        "headline": "Show the real thing, then price the whole job",
+        "subhead": "Material samples for your presentations, and help putting a project quote together.",
+        "image": "Presentation board on a conference table: a Timberthane faux wood sample, a vinyl shutter color sample set, a primed polyurethane sample and a short length of crown moulding, beside paint swatches and a floor plan. Soft window light."
+      },
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Hi {{ first_name|default:'there' }}, renderings sell the idea. A sample answers the client's real question, 'will it look real?', before anyone signs off."
+        },
+        {
+          "type": "cards",
+          "title": "Samples worth keeping on hand",
+          "items": [
+            {
+              "title": "Timberthane faux wood sample",
+              "text": "A 7\" x 10\" piece of the beam material to hold against the client's ceiling, floors or cabinets.",
+              "url": "https://www.architecturaldepot.com/BM-MAT-SAMPLE.html"
+            },
+            {
+              "title": "Polyurethane material sample",
+              "text": "See the polyurethane detail up close before you choose a paint color.",
+              "url": "https://www.architecturaldepot.com/SAMPLE-URETHANE.html"
+            },
+            {
+              "title": "Vinyl shutter color kits",
+              "text": "Match shutter colors to siding and trim on site, not on a screen.",
+              "url": "https://www.architecturaldepot.com/LVSAMPLECOLORS.html"
+            },
+            {
+              "title": "Moulding profile samples",
+              "text": "Check a crown or trim profile at full size before you order the run. Ask us about the profile you're specifying."
+            }
+          ]
+        },
+        {
+          "type": "steps",
+          "title": "Send us your project list",
+          "items": [
+            {
+              "title": "List it",
+              "text": "Product names or SKUs, sizes, quantities, and interior or exterior for each line."
+            },
+            {
+              "title": "Send it",
+              "text": "Email cs@architecturaldepot.com with the project name, ship-to ZIP and the date you need it on site."
+            },
+            {
+              "title": "Price it with us",
+              "text": "We'll help you put the quote together. Made-to-order items can't be returned, so include final measurements for anything custom."
+            }
+          ]
+        }
+      ],
+      "cta": {
+        "label": "Order material samples",
+        "url": "https://www.architecturaldepot.com/SAMPLE-URETHANE.html"
+      },
+      "ps": "P.S. Attach photos or plan pages to your list if you have them. They make it easier to match the right pieces.",
+      "style": "designed"
+    },
+    {
+      "id": "PRO-E4",
+      "channel": "email",
+      "branch": "All",
+      "timing": "Day 14 - 336 hours after entry",
+      "offset_hours": 336,
+      "condition": "None",
+      "name": "Where pros start: exterior and interior",
+      "purpose": "Map the Ekena categories that cover a whole house, outside and in, framed as 'where pros start' (no invented best-seller data), with the one question to settle before ordering each.",
+      "subject": "Where pros start: outside and in",
+      "subject_b": "Facade to ceiling, one supplier",
+      "preheader": "Shutters, vents, columns and railings outside; beams, mantels and moulding in.",
+      "hero": {
+        "eyebrow": "Where pros start",
+        "headline": "Outside to in: the categories to know first",
+        "subhead": "A quick map of the Ekena lines that cover a whole house, and what to settle before you order each.",
+        "image": "Split composition of one home in the same warm light: left, the facade with louvered shutters, a gable vent and porch columns with a balustrade; right, the great room with faux wood beams, a mantel and crown moulding."
+      },
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Hi {{ first_name|default:'there' }}, most jobs touch more than one category. Here's where to start outside and in, with the one question to settle before ordering each."
+        },
+        {
+          "type": "cards",
+          "title": "Exterior",
+          "items": [
+            {
+              "title": "Shutters",
+              "text": "Vinyl, wood or composite. Measure every window; vinyl and wood shutters are made to order and can't be returned."
+            },
+            {
+              "title": "Gable vents",
+              "text": "Size it to the gable, and check the product page for whether it's functional or decorative."
+            },
+            {
+              "title": "Columns",
+              "text": "Confirm whether it needs to be load-bearing, then check height and diameter against the product specs."
+            },
+            {
+              "title": "Balustrades",
+              "text": "Railing kits. Measure the full run between posts before you order."
+            }
+          ]
+        },
+        {
+          "type": "cards",
+          "title": "Interior",
+          "items": [
+            {
+              "title": "Faux wood beams",
+              "text": "Timberthane, maintenance-free. Heritage Series ships in 24-72 hours; custom sizes through the beam builder.",
+              "url": "https://www.architecturaldepot.com/faux-wood-beams.html"
+            },
+            {
+              "title": "Mantels",
+              "text": "Measure the firebox opening and check clearances before you pick a size."
+            },
+            {
+              "title": "Moulding",
+              "text": "Order the full run plus extra for cuts, and check a profile sample first.",
+              "url": "https://www.architecturaldepot.com/moulding.html"
+            },
+            {
+              "title": "Ceiling medallions",
+              "text": "Size it to the room and the light fixture it frames."
+            }
+          ]
+        }
+      ],
+      "cta": {
+        "label": "Shop all Ekena Millwork",
+        "url": "https://www.architecturaldepot.com/ekena-millwork.html"
+      },
+      "ps": "P.S. Got a project list? Send it to cs@architecturaldepot.com and we'll help you price it.",
+      "style": "designed"
+    }
+  ]
+}

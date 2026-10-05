@@ -1,0 +1,349 @@
+{
+  "id": "browse",
+  "code": "BRW",
+  "name": "Browse Abandonment",
+  "phase": 1,
+  "priority_rank": 4,
+  "goal": "Turn a product view into a confident next step (the right size, a material sample or a quick call) without discounting, and help Design Your Own visitors finish their custom piece.",
+  "trigger": "Viewed Product (Klaviyo metric from onsite tracking / the Miva integration). Design Your Own builder pages (/BUILDER-COR.html, /BUILDER-BKT.html, /BUILDER-FLT.html, /BM.html) must also fire Viewed Product, or a custom 'Viewed Builder' event, so they route to branch C.",
+  "flow_filters": [
+    "Started Checkout zero times since starting this flow",
+    "Placed Order zero times since starting this flow",
+    "Has not been in this flow in the last 14 days",
+    "Is not currently in the Cart flow",
+    "Is not currently in the Post-Purchase, Sample-to-Order, Depot Dollars or Back in Stock flows (all outrank Browse)",
+    "Can receive email marketing; BRW-S1 also requires SMS consent"
+  ],
+  "exit_conditions": [
+    "Started Checkout: exits (the Cart flow takes over)",
+    "Placed Order: exits",
+    "Unsubscribes from email (email steps stop) or replies STOP (SMS steps stop)"
+  ],
+  "smart_sending": "Email ON (16h). SMS ON (24h), quiet hours 10am-8pm local, counts toward the 3-per-7-days SMS cap.",
+  "branches": [
+    {
+      "id": "C",
+      "label": "Custom builder",
+      "rule": "Triggering view is a Design Your Own builder page: URL contains /BUILDER- (corbels, brackets, flat trim) or is /BM.html (faux wood beams)."
+    },
+    {
+      "id": "Default",
+      "label": "Standard product",
+      "rule": "Any other product page."
+    }
+  ],
+  "kpis": [
+    {
+      "metric": "Placed order rate (per recipient)",
+      "target": "1.5%"
+    },
+    {
+      "metric": "Email click rate",
+      "target": "5%"
+    },
+    {
+      "metric": "Sample orders from flow (per recipient)",
+      "target": "0.5%"
+    },
+    {
+      "metric": "Branch C placed order rate",
+      "target": "2%"
+    },
+    {
+      "metric": "SMS click rate (BRW-S1)",
+      "target": "8%"
+    },
+    {
+      "metric": "Email unsubscribe rate",
+      "target": "< 0.3%"
+    },
+    {
+      "metric": "SMS opt-out rate per send",
+      "target": "< 1.5%"
+    }
+  ],
+  "build_notes": [
+    "Viewed Product payload needs: ProductName, ProductID, URL, ImageURL, Price, Categories and an is_made_to_order flag. {{ category_name }} maps to the primary category with fallback 'millwork' (the subject then reads 'Still planning your millwork project?').",
+    "Branch C: add the Klaviyo onsite snippet to the builder pages so they send Viewed Product with the page URL and a builder_type property (beam, corbel, bracket, flat trim). If they can only send a custom event, build branch C as its own flow on that event with the same filters, and add 'has not been in Browse (custom) in the last 14 days' to the standard flow.",
+    "For branch C, {{ product_url }} is the builder page they viewed. Builder entries may not be saved between visits, so the copy never promises a saved design.",
+    "BRW-E1's 'If it's made to order' callout is a show/hide block: show only when the viewed product is made to order (e.g. vinyl or wood shutters).",
+    "BRW-E2 recommendations: Klaviyo catalog feed, same category as the viewed product, in stock, excluding the viewed item. Swap the hero image by category with show/hide image blocks (beams, corbels, shutters, mantels, moulding, other).",
+    "BRW-E2 review block: pull a real review for the viewed category from the customer reviews page. If none exists for that category, use a real review about help choosing size or finish. Quote verbatim.",
+    "BRW-S1 condition: Klaviyo splits can't match against the trigger's product, so either (a) send a site-side 'Repeat Viewed Product' event when the same product is viewed 2+ times in 7 days and split on it, or (b) approximate with 'Viewed Product at least 3 times in the last 7 days'. Prefer (a).",
+    "BRW-S1 sends at day 1 in both branches (it sits above the branch split)."
+  ],
+  "steps": [
+    {
+      "id": "BRW-E1",
+      "channel": "email",
+      "branch": "Default",
+      "timing": "Hour 2 - 2 hours after Viewed Product",
+      "offset_hours": 2,
+      "condition": "Standard product page (not a builder page)",
+      "name": "Still planning your project?",
+      "purpose": "Bring back the product they viewed and give them three ways to decide: check the specs and size, see the material in person, call with measurements. No discount.",
+      "subject": "Still planning your {{ category_name }} project?",
+      "subject_b": "How to know it's the right fit",
+      "preheader": "The piece you were looking at, plus three easy ways to be sure it's right.",
+      "hero": {
+        "eyebrow": "Picking up where you left off",
+        "headline": "The right piece, in the right size",
+        "subhead": "Here's what you were looking at, and three easy ways to know it's right for your space.",
+        "image": "Dynamic: the viewed product's lifestyle image if the catalog has one; fallback is an installed Ekena piece from the same category in a real room or on a real facade."
+      },
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Hi {{ first_name|default:'there' }}, good millwork comes down to the details, so it's worth a second look before you decide. Here's the piece you were checking out."
+        },
+        {
+          "type": "products",
+          "title": "You were looking at",
+          "source": "Dynamic: the Viewed Product that triggered the flow (image, name, price, size/finish options if available), linked to its product page.",
+          "count": 1
+        },
+        {
+          "type": "cards",
+          "title": "Three ways to decide with confidence",
+          "items": [
+            {
+              "title": "Check the specs",
+              "text": "Compare the listed dimensions with your space: beam length, corbel depth, shutter height, mantel width. Painter's tape on the wall or ceiling shows you the scale."
+            },
+            {
+              "title": "See the material in person",
+              "text": "Polyurethane and Timberthane faux wood samples, plus vinyl shutter color kits, let you judge color and texture in your own light.",
+              "url": "https://www.architecturaldepot.com/SAMPLE-URETHANE.html"
+            },
+            {
+              "title": "Talk it through",
+              "text": "Call 1-888-573-3768 with your measurements and we'll help you choose the size and material. Mon-Fri 8am-6pm CT, Sat 8am-12pm CT."
+            }
+          ]
+        },
+        {
+          "type": "callout",
+          "title": "If it's made to order",
+          "text": "Made-to-order pieces, like vinyl and wood shutters, are built to your size and finish after you order, so they can't be returned. Double-check your measurements before you buy; we're glad to check them with you."
+        },
+        {
+          "type": "text",
+          "text": "And when you're ready, every qualifying order earns 5% back in Depot Dollars."
+        }
+      ],
+      "cta": {
+        "label": "See it again",
+        "url": "{{ product_url }}"
+      },
+      "style": "designed"
+    },
+    {
+      "id": "BRW-S1",
+      "channel": "sms",
+      "branch": "All",
+      "timing": "Day 1 - 24 hours after Viewed Product (10am-8pm local)",
+      "offset_hours": 24,
+      "condition": "SMS consent = subscribed AND viewed the same product (or builder) 2+ times in the last 7 days",
+      "name": "One helpful text",
+      "purpose": "Repeat views mean a real project with an open question. One text offering a person to help size it, with a link back to the piece.",
+      "text": "Architectural Depot: Still sizing up that piece? Call 1-888-573-3768 with your measurements and we'll help. {link} Reply STOP to opt out",
+      "link": "{{ product_url }}"
+    },
+    {
+      "id": "BRW-E2",
+      "channel": "email",
+      "branch": "Default",
+      "timing": "Day 2 - 48 hours after Viewed Product",
+      "offset_hours": 48,
+      "condition": "Standard product page; no Started Checkout or Placed Order yet",
+      "name": "Three checks before you choose",
+      "purpose": "Category education that answers size, material and finish, then related pieces and a real review to build trust.",
+      "subject": "Size, material, finish: a quick guide",
+      "subject_b": "What to check before you order",
+      "preheader": "Three checks that make a beam, corbel, shutter or mantel look like it belongs.",
+      "hero": {
+        "eyebrow": "Planning guide",
+        "headline": "Three checks before you choose",
+        "subhead": "Size, material and finish decide whether millwork looks built-in or added-on. Here's how to get each one right.",
+        "image": "Dynamic by viewed category: Timberthane beams across a vaulted ceiling, corbels under a kitchen island overhang, shutters on a two-story facade; fallback is a mantel with crown moulding in a living room."
+      },
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Hi {{ first_name|default:'there' }}, whatever you're adding, the same three decisions make it look like it was always part of the house."
+        },
+        {
+          "type": "steps",
+          "title": "Three checks",
+          "items": [
+            {
+              "title": "Size it to the space",
+              "text": "Proportion is everything. Shutters should look like they'd cover the window if closed, corbels should suit the overhang they sit under, and beams should fit your ceiling span and spacing."
+            },
+            {
+              "title": "Match the material to the spot",
+              "text": "Timberthane faux wood is maintenance-free. AmeriCraft is stain-grade real wood. Going outside? Tell us where and we'll steer you to the right material."
+            },
+            {
+              "title": "See it in your light",
+              "text": "Order a material sample and hold it next to your floors, cabinets or siding at different times of day."
+            }
+          ]
+        },
+        {
+          "type": "products",
+          "title": "More in this category",
+          "source": "Dynamic: Klaviyo catalog recommendations from the viewed product's category, in stock, excluding the viewed item.",
+          "count": 3
+        },
+        {
+          "type": "review",
+          "source": "Pull one real customer review for the viewed category from https://www.architecturaldepot.com/architecturaldepot-customer-reviews.html, ideally one that mentions fit, finish or how real it looks. Quote verbatim with the reviewer's first name and location if shown; never edit or invent."
+        },
+        {
+          "type": "text",
+          "text": "Want help sizing it? Call 1-888-573-3768 (Mon-Fri 8am-6pm CT, Sat 8am-12pm CT) with your measurements."
+        }
+      ],
+      "cta": {
+        "label": "Keep planning",
+        "url": "{{ product_url }}"
+      },
+      "style": "designed"
+    },
+    {
+      "id": "BRW-E1C",
+      "channel": "email",
+      "branch": "C",
+      "timing": "Hour 1 - 1 hour after viewing a builder page",
+      "offset_hours": 1,
+      "condition": "Branch C: viewed a Design Your Own builder page",
+      "name": "Help finishing your custom design",
+      "purpose": "They started a Design Your Own builder. Help them finish: what to measure, how the builder works, and a person who will check their dimensions.",
+      "subject": "Need a hand with your custom design?",
+      "subject_b": "What to measure for a custom size",
+      "preheader": "What to measure, how the builder works, and who to call with your numbers.",
+      "hero": {
+        "eyebrow": "Design Your Own",
+        "headline": "Let's finish your custom piece",
+        "subhead": "Custom corbels, brackets, flat trim and faux wood beams, built to your measurements. Here's how to get the numbers right.",
+        "image": "Process shot: hands with a tape measure under a counter overhang or along a ceiling run, notepad with dimensions; inset screenshot of the real builder page."
+      },
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Hi {{ first_name|default:'there' }}, you started designing a custom piece. Getting it right comes down to a few measurements, and we're happy to help with any of them."
+        },
+        {
+          "type": "steps",
+          "title": "How the builder works",
+          "items": [
+            {
+              "title": "Measure the spot",
+              "text": "Beams: the length of each run, plus the width and depth you want. Corbels and brackets: the depth of the overhang and the height you have. Flat trim: length and width."
+            },
+            {
+              "title": "Enter your size, then style it",
+              "text": "Put your dimensions into the builder, then choose the profile and finish options."
+            },
+            {
+              "title": "Double-check, then order",
+              "text": "Custom pieces are made to order for you, so they can't be returned. A second look at your numbers is time well spent."
+            }
+          ]
+        },
+        {
+          "type": "callout",
+          "title": "Send us your dimensions",
+          "text": "Call 1-888-573-3768 (Mon-Fri 8am-6pm CT, Sat 8am-12pm CT) or email cs@architecturaldepot.com with your measurements and a photo of the space. We'll help you confirm the size before it's built."
+        },
+        {
+          "type": "cards",
+          "title": "Design Your Own builders",
+          "items": [
+            {
+              "title": "Faux wood beams",
+              "text": "Custom-size beams for your ceiling.",
+              "url": "https://www.architecturaldepot.com/BM.html"
+            },
+            {
+              "title": "Corbels",
+              "text": "Sized to your shelf, counter or mantel.",
+              "url": "https://www.architecturaldepot.com/BUILDER-COR.html"
+            },
+            {
+              "title": "Brackets",
+              "text": "Built to your overhang.",
+              "url": "https://www.architecturaldepot.com/BUILDER-BKT.html"
+            },
+            {
+              "title": "Flat trim",
+              "text": "Cut to your run and width.",
+              "url": "https://www.architecturaldepot.com/BUILDER-FLT.html"
+            }
+          ]
+        }
+      ],
+      "cta": {
+        "label": "Return to the builder",
+        "url": "{{ product_url }}"
+      },
+      "style": "designed"
+    },
+    {
+      "id": "BRW-E2C",
+      "channel": "email",
+      "branch": "C",
+      "timing": "Day 2 - 48 hours after viewing a builder page",
+      "offset_hours": 48,
+      "condition": "Branch C; no Started Checkout or Placed Order yet",
+      "name": "Custom at off-the-shelf prices",
+      "purpose": "Show why custom is worth it here (custom sizes at off-the-shelf prices), set made-to-order expectations honestly ({{ MTO_LEAD_TIME }}, not returnable, measure twice) and offer samples to settle material and finish.",
+      "subject": "Custom size, off-the-shelf price",
+      "subject_b": "When a stock size is almost right",
+      "preheader": "Exactly the size your space needs, plus samples to settle the finish first.",
+      "hero": {
+        "eyebrow": "Design Your Own",
+        "headline": "Custom sizes at off-the-shelf prices",
+        "subhead": "When a stock size is close but not right, the builder makes it exactly right. Here's what to know before you order.",
+        "image": "Two-up: a custom-length faux wood beam running wall to wall across a ceiling, and a corbel sized precisely to a deep countertop overhang. Bright, clean interiors."
+      },
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Hi {{ first_name|default:'there' }}, a corbel an inch too shallow or a beam that stops short is the difference between built-in and added-on. That's what the Design Your Own builders are for: custom corbels, brackets, flat trim and faux wood beams at off-the-shelf prices."
+        },
+        {
+          "type": "callout",
+          "title": "Made for you, made to order",
+          "text": "Custom pieces are built to your measurements after you order, so they can't be returned. Production time: {{ MTO_LEAD_TIME }}. Measure twice, and we'll gladly check your numbers with you."
+        },
+        {
+          "type": "cards",
+          "title": "Settle the finish first",
+          "items": [
+            {
+              "title": "Timberthane faux wood sample",
+              "text": "A 7\" x 10\" piece of Timberthane so you can see the texture and color up close.",
+              "url": "https://www.architecturaldepot.com/BM-MAT-SAMPLE.html"
+            },
+            {
+              "title": "Polyurethane material sample",
+              "text": "See and feel polyurethane before you commit to a custom size.",
+              "url": "https://www.architecturaldepot.com/SAMPLE-URETHANE.html"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Questions about your design? Call 1-888-573-3768 (Mon-Fri 8am-6pm CT, Sat 8am-12pm CT) with your dimensions, or email cs@architecturaldepot.com."
+        }
+      ],
+      "cta": {
+        "label": "Design my piece",
+        "url": "{{ product_url }}"
+      },
+      "style": "designed"
+    }
+  ]
+}

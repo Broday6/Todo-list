@@ -1,0 +1,362 @@
+{
+  "id": "sample",
+  "code": "SMP",
+  "name": "Sample-to-Order",
+  "phase": 2,
+  "priority_rank": 7,
+  "goal": "Turn a sample order into a confident full order by teaching them how to judge the sample, pointing them to the matching line and custom sizes, and getting their measurements in front of a real person.",
+  "trigger": "Placed Order (Klaviyo metric trigger from the Miva integration) where every line item is a sample: trigger filter is_samples_only = true (all SKUs contain SAMPLE, e.g. SAMPLE-URETHANE, BM-MAT-SAMPLE, LVSAMPLECOLORS, BESAMPLECOLORS, moulding profile samples).",
+  "flow_filters": [
+    "Placed Order where is_samples_only = false zero times since starting this flow.",
+    "Currently in flow Post-Purchase is false (Post-Purchase outranks).",
+    "Has not been in this flow in the last 30 days, so a second sample order does not restart the sequence.",
+    "SMS step only: can receive SMS marketing (consented)."
+  ],
+  "exit_conditions": [
+    "Places a non-sample order (Placed Order where is_samples_only = false). They move to Post-Purchase.",
+    "Unsubscribes from email (email steps) or texts STOP (SMS step)."
+  ],
+  "smart_sending": "Email ON (16h). SMS ON (24h), quiet hours 10am-8pm local, max 3 marketing texts per rolling 7 days. E1 can stay on: the storefront's transactional confirmation is not a Klaviyo marketing send, so it does not block E1.",
+  "branches": [
+    {
+      "id": "All",
+      "label": "All sample orders",
+      "rule": "No split. Products blocks, the E2 CTA and the S1 link adapt to the sampled line by SKU (map in build_notes)."
+    }
+  ],
+  "kpis": [
+    {
+      "metric": "Sample-to-order conversion (non-sample order within 45 days of entry)",
+      "target": "15% (starting benchmark; reset after 60 days of data)"
+    },
+    {
+      "metric": "Email click rate",
+      "target": "4%"
+    },
+    {
+      "metric": "Revenue per recipient",
+      "target": "Baseline in month 1, then grow"
+    },
+    {
+      "metric": "Calls or emails to CS citing samples (tag in the help desk)",
+      "target": "Track; no target at launch"
+    },
+    {
+      "metric": "Unsubscribe rate per email",
+      "target": "< 0.3%"
+    },
+    {
+      "metric": "SMS opt-out rate per send",
+      "target": "< 1.5%"
+    }
+  ],
+  "build_notes": [
+    "Data: compute is_samples_only on the Placed Order event (true when every line item SKU contains 'SAMPLE'). Confirm the moulding profile sample SKUs follow the same pattern; if not, add them to the rule explicitly.",
+    "Sample-to-line map (drives products blocks, the E2 CTA swap and the optional S1 link): BM-MAT-SAMPLE (Timberthane faux wood, 7\" x 10\") > faux wood beams, /faux-wood-beams.html. SAMPLE-URETHANE (polyurethane) > corbels, mantels, moulding, medallions and the wider Ekena collection, /ekena-millwork.html. LVSAMPLECOLORS and BESAMPLECOLORS (vinyl shutter color kits) > vinyl shutters in the sampled color range (made to order). Moulding profile samples > /moulding.html. Mixed sample orders show the first mapped line.",
+    "Vinyl shutters, custom builder items and made-to-order beams are made to order and cannot be returned; any copy that sends sample buyers toward them already says so. Keep it that way if copy is edited.",
+    "SMP-E3: ship the main version without any sample-credit claim. Use the alt version only if {{ SAMPLE_CREDIT }} is confirmed, with the exact terms.",
+    "SMP-E3 reply handling: measurements and photos go to cs@architecturaldepot.com. Confirm the CS team wants project photos at that inbox and can turn them around within a business day.",
+    "SMP-E4 room cards: link only to verified pages (/beams.html, /moulding.html, /blogs/). If shutter, corbel or exterior category pages are added later, verify the paths before linking.",
+    "Welcome overlap: a sample order counts as Placed Order, which already removes the buyer from the Welcome Series under its filter. No extra rule needed here.",
+    "No 'not in Cart' filter: a failed flow filter removes the profile from the rest of this sequence rather than pausing it. Smart Sending spaces Cart and Sample emails."
+  ],
+  "steps": [
+    {
+      "id": "SMP-E1",
+      "channel": "email",
+      "branch": "All",
+      "timing": "Day 0 - 1 hour after order",
+      "offset_hours": 1,
+      "condition": "None",
+      "name": "Samples on the way: how to judge them",
+      "purpose": "Make the sample do its job. Teach them to judge it in their own light and space, against what's staying, so they reach a confident yes (or a clear no) instead of leaving it in the box.",
+      "subject": "How to get the most from your samples",
+      "subject_b": "Your samples are on the way",
+      "preheader": "Five quick checks that tell you more than any photo on a screen can.",
+      "hero": {
+        "eyebrow": "Samples on the way",
+        "headline": "A sample beats a screen",
+        "subhead": "Here's how to judge yours in your own light and your own space.",
+        "image": "A hand holding a Timberthane faux wood material sample up toward a white ceiling, or a vinyl shutter color sample against real siding, in natural daylight. Real samples, real house."
+      },
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Hi {{ first_name|default:'there' }}, thanks for ordering samples. It's the smart first step in a millwork project, because color, grain and texture never look quite the same on a screen as they do in your space. Your shipping confirmation will have the tracking. When they arrive, try this:"
+        },
+        {
+          "type": "products",
+          "title": "Your samples",
+          "source": "Dynamic: sample line items from the Placed Order event (image and name), each linked to its sample page.",
+          "count": 4
+        },
+        {
+          "type": "steps",
+          "title": "How to judge a sample",
+          "items": [
+            {
+              "title": "See it in your light",
+              "text": "Look in the morning, mid-afternoon and at night under your lamps. Color reads differently in each."
+            },
+            {
+              "title": "Hold it where it will go",
+              "text": "Up at the ceiling for a beam, beside the window for a shutter, along the wall for moulding. Then step back across the room."
+            },
+            {
+              "title": "Compare it with what's staying",
+              "text": "Set it next to your floors, cabinets, trim, brick or paint."
+            },
+            {
+              "title": "Feel the texture",
+              "text": "Run a hand over the grain. That's what you'll see up close every day."
+            },
+            {
+              "title": "Snap a photo",
+              "text": "Take one in place to share with whoever helps you decide."
+            }
+          ]
+        }
+      ],
+      "cta": {
+        "label": "Explore Ekena Millwork",
+        "url": "https://www.architecturaldepot.com/ekena-millwork.html"
+      },
+      "ps": "Questions while you compare? Call 1-888-573-3768, Mon-Fri 8am-6pm CT or Sat 8am-12pm CT.",
+      "style": "designed"
+    },
+    {
+      "id": "SMP-E2",
+      "channel": "email",
+      "branch": "All",
+      "timing": "Day 7",
+      "offset_hours": 168,
+      "condition": "None",
+      "name": "How did it look? Shop the line or go custom",
+      "purpose": "Catch them right after they've lived with the sample. If it matched, show the full line; if the standard sizes don't fit, show the Design Your Own builders, with an honest made-to-order note. If it didn't match, invite them to tell us why.",
+      "subject": "How did your samples look?",
+      "subject_b": "From sample to finished room",
+      "preheader": "Shop the line that matched, or build a custom size if a standard one won't fit.",
+      "hero": {
+        "eyebrow": "Next step",
+        "headline": "How did it look in your space?",
+        "subhead": "If it was a match, here's the full line, including custom sizes.",
+        "image": "Two-panel image in the same room and light: a Timberthane sample held at the ceiling on the left, the finished faux wood beam ceiling on the right. Real Ekena imagery."
+      },
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Hi {{ first_name|default:'there' }}, you've had about a week with your samples. If one looked right in your light, here's where to shop that line. If it didn't, call or email us and tell us what felt off, whether color, texture or scale, and we'll suggest another option."
+        },
+        {
+          "type": "products",
+          "title": "From the line you sampled",
+          "source": "Dynamic: products from the material line that matches the sampled SKU (map in build_notes), e.g. BM-MAT-SAMPLE > Timberthane faux wood beams; SAMPLE-URETHANE > polyurethane corbels, mantels, moulding, medallions; vinyl shutter color kits > vinyl shutters.",
+          "count": 3
+        },
+        {
+          "type": "cards",
+          "title": "Shop what you sampled",
+          "items": [
+            {
+              "title": "Timberthane faux wood",
+              "text": "Faux wood beams in standard sizes, including Heritage Series beams that ship in 24-72 hours.",
+              "url": "https://www.architecturaldepot.com/faux-wood-beams.html"
+            },
+            {
+              "title": "Polyurethane millwork",
+              "text": "Corbels, mantels, moulding, medallions and more from the full Ekena collection.",
+              "url": "https://www.architecturaldepot.com/ekena-millwork.html"
+            },
+            {
+              "title": "Vinyl shutters",
+              "text": "Made to order in the color you picked. Measure every window before you order.",
+              "url": "https://www.architecturaldepot.com/ekena-millwork.html"
+            }
+          ]
+        },
+        {
+          "type": "callout",
+          "title": "Need a size that isn't listed?",
+          "text": "Design Your Own builders make custom [beams](https://www.architecturaldepot.com/BM.html), [corbels](https://www.architecturaldepot.com/BUILDER-COR.html), [brackets](https://www.architecturaldepot.com/BUILDER-BKT.html) and [flat trim](https://www.architecturaldepot.com/BUILDER-FLT.html): custom at off-the-shelf prices. Custom pieces are made for you and can't be returned, so double-check your measurements first."
+        }
+      ],
+      "cta": {
+        "label": "Shop the collection",
+        "url": "https://www.architecturaldepot.com/ekena-millwork.html"
+      },
+      "ps": "Not sure which size or profile? Call 1-888-573-3768 with your measurements.",
+      "style": "designed",
+      "alt_versions": [
+        {
+          "label": "Line-specific CTA",
+          "subject": "How did your samples look?",
+          "headline": "How did it look in your space?",
+          "notes": "Swap the CTA by sampled line per the map in build_notes: Timberthane sample > 'Shop faux wood beams' to /faux-wood-beams.html; moulding profile sample > 'Shop moulding' to /moulding.html; everything else keeps 'Shop the collection'."
+        }
+      ]
+    },
+    {
+      "id": "SMP-S1",
+      "channel": "sms",
+      "branch": "All",
+      "timing": "Day 8, 11am local",
+      "offset_hours": 192,
+      "condition": "Can receive SMS marketing",
+      "name": "Sample check-in",
+      "purpose": "One quick, human check-in a day after E2: did they find their match, and here's a person to call with sizing questions.",
+      "text": "Architectural Depot: How did your samples look? Found your match? Shop the line: {link} Sizing help: 1-888-573-3768. Reply STOP to opt out",
+      "link": "https://www.architecturaldepot.com/ekena-millwork.html"
+    },
+    {
+      "id": "SMP-E3",
+      "channel": "email",
+      "branch": "All",
+      "timing": "Day 14",
+      "offset_hours": 336,
+      "condition": "None",
+      "name": "Planning help: what to measure",
+      "purpose": "Answer the biggest blocker, 'Is this the right size?', with a simple what-to-measure list by project type, then get their numbers to a real person who can check them.",
+      "subject": "What to measure before you order",
+      "subject_b": "Have a real person check your sizes",
+      "preheader": "A simple measuring list by project, plus someone to check your numbers with you.",
+      "hero": {
+        "eyebrow": "Planning help",
+        "headline": "Get your sizes right the first time",
+        "subhead": "What to measure for the most common projects, and how to get a second set of eyes on it.",
+        "image": "Overhead shot of a hand-drawn room sketch with dimensions, a tape measure and a material sample on a kitchen table, natural light."
+      },
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Hi {{ first_name|default:'there' }}, once you've picked a material, size is the next big decision. Here's what to have on paper before you order. Treat it as a starting point; each product page lists the exact specs."
+        },
+        {
+          "type": "cards",
+          "title": "What to measure",
+          "items": [
+            {
+              "title": "Ceiling beams",
+              "text": "Room length and width, ceiling height, which way the joists run, and how many beams you're picturing."
+            },
+            {
+              "title": "Shutters",
+              "text": "Height and width of every window opening. Measure each one, even if they look identical."
+            },
+            {
+              "title": "Mantels and corbels",
+              "text": "Width and height of the wall or fireplace, and what the piece will hold. Check the specs before anything rests on it."
+            },
+            {
+              "title": "Moulding and trim",
+              "text": "Length of each wall, ceiling height, and a count of inside and outside corners."
+            },
+            {
+              "title": "Columns",
+              "text": "Floor-to-ceiling height, and whether it's decorative or needs to carry weight. The specs will tell you."
+            }
+          ]
+        },
+        {
+          "type": "steps",
+          "title": "Get a second set of eyes",
+          "items": [
+            {
+              "title": "Sketch it",
+              "text": "A rough drawing with dimensions is plenty."
+            },
+            {
+              "title": "Take two photos",
+              "text": "One wide shot of the space, one close-up of where it mounts."
+            },
+            {
+              "title": "Send or call",
+              "text": "Email cs@architecturaldepot.com or call 1-888-573-3768 and we'll walk through sizes with you."
+            }
+          ]
+        }
+      ],
+      "cta": {
+        "label": "Get planning help",
+        "url": "https://www.architecturaldepot.com/HELP.html"
+      },
+      "ps": "Phones are answered Mon-Fri 8am-6pm CT and Sat 8am-12pm CT.",
+      "style": "designed",
+      "alt_versions": [
+        {
+          "label": "Sample credit version (only if SAMPLE_CREDIT is confirmed)",
+          "subject": "Put your sample toward your order",
+          "headline": "Your sample can count toward your order",
+          "notes": "Do not send until the credit and its exact terms are confirmed. Adds a callout after the cards: title 'Your sample counts', text '{{ SAMPLE_CREDIT }}' written with the confirmed terms (amount, how to apply it, any time limit)."
+        }
+      ]
+    },
+    {
+      "id": "SMP-E4",
+      "channel": "email",
+      "branch": "All",
+      "timing": "Day 30",
+      "offset_hours": 720,
+      "condition": "None",
+      "name": "Still planning? Ideas by room + why order here",
+      "purpose": "For the slow deciders: no pressure, just room-by-room ideas to restart the project, plus the two reasons to order here (price match and Depot Dollars) and a person to call.",
+      "subject": "Still planning? A few ideas to help",
+      "subject_b": "Ideas for every room, and outside too",
+      "preheader": "Room-by-room ideas, plus what you get when you're ready to order.",
+      "hero": {
+        "eyebrow": "Project ideas",
+        "headline": "Good projects take time",
+        "subhead": "A few ideas by room, and what you get when you're ready to order.",
+        "image": "Split hero: a warm living room with faux wood beams and a mantel on one side, a home exterior with shutters and a gable vent on the other. Real Ekena imagery."
+      },
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Hi {{ first_name|default:'there' }}, most millwork projects take a while to come together, and that's fine. If you're still deciding, here are a few places these pieces make a big difference. More ideas live on [our blog](https://www.architecturaldepot.com/blogs/)."
+        },
+        {
+          "type": "cards",
+          "title": "Ideas by room",
+          "items": [
+            {
+              "title": "Living room",
+              "text": "Faux wood beams overhead and a mantel to anchor the fireplace.",
+              "url": "https://www.architecturaldepot.com/beams.html"
+            },
+            {
+              "title": "Kitchen",
+              "text": "Corbels to dress up an island or range hood, crown moulding along the cabinets."
+            },
+            {
+              "title": "Dining room and bedroom",
+              "text": "A ceiling medallion above the light and crown moulding to finish the room.",
+              "url": "https://www.architecturaldepot.com/moulding.html"
+            },
+            {
+              "title": "Outside",
+              "text": "Shutters, gable vents, columns and balustrade railing for curb appeal."
+            }
+          ]
+        },
+        {
+          "type": "products",
+          "title": "From the line you sampled",
+          "source": "Dynamic: products from the sampled material line (map in build_notes), or recently viewed products if the profile has Viewed Product events in the last 30 days.",
+          "count": 3
+        },
+        {
+          "type": "bullets",
+          "items": [
+            "**Price match:** find a lower price, including shipping and handling, on the exact same product at another online home improvement store, shippable within 10 business days, and we'll refund the difference.",
+            "**Depot Dollars:** 5% back on qualifying purchases, available once your order ships.",
+            "**Real people:** 1-888-573-3768, Mon-Fri 8am-6pm CT and Sat 8am-12pm CT."
+          ]
+        }
+      ],
+      "cta": {
+        "label": "Start your project",
+        "url": "https://www.architecturaldepot.com/ekena-millwork.html"
+      },
+      "style": "designed"
+    }
+  ]
+}

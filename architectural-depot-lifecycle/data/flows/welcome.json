@@ -1,0 +1,342 @@
+{
+  "id": "welcome",
+  "code": "WEL",
+  "name": "Welcome Series",
+  "phase": 1,
+  "priority_rank": 1,
+  "goal": "Turn a new email subscriber into a first order by helping them pick the right material and size, and by giving them clear reasons to buy their millwork here.",
+  "trigger": "Profile is added to the Newsletter list (popup, footer form, or account signup with email consent). Klaviyo: List trigger - 'Added to list: Newsletter'.",
+  "flow_filters": [
+    "Placed Order zero times since starting this flow.",
+    "From E2 on: customer_type is not contractor, builder, designer or architect (pros move to Pro Welcome). Build this as a conditional split before E2, E3 and E4 that exits pros, not as a flow filter, so pro-form signups still receive E1 and their code."
+  ],
+  "exit_conditions": [
+    "Places any order, including a samples-only order (Post-Purchase or Sample-to-Order takes over).",
+    "customer_type is set to a pro value: exits at the next pro split (before E2, E3 or E4) and Pro Welcome takes over.",
+    "Unsubscribes from email or is suppressed."
+  ],
+  "smart_sending": "Email on (16h) for all four emails, per the cross-flow rule. A brand-new subscriber has no recent sends, so E1 is not at risk; check the 'skipped: Smart Sending' count on E1 after two weeks and raise it if it is more than a handful.",
+  "branches": [
+    {
+      "id": "All",
+      "label": "Offer path (default)",
+      "rule": "Never ordered before and {{ WELCOME_OFFER }} is live. Gets E1-E4 as written."
+    },
+    {
+      "id": "N",
+      "label": "No-offer path",
+      "rule": "Trigger split at entry: Placed Order at least once over all time (past customers are not eligible for a first-order offer) OR {{ WELCOME_OFFER }} is not confirmed. Sends the alt_versions of E1 and E4; E2 and E3 are the same for everyone."
+    }
+  ],
+  "kpis": [
+    {"metric": "Placed order rate (whole flow)", "target": "3-4%"},
+    {"metric": "Click rate per email", "target": ">= 4%"},
+    {"metric": "Material sample orders attributed to E2", "target": "Baseline in first 60 days, then grow"},
+    {"metric": "Welcome code redemption rate", "target": "Baseline in first 60 days"},
+    {"metric": "Pro self-identification clicks in E3", "target": "Track; no target at launch"},
+    {"metric": "Unsubscribe rate per email", "target": "< 0.5%"}
+  ],
+  "build_notes": [
+    "Welcome code: {{ welcome_code }} maps to Klaviyo {% coupon_code 'WELCOME' %}. Klaviyo only auto-creates unique codes for platforms it has a coupon integration with; for Miva, plan on creating a batch of single-use, first-order-only codes in Miva and uploading them to Klaviyo as a coupon pool. Confirm with whoever owns the Miva integration.",
+    "Code window: E1 says the code is good for 10 days and E4 (day 8) says it ends in 48 hours, so set the code to expire 10 days after it is issued. E4 must show the same code E1 issued, not a fresh one (a coupon tag issues a new code each time it renders). Options: (a) write the issued code back to a welcome_code profile property via Miva or a webhook and reference that property in E4; (b) use one static WELCOME code with first-order-only and a per-customer 10-day window enforced in Miva. If neither is possible, remove the 48-hour wording from E4 before launch.",
+    "Offer scope: confirm whether the welcome code applies to made-to-order and Design Your Own builder items. The cross-flow guardrail says no percentage off made-to-order items in automated messages unless margin allows. If they are excluded, add 'Excludes made-to-order items.' to the E1 and E4 code callouts (and to SMW-S1). The copy never pairs the code with made-to-order products.",
+    "No-offer path (branch N): trigger split at entry. YES (past customer, or offer not live) sends the E1 and E4 alt_versions. For past customers change 'Your first 5% back' to 'Your next 5% back' in the E4 alt.",
+    "Reply-to: set to cs@architecturaldepot.com. The E1 P.S. invites replies with photos and measurements, and E3 asks for measurements by email.",
+    "Pro links in E3: four links to the homepage carrying ?pro=contractor, ?pro=builder, ?pro=designer and ?pro=architect. Build a small helper flow: trigger = Clicked Email, trigger filter URL contains 'pro=' -> conditional split on the value -> Update Profile Property customer_type. That enters Pro Welcome and exits this flow at the next split. The UTM step must append with '&' because these URLs already carry a '?'. Alternative: point the four links at a Klaviyo-hosted page with a customer_type field.",
+    "Flow priority: Welcome ranks below Post-Purchase, Cart, Sample-to-Order, Depot Dollars, Back in Stock and Browse. Before E2 and E3, add a split 'currently in flow Cart & Checkout Abandonment OR Browse Abandonment' -> YES skips that email. E4 keeps only Smart Sending, because the code deadline matters most to someone who is mid-checkout.",
+    "Samples-only orders count as Placed Order and end this flow (Sample-to-Order takes over). If the business wants the welcome code to survive a sample purchase, change the filter to exclude samples-only orders, and decide whether the code may be used on samples at all.",
+    "E2 sample links: the vinyl shutter color kit links to /LVSAMPLECOLORS.html; a second kit lives at /BESAMPLECOLORS.html. Confirm which shutter line each kit matches and add the second link if both apply.",
+    "Review block in E4: pull a real, published review only. Never write, paraphrase or combine reviews."
+  ],
+  "steps": [
+    {
+      "id": "WEL-E1",
+      "channel": "email",
+      "branch": "All",
+      "timing": "Day 0 - immediately",
+      "offset_hours": 0,
+      "condition": "None. Branch N (past customers or offer not live) gets the no-offer alt version.",
+      "name": "Welcome + offer",
+      "purpose": "Deliver the welcome code, establish who we are (largest Ekena Millwork provider, 20+ years) and the three reasons to buy here, then route the reader to their project category. They should feel they found the specialist, not another generic listing.",
+      "subject": "Welcome. Here's {{ WELCOME_OFFER }}",
+      "subject_b": "Planning beams, corbels or shutters?",
+      "preheader": "Your code is inside, plus 5% back on every order and real people to call.",
+      "hero": {
+        "eyebrow": "Welcome to Architectural Depot",
+        "headline": "The whole Ekena Millwork catalog, and people who know it",
+        "subhead": "Here's {{ WELCOME_OFFER }} for your project. Code {{ welcome_code }} is good for 10 days.",
+        "image": "Finished great room: Timberthane faux wood beams across a white ceiling, a mantel flanked by corbels, crown moulding at the ceiling line. Warm late-afternoon light, no people. Keep the top third calm for the headline on mobile."
+      },
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Hi {{ first_name|default:'there' }}, welcome in. We're the largest provider of Ekena Millwork products anywhere, and we've been a source for architectural millwork for more than 20 years. Beams, corbels, shutters, mantels, columns, moulding, medallions: the full collection is here."
+        },
+        {
+          "type": "callout",
+          "title": "Your code: {{ welcome_code }}",
+          "text": "{{ WELCOME_OFFER }}. Enter it at checkout within the next 10 days."
+        },
+        {
+          "type": "cards",
+          "title": "Three reasons to buy your millwork here",
+          "items": [
+            {
+              "title": "5% back in Depot Dollars",
+              "text": "Every qualifying order earns 5% back. Each Depot Dollar is $1 off a future order, ready once your order ships."
+            },
+            {
+              "title": "Lower price guarantee",
+              "text": "Find the exact same product for less at another online home improvement store, shipping included and shippable within 10 business days, and we refund the difference."
+            },
+            {
+              "title": "Real people on the phone",
+              "text": "Talk size, material or finish with our team at 1-888-573-3768, Mon-Fri 8am-6pm CT and Sat 8am-12pm CT."
+            }
+          ]
+        },
+        {
+          "type": "cards",
+          "title": "Start with your project",
+          "items": [
+            {
+              "title": "Faux wood beams",
+              "text": "Timberthane beams with the look of wood and no upkeep.",
+              "url": "https://www.architecturaldepot.com/faux-wood-beams.html"
+            },
+            {
+              "title": "Moulding and trim",
+              "text": "Crown moulding and trim profiles.",
+              "url": "https://www.architecturaldepot.com/moulding.html"
+            },
+            {
+              "title": "Corbels, shutters, mantels and more",
+              "text": "The full Ekena Millwork collection.",
+              "url": "https://www.architecturaldepot.com/ekena-millwork.html"
+            },
+            {
+              "title": "On sale now",
+              "text": "Current markdowns across the catalog.",
+              "url": "https://www.architecturaldepot.com/products-on-sale.html"
+            }
+          ]
+        }
+      ],
+      "cta": {
+        "label": "Shop Ekena Millwork",
+        "url": "https://www.architecturaldepot.com/ekena-millwork.html"
+      },
+      "ps": "P.S. Not sure what size you need? Reply with a photo of your space and your measurements, and our team will take a look.",
+      "style": "designed",
+      "alt_versions": [
+        {
+          "label": "No-offer version",
+          "subject": "Welcome. Here's how 5% back works",
+          "subject_b": "Planning beams, corbels or shutters?",
+          "preheader": "Depot Dollars on every order, first word on sales, and real people to call.",
+          "headline": "The whole Ekena Millwork catalog, and people who know it",
+          "notes": "Use for branch N (past customers, or {{ WELCOME_OFFER }} not live). Hero subhead: 'Every qualifying order earns 5% back in Depot Dollars, and subscribers hear about sales first.' Replace the code callout with title 'Your first 5% back' and text 'Every qualifying order earns 5% back in Depot Dollars: $1 toward your next order for every $20 you spend, ready once your order ships.' Add one line under it: 'Subscribers hear about sales first, so watch your inbox.' Keep the early-access line only if sale campaigns really go to subscribers before the sale is public. Everything else stays the same."
+        }
+      ]
+    },
+    {
+      "id": "WEL-E2",
+      "channel": "email",
+      "branch": "All",
+      "timing": "Day 2 - 48 hours after signup",
+      "offset_hours": 48,
+      "condition": "Not a pro (split exits customer_type = contractor, builder, designer or architect). Skip if currently in Cart & Checkout Abandonment or Browse Abandonment.",
+      "name": "Pick the right material",
+      "purpose": "Answer 'which material do I need, and will it look cheap?' with a plain guide to the six Ekena lines, then move the reader to a low-risk next step: a material sample.",
+      "subject": "Which material fits your project?",
+      "subject_b": "Will faux wood look real in your room?",
+      "preheader": "Six Ekena materials, what each one is for, and how to see one in person first.",
+      "hero": {
+        "eyebrow": "Material guide",
+        "headline": "Pick the material first, then the piece",
+        "subhead": "Where it goes and how you'll finish it narrow the choice fast.",
+        "image": "Overhead flat-lay on a workbench: a primed polyurethane corbel, a Timberthane faux wood sample, a stained hardwood bracket, a black metal bracket and a length of white trim, each with a kraft paper tag naming the material. Soft daylight."
+      },
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Hi {{ first_name|default:'there' }}, two questions settle most material choices: is it going inside or outside, and do you want to paint it, stain it, or get the look of wood with no upkeep?"
+        },
+        {
+          "type": "cards",
+          "title": "The six Ekena material lines",
+          "items": [
+            {
+              "title": "Polyurethane (Endurathane)",
+              "text": "Crisp, detailed shapes for corbels, crown moulding and ceiling medallions. A good fit when you plan to paint.",
+              "url": "https://www.architecturaldepot.com/SAMPLE-URETHANE.html"
+            },
+            {
+              "title": "Timberthane faux wood",
+              "text": "Our faux wood beam material. The look of wood, maintenance-free, and the new generation is even more realistic.",
+              "url": "https://www.architecturaldepot.com/BM-MAT-SAMPLE.html"
+            },
+            {
+              "title": "AmeriCraft real wood",
+              "text": "Stain-grade hardwoods, for when you want real grain under a stain."
+            },
+            {
+              "title": "PVC",
+              "text": "Often chosen for exterior trim and accents. Confirm it's rated for where it's going."
+            },
+            {
+              "title": "Fiberthane",
+              "text": "Ekena's fiberglass line. Look for it on columns."
+            },
+            {
+              "title": "SteelTek",
+              "text": "Metal brackets and shutter hardware, for a slim metal look."
+            }
+          ]
+        },
+        {
+          "type": "callout",
+          "title": "Inside or outside?",
+          "text": "Before you order for a porch, eave or entry, check that the piece is rated for exterior use, or ask us."
+        },
+        {
+          "type": "text",
+          "text": "A sample in your own light settles it. See the detail up close with the [polyurethane sample](https://www.architecturaldepot.com/SAMPLE-URETHANE.html), or hold the 7\" x 10\" [Timberthane sample](https://www.architecturaldepot.com/BM-MAT-SAMPLE.html) right against your ceiling. Shopping for shutters? Try a [vinyl shutter color sample kit](https://www.architecturaldepot.com/LVSAMPLECOLORS.html)."
+        }
+      ],
+      "cta": {
+        "label": "Order a material sample",
+        "url": "https://www.architecturaldepot.com/SAMPLE-URETHANE.html"
+      },
+      "ps": "P.S. Torn between two materials? Call 1-888-573-3768 and tell us the room and the finish you want.",
+      "style": "designed"
+    },
+    {
+      "id": "WEL-E3",
+      "channel": "email",
+      "branch": "All",
+      "timing": "Day 5 - 120 hours after signup",
+      "offset_hours": 120,
+      "condition": "Not a pro (split exits customer_type = contractor, builder, designer or architect). Skip if currently in Cart & Checkout Abandonment or Browse Abandonment.",
+      "name": "Planning help: size it right",
+      "purpose": "Answer 'is this the right size?' with the questions to settle before ordering, introduce the Design Your Own builders for sizes off the standard chart (with made-to-order honesty), offer a person to check the numbers, and let pros identify themselves.",
+      "subject": "Measure twice: 4 questions before you order",
+      "subject_b": "Can't find your size? Design your own",
+      "preheader": "Room scale, run length, what it's fastened to, and who to call with your numbers.",
+      "hero": {
+        "eyebrow": "Planning help",
+        "headline": "Get the size right the first time",
+        "subhead": "Answer these before you order beams, corbels, shutters or moulding.",
+        "image": "Hands holding a tape measure up to a kitchen ceiling where a beam will run, painter's tape outlining the beam's width on the drywall, a pencil tucked behind an ear. Natural daylight."
+      },
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Hi {{ first_name|default:'there' }}, most sizing mistakes happen before anyone opens a product page. These questions catch them."
+        },
+        {
+          "type": "steps",
+          "title": "Four questions to answer first",
+          "items": [
+            {
+              "title": "How long is the run?",
+              "text": "Measure wall to wall for beams. For moulding, total every wall and add extra for cuts."
+            },
+            {
+              "title": "How big should it look?",
+              "text": "Tape a paper template where it will go and look from across the room. Size to the space, not the photo."
+            },
+            {
+              "title": "What's it fastened to?",
+              "text": "Know what's behind it: joists, studs or sheathing."
+            },
+            {
+              "title": "Does it hold anything?",
+              "text": "If a corbel or bracket will carry a shelf or counter, call us before you choose one."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "**Can't find your size?** Our Design Your Own builders make custom [faux wood beams](https://www.architecturaldepot.com/BM.html), [corbels](https://www.architecturaldepot.com/BUILDER-COR.html), [brackets](https://www.architecturaldepot.com/BUILDER-BKT.html) and [flat trim](https://www.architecturaldepot.com/BUILDER-FLT.html) at off-the-shelf prices. Custom pieces are made to order, so they can't be returned. Double-check your numbers, or send them to us first."
+        },
+        {
+          "type": "text",
+          "text": "Want a second set of eyes? Call 1-888-573-3768 (Mon-Fri 8am-6pm CT, Sat 8am-12pm CT) or email cs@architecturaldepot.com with your measurements and a photo of the space."
+        },
+        {
+          "type": "text",
+          "text": "**Are you a pro?** If you're a [contractor](https://www.architecturaldepot.com/?pro=contractor), [builder](https://www.architecturaldepot.com/?pro=builder), [designer](https://www.architecturaldepot.com/?pro=designer) or [architect](https://www.architecturaldepot.com/?pro=architect), click yours and we'll send trade-focused help instead."
+        }
+      ],
+      "cta": {
+        "label": "Contact our team",
+        "url": "https://www.architecturaldepot.com/HELP.html"
+      },
+      "ps": "P.S. Exterior project? Check that the piece is rated for outdoor use before you order.",
+      "style": "designed"
+    },
+    {
+      "id": "WEL-E4",
+      "channel": "email",
+      "branch": "All",
+      "timing": "Day 8 - 192 hours after signup",
+      "offset_hours": 192,
+      "condition": "Not a pro (split exits customer_type = contractor, builder, designer or architect). Branch N gets the no-offer alt version.",
+      "name": "Offer ends in 48 hours",
+      "purpose": "Create honest urgency on the welcome code, back it with a real customer review, and remove the last risk questions (price match, returns, made-to-order) so the reader can order with confidence.",
+      "subject": "Your {{ WELCOME_OFFER }} ends in 48 hours",
+      "subject_b": "Questions before your code expires?",
+      "preheader": "A real customer's take, plus exactly how returns and price match work here.",
+      "hero": {
+        "eyebrow": "48 hours left",
+        "headline": "Your welcome offer ends in 48 hours",
+        "subhead": "{{ WELCOME_OFFER }} with code {{ welcome_code }}. Here's what to know before you order.",
+        "image": "Dining room with new crown moulding and a ceiling medallion above a lit chandelier, evening light, table set simply. Finished and lived-in, not staged."
+      },
+      "blocks": [
+        {
+          "type": "callout",
+          "title": "Code {{ welcome_code }}",
+          "text": "{{ WELCOME_OFFER }}. Expires in 48 hours. Enter it at checkout."
+        },
+        {
+          "type": "review",
+          "source": "Pull one real, published review from https://www.architecturaldepot.com/architecturaldepot-customer-reviews.html and pick one that mentions help choosing a size or material, or how the piece looked once installed. Quote it word for word (trim only with an ellipsis) with the reviewer name and location exactly as published."
+        },
+        {
+          "type": "text",
+          "text": "Hi {{ first_name|default:'there' }}, before you check out, here's how buying here works:"
+        },
+        {
+          "type": "bullets",
+          "items": [
+            "Price match: find the exact same product for less at another online home improvement store, shipping included and shippable within 10 business days, and we'll refund the difference.",
+            "Returns: most items can be returned within 30 days of delivery for a partial refund, less a 20% processing fee. Return shipping is on you.",
+            "Made to order: vinyl and wood shutters and anything from a Design Your Own builder are built for you and can't be returned, so double-check measurements first.",
+            "5% back: your order earns Depot Dollars, ready to use once it ships."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Want us to check a size before you order? Call 1-888-573-3768, Mon-Fri 8am-6pm CT or Sat 8am-12pm CT."
+        }
+      ],
+      "cta": {
+        "label": "Shop with my code",
+        "url": "https://www.architecturaldepot.com/ekena-millwork.html"
+      },
+      "style": "designed",
+      "alt_versions": [
+        {
+          "label": "No-offer version",
+          "subject": "Your first 5% back is waiting",
+          "subject_b": "How returns and price match work here",
+          "preheader": "A real customer's take, plus how Depot Dollars, returns and price match work.",
+          "headline": "Your first 5% back in Depot Dollars",
+          "notes": "Use for branch N. Remove the 48-hour framing, the hero code line and the code callout. Hero eyebrow: 'Before you order'. Subhead: 'Every qualifying order earns 5% back, ready once it ships.' Replace the code callout with title 'Your first 5% back' and text 'A $500 order earns $25 in Depot Dollars toward your next one. They're available once your order ships and expire 90 days after they're earned.' Keep the review, the policy bullets and the phone line. CTA: 'Start my project' (same URL as the main CTA). For past customers use 'Your next 5% back'."
+        }
+      ]
+    }
+  ]
+}

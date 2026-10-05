@@ -1,0 +1,486 @@
+{
+  "id": "post-purchase",
+  "code": "PP",
+  "name": "Post-Purchase",
+  "phase": 1,
+  "priority_rank": 5,
+  "goal": "Turn every order into a well-installed project and a second order: set honest expectations, help them prep and install, ask for a review once it's up, then suggest the pieces that finish the job.",
+  "trigger": "Placed Order (Klaviyo metric trigger from the Miva integration). Trigger filter: is_samples_only = false, so samples-only orders go to Sample-to-Order instead.",
+  "flow_filters": [
+    "Order is not samples-only (is_samples_only = false). Samples-only orders enter Sample-to-Order.",
+    "Placed Order (non-sample) zero times since starting this flow. A newer order ends this run and starts a fresh one in the repeat branch, so nobody gets two parallel sequences.",
+    "Country is not Canada OR email consent is subscribed (CASL). US buyers who never subscribed can receive these under CAN-SPAM.",
+    "SMS steps only: can receive SMS marketing (consented)."
+  ],
+  "exit_conditions": [
+    "Places another non-sample order: this run ends and the new order starts a new run (repeat branch).",
+    "Order cancelled or fully refunded, if Miva sends a Cancelled Order or Refunded Order event.",
+    "Unsubscribes from email (email steps) or texts STOP (SMS steps)."
+  ],
+  "smart_sending": "E1 variants (PP-E1, PP-E1R, PP-E1M): Smart Sending OFF, because they are order-specific and should always arrive. All other emails ON (16h). SMS ON (24h), quiet hours 10am-8pm local, max 3 marketing texts per rolling 7 days.",
+  "branches": [
+    {
+      "id": "F",
+      "label": "First order, in-stock only",
+      "rule": "Placed Order where is_samples_only = false equals 1 time over all time (this order) AND has_made_to_order = false"
+    },
+    {
+      "id": "R",
+      "label": "Repeat order, in-stock only",
+      "rule": "Placed Order where is_samples_only = false at least 2 times over all time AND has_made_to_order = false"
+    },
+    {
+      "id": "M",
+      "label": "Contains made-to-order",
+      "rule": "has_made_to_order = true (any order count). Gets PP-E1M, and E3, S2 and E4 wait until the order has shipped."
+    }
+  ],
+  "kpis": [
+    {
+      "metric": "E1 click rate (all variants)",
+      "target": "6% (starting benchmark; reset after 60 days of data)"
+    },
+    {
+      "metric": "Review page clicks per recipient (E3 + S2)",
+      "target": "4%"
+    },
+    {
+      "metric": "Repeat order rate within 90 days of entry",
+      "target": "Baseline in month 1, then +10% relative"
+    },
+    {
+      "metric": "E4 revenue per recipient",
+      "target": "Baseline in month 1, then grow"
+    },
+    {
+      "metric": "Unsubscribe rate per email",
+      "target": "< 0.3%"
+    },
+    {
+      "metric": "SMS opt-out rate per send",
+      "target": "< 1.5%"
+    }
+  ],
+  "build_notes": [
+    "Data: the Placed Order event must carry line items with SKU, product name, category, image URL, product URL and a made_to_order flag, plus order-level booleans is_samples_only and has_made_to_order. If Miva has no made_to_order flag, derive it from category/SKU: vinyl shutters, wood shutters, Design Your Own builder items (BUILDER-COR, BUILDER-BKT, BUILDER-FLT, BM) and made-to-order faux wood beams.",
+    "Structure: Trigger > conditional split on has_made_to_order. YES = M path (PP-E1M). NO = second split on non-sample order count >= 2: YES = R path (PP-E1R), NO = F path (PP-E1). Klaviyo branches do not rejoin, so clone the tail (S1, E2, E3, S2, E4) into each path with identical content. Each customer receives 4 emails and up to 2 texts; the file holds 6 emails because E1 has three variants.",
+    "PP-E1M is shared by first and repeat made-to-order orders, so its copy works for both. Optional: add a show/hide line 'Good to see you again.' for repeat customers.",
+    "M path timing: E3, S2 and E4 must not ask for a review or push add-ons before a made-to-order piece has even shipped. Preferred build: if Miva sends a shipment event (Fulfilled Order / Shipped), end the M path after E2 and run its E3, S2 and E4 from a small clone flow triggered on that event with has_made_to_order = true (E3 10 days after shipment, S2 1 day later, E4 7 days after E3). Fallback: set the M-path delay before E3 to the confirmed {{ MTO_LEAD_TIME }} plus 14 days.",
+    "Do not duplicate the storefront's transactional order and shipping confirmations. No order totals, tracking numbers or addresses in these emails; refer to the confirmations instead.",
+    "PP-S1 link: defaults to /HELP.html. If the Placed Order event carries product URLs, link the first line item's product page instead, since that is where its installation guide and specs live.",
+    "PP-E2 category tips block: one short tip per purchased category, written from the Ekena installation guides and approved by customer service before launch. Safe starters: Beams - find the joists and confirm the mounting method in the guide before marking beam lines. Shutters - measure every window; follow the guide's fastening method for your siding. Corbels and brackets - check the specs before anything rests on them. Mantels - follow the guide and your local code for clearances around the fireplace. Columns - confirm in the specs whether the column is decorative or structural. Moulding and trim - plan corners and joints and dry-fit first. Ceiling medallions - turn off power at the breaker before working around a light fixture. No invented specs, cure times or load ratings.",
+    "PP-E3 and PP-S2 review link: the store reviews page (/architecturaldepot-customer-reviews.html). If a product-review app is connected later, swap to its per-product review form. Do not gate reviews: everyone gets the same ask, happy or not.",
+    "PP-S2 condition: skip anyone who clicked the review link in PP-E3 (Clicked Email where URL contains 'customer-reviews' since starting flow). If the review platform sends a Submitted Review event, use that instead.",
+    "PP-E3: if {{ INSTAGRAM_HANDLE }} is not confirmed at launch, delete the sentence that mentions it rather than shipping the token.",
+    "PP-E4 cross-sell map (products block): corbels > shelf brackets, mantels; beams > beam straps, brackets, corbels; shutters > SteelTek shutter hardware; mantels > corbels, moulding; columns > balustrade railing kits; moulding and trim > ceiling medallions. Exclude items already purchased; prefer the same material line and finish. Fallback when nothing maps: Ekena Millwork catalog picks.",
+    "PP-E4 alt version: once depot_dollars_balance and depot_dollars_expiration_date sync from Miva, switch to the balance version in alt_versions.",
+    "{{ category_name }} in PP-E4 subject_b uses the first line item's category with a fallback of 'project' (Klaviyo default filter)."
+  ],
+  "steps": [
+    {
+      "id": "PP-E1",
+      "channel": "email",
+      "branch": "F",
+      "timing": "Day 0 - 1 hour after order",
+      "offset_hours": 1,
+      "condition": "First non-sample order AND no made-to-order items",
+      "name": "Thank you + what happens next (first order)",
+      "purpose": "First impression after the transactional confirmation. Thank them, set expectations for shipping and delivery day, explain the Depot Dollars they just earned, and show them they bought from a knowledgeable source with real people on the phone.",
+      "subject": "Thanks for your order. Here's what's next",
+      "subject_b": "You just earned Depot Dollars",
+      "preheader": "Shipping, your 5% back in Depot Dollars, and one tip for delivery day.",
+      "hero": {
+        "eyebrow": "Order {{ order_number }}",
+        "headline": "Thank you. Your project is underway.",
+        "subhead": "Here's what happens between now and install day, and who to call if you need us.",
+        "image": "Warm natural-light photo of an Ekena piece (a faux wood beam end or a pair of corbels) being lifted out of kraft packaging on a clean work table. Real product photography, no faces needed."
+      },
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Hi {{ first_name|default:'there' }}, thank you for your first order with Architectural Depot. You'll get separate order and shipping confirmations with your tracking details. This note covers the rest: what to expect, what you earned and how to make delivery day go smoothly."
+        },
+        {
+          "type": "products",
+          "title": "In your order",
+          "source": "Dynamic: line items from the Placed Order event (image, product name, quantity), each linked to its product page. No prices or totals.",
+          "count": 4
+        },
+        {
+          "type": "steps",
+          "title": "What happens next",
+          "items": [
+            {
+              "title": "We ship it",
+              "text": "In-stock items ship from our warehouse. Your shipping confirmation will have tracking once it's on the way."
+            },
+            {
+              "title": "You earn Depot Dollars",
+              "text": "This order earns 5% back in Depot Dollars on qualifying items. They're available once your order ships and expire 90 days after they're earned."
+            },
+            {
+              "title": "Inspect it on arrival",
+              "text": "Open every box and check each piece against your order. If anything is damaged or missing, call us right away."
+            },
+            {
+              "title": "Keep the packaging",
+              "text": "Hold on to the boxes until everything is installed. They're the best protection for your pieces while they wait."
+            }
+          ]
+        },
+        {
+          "type": "callout",
+          "title": "Glad you found us",
+          "text": "We're the largest provider of Ekena Millwork anywhere and have been a source for architectural millwork for more than 20 years. Real people answer the phone at 1-888-573-3768, Mon-Fri 8am-6pm CT and Sat 8am-12pm CT."
+        }
+      ],
+      "cta": {
+        "label": "Visit our help page",
+        "url": "https://www.architecturaldepot.com/HELP.html"
+      },
+      "ps": "Depot Dollars aren't valid on shipping, handling or tax, and they have no cash value.",
+      "style": "designed"
+    },
+    {
+      "id": "PP-E1R",
+      "channel": "email",
+      "branch": "R",
+      "timing": "Day 0 - 1 hour after order",
+      "offset_hours": 1,
+      "condition": "Repeat non-sample order (2+ all time) AND no made-to-order items",
+      "name": "Thanks for coming back + what happens next (repeat)",
+      "purpose": "Skip the introductions and thank a returning customer like a regular at the counter. Same practical expectations as E1, plus a useful tip for orders that add on to an earlier project.",
+      "subject": "Good to see you again",
+      "subject_b": "Another 5% back is on its way",
+      "preheader": "Thanks for coming back. Here's what's next, and a tip if this adds on to a past project.",
+      "hero": {
+        "eyebrow": "Order {{ order_number }}",
+        "headline": "Thanks for coming back",
+        "subhead": "Here's what to expect with this order, and how to make the new pieces match what's already up.",
+        "image": "A finished room that looks like a project growing over time: faux wood beams already installed overhead, a new mantel or pair of corbels being set below. Warm, lived-in light, real Ekena product."
+      },
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Hi {{ first_name|default:'there' }}, thanks for ordering with us again. It means a lot that you came back for the next part of your project. Your order and shipping confirmations come separately; here's the rest."
+        },
+        {
+          "type": "products",
+          "title": "In this order",
+          "source": "Dynamic: line items from the Placed Order event (image, product name, quantity), each linked to its product page. No prices or totals.",
+          "count": 4
+        },
+        {
+          "type": "bullets",
+          "items": [
+            "**Shipping:** in-stock items ship from our warehouse, and your shipping confirmation has the tracking details.",
+            "**Depot Dollars:** this order earns another 5% back on qualifying items. They're available once it ships and expire 90 days after they're earned.",
+            "**On arrival:** open every box, check each piece against your order, and keep the packaging until everything is installed."
+          ]
+        },
+        {
+          "type": "callout",
+          "title": "Adding on to an earlier project?",
+          "text": "Set the new pieces next to what's already up before you install anything. If a size, profile or finish doesn't look right, call 1-888-573-3768 with both order numbers handy and we'll take a look with you."
+        }
+      ],
+      "cta": {
+        "label": "Visit our help page",
+        "url": "https://www.architecturaldepot.com/HELP.html"
+      },
+      "ps": "We're here Mon-Fri 8am-6pm CT and Sat 8am-12pm CT, or anytime at cs@architecturaldepot.com.",
+      "style": "designed"
+    },
+    {
+      "id": "PP-E1M",
+      "channel": "email",
+      "branch": "M",
+      "timing": "Day 0 - 1 hour after order",
+      "offset_hours": 1,
+      "condition": "Order contains at least one made-to-order item (first or repeat order)",
+      "name": "Made for you + what happens next (made-to-order)",
+      "purpose": "Set honest expectations for a made-to-order piece: it's built to their specs, it takes {{ MTO_LEAD_TIME }}, it can't be returned, so one more look at sizes is worth it. Framed as craftsmanship, never as a warning. Also covers Depot Dollars timing and delivery day.",
+      "subject": "Your order is being made for you",
+      "subject_b": "What to expect with a made-to-order piece",
+      "preheader": "Built to your specs after you order. Here's the timeline and what to check.",
+      "hero": {
+        "eyebrow": "Order {{ order_number }}",
+        "headline": "Made for you, to your specs",
+        "subhead": "Part of your order is built after you order it. Here's what that means for timing, Depot Dollars and delivery day.",
+        "image": "Craftsmanship detail: hands checking a made-to-order faux wood beam or vinyl shutter against a tape measure, warm shop light, shallow depth of field. Real product; do not depict a specific factory unless the photo is sourced from Ekena."
+      },
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Hi {{ first_name|default:'there' }}, thank you for your order. Part of it is made to order, which means it's built to your sizes and specs after you order instead of coming off a shelf. Your order and shipping confirmations come separately; here's what to expect in between."
+        },
+        {
+          "type": "products",
+          "title": "In your order",
+          "source": "Dynamic: line items from the Placed Order event (image, product name, quantity), each linked to its product page, with a 'Made to order' label on items where made_to_order = true. No prices or totals.",
+          "count": 4
+        },
+        {
+          "type": "steps",
+          "title": "What happens next",
+          "items": [
+            {
+              "title": "It's built for you",
+              "text": "It's built to your specs after you order. Production time: {{ MTO_LEAD_TIME }}. Any in-stock items in your order ship from our warehouse."
+            },
+            {
+              "title": "Give your sizes one more look",
+              "text": "Because it's made for you, a made-to-order item can't be returned. Check the sizes, finish and quantities in your confirmation, and call us right away if anything looks off."
+            },
+            {
+              "title": "Your Depot Dollars",
+              "text": "You earn 5% back on qualifying items. Depot Dollars become available once the order ships and expire 90 days after they're earned."
+            },
+            {
+              "title": "Delivery day",
+              "text": "Open every box, check each piece against your order, and keep the packaging until everything is installed."
+            }
+          ]
+        },
+        {
+          "type": "callout",
+          "title": "We're here while it's built",
+          "text": "Questions about your order or your install plan? Call 1-888-573-3768 (Mon-Fri 8am-6pm CT, Sat 8am-12pm CT) or email cs@architecturaldepot.com."
+        }
+      ],
+      "cta": {
+        "label": "Visit our help page",
+        "url": "https://www.architecturaldepot.com/HELP.html"
+      },
+      "ps": "Depot Dollars aren't valid on shipping, handling or tax, and they have no cash value.",
+      "style": "designed"
+    },
+    {
+      "id": "PP-S1",
+      "channel": "sms",
+      "branch": "All",
+      "timing": "Day 0 - 2 hours after order (10am-8pm local)",
+      "offset_hours": 2,
+      "condition": "Can receive SMS marketing",
+      "name": "Thanks + help line + install guides",
+      "purpose": "A short, useful thank-you that puts the phone number and the install guides in their pocket. No selling.",
+      "text": "Architectural Depot: Thanks for your order. Install guides are on each product page. Help: 1-888-573-3768 or {link} Reply STOP to opt out",
+      "link": "https://www.architecturaldepot.com/HELP.html"
+    },
+    {
+      "id": "PP-E2",
+      "channel": "email",
+      "branch": "All",
+      "timing": "Day 5",
+      "offset_hours": 120,
+      "condition": "None (all branches; works whether the order is in transit or still being built)",
+      "name": "Get ready to install",
+      "purpose": "Help them prep before the boxes are open: read the guide, re-measure, check the structure, gather fasteners, dry-fit, plan the finish. Category-specific tips make it feel written for their project. Builds confidence and cuts damage and install calls.",
+      "subject": "Get your space ready for install day",
+      "subject_b": "Measure twice, install once",
+      "preheader": "A short prep checklist, where to find your install guide, and who to call.",
+      "hero": {
+        "eyebrow": "Install prep",
+        "headline": "Get ready while it's on the way",
+        "subhead": "A little prep now makes install day go smoother, whether your order is in transit or still being built.",
+        "image": "Prep scene: tape measure, pencil, level and stud finder beside an open installation guide on a work surface, a boxed Ekena piece in soft focus behind. No branded tools."
+      },
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Hi {{ first_name|default:'there' }}, whether you're installing it yourself or handing it to a contractor, a little prep now saves time later. Every product page has the installation guide and specs for that piece. Start there, because the guide for your exact product beats any general advice."
+        },
+        {
+          "type": "steps",
+          "title": "Your prep checklist",
+          "items": [
+            {
+              "title": "Read the guide first",
+              "text": "Note the recommended fasteners, adhesive and finishing steps."
+            },
+            {
+              "title": "Re-check your measurements",
+              "text": "Measure the wall, ceiling or opening again and mark where each piece goes."
+            },
+            {
+              "title": "Know what's behind the surface",
+              "text": "Find the studs, joists or solid backing and check the wall or ceiling structure before you mount anything."
+            },
+            {
+              "title": "Gather what the guide calls for",
+              "text": "Have the recommended fasteners, adhesive and tools on hand before you start."
+            },
+            {
+              "title": "Dry-fit before you fasten",
+              "text": "Set pieces in place to check fit and alignment."
+            },
+            {
+              "title": "Plan your finish",
+              "text": "Priming, painting or staining? Follow the guide for your material."
+            }
+          ]
+        },
+        {
+          "type": "products",
+          "title": "Tips for what you ordered",
+          "source": "Dynamic by purchased category (Placed Order line-item categories): one short install tip per category plus a link to that product page's installation guide. Tip content comes from the Ekena installation guides and is approved by customer service (starter tips in build_notes). Hide categories not in the order.",
+          "count": 3
+        },
+        {
+          "type": "callout",
+          "title": "Stuck on a step?",
+          "text": "Call 1-888-573-3768 with your order number and measurements, Mon-Fri 8am-6pm CT or Sat 8am-12pm CT. If the guide doesn't match your situation, a professional installer is the safe call."
+        }
+      ],
+      "cta": {
+        "label": "Get install help",
+        "url": "https://www.architecturaldepot.com/HELP.html"
+      },
+      "style": "designed"
+    },
+    {
+      "id": "PP-E3",
+      "channel": "email",
+      "branch": "All",
+      "timing": "Day 14 (made-to-order path: 10 days after the order ships)",
+      "offset_hours": 336,
+      "condition": "Has not received PP-E3 in the last 90 days (repeat buyers are not asked every order)",
+      "name": "Review request + share a photo",
+      "purpose": "A personal, no-pressure ask for an honest review and a photo of the finished space. Reviews answer the questions the next buyer has (will it look real, is the scale right), so frame it as helping them. Not gated: everyone gets the same ask.",
+      "subject": "How did it turn out?",
+      "subject_b": "A quick favor, {{ first_name|default:'there' }}",
+      "preheader": "Two minutes and a few honest words help the next person planning a project.",
+      "hero": {
+        "eyebrow": "Your project",
+        "headline": "How did it turn out?",
+        "subhead": "Tell us, and help the next person planning a project like yours.",
+        "image": "Plain-text style: no hero image. If rendered designed, use a real customer install photo (with permission) of beams or a mantel in a lived-in room."
+      },
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Hi {{ first_name|default:'there' }},"
+        },
+        {
+          "type": "text",
+          "text": "Your order should be with you by now, and it may already be up. Whether it's finished or still waiting in the garage, would you take two minutes to tell us how it went?"
+        },
+        {
+          "type": "text",
+          "text": "Honest reviews are how other homeowners and pros figure out whether a beam will look real overhead, whether a corbel is the right scale, or whether a shutter color suits the house. Good, bad or in between, your words help."
+        },
+        {
+          "type": "text",
+          "text": "If it's installed, we'd love to see it. Tag us at {{ INSTAGRAM_HANDLE }} on Instagram."
+        },
+        {
+          "type": "text",
+          "text": "And if something isn't right, call us at 1-888-573-3768 and we'll help, whether or not you leave a review."
+        },
+        {
+          "type": "text",
+          "text": "Thanks for choosing us for your project.\nThe Architectural Depot team"
+        }
+      ],
+      "cta": {
+        "label": "Write a review",
+        "url": "https://www.architecturaldepot.com/architecturaldepot-customer-reviews.html"
+      },
+      "style": "plain"
+    },
+    {
+      "id": "PP-S2",
+      "channel": "sms",
+      "branch": "All",
+      "timing": "Day 15, 11am local (made-to-order path: 1 day after PP-E3)",
+      "offset_hours": 360,
+      "condition": "Can receive SMS marketing AND has not clicked the review link in PP-E3 (or no Submitted Review event, if synced)",
+      "name": "One-tap review",
+      "purpose": "One short text for people who missed the email. Easy, one link, no pressure.",
+      "text": "Architectural Depot: How did your project turn out? A quick review helps the next person plan theirs: {link} Reply STOP to opt out",
+      "link": "https://www.architecturaldepot.com/architecturaldepot-customer-reviews.html"
+    },
+    {
+      "id": "PP-E4",
+      "channel": "email",
+      "branch": "All",
+      "timing": "Day 21 (made-to-order path: 7 days after PP-E3)",
+      "offset_hours": 504,
+      "condition": "None. If Miva sends a shipment event, also require that the order has shipped so the Depot Dollars line is true.",
+      "name": "Complete the look + Depot Dollars ready",
+      "purpose": "Suggest the smaller pieces that make the project look finished, mapped to what they bought, and remind them their 5% back is ready to spend. Help-first cross-sell, not a hard sell.",
+      "subject": "Your Depot Dollars are ready to use",
+      "subject_b": "What pairs with your {{ category_name }}",
+      "preheader": "The finishing pieces for your project, and the 5% back you earned to put toward them.",
+      "hero": {
+        "eyebrow": "Complete the look",
+        "headline": "The finishing pieces",
+        "subhead": "What pairs well with what you ordered, and Depot Dollars to put toward it.",
+        "image": "Layered vignette showing pieces working together: a mantel with corbels beneath and crown moulding above, or faux wood beams with matching straps. Real Ekena product photography in a styled room."
+      },
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Hi {{ first_name|default:'there' }}, once the main pieces are up, it's often the smaller ones that make a project look finished: corbels under a mantel shelf, straps on a beam, a medallion above a light. Here's what pairs with what you ordered."
+        },
+        {
+          "type": "products",
+          "title": "Picked to go with your order",
+          "source": "Dynamic cross-sell by purchased category (map in build_notes): corbels > shelf brackets, mantels; beams > beam straps, brackets, corbels; shutters > SteelTek shutter hardware; mantels > corbels, moulding; columns > balustrade railing kits; moulding > ceiling medallions. Exclude purchased items; prefer the same material line and finish.",
+          "count": 3
+        },
+        {
+          "type": "cards",
+          "title": "Natural pairings",
+          "items": [
+            {
+              "title": "Beams",
+              "text": "Add beam straps, brackets or corbels.",
+              "url": "https://www.architecturaldepot.com/beams.html"
+            },
+            {
+              "title": "Corbels",
+              "text": "Pair with shelf brackets or a mantel to carry the style across the room."
+            },
+            {
+              "title": "Shutters",
+              "text": "Finish them with SteelTek shutter hardware."
+            },
+            {
+              "title": "Mantels",
+              "text": "Frame the fireplace with corbels and moulding."
+            },
+            {
+              "title": "Columns",
+              "text": "Connect them with a balustrade railing kit."
+            },
+            {
+              "title": "Moulding",
+              "text": "Add a ceiling medallion to anchor a light fixture.",
+              "url": "https://www.architecturaldepot.com/moulding.html"
+            }
+          ]
+        },
+        {
+          "type": "callout",
+          "title": "Your Depot Dollars are ready",
+          "text": "The 5% back from your order is ready to use now that it has shipped. Each $1 in Depot Dollars takes $1 off a future order. They expire 90 days after they're earned and aren't valid on shipping, handling or tax."
+        }
+      ],
+      "cta": {
+        "label": "Shop the finishing pieces",
+        "url": "https://www.architecturaldepot.com/ekena-millwork.html"
+      },
+      "ps": "Not sure what fits with what you have? Call 1-888-573-3768 and we'll help you match it.",
+      "style": "designed",
+      "alt_versions": [
+        {
+          "label": "Balance-synced version",
+          "subject": "You have {{ depot_dollars_balance }} to spend",
+          "headline": "Your {{ depot_dollars_balance }} is ready",
+          "notes": "Use once depot_dollars_balance and depot_dollars_expiration_date sync from Miva. Replace the callout text with: 'You have {{ depot_dollars_balance }} in Depot Dollars, good until {{ depot_dollars_expiration_date }}. Each $1 takes $1 off a future order; not valid on shipping, handling or tax.' Hide the callout when the balance is 0."
+        }
+      ]
+    }
+  ]
+}

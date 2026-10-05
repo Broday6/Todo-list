@@ -1,0 +1,171 @@
+{
+  "id": "depot-dollars",
+  "code": "DD",
+  "name": "Depot Dollars Expiring",
+  "phase": 2,
+  "priority_rank": 6,
+  "goal": "Get customers to spend their Depot Dollars before they expire by reminding them of the balance, showing small pieces it can go toward and explaining how to apply it at checkout.",
+  "trigger": "Date-based: Klaviyo date-property trigger on the profile property depot_dollars_expiration_date. Hour 0 = the expiry date; messages go out 14, 3 and 2 days before it. Requires a Miva -> Klaviyo sync of depot_dollars_balance and depot_dollars_expiration_date. Until that sync exists, use the fallback: Klaviyo metric trigger Placed Order, with the first message 76 days after the order.",
+  "flow_filters": [
+    "depot_dollars_balance > 0 (when synced). Klaviyo re-checks flow filters before every message, so a balance that is spent or expires stops the flow.",
+    "Placed Order zero times since starting this flow.",
+    "Fallback build only: no balance is available to filter on, so the Placed Order filter does the work. A newer order removes the profile from the older order's reminders and starts its own run."
+  ],
+  "exit_conditions": [
+    "Places any order (flow filter). Post-Purchase takes over, and its E4 already says the new Depot Dollars are ready.",
+    "depot_dollars_balance drops to 0 because the balance was used or has expired.",
+    "The expiry date passes. E2, 2 days before, is the last message.",
+    "Unsubscribes from email: the email steps stop but S1 still sends if SMS-consented. Replies STOP: S1 is skipped but the emails still send."
+  ],
+  "smart_sending": "Email on (16h) / SMS on (24h). This is the program default. DD ranks below Post-Purchase, Cart and Sample-to-Order, so if one of those sent within the window, this reminder gives way. If Smart Sending skips E2, SMS subscribers already got the date in S1.",
+  "branches": [
+    {
+      "id": "All",
+      "label": "Everyone with an expiring balance",
+      "rule": "No split. The fallback build (Placed Order + 76 days) uses the no-balance alt versions of E1 and E2 and the fallback S1 text in build_notes."
+    }
+  ],
+  "kpis": [
+    {"metric": "Placed order rate before expiry (per recipient)", "target": "5% (starting benchmark; reset after 60 days of data)"},
+    {"metric": "Share of expiring Depot Dollars redeemed before expiry", "target": "Set a baseline in the first 60 days, then +25%"},
+    {"metric": "Email click rate", "target": "4%"},
+    {"metric": "SMS click rate", "target": "8%"},
+    {"metric": "Email unsubscribe rate per send", "target": "< 0.3%"},
+    {"metric": "SMS opt-out rate per send", "target": "< 1.5%"}
+  ],
+  "build_notes": [
+    "Data (required for the full build): sync two profile properties from Miva to Klaviyo at least daily, and again after every order, shipment and Depot Dollars redemption. (1) depot_dollars_expiration_date: the last day the soonest-expiring unspent Depot Dollars can be used, stored as a date. (2) depot_dollars_balance: the amount expiring on that date, formatted as currency with the dollar sign (e.g. $37.50). Every subject, SMS and headline assumes the token renders with the $ sign. Show the date in a readable format such as 'October 19'.",
+    "If Miva can only provide the total balance (not the amount expiring on the next date), tell the copy owner. For customers whose Depot Dollars come from more than one order, 'Your $X expires on [date]' would then overstate what is expiring, and the lines need to read 'Some of your $X in Depot Dollars expires on [date]'.",
+    "Trigger setup: a one-time Klaviyo date-property flow on depot_dollars_expiration_date (not set to repeat annually). Hour 0 = expiry date. DD-E1 goes out 14 days before at 10am local (offset_hours -336), DD-S1 3 days before at 11am local (-72) and DD-E2 2 days before at 10am local (-48). The profile qualifies again whenever the property moves to a new date after a later order.",
+    "Fallback until the sync exists: metric trigger Placed Order. E1 goes out 76 days after the order, S1 after 87 days and E2 after 88 days. Depot Dollars become available when the order ships and expire 90 days after they are earned, so the real expiry is on or after order date + 90 and fallback reminders arrive early, never late. Use the alt_versions of E1 and E2 (no balance or date tokens) and this S1 text: 'Architectural Depot: The Depot Dollars from your last order expire soon. Use them at checkout: {link} Reply STOP to opt out'.",
+    "Checkout mechanics: verify before launch. DD-E2 step 2 assumes the balance appears when the customer checks out signed in to the account that earned it, and step 3 assumes they apply it during checkout. Confirm with the Miva setup whether sign-in is required and whether Depot Dollars apply automatically or must be selected, then adjust steps 2 and 3 if needed.",
+    "The small-item cards (finials, plinth blocks, ceiling medallions, samples, shutter hardware) are ideas, not prices. Never show prices or 'free' language next to them, because balances vary and an item can cost more than the balance. Only the sample card links out, to the verified /BM-MAT-SAMPLE.html. Add category links for the other cards once their URLs are verified.",
+    "Priority: DD ranks below Post-Purchase, Cart and Sample-to-Order. Rely on Smart Sending for collisions and do not add 'not in flow X' filters here, because a flow filter would remove the profile from the rest of the reminder sequence.",
+    "SMS: DD-S1 goes out at 11am recipient local time, inside the 10am-8pm quiet-hours window, and counts toward the 3-per-rolling-7-days cap. With literal tokens the text is 160 characters. With a real balance and date it renders at about 125.",
+    "Images: use real Ekena product photography. The balance and date are always live HTML text and are never baked into an image."
+  ],
+  "steps": [
+    {
+      "id": "DD-E1",
+      "channel": "email",
+      "branch": "All",
+      "timing": "14 days before expiry - 10am local",
+      "offset_hours": -336,
+      "condition": "depot_dollars_balance > 0",
+      "name": "Your balance + ideas to use it",
+      "purpose": "Make the balance feel real and easy to use. Many people forget they have Depot Dollars, or think they need a big project to use them. Show the amount and the date, then suggest small finishing pieces it can go toward.",
+      "subject": "You have {{ depot_dollars_balance }} to spend",
+      "subject_b": "Put your Depot Dollars toward a finishing touch",
+      "preheader": "They expire {{ depot_dollars_expiration_date }}. A few good ways to use them.",
+      "hero": {
+        "eyebrow": "Depot Dollars",
+        "headline": "You have {{ depot_dollars_balance }} in Depot Dollars",
+        "subhead": "Each Depot Dollar takes $1 off your next order. Use them by {{ depot_dollars_expiration_date }}.",
+        "image": "Close, warm-light detail of a white polyurethane ceiling medallion around a pendant light, with a pair of plinth blocks and a finial resting on a workbench below. Real Ekena product photography. The balance sits on a solid color band as live HTML text and is never baked into the image."
+      },
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Hi {{ first_name|default:'there' }}, your recent purchase earned you Depot Dollars: 5% back, ready to use now. Each one takes $1 off a future order, and this balance expires on **{{ depot_dollars_expiration_date }}**."
+        },
+        {
+          "type": "cards",
+          "title": "Small pieces your balance can go toward",
+          "items": [
+            {"title": "Finials", "text": "A finishing point for a gable peak or the top of a post."},
+            {"title": "Plinth blocks", "text": "They sit where door casing meets the baseboard, for a cleaner, more substantial doorway."},
+            {"title": "Ceiling medallions", "text": "Center a chandelier or pendant and give a plain ceiling a focal point."},
+            {"title": "Material samples", "text": "Thinking about beams? Hold a Timberthane faux wood sample up to your ceiling before you order.", "url": "https://www.architecturaldepot.com/BM-MAT-SAMPLE.html"},
+            {"title": "Shutter hardware", "text": "Hinges and holdbacks that finish a set of exterior shutters."}
+          ]
+        },
+        {
+          "type": "callout",
+          "title": "How Depot Dollars work",
+          "text": "Apply them during checkout. Each Depot Dollar is worth $1 off. They don't cover shipping, handling or tax, have no cash value and can't be transferred."
+        },
+        {
+          "type": "text",
+          "text": "Saving up for something bigger, like [faux wood beams](https://www.architecturaldepot.com/faux-wood-beams.html) or a new mantel? Your Depot Dollars go toward any qualifying order placed by {{ depot_dollars_expiration_date }}."
+        }
+      ],
+      "cta": {"label": "Shop finishing touches", "url": "https://www.architecturaldepot.com/ekena-millwork.html"},
+      "ps": "Not sure what fits your space? Call 1-888-573-3768 (Mon-Fri 8am-6pm CT, Sat 8am-12pm CT) and we'll help you choose.",
+      "style": "designed",
+      "alt_versions": [
+        {
+          "label": "Fallback (no balance sync)",
+          "subject": "Your Depot Dollars expire soon",
+          "headline": "Your Depot Dollars are waiting",
+          "notes": "Use with the Placed Order + 76 days fallback. Remove every {{ depot_dollars_balance }} and {{ depot_dollars_expiration_date }} reference. The opening reads: 'The Depot Dollars you earned on your last order (5% back) expire 90 days after they're earned, so now is a good time to use them.' Preheader: 'A few small pieces they can go toward, and how to apply them.' Keep the cards and the callout as written."
+        }
+      ]
+    },
+    {
+      "id": "DD-S1",
+      "channel": "sms",
+      "branch": "All",
+      "timing": "3 days before expiry - 11am local",
+      "offset_hours": -72,
+      "condition": "Can receive SMS marketing AND depot_dollars_balance > 0",
+      "name": "Balance + expiry date",
+      "purpose": "A short, factual reminder with the balance and date. It reaches people who skimmed past E1 before the last-chance email.",
+      "text": "Architectural Depot: Use your {{ depot_dollars_balance }} in Depot Dollars by {{ depot_dollars_expiration_date }}: {link} Reply STOP to opt out",
+      "link": "https://www.architecturaldepot.com/ekena-millwork.html"
+    },
+    {
+      "id": "DD-E2",
+      "channel": "email",
+      "branch": "All",
+      "timing": "2 days before expiry - 10am local",
+      "offset_hours": -48,
+      "condition": "depot_dollars_balance > 0 AND Placed Order zero times since starting this flow",
+      "name": "Last chance + how to apply",
+      "purpose": "A final, useful reminder. Remove the last bit of friction by showing exactly how to apply Depot Dollars, and suggest an easy small order for anyone without a project in hand.",
+      "subject": "Your Depot Dollars expire in 2 days",
+      "subject_b": "How to use Depot Dollars at checkout",
+      "preheader": "Three quick steps to use them before {{ depot_dollars_expiration_date }}.",
+      "hero": {
+        "eyebrow": "Last chance",
+        "headline": "Your Depot Dollars expire in 2 days",
+        "subhead": "That's {{ depot_dollars_balance }} off your next order, through {{ depot_dollars_expiration_date }}.",
+        "image": "Overhead shot of a tidy workbench with a pair of plinth blocks, a small ceiling medallion and a Timberthane faux wood sample laid out beside a tape measure. Real Ekena product photography, warm daylight, no price tags."
+      },
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Hi {{ first_name|default:'there' }}, a quick heads-up: your **{{ depot_dollars_balance }}** in Depot Dollars expires on **{{ depot_dollars_expiration_date }}**. After that the balance is gone, and we'd much rather see it on your walls."
+        },
+        {
+          "type": "steps",
+          "title": "Using them takes three steps",
+          "items": [
+            {"title": "Add what you need", "text": "Anything from a pair of plinth blocks to a faux wood beam. Depot Dollars go toward any qualifying order."},
+            {"title": "Check out with your account", "text": "Use the same account you ordered with, so your balance is there waiting."},
+            {"title": "Apply your Depot Dollars", "text": "Apply them during checkout. Each one takes $1 off, though they don't cover shipping, handling or tax."}
+          ]
+        },
+        {
+          "type": "callout",
+          "title": "Not sure what to get?",
+          "text": "Small finishing pieces are an easy fit: finials, plinth blocks, a ceiling medallion, shutter hardware or a material sample for the next project on your list."
+        },
+        {
+          "type": "text",
+          "text": "Questions about your balance or what will fit? Call us at 1-888-573-3768, Mon-Fri 8am-6pm CT and Sat 8am-12pm CT."
+        }
+      ],
+      "cta": {"label": "Use my Depot Dollars", "url": "https://www.architecturaldepot.com/ekena-millwork.html"},
+      "ps": "This is our last reminder about this balance before it expires.",
+      "style": "designed",
+      "alt_versions": [
+        {
+          "label": "Fallback (no balance sync)",
+          "subject": "Last call on your Depot Dollars",
+          "headline": "Your Depot Dollars expire soon",
+          "notes": "Use with the Placed Order + 88 days fallback. Remove the balance and date tokens. The opening reads: 'The Depot Dollars from your last order are about to expire, and we'd much rather see them on your walls.' Preheader: 'Three quick steps to apply them at checkout before they're gone.' Keep the steps, callout and phone line."
+        }
+      ]
+    }
+  ]
+}

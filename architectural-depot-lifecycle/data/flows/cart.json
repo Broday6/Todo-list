@@ -1,0 +1,426 @@
+{
+  "id": "cart",
+  "code": "CRT",
+  "name": "Cart & Checkout Abandonment",
+  "phase": 1,
+  "priority_rank": 3,
+  "goal": "Recover started checkouts by answering the questions that stall a millwork order (size, material, delivery, returns, install), giving high-value carts a real person and made-to-order carts an honest, reassuring note.",
+  "trigger": "Started Checkout (Klaviyo metric trigger from the Miva integration). Fallback: Added to Cart, if Miva cannot send Started Checkout.",
+  "flow_filters": [
+    "Placed Order zero times since starting this flow",
+    "Has not been in this flow in the last 7 days",
+    "Can receive email marketing; SMS steps also require SMS consent"
+  ],
+  "exit_conditions": [
+    "Placed Order (any order): exits immediately, all branches",
+    "Unsubscribes from email (email steps stop) or replies STOP (SMS steps stop)"
+  ],
+  "smart_sending": "Email: OFF for CRT-E1 so it lands about an hour after checkout (the cross-flow exception); ON (16h) for CRT-E2, CRT-E2A, CRT-E2B and CRT-E3. SMS: ON (24h), quiet hours 10am-8pm recipient local time, counts toward the 3-per-7-days SMS cap.",
+  "branches": [
+    {
+      "id": "A",
+      "label": "High-value cart",
+      "rule": "Started Checkout value >= $1,000. Checked first, so a high-value cart with made-to-order items lands here (the specialist note covers made-to-order)."
+    },
+    {
+      "id": "B",
+      "label": "Made-to-order in cart",
+      "rule": "Checkout value < $1,000 AND at least one item flagged made-to-order (vinyl shutters, wood shutters, Design Your Own builder items, other made-to-order SKUs)."
+    },
+    {
+      "id": "Default",
+      "label": "Everyone else",
+      "rule": "Checkout value < $1,000 and no made-to-order items."
+    }
+  ],
+  "kpis": [
+    {
+      "metric": "Placed order rate (per recipient, whole flow)",
+      "target": "6%"
+    },
+    {
+      "metric": "Email click rate",
+      "target": "7%"
+    },
+    {
+      "metric": "Branch A reply or call rate (CRT-E2A)",
+      "target": "5%"
+    },
+    {
+      "metric": "SMS click rate",
+      "target": "10%"
+    },
+    {
+      "metric": "Revenue per recipient",
+      "target": "Set baseline in first 30 days, then +10% per quarter"
+    },
+    {
+      "metric": "Email unsubscribe rate",
+      "target": "< 0.3%"
+    },
+    {
+      "metric": "SMS opt-out rate per send",
+      "target": "< 1.5%"
+    }
+  ],
+  "build_notes": [
+    "Started Checkout must carry: line items (name, SKU, image, URL, size/options, quantity, price), checkout $value, and a per-item made-to-order flag (e.g. is_made_to_order from a Miva product custom field). Without the flag, branch B can't be built; route those carts to Default until it exists.",
+    "{{ cart_url }} must restore the cart on any device (a Miva basket-restore or checkout URL passed on the event). If none exists, fall back to https://www.architecturaldepot.com/BASK.html, which only works in the same browser.",
+    "Split order: CRT-E1 and CRT-S1 sit above the splits. Before E2, split 1 on value >= 1000 (A), then split 2 on made-to-order (B), else Default. Klaviyo paths don't rejoin, so duplicate CRT-E3 and CRT-S2 into each path with identical content and ids.",
+    "CRT-E1's 'Made-to-order pieces in your cart' callout is a show/hide block: show only when the cart has a made-to-order item. Its copy is written conditionally, so it still reads correctly if shown to everyone.",
+    "CRT-E2A is a plain-text template: no header, nav or images (keep the required footer). From name: '{{ SPECIALIST_NAME }} at Architectural Depot'. Reply-to must be a monitored inbox (the specialist's or cs@architecturaldepot.com), answered within one business day. Confirm a real, named person before launch; swap in a direct extension if they have one.",
+    "{{ CART_INCENTIVE }} is optional and needs approval before launch. If approved: bonus Depot Dollars only (never a percentage off, never a discount on made-to-order items), valid 48 hours from CRT-E3, credited once the order ships. Set a profile property (cart_incentive_expires) so CS can honor it. If not approved, send CRT-E3's no-incentive version.",
+    "CRT-S2 is written without the incentive. If {{ CART_INCENTIVE }} is approved, swap to: 'Architectural Depot: Last reminder: order your saved cart in the next 48 hrs to earn [incentive in plain words]. {link} Reply STOP to opt out' and keep it under 160 characters, GSM-7 only.",
+    "SMS steps: condition SMS consent = subscribed; quiet hours 10am-8pm local (a text that falls outside waits for the next window).",
+    "No 'not in Post-Purchase' filter on purpose: Klaviyo removes a profile the moment it fails a flow filter, so that filter would cancel cart recovery for any repeat buyer within 3 weeks of an order. Smart Sending (16h) spaces Cart and Post-Purchase emails instead."
+  ],
+  "steps": [
+    {
+      "id": "CRT-E1",
+      "channel": "email",
+      "branch": "All",
+      "timing": "Hour 1 - 1 hour after Started Checkout",
+      "offset_hours": 1,
+      "condition": "None (Smart Sending off)",
+      "name": "Your cart is saved",
+      "purpose": "Catch them while the project is top of mind: show exactly what they picked, take the risk out (price match, 5% back, secure checkout, real people on the phone) and make finishing one click. No incentive.",
+      "subject": "We saved your project picks",
+      "subject_b": "Questions before you check out?",
+      "preheader": "Pick up where you left off, or call us first with a size or finish question.",
+      "hero": {
+        "eyebrow": "Your cart",
+        "headline": "Your project is right where you left it",
+        "subhead": "Everything you picked is saved. Finish when you're ready, or call us first if a size or finish question is holding you up.",
+        "image": "Warm, natural-light photo of a finished Ekena install in the cart's lead category (e.g. Timberthane beams across a living room ceiling, corbels under a kitchen island). Swap by category with show/hide image blocks; fallback is the beam shot. No text on the image."
+      },
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Hi {{ first_name|default:'there' }}, you were one step from checkout, so we kept everything just as you left it."
+        },
+        {
+          "type": "products",
+          "title": "In your cart",
+          "source": "Dynamic: Started Checkout line items (image, name, size/options, quantity, price) plus checkout total; each item links to its product page.",
+          "count": 4
+        },
+        {
+          "type": "button",
+          "label": "Finish my order",
+          "url": "{{ cart_url }}"
+        },
+        {
+          "type": "text",
+          "text": "Millwork orders usually stall on one detail: a length, a finish, a projection. If that's you, call **1-888-573-3768** with your measurements and we'll check the fit with you before you buy."
+        },
+        {
+          "type": "callout",
+          "title": "Made-to-order pieces in your cart",
+          "text": "If your cart includes a made-to-order piece, it's built to your exact size and finish, so it can't be returned. Give your measurements one more check, and call us if you'd like a second set of eyes."
+        },
+        {
+          "type": "cards",
+          "title": "Why order from Architectural Depot",
+          "items": [
+            {
+              "title": "Lower price guarantee",
+              "text": "Find the exact same product for less at another online home improvement store, shipping included, and we'll refund the difference.",
+              "url": "https://www.architecturaldepot.com/HELP.html"
+            },
+            {
+              "title": "5% back in Depot Dollars",
+              "text": "Every qualifying purchase earns $0.05 per $1, ready to use once your order ships."
+            },
+            {
+              "title": "Secure checkout",
+              "text": "Your cart is saved, and checkout is secure whenever you're ready."
+            },
+            {
+              "title": "Real people on the phone",
+              "text": "Call 1-888-573-3768, Mon-Fri 8am-6pm CT or Sat 8am-12pm CT, or email cs@architecturaldepot.com."
+            }
+          ]
+        }
+      ],
+      "cta": {
+        "label": "Finish my order",
+        "url": "{{ cart_url }}"
+      },
+      "ps": "Not sure about a finish? Order a material sample and see it in your own light first.",
+      "style": "designed"
+    },
+    {
+      "id": "CRT-S1",
+      "channel": "sms",
+      "branch": "All",
+      "timing": "Hour 2 - 2 hours after Started Checkout (10am-8pm local)",
+      "offset_hours": 2,
+      "condition": "SMS consent = subscribed",
+      "name": "Cart saved + help line",
+      "purpose": "A short, helpful nudge on the channel they're most likely to see: the cart is saved and a person can answer the size or finish question.",
+      "text": "Architectural Depot: Your cart is saved. Questions on size or finish? Call 1-888-573-3768 or check out here: {link} Reply STOP to opt out",
+      "link": "{{ cart_url }}"
+    },
+    {
+      "id": "CRT-E2A",
+      "channel": "email",
+      "branch": "A",
+      "timing": "Day 1 - 24 hours after Started Checkout",
+      "offset_hours": 24,
+      "condition": "Branch A: checkout value >= $1,000",
+      "name": "Specialist note (high-value cart)",
+      "purpose": "A large millwork order deserves a person. A short plain-text note from a named project specialist offering a call to confirm sizes, material, finish and delivery timing before they commit. Must feel one-to-one, not like marketing.",
+      "subject": "A quick note about your project",
+      "subject_b": "Can I help you check those sizes?",
+      "preheader": "I'm a project specialist here, and I'd be glad to look over your order with you.",
+      "hero": {
+        "eyebrow": "Personal note",
+        "headline": "Want me to look over your order with you?",
+        "subhead": "Plain-text note from {{ SPECIALIST_NAME }} offering a call to confirm sizes, materials, finish and delivery timing. Reply-to is a real inbox.",
+        "image": "None. Plain-text email with no images (internal summary only)."
+      },
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Hi {{ first_name|default:'there' }},"
+        },
+        {
+          "type": "text",
+          "text": "I'm {{ SPECIALIST_NAME }}, a project specialist at Architectural Depot. Your order is still sitting in your cart, and with a project this size I like to reach out personally before you place it."
+        },
+        {
+          "type": "text",
+          "text": "On bigger millwork orders, a quick call is often the easiest way to settle the details that matter: lengths and projections, the right material for interior or exterior, the finish, and when everything will arrive."
+        },
+        {
+          "type": "text",
+          "text": "If anything in your cart is made to order, it's built to your exact size and can't be returned, so I'm glad to go over your measurements with you first."
+        },
+        {
+          "type": "text",
+          "text": "Just reply with a good time to call, or reach me at 1-888-573-3768 (Mon-Fri 8am-6pm CT, Sat 8am-12pm CT). Your cart is saved whenever you're ready."
+        },
+        {
+          "type": "text",
+          "text": "Thanks,\n{{ SPECIALIST_NAME }}\nProject Specialist, Architectural Depot\n1-888-573-3768 | cs@architecturaldepot.com"
+        }
+      ],
+      "cta": {
+        "label": "Review my cart",
+        "url": "{{ cart_url }}"
+      },
+      "style": "plain"
+    },
+    {
+      "id": "CRT-E2B",
+      "channel": "email",
+      "branch": "B",
+      "timing": "Day 1 - 24 hours after Started Checkout",
+      "offset_hours": 24,
+      "condition": "Branch B: checkout value < $1,000 AND cart contains a made-to-order item",
+      "name": "Made for you + quick answers",
+      "purpose": "Their cart includes a made-to-order piece. Explain plainly and warmly what that means (built to their size, not returnable, double-check measurements, {{ MTO_LEAD_TIME }}), then clear the other common questions. Confidence, never fear.",
+      "subject": "Your made-to-order pieces, explained",
+      "subject_b": "Measure twice, order once",
+      "preheader": "What built to order means for your project, plus quick answers on shipping and install.",
+      "hero": {
+        "eyebrow": "Made for your project",
+        "headline": "Some of your cart is built just for you",
+        "subhead": "Made-to-order millwork is made to your size and finish. Here's what that means, and how we help you get it right the first time.",
+        "image": "Craft detail: a custom-length faux wood beam or a custom shutter on a clean workbench with a tape measure and pencil marks. Warm light; should feel like care and craftsmanship, not a factory."
+      },
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Hi {{ first_name|default:'there' }}, your cart includes at least one made-to-order piece. It's built for your project after you order, to the exact size and finish you chose, instead of coming off a shelf."
+        },
+        {
+          "type": "products",
+          "title": "Your cart",
+          "source": "Dynamic: Started Checkout line items (image, name, size/options, quantity, price); made-to-order items labeled 'Made to order'.",
+          "count": 4
+        },
+        {
+          "type": "steps",
+          "title": "Getting a made-to-order piece right",
+          "items": [
+            {
+              "title": "Measure twice",
+              "text": "Re-check width, height, length and projection against the product specs, right where the piece will be installed."
+            },
+            {
+              "title": "Confirm the details",
+              "text": "It's built exactly as ordered, so a made-to-order item can't be returned. Make sure the size, profile and finish are the ones you want."
+            },
+            {
+              "title": "Plan your timing",
+              "text": "Production time: {{ MTO_LEAD_TIME }}. Build that into your project schedule."
+            }
+          ]
+        },
+        {
+          "type": "cards",
+          "title": "Quick answers",
+          "items": [
+            {
+              "title": "Interior or exterior?",
+              "text": "Tell us where it's going and we'll point you to the right material."
+            },
+            {
+              "title": "Shipping",
+              "text": "Items marked \"Free Shipping\" ship free to the lower 48 states."
+            },
+            {
+              "title": "Install",
+              "text": "Product pages list the specs, and many include an install guide."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Want a second set of eyes on your numbers? Call 1-888-573-3768 (Mon-Fri 8am-6pm CT, Sat 8am-12pm CT) and we'll go over them with you."
+        }
+      ],
+      "cta": {
+        "label": "Review my cart",
+        "url": "{{ cart_url }}"
+      },
+      "style": "designed"
+    },
+    {
+      "id": "CRT-E2",
+      "channel": "email",
+      "branch": "Default",
+      "timing": "Day 1 - 24 hours after Started Checkout",
+      "offset_hours": 24,
+      "condition": "Default: checkout value < $1,000 and no made-to-order items",
+      "name": "Quick answers before checkout",
+      "purpose": "Answer the questions behind most abandoned millwork carts (size, material, shipping, returns, install) in a scannable mini-FAQ, with a real person as the fallback.",
+      "subject": "Size, material, shipping: quick answers",
+      "subject_b": "Still measuring? We can help",
+      "preheader": "Sizing, materials, shipping, returns and install, answered in about two minutes.",
+      "hero": {
+        "eyebrow": "Quick answers",
+        "headline": "The five questions we hear most before checkout",
+        "subhead": "If one of these is holding up your order, here's the straight answer.",
+        "image": "Overhead flat-lay of a project in progress: tape measure, a sketched elevation with dimensions, a corbel and a short moulding profile on a workbench. Natural light."
+      },
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Hi {{ first_name|default:'there' }}, your cart is still saved. If something is holding you back, it's probably one of these."
+        },
+        {
+          "type": "cards",
+          "title": "Before you check out",
+          "items": [
+            {
+              "title": "Is it the right size?",
+              "text": "Check the dimensions on the product page against your space: beam span, corbel depth, shutter height. Not sure? Send us your measurements."
+            },
+            {
+              "title": "Which material?",
+              "text": "Timberthane faux wood gives you the look of wood, maintenance-free. AmeriCraft is stain-grade real wood. Interior or exterior, tell us where it's going and we'll steer you right."
+            },
+            {
+              "title": "When will it ship?",
+              "text": "Heritage Series beams ship in 24-72 hours. Items marked \"Free Shipping\" ship free to the lower 48 states."
+            },
+            {
+              "title": "Can I return it?",
+              "text": "Most items can be returned within 30 days of delivery for a partial refund (20% processing fee; you cover return shipping). Made-to-order items can't be returned."
+            },
+            {
+              "title": "How does it install?",
+              "text": "Product pages list the specs, and many include an install guide. Read it before you order so you know what the job takes."
+            }
+          ]
+        },
+        {
+          "type": "products",
+          "title": "Still in your cart",
+          "source": "Dynamic: Started Checkout line items (image, name, size/options, price), each linked to its product page.",
+          "count": 3
+        },
+        {
+          "type": "text",
+          "text": "Still have a question? Call 1-888-573-3768 (Mon-Fri 8am-6pm CT, Sat 8am-12pm CT) or email cs@architecturaldepot.com."
+        }
+      ],
+      "cta": {
+        "label": "Finish my order",
+        "url": "{{ cart_url }}"
+      },
+      "style": "designed"
+    },
+    {
+      "id": "CRT-E3",
+      "channel": "email",
+      "branch": "All",
+      "timing": "Day 3 - 72 hours after Started Checkout",
+      "offset_hours": 72,
+      "condition": "None (all branches; duplicated into each path)",
+      "name": "Last reminder + optional incentive",
+      "purpose": "Final nudge before the cart goes cold. If {{ CART_INCENTIVE }} is approved, offer it as bonus Depot Dollars that expire in 48 hours (never a percentage off). If not, send the no-incentive version that leads with 5% back and the price guarantee.",
+      "subject": "Last call on your saved cart",
+      "subject_b": "A little extra for finishing your order",
+      "preheader": "Order in the next 48 hours and earn {{ CART_INCENTIVE }} on it.",
+      "hero": {
+        "eyebrow": "Last reminder",
+        "headline": "Ready to finish your project?",
+        "subhead": "Your cart is still saved. Order within 48 hours to earn {{ CART_INCENTIVE }}.",
+        "image": "The finished look for the cart's lead category: a styled room or facade (beamed ceiling, mantel wall or shuttered exterior) in late-afternoon light. Aspirational but realistic."
+      },
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Hi {{ first_name|default:'there' }}, this is our last reminder about your saved cart. Your picks are below whenever your project is ready for them."
+        },
+        {
+          "type": "products",
+          "title": "Still in your cart",
+          "source": "Dynamic: Started Checkout line items (image, name, size/options, quantity, price) plus checkout total.",
+          "count": 4
+        },
+        {
+          "type": "callout",
+          "title": "Earn {{ CART_INCENTIVE }} on this order",
+          "text": "Order within 48 hours and you'll earn {{ CART_INCENTIVE }} instead of the usual 5% back. Each Depot Dollar is $1 off a future order once this one ships, for 90 days (not valid on shipping, handling or tax)."
+        },
+        {
+          "type": "bullets",
+          "items": [
+            "**Lower price guarantee:** find the exact same product for less at another online home improvement store, shipping included, and we'll refund the difference.",
+            "**Made-to-order pieces:** if your cart has any, they're built to your size and can't be returned, so give your measurements one last check.",
+            "**Questions first?** Call 1-888-573-3768, Mon-Fri 8am-6pm CT or Sat 8am-12pm CT."
+          ]
+        }
+      ],
+      "cta": {
+        "label": "Finish my order",
+        "url": "{{ cart_url }}"
+      },
+      "style": "designed",
+      "alt_versions": [
+        {
+          "label": "No-incentive version (send if {{ CART_INCENTIVE }} is not approved)",
+          "subject": "Last call on your saved cart",
+          "headline": "Ready to finish your project?",
+          "notes": "subject_b: 'Your cart is saved, and so is your 5% back'. Preheader: 'Your picks are still saved, and every qualifying order earns 5% back in Depot Dollars.' Hero subhead: 'Your cart is still saved whenever you're ready.' Replace the incentive callout with title 'Your 5% back' and text 'Every qualifying order earns 5% back in Depot Dollars, ready once it ships. Each Depot Dollar is $1 off a future order for 90 days (not valid on shipping, handling or tax).' Everything else stays."
+        }
+      ]
+    },
+    {
+      "id": "CRT-S2",
+      "channel": "sms",
+      "branch": "All",
+      "timing": "Day 3 - 73 hours after Started Checkout (10am-8pm local)",
+      "offset_hours": 73,
+      "condition": "SMS consent = subscribed",
+      "name": "Last reminder text",
+      "purpose": "Last-chance text that matches CRT-E3: cart still saved, help available. Incentive wording only if {{ CART_INCENTIVE }} is approved (see build notes).",
+      "text": "Architectural Depot: Last reminder: your cart is still saved. Sizing questions? Call 1-888-573-3768. {link} Reply STOP to opt out",
+      "link": "{{ cart_url }}"
+    }
+  ]
+}
