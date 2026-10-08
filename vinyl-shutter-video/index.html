@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Vinyl Shutter Install</title>
+<style>
+  @font-face { font-family: Poppins; font-weight: 500; src: url(node_modules/@fontsource/poppins/files/poppins-latin-500-normal.woff2); }
+  @font-face { font-family: Poppins; font-weight: 600; src: url(node_modules/@fontsource/poppins/files/poppins-latin-600-normal.woff2); }
+  @font-face { font-family: Poppins; font-weight: 700; src: url(node_modules/@fontsource/poppins/files/poppins-latin-700-normal.woff2); }
+  html, body { margin: 0; width: 1920px; height: 1080px; overflow: hidden; background: #000; }
+  #stage { position: relative; width: 1920px; height: 1080px; font-family: Poppins, sans-serif; }
+  canvas { position: absolute; inset: 0; display: block; }
+  #scrim { position: absolute; inset: 0; pointer-events: none; opacity: 0; }
+  #overlay { position: absolute; inset: 0; pointer-events: none; color: #fff; }
+  .blk { position: absolute; opacity: 0; will-change: transform, opacity; }
+  .shadow { text-shadow: 0 2px 6px rgba(0,0,0,.35), 0 8px 30px rgba(0,0,0,.30); }
+  .kicker { font-weight: 600; font-size: 40px; letter-spacing: .14em; text-transform: uppercase; color: #fff; display: flex; align-items: center; gap: 22px; }
+  .kicker::before { content: ""; width: 64px; height: 6px; background: #fff; border-radius: 3px; }
+  .h1 { font-weight: 700; font-size: 112px; line-height: 1.02; }
+  .h2 { font-weight: 600; font-size: 86px; line-height: 1.08; }
+  .sub { font-weight: 500; font-size: 38px; line-height: 1.35; opacity: .96; margin-top: 18px; }
+  .label { position: absolute; font-weight: 600; font-size: 34px; color: #2b2d2f; white-space: nowrap; opacity: 0; transform: translate(-50%, 0); }
+  .label small { display: block; font-weight: 500; font-size: 24px; color: #6b6e71; }
+  .dark { color: #26282a; text-shadow: none; }
+  .dark .kicker, .dark.kicker { color: #26282a; }
+  .dark .kicker::before { background: #26282a; }
+</style>
+<script type="importmap">{ "imports": { "three": "./node_modules/three/build/three.module.js", "three/addons/": "./node_modules/three/examples/jsm/" } }</script>
+</head>
+<body>
+<div id="stage">
+  <div id="scrim"></div>
+  <div id="overlay"></div>
+</div>
+<script type="module" src="scene.js"></script>
+</body>
+</html>
