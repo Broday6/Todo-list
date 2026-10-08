@@ -206,8 +206,8 @@ function wallZ(x, y) { ray.set(V(x, y, 50), V(0, 0, -1)); const hit = ray.inters
 {
   const r = rng(3);
   const spots = [[-150, 15, 22], [-120, 17, 20], [-90, 15, 22], [-62, 16, 20], [-34, 13, 26], [-8, 15, 22], [18, 14, 24], [44, 13, 26], [70, 16, 20], [96, 14, 24], [124, 16, 21], [152, 15, 22]];
-  const PER = 900;
-  const leaf = new THREE.SphereGeometry(1, 7, 4); leaf.scale(1.25, .32, .7);
+  const PER = 450;
+  const leaf = new THREE.SphereGeometry(1, 7, 4); leaf.scale(1.6, .4, .9);
   const leavesI = new THREE.InstancedMesh(leaf, new THREE.MeshStandardMaterial({ color: '#ffffff', roughness: .75 }), spots.length * PER);
   const o = new THREE.Object3D(), col = new THREE.Color(); let n = 0;
   const core = new THREE.MeshStandardMaterial({ color: '#22301a', roughness: 1 });
@@ -455,7 +455,7 @@ scene.add(leaves);
 // ---------- lights ----------
 const hemi = new THREE.HemisphereLight('#e6eef7', '#8d8172', .55); scene.add(hemi);
 const sun = new THREE.DirectionalLight('#fff4e5', 2.7); scene.add(sun, sun.target);
-sun.castShadow = true; sun.shadow.mapSize.set(4096, 4096); sun.shadow.bias = -.0004; sun.shadow.normalBias = .02;
+sun.castShadow = true; sun.shadow.mapSize.set(2048, 2048); sun.shadow.bias = -.0004; sun.shadow.normalBias = .02;
 const SUN_DIR = V(-.55, .62, .56).normalize();
 function setSun(target, half, intensity = 2.7, dir = SUN_DIR) {
   sun.target.position.copy(target); sun.position.copy(target).addScaledVector(dir, 400);
