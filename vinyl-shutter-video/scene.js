@@ -728,8 +728,8 @@ const SCENES = {
     const k = eio(0, 8.5, t);
     const ang = mix(.42, 0, k), dist = mix(190, 250, k), cx = mix(-10, -50, k);
     look(V(cx + Math.sin(ang) * dist, mix(60, 74, k), Math.cos(ang) * dist), V(cx, mix(68, 72, k), 0));
-    setScrim('left', .9 * ss(2.5, 4, t));
-    showBlocks([{ html: `<div class="h2" style="font-size:96px">A Simple Upgrade.</div><div class="h2" style="font-size:96px">A Beautiful Finish.</div>`, x: 120, y: 300, w: 1000, t0: 3.2 }], t);
+    setScrim('left', .9 * ss(4, 5.5, t));
+    showBlocks([{ html: `<div class="h2" style="font-size:96px">A Simple Upgrade.</div><div class="h2" style="font-size:96px">A Beautiful Finish.</div>`, x: 120, y: 300, w: 1000, t0: 4.8 }], t);
   } },
 };
 
