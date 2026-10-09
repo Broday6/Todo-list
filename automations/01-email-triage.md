@@ -1,13 +1,24 @@
 # 01 — Email triage (8:00 block)
 
-**Status:** Spec written 2026-10-09. Routine not created yet. Planned: "E-comm 01: Morning email triage", weekdays 7:12 ET (before 8:00 in both ET and CT), fresh session each run, Microsoft 365 connector.
+**Status:** Rebuilt to run locally on Brody's PC (2026-10-09). Prompt: [local/01-email-triage.prompt.md](local/01-email-triage.prompt.md). Brody registers the schedule himself (below). No cloud routine.
+
+## Set it up on the PC (Brody, about 3 minutes)
+
+1. Open the Claude Desktop app. Check that Microsoft 365 is connected under Settings → Connectors.
+2. Create a new scheduled task (in Cowork / Claude Code on desktop: the Scheduled section, "New task").
+3. Name: `E-comm 01 - Morning email triage`. Schedule: weekdays, 7:12 AM (before the 8:00 block in ET or CT).
+4. Paste the full text of `local/01-email-triage.prompt.md` as the task prompt.
+5. Permissions: allow Microsoft 365 mail search, read, and create reply draft; allow writing files in `OneDrive\Claude Automations`. Do **not** allow send mail or send draft.
+6. Click "Run now" once and check Outlook Drafts and the summary file.
+
+The PC must be on and signed in at 7:12. Desktop scheduled tasks don't run while the machine sleeps; they catch up when it wakes.
 
 ## What it does
 
 1. Reads every inbox email since the last weekday's 5:00 PM.
 2. Sorts each one into a bucket.
 3. Writes Outlook reply drafts for "Needs Brody" items. Never sends.
-4. Posts one summary and pushes to Brody's phone only if something is urgent.
+4. Saves one summary to `OneDrive\Claude Automations\email-triage\<date>.md`, starting with "URGENT" when something can't wait.
 
 ## Buckets
 
@@ -21,34 +32,7 @@
 
 ## Routine prompt
 
-```
-You are running Brody Simpson's 8:00 email triage. Brody is E-Commerce Team Lead at PCI Enterprises
-(b.simpson@pcienterprises.com; also b.simpson@architecturaldepot.com and b.simpson@millwork.com).
-
-Rules: never send email, never delete, move or mark anything read. Drafts only. Plain, specific
-writing, no filler. Do not invent facts in drafts; leave [brackets] where Brody must fill in.
-
-1. Use the Microsoft 365 connector. Search the inbox for email received since the previous weekday
-   at 17:00 Eastern (on Monday, since Friday 17:00). Page through every result.
-2. Read the full body of anything not obviously noise. Sort each email:
-   - NEEDS BRODY: Brody is in To and someone asks him a question, requests something or needs a
-     decision; or the sender is Ethan Sellek, Robert Sellek, Tory Kepler or Daniel Milkie and the
-     thread waits on Brody. Skip it if Brody already replied later in the same thread.
-   - CASE ALERT: subject contains "ALERT - ECOM - Pending Cases".
-   - BUG: sender notifications@bugherd.com. Capture task number, status and the comment text.
-   - FYI: Brody only CC'd, or someone else already handled it.
-   - NOISE: order confirmations, newsletters, vendor marketing, meeting reminders.
-3. For each NEEDS BRODY email, create a reply draft on that thread (outlook_create_reply_draft, or
-   reply-all when others on the thread need the answer). Short, in Brody's voice, signed "Brody".
-4. Final message, in this order:
-   - "Needs you" — sender, subject, one-line ask, and "draft ready" or why there is no draft.
-   - "Cases for 9:30" — count and case numbers if present in the alert.
-   - "Bugs for 9:00" — BugHerd task numbers with one line each.
-   - "FYI" — one line each, max 10.
-   - "Noise" — a count only.
-5. If any NEEDS BRODY item came from Ethan Sellek or Robert Sellek, or is marked high importance,
-   say "URGENT" in the first line so the push notification fires.
-```
+See [local/01-email-triage.prompt.md](local/01-email-triage.prompt.md). Edit it there only.
 
 ## To do / next improvements
 

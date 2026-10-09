@@ -17,11 +17,15 @@ One file per daily task. Each file holds the routine prompt, its rules and its s
 - Never judge ads on ROAS. Judge portal groups on spend against the 7.5% cap and 12% growth.
 - Push to Brody's phone only when something needs him.
 
+## Where they run
+
+All automations run locally on Brody's PC as Claude Desktop scheduled tasks, so they can use his signed-in Chrome (NotebookLM, NetSuite, Miva, Marketing Portal, Strety) as well as the connectors. Prompts live in `local/`.
+
 ## Daily tasks
 
 | # | Time | Task | What gets automated | Where it runs | Status |
 |---|------|------|---------------------|---------------|--------|
-| 1 | 8:00 | Check and respond to emails (20 min) | Triage the inbox, draft replies, pull case alerts and BugHerd mentions into lists | Cloud routine, Outlook connector | **Spec written, routine not created yet** — [01-email-triage.md](01-email-triage.md) |
+| 1 | 8:00 | Check and respond to emails (20 min) | Triage the inbox, draft replies, pull case alerts and BugHerd mentions into lists | Brody's PC (Claude Desktop scheduled task) | **Built, Brody to schedule** — [01-email-triage.md](01-email-triage.md) |
 | 2 | 8:20 | Review daily metrics and KPIs (20 min) | Marketing Portal read per group: spend vs 7.5% cap, growth vs 12% | Brody's PC (portal is logged-in) | To do |
 | 3 | 8:40 | Team check-in (20 min) | Per-person agenda: open Asana tasks, overdue items, yesterday's emails from each team member | Cloud routine, Asana + Outlook | To do |
 | 4 | 9:00 | Bug Herds, complete 5 (30 min, Rock time) | Rank open BugHerd "Our Websites Bugs" tasks, draft fixes or owner hand-offs for the top 5 | Cloud routine, BugHerd notification emails | To do |
