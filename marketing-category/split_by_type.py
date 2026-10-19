@@ -28,7 +28,13 @@ def read_rows(path):
             break
         except UnicodeDecodeError:
             continue
-    reader = csv.DictReader(text.splitlines())
+    # Accept OneDrive page reads pasted together: drop the header each page
+    # repeats and the "[page N ...]" / "[truncated: ...]" footers.
+    lines = [l for l in text.splitlines() if l.strip()]
+    header = lines[0]
+    body = [l for l in lines[1:]
+            if l != header and not re.match(r"^\[(page \d|truncated:)", l)]
+    reader = csv.DictReader([header] + body)
     return reader.fieldnames, list(reader)
 
 
@@ -62,6 +68,9 @@ def main(src, out_dir):
     mapping = json.load(open(os.path.join(HERE, "category_map.json")))
     marketing_values = set(mapping.values())
     fields, rows = read_rows(src)
+    id_col = find_col(fields, "internal id")
+    seen = set()
+    rows = [r for r in rows if not (r[id_col] in seen or seen.add(r[id_col]))]
     type_col = find_col(fields, "type")
     name_col = find_col(fields, "name")
     pc_col = find_col(fields, "product categories", "product category")
