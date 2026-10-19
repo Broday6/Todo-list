@@ -19,6 +19,24 @@ from collections import Counter, defaultdict
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 
+# Internal type ids (as in Miva/NetSuite exports) -> NetSuite's display names.
+TYPE_NAMES = {
+    "_assembly": "Assembly/Bill of Materials",
+    "_kit": "Kit/Package",
+    "_inventoryItem": "Inventory Item",
+    "_nonInventoryItem": "Non-inventory Item",
+    "_service": "Service",
+    "_otherCharge": "Other Charge",
+    "_itemGroup": "Item Group",
+    "_discount": "Discount",
+    "_markup": "Markup",
+    "_description": "Description",
+    "_subtotal": "Subtotal",
+    "_payment": "Payment",
+    "_giftCertificate": "Gift Certificate",
+    "_downloadItem": "Download Item",
+}
+
 
 def read_rows(path):
     raw = open(path, "rb").read()
@@ -72,7 +90,9 @@ def main(src, out_dir):
     seen = set()
     rows = [r for r in rows if not (r[id_col] in seen or seen.add(r[id_col]))]
     type_col = find_col(fields, "type")
-    name_col = find_col(fields, "name")
+    name_col = find_col(fields, "name", "sku")
+    for r in rows:
+        r[type_col] = TYPE_NAMES.get(r[type_col].strip(), r[type_col].strip())
     pc_col = find_col(fields, "product categories", "product category")
     mc_col = find_col(fields, "marketing product categories", "marketing product category")
 
