@@ -64,10 +64,19 @@ def find_col(fields, *names):
     sys.exit(f"Missing column, expected one of {names}; got {fields}")
 
 
+# Code prefixes Brody set as rules (GV = gable vent -> Ventilation).
+PREFIX_RULES = {
+    "GV": "Ventilation",
+}
+
+
 def category_for(product_category, mapping, marketing_values):
     pc = product_category.strip()
     if pc in mapping:
         return mapping[pc]
+    for prefix, mc in PREFIX_RULES.items():
+        if pc.upper().startswith(prefix):
+            return mc
     # "Columns - Round" -> "Columns", "Shutters - Steel" -> "Shutters"
     prefix = pc.split(" - ")[0].strip()
     for known_pc, mc in mapping.items():
