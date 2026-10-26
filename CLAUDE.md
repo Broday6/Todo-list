@@ -22,9 +22,12 @@ Chrome, cloud Claude Code, claude.ai).
   tell him in one line what was saved, with links.
 - Brody's latest instruction wins over memory. When they disagree, follow the
   instruction and correct the memory.
-- Also read (never edit) the Drive folder "Claude Knowledge Base (NotebookLM)",
-  e.g. "KB – NetSuite". Most of it is generated from the memory on Brody's PC;
-  "KB – Notion Memory" is written only by the sync routine.
+- Since 2026-10-26, Notion Memory is the source of truth: the memory docs in
+  the Drive folder "Claude Knowledge Base (NotebookLM)" (KB – Core, KB –
+  NetSuite, Parts 0–6, etc.) were imported into it and are now an archive.
+- For product facts, read (never edit) that folder's "Spec – …" docs and
+  "KB – Products & Specs (Index)". "KB – Notion Memory" is written only by the
+  sync routine.
 - Never save passwords, compensation or customer personal data.
 
 ## Limits of cloud sessions
