@@ -13,12 +13,18 @@ Chrome, cloud Claude Code, claude.ai).
   remember / always / never. Search first and update the existing topic page
   (one topic per page). Don't wait for the end of the session; it can end
   without warning.
+- **Then sync:** after the last memory save in a turn, fire the routine
+  "Notion memory KB sync" once (`fire_trigger`, id
+  `trig_01A9Xm1hJZcUvWy1scHirSi6`). It copies Notion Memory into the
+  "KB – Notion Memory" doc that feeds NotebookLM. If you can't fire it, skip
+  this; the routine also runs every Monday.
 - **Before ending a session:** check that nothing Brody taught is unsaved, then
   tell him in one line what was saved, with links.
 - Brody's latest instruction wins over memory. When they disagree, follow the
   instruction and correct the memory.
 - Also read (never edit) the Drive folder "Claude Knowledge Base (NotebookLM)",
-  e.g. "KB – NetSuite". It is generated from the memory on Brody's PC.
+  e.g. "KB – NetSuite". Most of it is generated from the memory on Brody's PC;
+  "KB – Notion Memory" is written only by the sync routine.
 - Never save passwords, compensation or customer personal data.
 
 ## Limits of cloud sessions
