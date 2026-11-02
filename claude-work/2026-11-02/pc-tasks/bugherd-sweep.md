@@ -1,7 +1,7 @@
 # BugHerd live pull (PC scheduled task)
 
 - **Name:** BugHerd live pull
-- **Schedule:** weekdays 7:15 Central (before the 6:50 rebuild's next check-in at 8:47)
+- **Schedule:** weekdays 7:15 Central (the 8:47 check-in and next morning's rebuild pick it up)
 - **Needs:** Claude desktop open, Claude in Chrome on the PCI Chrome profile, signed in to BugHerd.
 
 ## Prompt
