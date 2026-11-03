@@ -10,3 +10,4 @@ Scripts that rebuilt Brody's board in stages (run in this order, each takes the 
 6. `score.py` — Quarter scorecard and Friday wins (Week tab), Waiting on others (Team tab).
 
 Each script only swaps the state JSON and inserts app code with exact-match asserts.
+7. `pe.py` — "Write the emails" on each promotion: hands the campaign emails to Claude as a queued task.
