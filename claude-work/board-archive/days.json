@@ -1,0 +1,6160 @@
+{
+ "note": "Days archived from Brody's board. Each entry is the day exactly as it was on the board.",
+ "cut": "2026-10-20",
+ "days": {
+  "2026-09-02": {
+   "blocks": [
+    {
+     "id": "b1",
+     "start": "08:00",
+     "end": "08:20",
+     "title": "Check and respond to emails",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "b2",
+     "start": "08:20",
+     "end": "08:40",
+     "title": "Review daily metrics & KPIs",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "b3",
+     "start": "08:40",
+     "end": "09:00",
+     "title": "Team check-in",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "b4",
+     "start": "09:00",
+     "end": "09:20",
+     "title": "Google Ads: raise the target on the 10x / 30x campaign",
+     "sub": "Set target ~25x or switch to Max Conversion Value. Write the loss number down.",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "b5",
+     "start": "09:30",
+     "end": "12:00",
+     "title": "Asana — Wednesday meetings",
+     "sub": "",
+     "meeting": true,
+     "done": true
+    },
+    {
+     "id": "b6",
+     "start": "12:00",
+     "end": "12:20",
+     "title": "Bug Herds — complete 5",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "b7",
+     "start": "12:20",
+     "end": "12:40",
+     "title": "Cases — complete 10",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "b8",
+     "start": "12:40",
+     "end": "13:40",
+     "title": "Focus: Labor Day sale emails — draft",
+     "sub": "Labor Day is Monday. Nail the offer, dates, and code; draft the announcement and the last-chance version. Send Claude the offer details for copy.",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "b9",
+     "start": "13:40",
+     "end": "14:20",
+     "title": "Focus: find candidates",
+     "sub": "Work the applicant list, book first screens. Log who you reached out to.",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "b10",
+     "start": "14:20",
+     "end": "14:40",
+     "title": "Strety",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "b11",
+     "start": "14:40",
+     "end": "15:00",
+     "title": "Follow up with Andrew's ads",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "b12",
+     "start": "15:00",
+     "end": "15:30",
+     "title": "Focus: Ceiling & Wall Motifs — completion dates",
+     "sub": "Just the dates today. Jonathan's emails move to tomorrow.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "b13",
+     "start": "15:30",
+     "end": "15:50",
+     "title": "Search terms: export both reports and upload",
+     "sub": "Both accounts, last 30 days, all campaigns. The review itself moves to Thu/Fri.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "b14",
+     "start": "15:50",
+     "end": "16:00",
+     "title": "Wrap",
+     "sub": "Log what got done. Tomorrow gets built from this.",
+     "meeting": false,
+     "done": false
+    }
+   ],
+   "log": [
+    {
+     "t": "07:21",
+     "text": "i was pulled into a meeting from 3 - 5"
+    }
+   ]
+  },
+  "2026-09-03": {
+   "blocks": [
+    {
+     "id": "c1",
+     "start": "08:00",
+     "end": "08:20",
+     "title": "Check and respond to emails",
+     "sub": "Daily · 20 min. Priority people first: Hayden (Motif SKU updates with Procurement, 2 unread), Ethan and Lauren (sale product picks). Then Marc Tillery's screen, Timeline Wood promos, Case 0960930. Also ask Hayden for the Motif completion date so it's ready for the L-10. Book Marc Tillery's screen in this block — candidates has no separate slot today.",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "c2",
+     "start": "08:20",
+     "end": "08:40",
+     "title": "Review daily metrics & KPIs",
+     "sub": "Daily · 20 min. NetSuite lead landed: Products Without Marketing Category (sent to you and Daniel).",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "c3",
+     "start": "08:40",
+     "end": "09:00",
+     "title": "Team check-in",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "c4",
+     "start": "09:00",
+     "end": "10:00",
+     "title": "Focus: Labor Day sale emails — build Email #1",
+     "sub": "Ethan: lean into Ekena, PVC and Timberthane. Lauren: new shutter styles, SteelTek hardware, custom wood shutters — she's working images. Build Email #1 today.",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "c5",
+     "start": "10:00",
+     "end": "10:20",
+     "title": "Bug Herds — complete 5 (Rock: under 10)",
+     "sub": "Daily · 20 min. This block is Rock time — hold it every day and the Rock holds itself.",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "c6",
+     "start": "10:20",
+     "end": "10:40",
+     "title": "Cases — complete 10",
+     "sub": "Daily · 20 min. Case 0960930 needs the AFCO answer.",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "c7",
+     "start": "10:40",
+     "end": "11:00",
+     "title": "L-10 prep",
+     "sub": "You're running it. Issues list: nav redesign decision (due tomorrow), Daniel's Accessories question (HomeOver/Millwork), Offset Mullion fields (Ethan asked Sam to re-add), scorecards in Strety by next L-10.",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "c8",
+     "start": "11:00",
+     "end": "12:00",
+     "title": "E-Commerce L-10",
+     "sub": "Hayden's in the room — get the Motif completion date there. Decide the nav site before you leave.",
+     "meeting": true,
+     "done": true
+    },
+    {
+     "id": "c9",
+     "start": "12:00",
+     "end": "12:40",
+     "title": "Rock: navigation redesign — first working block",
+     "sub": "Fresh from the decision. Audit the current top-level nav on the chosen site, list what's broken on mobile, sketch the target structure. Output: a one-page nav map to react to tomorrow.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "c10",
+     "start": "12:40",
+     "end": "13:00",
+     "title": "Strety",
+     "sub": "Daily · 20 min. Scorecards need to be in before next L-10.",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "c11",
+     "start": "13:00",
+     "end": "13:30",
+     "title": "Google <> Arch Depot | Hayden's cohort",
+     "sub": "Google Meet. Tentative — accept or decline this morning. If you decline, the stain asset gets this slot too.",
+     "meeting": true,
+     "done": true
+    },
+    {
+     "id": "c12",
+     "start": "13:30",
+     "end": "14:15",
+     "title": "Focus: Jonathan's Motifs emails — both lines",
+     "sub": "Due today. Launch tomorrow if Hayden gave you a date.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "c13",
+     "start": "14:15",
+     "end": "15:30",
+     "title": "Rock: AD Ads — search term audit",
+     "sub": "75 min. Export search terms for both accounts (last 30 days, all campaigns), upload to Claude for the recommend-only negative-exact list, then start Group 1 while it builds.",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "c14",
+     "start": "15:30",
+     "end": "16:00",
+     "title": "Brody / Kody sync",
+     "sub": "Teams invite sent to Kody. Add an agenda line in the invite if you want him prepped.",
+     "meeting": true,
+     "done": true
+    },
+    {
+     "id": "c15",
+     "start": "16:00",
+     "end": "16:40",
+     "title": "Stain asset",
+     "sub": "40 min. Work the stain asset here — if it needs more, tell me and I'll give it a full block Friday.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "c16",
+     "start": "16:40",
+     "end": "17:00",
+     "title": "Follow up with Andrew's ads + log the day",
+     "sub": "Daily · 20 min. Last five minutes: log what got done so Friday builds from it.",
+     "meeting": false,
+     "done": false
+    }
+   ],
+   "log": [
+    {
+     "t": "15:53",
+     "text": "Andrews ads - Alot of irrelevant search terms even after Expanded url was turned off."
+    }
+   ]
+  },
+  "2026-09-04": {
+   "blocks": [
+    {
+     "id": "g1",
+     "start": "08:00",
+     "end": "08:20",
+     "title": "Check and respond to emails",
+     "sub": "Daily · 20 min. Hayden, Ethan and Lauren first.",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "g2",
+     "start": "08:20",
+     "end": "08:40",
+     "title": "Review daily metrics & KPIs",
+     "sub": "Daily · 20 min.",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "g3",
+     "start": "08:40",
+     "end": "09:00",
+     "title": "Team check-in",
+     "sub": "Daily · 20 min.",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "g4",
+     "start": "09:00",
+     "end": "09:20",
+     "title": "Bug Herds — complete 5 (Rock: under 10)",
+     "sub": "Daily · 20 min. This block is Rock time — hold it every day and the Rock holds itself.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "g5",
+     "start": "09:20",
+     "end": "09:40",
+     "title": "Cases — complete 10",
+     "sub": "Daily · 20 min.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "g6",
+     "start": "09:40",
+     "end": "10:00",
+     "title": "Strety",
+     "sub": "Daily · 20 min. Scorecards need to be in before next L-10.",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "g7",
+     "start": "10:00",
+     "end": "10:40",
+     "title": "Focus: Ceiling & Wall Motifs — confirm completion dates",
+     "sub": "Carried 2 days from Sep 2. Get the date from Hayden — it's blocking Jonathan's emails below.",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "g8",
+     "start": "10:40",
+     "end": "11:40",
+     "title": "Focus: Jonathan's Motifs emails — finish both lines and launch",
+     "sub": "Carried from Sep 3. Launch once you have Hayden's completion date from the block above.",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "g9",
+     "start": "11:40",
+     "end": "12:20",
+     "title": "Search term audit — review Groups 1–5 candidates and apply",
+     "sub": "Recommend-only negative-exact list; no match-type tightening. Export both accounts' reports first if that's not already done.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "g10",
+     "start": "12:20",
+     "end": "13:00",
+     "title": "Rock: navigation redesign — continue + decide which site stays in Q3",
+     "sub": "Yesterday's L-10 was the deadline for this decision — close it out in writing today if it didn't land. Then keep building the nav map.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "g11",
+     "start": "13:00",
+     "end": "14:00",
+     "title": "Find candidates for the e-comm team",
+     "sub": "Daily 60-min block until filled. Book first screens — due today. Log every outreach.",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "g12",
+     "start": "14:00",
+     "end": "14:30",
+     "title": "Build and schedule the Labor Day sale emails",
+     "sub": "Carried from Sep 3 — this is now the long pole before the Sep 7 last-chance send.",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "g13",
+     "start": "14:30",
+     "end": "15:00",
+     "title": "Fix the carousel board-scan trigger",
+     "sub": "Carried multiple days now. Approve the pending edit in Cowork, rebind device access — or disable it.",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "g14",
+     "start": "15:00",
+     "end": "15:20",
+     "title": "Products Without Marketing Category — work the NetSuite lead",
+     "sub": "Sent to you and Daniel Sep 3.",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "g15",
+     "start": "15:20",
+     "end": "15:40",
+     "title": "Gable vent listings — check back into it",
+     "sub": "Follow-up from yesterday's fix.",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "g16",
+     "start": "15:40",
+     "end": "16:20",
+     "title": "Stain asset",
+     "sub": "40 min, per your own note — say if it needs a full block Friday instead.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "g17",
+     "start": "16:20",
+     "end": "16:40",
+     "title": "Follow up with Andrew's ads",
+     "sub": "Daily · 20 min. Yesterday's log: a lot of irrelevant search terms even with Expanded URL off — worth digging into.",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "g18",
+     "start": "16:40",
+     "end": "17:00",
+     "title": "Wrap",
+     "sub": "Log what got done. Tomorrow gets built from this.",
+     "meeting": false,
+     "done": false
+    }
+   ],
+   "log": []
+  },
+  "2026-09-07": {
+   "blocks": [
+    {
+     "id": "h1",
+     "start": "08:00",
+     "end": "08:20",
+     "title": "Check and respond to emails",
+     "sub": "Daily · 20 min. Hayden, Ethan and Lauren first.",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "h2",
+     "start": "08:20",
+     "end": "08:40",
+     "title": "Review daily metrics & KPIs",
+     "sub": "Daily · 20 min.",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "h3",
+     "start": "08:40",
+     "end": "09:00",
+     "title": "Team check-in",
+     "sub": "Daily · 20 min.",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "h4",
+     "start": "09:00",
+     "end": "09:30",
+     "title": "Bug Herds — complete 5 (Rock: under 10)",
+     "sub": "Daily · 30 min — bumped from 20, per your note these take longer than expected.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "h5",
+     "start": "09:30",
+     "end": "09:50",
+     "title": "Cases — complete 10",
+     "sub": "Daily · 20 min.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "h6",
+     "start": "09:50",
+     "end": "10:10",
+     "title": "Strety",
+     "sub": "Daily · 20 min.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "h15",
+     "start": "10:10",
+     "end": "10:40",
+     "title": "Last-chance Labor Day sale email — schedule and send",
+     "sub": "30 min. Half day today — do this first since it's the actual send day, both sites.",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "h16",
+     "start": "10:40",
+     "end": "11:50",
+     "title": "Rock: navigation redesign — close the Q3 site decision",
+     "sub": "70 min. Half day today, so this gets the one longer block — decide which site stays in Q3 (the other moves to Q4 in writing), then keep building the nav map as far as time allows.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "h17",
+     "start": "11:50",
+     "end": "12:00",
+     "title": "Wrap — half day",
+     "sub": "10 min. Log what got done. Search term audit, first screens, Marc Tillery's screen, the stain asset, and Andrew's ads carry to tomorrow.",
+     "meeting": false,
+     "done": false
+    }
+   ],
+   "log": []
+  },
+  "2026-09-08": {
+   "blocks": [
+    {
+     "id": "i1",
+     "start": "08:00",
+     "end": "08:20",
+     "title": "Check and respond to emails",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "i2",
+     "start": "08:20",
+     "end": "08:40",
+     "title": "Review daily metrics & KPIs",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "i3",
+     "start": "08:40",
+     "end": "09:00",
+     "title": "Team check-in",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "i4",
+     "start": "09:00",
+     "end": "09:30",
+     "title": "Bug Herds — complete 5 (Rock: under 10)",
+     "sub": "Daily · 30 min — bumped from 20, per your note these take longer than expected.",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "i5",
+     "start": "09:30",
+     "end": "09:50",
+     "title": "Cases — complete 10",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "i6",
+     "start": "09:50",
+     "end": "10:10",
+     "title": "Strety",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "i7",
+     "start": "10:10",
+     "end": "11:00",
+     "title": "Search term audit — review Groups 1–5 candidates and apply",
+     "sub": "50 min — trimmed 10 min for your 11–12 meeting. Carried multiple days now — recommend-only negative-exact list, no match-type tightening. Export is done; apply the candidates.",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "i17",
+     "start": "11:00",
+     "end": "12:00",
+     "title": "Meeting",
+     "sub": "",
+     "meeting": true,
+     "done": true
+    },
+    {
+     "id": "i9",
+     "start": "12:00",
+     "end": "12:45",
+     "title": "Find candidates — first screens + Marc Tillery's screen",
+     "sub": "45 min. Carried from yesterday's half day — book first screens and close out Marc Tillery's screen, log every outreach.",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "i10",
+     "start": "12:45",
+     "end": "13:20",
+     "title": "Stain asset",
+     "sub": "35 min. Carried from Sept 4 — say if it still needs a full block instead.",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "i11",
+     "start": "13:20",
+     "end": "14:05",
+     "title": "Fix beam listings",
+     "sub": "45 min. Accessories, related items, the BMUH item, ads for beam hangers and beam brackets, plus the new stained asset.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "i12",
+     "start": "14:05",
+     "end": "14:35",
+     "title": "Look at Andrew's workload",
+     "sub": "30 min. He's been out — see where you can help him.",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "i13",
+     "start": "14:35",
+     "end": "14:55",
+     "title": "Coffered ceiling builder",
+     "sub": "20 min. Promoted from the ideas list — push this forward this week.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "i14",
+     "start": "14:55",
+     "end": "15:10",
+     "title": "Look into why email images aren't fully sending through",
+     "sub": "15 min.",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "i15",
+     "start": "15:10",
+     "end": "15:30",
+     "title": "Follow up with Andrew's ads",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "i16",
+     "start": "15:30",
+     "end": "15:50",
+     "title": "Wrap",
+     "sub": "Daily · 20 min. Log what got done. Tomorrow gets built from this.",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "i8",
+     "start": "15:50",
+     "end": "17:00",
+     "title": "Rock: navigation redesign — decide Q3 site + continue nav map",
+     "sub": "70 min — moved after your 11–12 meeting, trimmed 5 min. Still undecided since the Sept 4 deadline — close it out in writing today (other site moves to Q4), then keep building the nav map.",
+     "meeting": false,
+     "done": false
+    }
+   ],
+   "log": [
+    {
+     "t": "10:54",
+     "text": "I had a meeting from 11 - 12 Am"
+    },
+    {
+     "t": "15:40",
+     "text": "Also worked on ads for G1, G2, G3, G4. Worked on Daily spreadsheets. Worked on fretwork panels."
+    }
+   ]
+  },
+  "2026-09-09": {
+   "blocks": [
+    {
+     "id": "j1",
+     "start": "08:00",
+     "end": "08:20",
+     "title": "Check and respond to emails",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "j2",
+     "start": "08:20",
+     "end": "08:40",
+     "title": "Review daily metrics & KPIs",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "j3",
+     "start": "08:40",
+     "end": "09:00",
+     "title": "Team check-in",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "j4",
+     "start": "09:00",
+     "end": "09:30",
+     "title": "Bug Herds — complete 5 (Rock: under 10)",
+     "sub": "Daily · 30 min — bumped from 20, per your note these take longer than expected.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "j17",
+     "start": "09:30",
+     "end": "12:00",
+     "title": "Meeting",
+     "sub": "",
+     "meeting": true,
+     "done": true
+    },
+    {
+     "id": "j18",
+     "start": "12:00",
+     "end": "12:45",
+     "title": "Worksheet for Daniel",
+     "sub": "45 min, estimated — say if it needs more or less. Right after your 9:30–12 meeting.",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "j5",
+     "start": "12:45",
+     "end": "13:05",
+     "title": "Cases — complete 10",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "j6",
+     "start": "13:05",
+     "end": "13:25",
+     "title": "Strety",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "j7",
+     "start": "13:25",
+     "end": "14:45",
+     "title": "Rock: navigation redesign — decide Q3 site + continue nav map",
+     "sub": "80 min — trimmed for your 9:30–12 meeting and the Daniel worksheet. Still undecided since the Sept 4 deadline — decide today, in writing (other site moves to Q4), then keep building the nav map with whatever's left.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "j8",
+     "start": "14:45",
+     "end": "15:40",
+     "title": "Fix beam listings",
+     "sub": "55 min — trimmed today for the meeting. Accessories, related items, the BMUH item, ads for beam hangers and beam brackets, plus the new stained asset.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "j9",
+     "start": "15:40",
+     "end": "16:05",
+     "title": "Find candidates for the e-comm team",
+     "sub": "25 min — trimmed today for the meeting and Daniel's worksheet. Daily block until filled, per your own note. Interviews target is Sept 18.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "j10",
+     "start": "16:05",
+     "end": "16:20",
+     "title": "Coffered ceiling builder",
+     "sub": "15 min — trimmed today. Carried from yesterday, push forward when you can.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "j11",
+     "start": "16:20",
+     "end": "16:40",
+     "title": "Follow up with Andrew's ads",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "j12",
+     "start": "16:40",
+     "end": "17:00",
+     "title": "Wrap",
+     "sub": "Daily · 20 min. Log what got done. Tomorrow gets built from this.",
+     "meeting": false,
+     "done": false
+    }
+   ],
+   "log": []
+  },
+  "2026-09-10": {
+   "blocks": [
+    {
+     "id": "m1",
+     "start": "08:00",
+     "end": "08:20",
+     "title": "Check and respond to emails",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "m2",
+     "start": "08:20",
+     "end": "08:40",
+     "title": "Review daily metrics & KPIs",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "m3",
+     "start": "08:40",
+     "end": "09:00",
+     "title": "Team check-in",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "m4",
+     "start": "09:00",
+     "end": "09:30",
+     "title": "Bug Herds — complete 5 (Rock: under 10)",
+     "sub": "Daily · 30 min — bumped from 20, per your note these take longer than expected.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "m5",
+     "start": "09:30",
+     "end": "09:50",
+     "title": "Cases — complete 10",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "m6",
+     "start": "09:50",
+     "end": "10:10",
+     "title": "Strety",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "m7",
+     "start": "10:10",
+     "end": "11:40",
+     "title": "Rock: navigation redesign — decide Q3 site + continue nav map",
+     "sub": "90 min. Still undecided since the Sept 4 deadline — six days overdue now. Decide today, in writing (other site moves to Q4), no more slipping.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "m8",
+     "start": "11:40",
+     "end": "12:55",
+     "title": "Fix beam listings",
+     "sub": "75 min — carried multiple days now, growing. Accessories, related items, the BMUH item, ads for beam hangers and beam brackets, plus the new stained asset.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "m9",
+     "start": "12:55",
+     "end": "13:25",
+     "title": "Find candidates for the e-comm team",
+     "sub": "30 min. Daily block until filled, per your own note. Interviews target is Sept 18.",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "m10",
+     "start": "13:25",
+     "end": "13:50",
+     "title": "Coffered ceiling builder",
+     "sub": "25 min — carried from yesterday, push forward when you can.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "m11",
+     "start": "13:50",
+     "end": "14:10",
+     "title": "Follow up with Andrew's ads",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "m12",
+     "start": "14:10",
+     "end": "14:30",
+     "title": "Wrap",
+     "sub": "Daily · 20 min. Log what got done. Tomorrow gets built from this.",
+     "meeting": false,
+     "done": false
+    }
+   ],
+   "log": []
+  },
+  "2026-09-11": {
+   "blocks": [
+    {
+     "id": "n1",
+     "start": "08:00",
+     "end": "08:20",
+     "title": "Check and respond to emails",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "n2",
+     "start": "08:20",
+     "end": "08:40",
+     "title": "Review daily metrics & KPIs",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "n3",
+     "start": "08:40",
+     "end": "09:00",
+     "title": "Team check-in",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "n4",
+     "start": "09:00",
+     "end": "09:30",
+     "title": "Bug Herds — complete 5 (Rock: under 10)",
+     "sub": "Daily · 30 min — bumped from 20, per your note these take longer than expected.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "n5",
+     "start": "09:30",
+     "end": "09:50",
+     "title": "Cases — complete 10",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "n6",
+     "start": "09:50",
+     "end": "10:10",
+     "title": "Strety",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "n7",
+     "start": "10:10",
+     "end": "11:25",
+     "title": "Rock: navigation redesign — decide Q3 site + continue nav map",
+     "sub": "75 min. Still undecided since the Sept 4 deadline — seven days overdue now. Decide today, in writing (other site moves to Q4), no more slipping.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "n8",
+     "start": "11:25",
+     "end": "12:10",
+     "title": "Audit ads and lower spend",
+     "sub": "45 min. Continue the search-term and ROAS work across both accounts — the goal now is lowering spend, not just tightening negatives.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "n9",
+     "start": "12:10",
+     "end": "13:10",
+     "title": "Fix beam listings",
+     "sub": "60 min — carried multiple days now, still growing. Accessories, related items, the BMUH item, ads for beam hangers and beam brackets, plus the new stained asset. Get the spreadsheets ready before the updates go in.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "n10",
+     "start": "13:10",
+     "end": "13:40",
+     "title": "Find people to interview",
+     "sub": "30 min. Push candidate outreach — get more people into the pipeline for the e-comm team. Interviews target is Sept 18.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "n11",
+     "start": "13:40",
+     "end": "14:00",
+     "title": "Coffered ceiling builder",
+     "sub": "20 min. Carried multiple days now — push it forward.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "n12",
+     "start": "14:00",
+     "end": "14:20",
+     "title": "Look into why email images aren't fully sending through",
+     "sub": "20 min. Outlook issue — structure content outside of images instead of working around it.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "n13",
+     "start": "14:20",
+     "end": "14:40",
+     "title": "Look at Andrew's workload",
+     "sub": "20 min. He's been out — see where you can help him.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "n14",
+     "start": "14:40",
+     "end": "15:10",
+     "title": "Ekena catalog tasks",
+     "sub": "30 min. Launch Motif emails, kill the WPKPLWD collection, upload sample images (real wood, log, industrial beams), touch up kits for industrial beams, and get Ekena images in for Milan.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "n15",
+     "start": "15:10",
+     "end": "15:30",
+     "title": "Shutters — add a variant help menu",
+     "sub": "20 min. Promoted from the ideas list — let customers order custom shutters through a variant help menu.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "n16",
+     "start": "15:30",
+     "end": "15:50",
+     "title": "Follow up with Andrew's ads",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "n17",
+     "start": "15:50",
+     "end": "16:10",
+     "title": "Wrap",
+     "sub": "Daily · 20 min. Log what got done. Tomorrow gets built from this.",
+     "meeting": false,
+     "done": false
+    }
+   ],
+   "log": []
+  },
+  "2026-09-14": {
+   "blocks": [
+    {
+     "id": "o1",
+     "start": "08:00",
+     "end": "08:20",
+     "title": "Check and respond to emails",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o2",
+     "start": "08:20",
+     "end": "08:40",
+     "title": "Review daily metrics & KPIs",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o3",
+     "start": "08:40",
+     "end": "09:00",
+     "title": "Team check-in",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o4",
+     "start": "09:00",
+     "end": "09:30",
+     "title": "Bug Herds — complete 5 (Rock: under 10)",
+     "sub": "Daily · 30 min — bumped from 20, per your note these take longer than expected.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o5",
+     "start": "09:30",
+     "end": "09:50",
+     "title": "Cases — complete 10",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o6",
+     "start": "09:50",
+     "end": "10:10",
+     "title": "Strety",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o7",
+     "start": "10:10",
+     "end": "11:10",
+     "title": "Rock: navigation redesign — decide Q3 site",
+     "sub": "60 min. Still undecided since the Sept 4 deadline — over a week overdue now. Decide today, in writing (other site moves to Q4), no more slipping.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o8",
+     "start": "11:10",
+     "end": "12:10",
+     "title": "Fix beam listings",
+     "sub": "60 min — carried multiple days now, still growing. Accessories, related items, the BMUH item, ads for beam hangers and beam brackets, plus the new stained asset. Get the spreadsheets ready before the updates go in.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o9",
+     "start": "12:10",
+     "end": "12:55",
+     "title": "Audit ads and lower spend",
+     "sub": "45 min. Continue the search-term and ROAS work across both accounts — the goal is lowering spend, not just tightening negatives.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o10",
+     "start": "12:55",
+     "end": "13:25",
+     "title": "Find people to interview",
+     "sub": "30 min. Push candidate outreach — interviews target is Sept 18, four days out.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o11",
+     "start": "13:25",
+     "end": "13:55",
+     "title": "Ekena catalog tasks",
+     "sub": "30 min. Launch Motif emails, kill the WPKPLWD collection, upload sample images (real wood, log, industrial beams), touch up kits for industrial beams, and get Ekena images in for Milan.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o12",
+     "start": "13:55",
+     "end": "14:15",
+     "title": "Shutters — add a variant help menu",
+     "sub": "20 min. Let customers order custom shutters through a variant help menu.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o13",
+     "start": "14:15",
+     "end": "14:35",
+     "title": "Coffered ceiling builder",
+     "sub": "20 min. Carried multiple days now — push it forward.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o14",
+     "start": "14:35",
+     "end": "14:55",
+     "title": "Look into why email images aren't fully sending through",
+     "sub": "20 min. Outlook issue — structure content outside of images instead of working around it.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o15",
+     "start": "14:55",
+     "end": "15:15",
+     "title": "Look at Andrew's workload",
+     "sub": "20 min. He's been out — see where you can help him.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o16",
+     "start": "15:15",
+     "end": "15:35",
+     "title": "Follow up with Andrew's ads",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o17",
+     "start": "15:35",
+     "end": "15:55",
+     "title": "Wrap",
+     "sub": "Daily · 20 min. Log what got done. Tomorrow gets built from this.",
+     "meeting": false,
+     "done": false
+    }
+   ],
+   "log": []
+  },
+  "2026-09-15": {
+   "blocks": [
+    {
+     "id": "p1",
+     "start": "08:00",
+     "end": "08:20",
+     "title": "Check and respond to emails",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "p2",
+     "start": "08:20",
+     "end": "08:40",
+     "title": "Review daily metrics & KPIs",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "p3",
+     "start": "08:40",
+     "end": "09:00",
+     "title": "Team check-in",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "p4",
+     "start": "09:00",
+     "end": "09:30",
+     "title": "Bug Herds — complete 5 (Rock: under 10)",
+     "sub": "Daily · 30 min — bumped from 20, per your note these take longer than expected.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "p5",
+     "start": "09:30",
+     "end": "09:50",
+     "title": "Cases — complete 10",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "p6",
+     "start": "09:50",
+     "end": "10:10",
+     "title": "Strety",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "p7",
+     "start": "10:10",
+     "end": "11:10",
+     "title": "Rock: navigation redesign — decide Q3 site",
+     "sub": "60 min. Still undecided since the Sept 4 deadline — now well over a week overdue. Decide today, in writing (other site moves to Q4), no more slipping.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "p8",
+     "start": "11:10",
+     "end": "12:10",
+     "title": "Fix beam listings",
+     "sub": "60 min — carried forward again, still growing. Accessories, related items, the BMUH item, ads for beam hangers and beam brackets, plus the new stained asset. Get the spreadsheets ready before the updates go in.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "p9",
+     "start": "12:10",
+     "end": "12:55",
+     "title": "Audit ads and lower spend",
+     "sub": "45 min. Continue the search-term and ROAS work across both accounts — the goal is lowering spend, not just tightening negatives.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "p10",
+     "start": "12:55",
+     "end": "13:25",
+     "title": "Find people to interview",
+     "sub": "30 min. Push candidate outreach — interviews target is Sept 18, three days out now.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "p11",
+     "start": "13:25",
+     "end": "13:55",
+     "title": "Ekena catalog tasks",
+     "sub": "30 min. Launch Motif emails, kill the WPKPLWD collection, upload sample images (real wood, log, industrial beams), touch up kits for industrial beams, and get Ekena images in for Milan.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "p12",
+     "start": "13:55",
+     "end": "14:15",
+     "title": "Shutters — add a variant help menu",
+     "sub": "20 min. Let customers order custom shutters through a variant help menu.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "p13",
+     "start": "14:15",
+     "end": "14:35",
+     "title": "Coffered ceiling builder",
+     "sub": "20 min. Carried forward again — push it forward.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "p14",
+     "start": "14:35",
+     "end": "14:55",
+     "title": "Look into why email images aren't fully sending through",
+     "sub": "20 min. Outlook issue — structure content outside of images instead of working around it.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "p15",
+     "start": "14:55",
+     "end": "15:15",
+     "title": "Look at Andrew's workload",
+     "sub": "20 min. He's been out — see where you can help him.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "p16",
+     "start": "15:15",
+     "end": "15:35",
+     "title": "Follow up with Andrew's ads",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "p17",
+     "start": "15:35",
+     "end": "15:55",
+     "title": "Wrap",
+     "sub": "Daily · 20 min. Log what got done. Tomorrow gets built from this.",
+     "meeting": false,
+     "done": false
+    }
+   ],
+   "log": []
+  },
+  "2026-09-16": {
+   "blocks": [
+    {
+     "id": "q1",
+     "start": "08:00",
+     "end": "08:20",
+     "title": "Check and respond to emails",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "q2",
+     "start": "08:20",
+     "end": "08:40",
+     "title": "Review daily metrics & KPIs",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "q3",
+     "start": "08:40",
+     "end": "09:00",
+     "title": "Team check-in",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "q4",
+     "start": "09:00",
+     "end": "09:30",
+     "title": "Bug Herds — complete 5 (Rock: under 10)",
+     "sub": "Daily · 30 min — bumped from 20, per your note these take longer than expected.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "q5",
+     "start": "09:30",
+     "end": "09:50",
+     "title": "Cases — complete 10",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "q6",
+     "start": "09:50",
+     "end": "10:10",
+     "title": "Strety",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "q7",
+     "start": "10:10",
+     "end": "11:10",
+     "title": "Rock: navigation redesign — decide Q3 site",
+     "sub": "60 min. Still undecided since the Sept 4 deadline — now 12 days overdue. Decide today, in writing (other site moves to Q4), no more slipping.",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "q8",
+     "start": "11:10",
+     "end": "12:10",
+     "title": "Fix beam listings",
+     "sub": "60 min — carried forward again, still growing. Accessories, related items, the BMUH item, ads for beam hangers and beam brackets, plus the new stained asset. Get the spreadsheets ready before the updates go in.",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "q9",
+     "start": "12:10",
+     "end": "12:55",
+     "title": "Audit ads and lower spend",
+     "sub": "45 min. Continue the search-term and ROAS work across both accounts — the goal is lowering spend, not just tightening negatives.",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "q10",
+     "start": "12:55",
+     "end": "13:25",
+     "title": "Find people to interview",
+     "sub": "30 min. Push candidate outreach — interviews target is Sept 18, two days out now.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "q11",
+     "start": "13:25",
+     "end": "13:55",
+     "title": "Ekena catalog tasks",
+     "sub": "30 min. Launch Motif emails, kill the WPKPLWD collection, upload sample images (real wood, log, industrial beams), touch up kits for industrial beams, and get Ekena images in for Milan.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "q12",
+     "start": "13:55",
+     "end": "14:15",
+     "title": "Shutters — add a variant help menu",
+     "sub": "20 min. Let customers order custom shutters through a variant help menu.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "q13",
+     "start": "14:15",
+     "end": "14:35",
+     "title": "Coffered ceiling builder",
+     "sub": "20 min. Carried forward again — push it forward.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "q14",
+     "start": "14:35",
+     "end": "14:55",
+     "title": "Look into why email images aren't fully sending through",
+     "sub": "20 min. Outlook issue — structure content outside of images instead of working around it.",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "q15",
+     "start": "14:55",
+     "end": "15:15",
+     "title": "Look at Andrew's workload",
+     "sub": "20 min. He's been out — see where you can help him.",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "q16",
+     "start": "15:15",
+     "end": "15:35",
+     "title": "Follow up with Andrew's ads",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "q17",
+     "start": "15:35",
+     "end": "15:55",
+     "title": "Wrap",
+     "sub": "Daily · 20 min. Log what got done. Tomorrow gets built from this.",
+     "meeting": false,
+     "done": false
+    }
+   ],
+   "log": []
+  },
+  "2026-09-17": {
+   "blocks": [
+    {
+     "id": "r1",
+     "start": "08:00",
+     "end": "08:20",
+     "title": "Check and respond to emails",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "r2",
+     "start": "08:20",
+     "end": "08:40",
+     "title": "Review daily metrics & KPIs",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "r3",
+     "start": "08:40",
+     "end": "09:00",
+     "title": "Team check-in",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "r4",
+     "start": "09:00",
+     "end": "09:30",
+     "title": "Bug Herds — complete 5 (Rock: under 10)",
+     "sub": "Daily · 30 min — bumped from 20, per your note these take longer than expected.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "r5",
+     "start": "09:30",
+     "end": "09:50",
+     "title": "Cases — complete 10",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "r6",
+     "start": "09:50",
+     "end": "10:10",
+     "title": "Strety",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "r7",
+     "start": "10:10",
+     "end": "11:10",
+     "title": "Rock: navigation redesign — decide Q3 site",
+     "sub": "60 min. Still undecided since the Sept 4 deadline — now 13 days overdue. Decide today, in writing (other site moves to Q4), no more slipping.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "r8",
+     "start": "11:10",
+     "end": "12:10",
+     "title": "Fix beam listings",
+     "sub": "60 min — carried forward again, still growing. Accessories, related items, the BMUH item, ads for beam hangers and beam brackets, plus the new stained asset. Get the spreadsheets ready before the updates go in.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "r9",
+     "start": "12:10",
+     "end": "12:55",
+     "title": "Audit ads and lower spend",
+     "sub": "45 min. Continue the search-term and ROAS work across both accounts — the goal is lowering spend, not just tightening negatives.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "r10",
+     "start": "12:55",
+     "end": "13:25",
+     "title": "Find people to interview",
+     "sub": "30 min. Push candidate outreach — interviews target is Sept 18, one day out now.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "r11",
+     "start": "13:25",
+     "end": "13:55",
+     "title": "Ekena catalog tasks",
+     "sub": "30 min. Launch Motif emails, kill the WPKPLWD collection, and touch up kits for industrial beams — sample images and the Milan images are already done.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "r12",
+     "start": "13:55",
+     "end": "14:15",
+     "title": "Shutters — add a variant help menu",
+     "sub": "20 min. Let customers order custom shutters through a variant help menu.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "r13",
+     "start": "14:15",
+     "end": "14:35",
+     "title": "Coffered ceiling builder",
+     "sub": "20 min. Carried forward again — push it forward.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "r14",
+     "start": "14:35",
+     "end": "14:55",
+     "title": "Follow up with Andrew's ads",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "r15",
+     "start": "14:55",
+     "end": "15:15",
+     "title": "Wrap",
+     "sub": "Daily · 20 min. Log what got done. Tomorrow gets built from this.",
+     "meeting": false,
+     "done": false
+    }
+   ],
+   "log": []
+  },
+  "2026-09-18": {
+   "blocks": [
+    {
+     "id": "s1",
+     "start": "08:00",
+     "end": "08:20",
+     "title": "Check and respond to emails",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "s2",
+     "start": "08:20",
+     "end": "08:40",
+     "title": "Review daily metrics & KPIs",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "s3",
+     "start": "08:40",
+     "end": "09:00",
+     "title": "Team check-in",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "s4",
+     "start": "09:00",
+     "end": "09:30",
+     "title": "Bug Herds — complete 5 (Rock: under 10)",
+     "sub": "Daily · 30 min — bumped from 20, per your note these take longer than expected.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "s5",
+     "start": "09:30",
+     "end": "09:50",
+     "title": "Cases — complete 10",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "s6",
+     "start": "09:50",
+     "end": "10:10",
+     "title": "Strety",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "s7",
+     "start": "10:10",
+     "end": "11:10",
+     "title": "Rock: navigation redesign — decide Q3 site",
+     "sub": "60 min. Still undecided since the Sept 4 deadline — now 14 days overdue. Decide today, in writing (other site moves to Q4), no more slipping.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "s8",
+     "start": "11:10",
+     "end": "11:40",
+     "title": "Find people to interview",
+     "sub": "30 min. Push candidate outreach — interviews target was today (Sept 18), so get outreach and screens booked before end of day.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "s9",
+     "start": "11:40",
+     "end": "12:25",
+     "title": "Audit ads and lower spend",
+     "sub": "45 min. Continue the search-term and ROAS work across both accounts — the goal is lowering spend, not just tightening negatives.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "s10",
+     "start": "12:25",
+     "end": "13:25",
+     "title": "Fix beam listings",
+     "sub": "60 min — carried forward again, still growing. Accessories, related items, the BMUH item, ads for beam hangers and beam brackets, plus the new stained asset. Get the spreadsheets ready before the updates go in.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "s11",
+     "start": "13:25",
+     "end": "13:45",
+     "title": "Coffered ceiling builder",
+     "sub": "20 min. Carried forward again — push it forward.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "s12",
+     "start": "13:45",
+     "end": "14:05",
+     "title": "Shutters — add a variant help menu",
+     "sub": "20 min. Let customers order custom shutters through a variant help menu.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "s13",
+     "start": "14:05",
+     "end": "14:35",
+     "title": "Ekena catalog tasks",
+     "sub": "30 min. Launch Motif emails, kill the WPKPLWD collection, and touch up kits for industrial beams — sample images and the Milan images are already done.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "s14",
+     "start": "14:35",
+     "end": "14:55",
+     "title": "Follow up with Andrew's ads",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "s15",
+     "start": "14:55",
+     "end": "15:15",
+     "title": "Wrap",
+     "sub": "Daily · 20 min. Log what got done. Tomorrow gets built from this.",
+     "meeting": false,
+     "done": false
+    }
+   ],
+   "log": []
+  },
+  "2026-09-21": {
+   "blocks": [
+    {
+     "id": "u1",
+     "start": "08:00",
+     "end": "08:20",
+     "title": "Check and respond to emails",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "u2",
+     "start": "08:20",
+     "end": "08:40",
+     "title": "Review daily metrics & KPIs",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "u3",
+     "start": "08:40",
+     "end": "09:00",
+     "title": "Team check-in",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "u4",
+     "start": "09:00",
+     "end": "09:30",
+     "title": "Bug Herds — complete 5 (Rock: under 10)",
+     "sub": "Daily · 30 min — bumped from 20, per your note these take longer than expected.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "u5",
+     "start": "09:30",
+     "end": "09:50",
+     "title": "Cases — complete 10",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "u6",
+     "start": "09:50",
+     "end": "10:10",
+     "title": "Strety",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "u7",
+     "start": "10:10",
+     "end": "11:10",
+     "title": "Rock: navigation redesign — decide Q3 site",
+     "sub": "60 min. Still undecided since the Sept 4 deadline — now 17 days overdue. Decide today, in writing (other site moves to Q4), no more slipping.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "u8",
+     "start": "11:10",
+     "end": "11:40",
+     "title": "Find people to interview",
+     "sub": "30 min. The Sept 18 interviews target has now passed — push outreach and get people booked this week.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "u9",
+     "start": "11:40",
+     "end": "12:25",
+     "title": "Audit ads and lower spend",
+     "sub": "45 min. Continue the search-term and ROAS work across both accounts — the goal is lowering spend, not just tightening negatives.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "u10",
+     "start": "12:25",
+     "end": "13:25",
+     "title": "Fix beam listings",
+     "sub": "60 min — carried forward again, still growing. Accessories, related items, the BMUH item, ads for beam hangers and beam brackets, plus the new stained asset.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "u11",
+     "start": "13:25",
+     "end": "13:45",
+     "title": "Coffered ceiling builder",
+     "sub": "20 min. Carried forward again — push it forward.",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "u12",
+     "start": "13:45",
+     "end": "14:05",
+     "title": "Shutters — add a variant help menu",
+     "sub": "20 min. Let customers order custom shutters through a variant help menu.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "u13",
+     "start": "14:05",
+     "end": "14:35",
+     "title": "Ekena catalog tasks",
+     "sub": "30 min. Launch Motif emails, kill the WPKPLWD collection, and touch up kits for industrial beams.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "u14",
+     "start": "14:35",
+     "end": "14:55",
+     "title": "Follow up with Andrew's ads",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "u16",
+     "start": "14:55",
+     "end": "15:25",
+     "title": "Add items missing from our sites to all the sites",
+     "sub": "30 min. Check each site for products listed elsewhere but missing there, and add them across the board.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "u17",
+     "start": "15:25",
+     "end": "15:45",
+     "title": "Go over spend",
+     "sub": "20 min. Block time to review overall spend, beyond the daily ad-account audit.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "u18",
+     "start": "15:45",
+     "end": "16:05",
+     "title": "Ceiling & Wall Motifs — send the email",
+     "sub": "20 min. Get Jonathan's motif emails out the door — both lines.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "u19",
+     "start": "16:05",
+     "end": "16:45",
+     "title": "Redo the faux beams home page + blog posts",
+     "sub": "40 min. Start the home page refresh and outline a few supporting blog posts — likely carries to tomorrow.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "u20",
+     "start": "16:45",
+     "end": "17:00",
+     "title": "Build out the new job application",
+     "sub": "15 min. Get the new job application started.",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "u15",
+     "start": "17:00",
+     "end": "17:15",
+     "title": "Wrap",
+     "sub": "Daily · 20 min. Log what got done. Tomorrow gets built from this.",
+     "meeting": false,
+     "done": false
+    }
+   ],
+   "log": []
+  },
+  "2026-09-22": {
+   "blocks": [
+    {
+     "id": "v1",
+     "start": "08:00",
+     "end": "08:20",
+     "title": "Check and respond to emails",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "v2",
+     "start": "08:20",
+     "end": "08:40",
+     "title": "Review daily metrics & KPIs",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "v3",
+     "start": "08:40",
+     "end": "09:00",
+     "title": "Team check-in",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "v4",
+     "start": "09:00",
+     "end": "09:30",
+     "title": "Bug Herds — complete 5 (Rock: under 10)",
+     "sub": "Daily · 30 min — bumped from 20, per your note these take longer than expected.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "v5",
+     "start": "09:30",
+     "end": "09:50",
+     "title": "Cases — complete 10",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "v6",
+     "start": "09:50",
+     "end": "10:10",
+     "title": "Strety",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "v7",
+     "start": "10:10",
+     "end": "11:10",
+     "title": "Rock: navigation redesign — decide Q3 site",
+     "sub": "60 min. Still undecided since the Sept 4 deadline — 18 days overdue now. Decide today, in writing (other site moves to Q4), no more slipping.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "v8",
+     "start": "11:10",
+     "end": "11:30",
+     "title": "Fix the carousel board-scan trigger",
+     "sub": "20 min. Carried 18 days now. Approve the pending edit in Cowork, rebind device access — or disable it.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "v9",
+     "start": "11:30",
+     "end": "12:00",
+     "title": "Find people to interview",
+     "sub": "30 min. Carried 11 days now. Push candidate outreach — the Sept 18 interviews target has passed.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "v10",
+     "start": "12:00",
+     "end": "12:45",
+     "title": "Audit ads and lower spend",
+     "sub": "45 min. Carried 11 days now. Continue the search-term and ROAS work across both accounts — the goal is lowering spend, not just tightening negatives.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "v11",
+     "start": "12:45",
+     "end": "13:45",
+     "title": "Fix beam listings",
+     "sub": "60 min. Carried 11 days now, still growing. Accessories, related items, the BMUH item, ads for beam hangers and beam brackets, plus the stained asset.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "v12",
+     "start": "13:45",
+     "end": "14:05",
+     "title": "Shutters — add a variant help menu",
+     "sub": "20 min. Carried 11 days now. Let customers order custom shutters through a variant help menu.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "v13",
+     "start": "14:05",
+     "end": "14:30",
+     "title": "Ekena catalog tasks",
+     "sub": "25 min. Carried multiple days — launch the remaining Motif emails and kill the WPKPLWD collection.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "v14",
+     "start": "14:30",
+     "end": "15:00",
+     "title": "Add items missing from our sites to all the sites",
+     "sub": "30 min. Carried from yesterday. Check each site for products listed elsewhere but missing there, and add them across the board.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "v15",
+     "start": "15:00",
+     "end": "15:20",
+     "title": "Go over spend",
+     "sub": "20 min. Carried from yesterday. Block time to review overall spend, beyond the daily ad-account audit.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "v16",
+     "start": "15:20",
+     "end": "15:40",
+     "title": "Ceiling & Wall Motifs — send the email",
+     "sub": "20 min. Carried from yesterday. Get Jonathan's motif emails out the door — both lines.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "v17",
+     "start": "15:40",
+     "end": "16:20",
+     "title": "Redo the faux beams home page + blog posts",
+     "sub": "40 min. Carried from yesterday — start the home page refresh and outline a few supporting blog posts.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "v18",
+     "start": "16:20",
+     "end": "16:40",
+     "title": "Follow up with Andrew's ads",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "v19",
+     "start": "16:40",
+     "end": "17:00",
+     "title": "Wrap",
+     "sub": "Daily · 20 min. Log what got done. Tomorrow gets built from this.",
+     "meeting": false,
+     "done": false
+    }
+   ],
+   "log": []
+  },
+  "2026-09-23": {
+   "blocks": [
+    {
+     "id": "x1",
+     "start": "08:00",
+     "end": "08:20",
+     "title": "Check and respond to emails",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "x2",
+     "start": "08:20",
+     "end": "08:40",
+     "title": "Review daily metrics & KPIs",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "x3",
+     "start": "08:40",
+     "end": "09:00",
+     "title": "Team check-in",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "x4",
+     "start": "09:00",
+     "end": "09:30",
+     "title": "Bug Herds — complete 5 (Rock: under 10)",
+     "sub": "Daily · 30 min — bumped from 20, per your note these take longer than expected.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "x5",
+     "start": "09:30",
+     "end": "09:50",
+     "title": "Cases — complete 10",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "x6",
+     "start": "09:50",
+     "end": "10:10",
+     "title": "Strety",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "x7",
+     "start": "10:10",
+     "end": "11:10",
+     "title": "Rock: navigation redesign — decide Q3 site",
+     "sub": "60 min. Still undecided since the Sept 4 deadline — 19 days overdue now. Decide today, in writing (other site moves to Q4), no more slipping.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "x8",
+     "start": "11:10",
+     "end": "11:30",
+     "title": "Fix the carousel board-scan trigger",
+     "sub": "20 min. Carried 19 days now. Approve the pending edit in Cowork, rebind device access — or disable it.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "x9",
+     "start": "11:30",
+     "end": "12:00",
+     "title": "Find people to interview",
+     "sub": "30 min. Carried 12 days now. Push candidate outreach — the Sept 18 interviews target has long since passed.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "x10",
+     "start": "12:00",
+     "end": "12:45",
+     "title": "Audit ads and lower spend",
+     "sub": "45 min. Carried 12 days now. Continue the search-term and ROAS work across both accounts — the goal is lowering spend, not just tightening negatives.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "x11",
+     "start": "12:45",
+     "end": "13:45",
+     "title": "Fix beam listings",
+     "sub": "60 min. Carried 12 days now, still growing. Accessories, related items, the BMUH item, ads for beam hangers and beam brackets, plus the new stained asset.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "x12",
+     "start": "13:45",
+     "end": "14:05",
+     "title": "Shutters — add a variant help menu",
+     "sub": "20 min. Carried 12 days now. Let customers order custom shutters through a variant help menu.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "x13",
+     "start": "14:05",
+     "end": "14:30",
+     "title": "Ekena catalog tasks",
+     "sub": "25 min. Carried multiple days — launch the remaining Motif emails and kill the WPKPLWD collection.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "x14",
+     "start": "14:30",
+     "end": "15:00",
+     "title": "Add items missing from our sites to all the sites",
+     "sub": "30 min. Carried 2 days now. Check each site for products listed elsewhere but missing there, and add them across the board.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "x15",
+     "start": "15:00",
+     "end": "15:20",
+     "title": "Go over spend",
+     "sub": "20 min. Carried 2 days now. Block time to review overall spend, beyond the daily ad-account audit.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "x16",
+     "start": "15:20",
+     "end": "15:40",
+     "title": "Ceiling & Wall Motifs — send the email",
+     "sub": "20 min. Carried 2 days now. Get Jonathan's motif emails out the door — both lines.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "x17",
+     "start": "15:40",
+     "end": "16:20",
+     "title": "Redo the faux beams home page + blog posts",
+     "sub": "40 min. Carried 2 days now — start the home page refresh and outline a few supporting blog posts.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "x18",
+     "start": "16:20",
+     "end": "16:40",
+     "title": "Follow up with Andrew's ads",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "x19",
+     "start": "16:40",
+     "end": "17:00",
+     "title": "Wrap",
+     "sub": "Daily · 20 min. Log what got done. Tomorrow gets built from this.",
+     "meeting": false,
+     "done": false
+    }
+   ],
+   "log": []
+  },
+  "2026-09-24": {
+   "blocks": [
+    {
+     "id": "y1",
+     "start": "08:00",
+     "end": "08:20",
+     "title": "Check and respond to emails",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "y2",
+     "start": "08:20",
+     "end": "08:40",
+     "title": "Review daily metrics & KPIs",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "y3",
+     "start": "08:40",
+     "end": "09:00",
+     "title": "Team check-in",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "y4",
+     "start": "09:00",
+     "end": "09:30",
+     "title": "Bug Herds — complete 5 (Rock: under 10)",
+     "sub": "Daily · 30 min — bumped from 20, per your note these take longer than expected.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "y5",
+     "start": "09:30",
+     "end": "09:50",
+     "title": "Cases — complete 10",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "y6",
+     "start": "09:50",
+     "end": "10:10",
+     "title": "Strety",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "y7",
+     "start": "10:10",
+     "end": "11:10",
+     "title": "Rock: navigation redesign — decide Q3 site",
+     "sub": "60 min. Still undecided since the Sept 4 deadline — 20 days overdue now. Decide today, in writing (other site moves to Q4), no more slipping.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "y8",
+     "start": "11:10",
+     "end": "11:30",
+     "title": "Fix the carousel board-scan trigger",
+     "sub": "20 min. Carried 20 days now. Approve the pending edit in Cowork, rebind device access — or disable it.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "y9",
+     "start": "11:30",
+     "end": "12:00",
+     "title": "Find people to interview",
+     "sub": "30 min. Carried 13 days now. Push candidate outreach — the Sept 18 interviews target has long since passed.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "y10",
+     "start": "12:00",
+     "end": "12:45",
+     "title": "Audit ads and lower spend",
+     "sub": "45 min. Carried 13 days now. Continue the search-term and ROAS work across both accounts — the goal is lowering spend, not just tightening negatives.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "y11",
+     "start": "12:45",
+     "end": "13:45",
+     "title": "Fix beam listings",
+     "sub": "60 min. Carried 13 days now, still growing. Accessories, related items, the BMUH item, ads for beam hangers and beam brackets, plus the new stained asset.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "y12",
+     "start": "13:45",
+     "end": "14:05",
+     "title": "Shutters — add a variant help menu",
+     "sub": "20 min. Carried 13 days now. Let customers order custom shutters through a variant help menu.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "y13",
+     "start": "14:05",
+     "end": "14:30",
+     "title": "Ekena catalog tasks",
+     "sub": "25 min. Carried multiple days — launch the remaining Motif emails and kill the WPKPLWD collection.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "y14",
+     "start": "14:30",
+     "end": "15:00",
+     "title": "Add items missing from our sites to all the sites",
+     "sub": "30 min. Carried 3 days now. Check each site for products listed elsewhere but missing there, and add them across the board.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "y15",
+     "start": "15:00",
+     "end": "15:20",
+     "title": "Go over spend",
+     "sub": "20 min. Carried 3 days now. Block time to review overall spend, beyond the daily ad-account audit.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "y16",
+     "start": "15:20",
+     "end": "15:40",
+     "title": "Ceiling & Wall Motifs — send the email",
+     "sub": "20 min. Carried 3 days now. Get Jonathan's motif emails out the door — both lines.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "y17",
+     "start": "15:40",
+     "end": "16:20",
+     "title": "Redo the faux beams home page + blog posts",
+     "sub": "40 min. Carried 3 days now — keep going on the home page refresh and supporting blog posts.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "y18",
+     "start": "16:20",
+     "end": "16:40",
+     "title": "Follow up with Andrew's ads",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "y19",
+     "start": "16:40",
+     "end": "17:00",
+     "title": "Wrap",
+     "sub": "Daily · 20 min. Log what got done. Tomorrow gets built from this.",
+     "meeting": false,
+     "done": false
+    }
+   ],
+   "log": []
+  },
+  "2026-09-25": {
+   "blocks": [
+    {
+     "id": "z1",
+     "start": "08:00",
+     "end": "08:20",
+     "title": "Check and respond to emails",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "z2",
+     "start": "08:20",
+     "end": "08:40",
+     "title": "Review daily metrics & KPIs",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "z3",
+     "start": "08:40",
+     "end": "09:00",
+     "title": "Team check-in",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "z4",
+     "start": "09:00",
+     "end": "09:30",
+     "title": "Bug Herds — complete 5 (Rock: under 10)",
+     "sub": "Daily · 30 min — bumped from 20, per your note these take longer than expected.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "z5",
+     "start": "09:30",
+     "end": "09:50",
+     "title": "Cases — complete 10",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "z6",
+     "start": "09:50",
+     "end": "10:10",
+     "title": "Strety",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "z7",
+     "start": "10:10",
+     "end": "11:10",
+     "title": "Rock: navigation redesign — decide Q3 site",
+     "sub": "60 min. Still undecided since the Sept 4 deadline — now 21 days overdue. Decide today, in writing (other site moves to Q4), no more slipping.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "z8",
+     "start": "11:10",
+     "end": "11:30",
+     "title": "Fix the carousel board-scan trigger",
+     "sub": "20 min. Carried 21 days now. Approve the pending edit in Cowork, rebind device access — or disable it.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "z9",
+     "start": "11:30",
+     "end": "12:00",
+     "title": "Find people to interview",
+     "sub": "30 min. Push candidate outreach — get more people into the pipeline for the e-comm team. Carried 14 days now.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "z10",
+     "start": "12:00",
+     "end": "12:45",
+     "title": "Audit ads and lower spend",
+     "sub": "45 min. Continue the search-term and ROAS work across both accounts — the goal is lowering spend, not just tightening negatives. Carried 14 days now.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "z11",
+     "start": "12:45",
+     "end": "13:45",
+     "title": "Fix beam listings",
+     "sub": "60 min. Accessories, related items, the BMUH item, ads for beam hangers and beam brackets, plus the new stained asset. Carried 14 days now.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "z12",
+     "start": "13:45",
+     "end": "14:05",
+     "title": "Shutters — add a variant help menu",
+     "sub": "20 min. Let customers order custom shutters through a variant help menu. Carried 14 days now.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "z13",
+     "start": "14:05",
+     "end": "14:30",
+     "title": "Redo the faux beams home page + blog posts",
+     "sub": "25 min. Carried 4 days now — push it forward.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "z14",
+     "start": "14:30",
+     "end": "15:00",
+     "title": "Add items missing from our sites to all the sites",
+     "sub": "30 min. Check each site for products listed elsewhere but missing there, and add them across. Carried 4 days now.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "z15",
+     "start": "15:00",
+     "end": "15:20",
+     "title": "Go over spend",
+     "sub": "20 min. Block time to review ad spend. Carried 4 days now.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "z16",
+     "start": "15:20",
+     "end": "15:40",
+     "title": "Ceiling & Wall Motifs — send the email",
+     "sub": "20 min. Carried 4 days now — push it out.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "z17",
+     "start": "15:40",
+     "end": "16:00",
+     "title": "Follow up with Andrew's ads",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "z18",
+     "start": "16:00",
+     "end": "16:20",
+     "title": "Wrap",
+     "sub": "Daily · 20 min. Log what got done. Tomorrow gets built from this.",
+     "meeting": false,
+     "done": false
+    }
+   ],
+   "log": []
+  },
+  "2026-09-28": {
+   "blocks": [
+    {
+     "id": "d1",
+     "start": "08:00",
+     "end": "08:20",
+     "title": "Check and respond to emails",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "d2",
+     "start": "08:20",
+     "end": "08:40",
+     "title": "Review daily metrics & KPIs",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "d3",
+     "start": "08:40",
+     "end": "09:00",
+     "title": "Team check-in",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "d4",
+     "start": "09:00",
+     "end": "09:30",
+     "title": "Bug Herds — complete 5 (Rock: under 10)",
+     "sub": "Daily · 30 min — bumped from 20, per your note these take longer than expected.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "d5",
+     "start": "09:30",
+     "end": "09:50",
+     "title": "Cases — complete 10",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "d6",
+     "start": "09:50",
+     "end": "10:10",
+     "title": "Strety",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "d7",
+     "start": "10:10",
+     "end": "11:10",
+     "title": "Rock: navigation redesign — decide Q3 site",
+     "sub": "60 min. Still undecided since the Sept 4 deadline — now 24 days overdue. Decide today, in writing (other site moves to Q4), no more slipping.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "d8",
+     "start": "11:10",
+     "end": "11:30",
+     "title": "Fix the carousel board-scan trigger",
+     "sub": "20 min. Carried 24 days now. Approve the pending edit in Cowork, rebind device access — or disable it.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "d9",
+     "start": "11:30",
+     "end": "12:00",
+     "title": "Find people to interview",
+     "sub": "30 min. Push candidate outreach — get more people into the pipeline for the e-comm team. Carried 17 days now.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "d10",
+     "start": "12:00",
+     "end": "12:45",
+     "title": "Audit ads and lower spend",
+     "sub": "45 min. Continue the search-term and ROAS work across both accounts — the goal is lowering spend, not just tightening negatives. Carried 17 days now.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "d11",
+     "start": "12:45",
+     "end": "13:45",
+     "title": "Fix beam listings",
+     "sub": "60 min. Accessories, related items, the BMUH item, ads for beam hangers and beam brackets, plus the new stained asset. Carried 17 days now — get the spreadsheets ready before the updates go in.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "d12",
+     "start": "13:45",
+     "end": "14:05",
+     "title": "Coffered ceiling builder",
+     "sub": "20 min. Promoted from the ideas list — carried 17 days now, push it forward.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "d13",
+     "start": "14:05",
+     "end": "14:25",
+     "title": "Shutters — add a variant help menu",
+     "sub": "20 min. Let customers order custom shutters through a variant help menu. Carried 17 days now.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "d14",
+     "start": "14:25",
+     "end": "14:50",
+     "title": "Redo the faux beams home page + blog posts",
+     "sub": "25 min. Carried 7 days now — push it forward.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "d15",
+     "start": "14:50",
+     "end": "15:20",
+     "title": "Add items missing from our sites to all the sites",
+     "sub": "30 min. Check each site for products listed elsewhere but missing there, and add them across the board. Carried 7 days now.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "d16",
+     "start": "15:20",
+     "end": "15:40",
+     "title": "Go over spend",
+     "sub": "20 min. Block time to review ad spend. Carried 7 days now.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "d17",
+     "start": "15:40",
+     "end": "16:00",
+     "title": "Ceiling & Wall Motifs — send the email",
+     "sub": "20 min. Carried 7 days now — push it out.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "d18",
+     "start": "16:00",
+     "end": "16:20",
+     "title": "Follow up with Andrew's ads",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "d19",
+     "start": "16:20",
+     "end": "16:40",
+     "title": "Wrap",
+     "sub": "Daily · 20 min. Log what got done. Tomorrow gets built from this.",
+     "meeting": false,
+     "done": false
+    }
+   ],
+   "log": []
+  },
+  "2026-09-29": {
+   "blocks": [
+    {
+     "id": "e1",
+     "start": "08:00",
+     "end": "08:20",
+     "title": "Check and respond to emails",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "e2",
+     "start": "08:20",
+     "end": "08:40",
+     "title": "Review daily metrics & KPIs",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "e3",
+     "start": "08:40",
+     "end": "09:00",
+     "title": "Team check-in",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "e4",
+     "start": "09:00",
+     "end": "09:30",
+     "title": "Bug Herds — complete 5 (Rock: under 10)",
+     "sub": "Daily · 30 min — bumped from 20, per your note these take longer than expected. Q3 ends tomorrow.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "e5",
+     "start": "09:30",
+     "end": "09:50",
+     "title": "Cases — complete 10",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "e6",
+     "start": "09:50",
+     "end": "10:10",
+     "title": "Strety",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "e7",
+     "start": "10:10",
+     "end": "11:10",
+     "title": "Rock: navigation redesign — decide Q3 site",
+     "sub": "60 min. Still undecided since the Sept 4 deadline — now 25 days overdue, and Q3 ends tomorrow. Decide today, in writing (other site moves to Q4).",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "e8",
+     "start": "11:10",
+     "end": "11:30",
+     "title": "Fix the carousel board-scan trigger",
+     "sub": "20 min. Carried 25 days now. Approve the pending edit in Cowork, rebind device access — or disable it.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "e9",
+     "start": "11:30",
+     "end": "12:00",
+     "title": "Find people to interview",
+     "sub": "30 min. Push candidate outreach — get more people into the pipeline for the e-comm team. Carried 18 days now.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "e10",
+     "start": "12:00",
+     "end": "12:45",
+     "title": "Audit ads and lower spend",
+     "sub": "45 min. Continue the search-term and ROAS work across both accounts — the goal is lowering spend, not just tightening negatives. Carried 18 days now.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "e11",
+     "start": "12:45",
+     "end": "13:45",
+     "title": "Fix beam listings",
+     "sub": "60 min. Accessories, related items, the BMUH item, ads for beam hangers and beam brackets, plus the new stained asset. Carried 18 days now — get the spreadsheets ready before the updates go in.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "e12",
+     "start": "13:45",
+     "end": "14:05",
+     "title": "Coffered ceiling builder",
+     "sub": "20 min. Promoted from the ideas list — carried 18 days now, push it forward.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "e13",
+     "start": "14:05",
+     "end": "14:25",
+     "title": "Shutters — add a variant help menu",
+     "sub": "20 min. Let customers order custom shutters through a variant help menu. Carried 18 days now.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "e14",
+     "start": "14:25",
+     "end": "14:50",
+     "title": "Redo the faux beams home page + blog posts",
+     "sub": "25 min. Carried 8 days now — push it forward.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "e15",
+     "start": "14:50",
+     "end": "15:20",
+     "title": "Add items missing from our sites to all the sites",
+     "sub": "30 min. Check each site for products listed elsewhere but missing there, and add them across the board. Carried 8 days now.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "e16",
+     "start": "15:20",
+     "end": "15:40",
+     "title": "Go over spend",
+     "sub": "20 min. Block time to review ad spend. Carried 8 days now.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "e17",
+     "start": "15:40",
+     "end": "16:00",
+     "title": "Ceiling & Wall Motifs — send the email",
+     "sub": "20 min. Carried 8 days now — push it out.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "e18",
+     "start": "16:00",
+     "end": "16:20",
+     "title": "Follow up with Andrew's ads",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "e19",
+     "start": "16:20",
+     "end": "16:40",
+     "title": "Wrap",
+     "sub": "Daily · 20 min. Log what got done. Tomorrow gets built from this.",
+     "meeting": false,
+     "done": false
+    }
+   ],
+   "log": []
+  },
+  "2026-09-30": {
+   "blocks": [
+    {
+     "id": "f1",
+     "start": "08:00",
+     "end": "08:20",
+     "title": "Check and respond to emails",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "f2",
+     "start": "08:20",
+     "end": "08:40",
+     "title": "Review daily metrics & KPIs",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "f3",
+     "start": "08:40",
+     "end": "09:00",
+     "title": "Team check-in",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "f4",
+     "start": "09:00",
+     "end": "09:30",
+     "title": "Bug Herds — complete 5 (Rock: under 10)",
+     "sub": "Daily · 30 min — bumped from 20, per your note these take longer than expected. Q3 ends today — this is the last day to hold the Rock.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "f5",
+     "start": "09:30",
+     "end": "09:50",
+     "title": "Cases — complete 10",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "f6",
+     "start": "09:50",
+     "end": "10:10",
+     "title": "Strety",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "f7",
+     "start": "10:10",
+     "end": "11:10",
+     "title": "Rock: navigation redesign — decide Q3 site",
+     "sub": "60 min. Still undecided since the Sept 4 deadline — now 26 days overdue, and Q3 ends today. Decide it in writing before end of day (other site moves to Q4).",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "f8",
+     "start": "11:10",
+     "end": "11:30",
+     "title": "Fix the carousel board-scan trigger",
+     "sub": "20 min. Carried 26 days now. Approve the pending edit in Cowork, rebind device access — or disable it.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "f9",
+     "start": "11:30",
+     "end": "12:00",
+     "title": "Find people to interview",
+     "sub": "30 min. Push candidate outreach — get more people into the pipeline for the e-comm team. Carried 19 days now.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "f10",
+     "start": "12:00",
+     "end": "12:45",
+     "title": "Audit ads and lower spend",
+     "sub": "45 min. Continue the search-term and ROAS work across both accounts — the goal is lowering spend, not just tightening negatives. Carried 19 days now; the AD Ads Rock closes today with Q3.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "f11",
+     "start": "12:45",
+     "end": "13:45",
+     "title": "Fix beam listings",
+     "sub": "60 min. Accessories, related items, the BMUH item, ads for beam hangers and beam brackets, plus the new stained asset. Carried 19 days now — get the spreadsheets ready before the updates go in.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "f12",
+     "start": "13:45",
+     "end": "14:05",
+     "title": "Coffered ceiling builder",
+     "sub": "20 min. Promoted from the ideas list — carried 19 days now, push it forward.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "f13",
+     "start": "14:05",
+     "end": "14:25",
+     "title": "Shutters — add a variant help menu",
+     "sub": "20 min. Let customers order custom shutters through a variant help menu. Carried 19 days now.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "f14",
+     "start": "14:25",
+     "end": "14:50",
+     "title": "Redo the faux beams home page + blog posts",
+     "sub": "25 min. Carried 9 days now — push it forward.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "f15",
+     "start": "14:50",
+     "end": "15:20",
+     "title": "Add items missing from our sites to all the sites",
+     "sub": "30 min. Check each site for products listed elsewhere but missing there, and add them across the board. Carried 9 days now.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "f16",
+     "start": "15:20",
+     "end": "15:40",
+     "title": "Go over spend",
+     "sub": "20 min. Block time to review ad spend. Carried 9 days now.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "f17",
+     "start": "15:40",
+     "end": "16:00",
+     "title": "Ceiling & Wall Motifs — send the email",
+     "sub": "20 min. Carried 9 days now — push it out.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "f18",
+     "start": "16:00",
+     "end": "16:20",
+     "title": "Follow up with Andrew's ads",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "f19",
+     "start": "16:20",
+     "end": "16:40",
+     "title": "Wrap",
+     "sub": "Daily · 20 min. Log what got done. Tomorrow gets built from this — and it's the first day of Q4.",
+     "meeting": false,
+     "done": false
+    }
+   ],
+   "log": []
+  },
+  "2026-10-01": {
+   "blocks": [
+    {
+     "id": "k1",
+     "start": "08:00",
+     "end": "08:20",
+     "title": "Check and respond to emails",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "k2",
+     "start": "08:20",
+     "end": "08:40",
+     "title": "Review daily metrics & KPIs",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "k3",
+     "start": "08:40",
+     "end": "09:00",
+     "title": "Team check-in",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "k4",
+     "start": "09:00",
+     "end": "09:30",
+     "title": "Bug Herds — complete 5 (Rock: under 10)",
+     "sub": "Daily · 30 min — bumped from 20, per your note these take longer than expected.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "k5",
+     "start": "09:30",
+     "end": "09:50",
+     "title": "Cases — complete 10",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "k6",
+     "start": "09:50",
+     "end": "10:10",
+     "title": "Strety",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "k7",
+     "start": "10:10",
+     "end": "11:10",
+     "title": "Rock: navigation redesign — decide site",
+     "sub": "60 min. Still undecided since the Sept 4 deadline — now 27 days overdue, and Q3 closed yesterday without it. First day of Q4: decide which site it is, in writing, today.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "k8",
+     "start": "11:10",
+     "end": "11:30",
+     "title": "Fix the carousel board-scan trigger",
+     "sub": "20 min. Carried 27 days now. Approve the pending edit in Cowork, rebind device access — or disable it.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "k9",
+     "start": "11:30",
+     "end": "12:00",
+     "title": "Find people to interview",
+     "sub": "30 min. Push candidate outreach — get more people into the pipeline for the e-comm team. Carried 20 days now.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "k10",
+     "start": "12:00",
+     "end": "12:45",
+     "title": "Audit ads and lower spend",
+     "sub": "45 min. Continue the search-term and ROAS work across both accounts — the goal is lowering spend, not just tightening negatives. Carried 20 days now.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "k11",
+     "start": "12:45",
+     "end": "13:45",
+     "title": "Fix beam listings",
+     "sub": "60 min. Accessories, related items, the BMUH item, ads for beam hangers and beam brackets, plus the new stained asset. Carried 20 days now — get the spreadsheets ready before the updates go in.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "k12",
+     "start": "13:45",
+     "end": "14:05",
+     "title": "Coffered ceiling builder",
+     "sub": "20 min. Promoted from the ideas list — carried 20 days now, push it forward.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "k13",
+     "start": "14:05",
+     "end": "14:25",
+     "title": "Shutters — add a variant help menu",
+     "sub": "20 min. Let customers order custom shutters through a variant help menu. Carried 20 days now.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "k14",
+     "start": "14:25",
+     "end": "14:50",
+     "title": "Redo the faux beams home page + blog posts",
+     "sub": "25 min. Carried 10 days now — push it forward.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "k15",
+     "start": "14:50",
+     "end": "15:20",
+     "title": "Add items missing from our sites to all the sites",
+     "sub": "30 min. Check each site for products listed elsewhere but missing there, and add them across the board. Carried 10 days now.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "k16",
+     "start": "15:20",
+     "end": "15:40",
+     "title": "Go over spend",
+     "sub": "20 min. Block time to review ad spend. Carried 10 days now.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "k17",
+     "start": "15:40",
+     "end": "16:00",
+     "title": "Ceiling & Wall Motifs — send the email",
+     "sub": "20 min. Carried 10 days now — push it out.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "k18",
+     "start": "16:00",
+     "end": "16:20",
+     "title": "Follow up with Andrew's ads",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "k19",
+     "start": "16:20",
+     "end": "16:40",
+     "title": "Wrap",
+     "sub": "Daily · 20 min. Log what got done. Tomorrow gets built from this.",
+     "meeting": false,
+     "done": false
+    }
+   ],
+   "log": []
+  },
+  "2026-10-02": {
+   "blocks": [
+    {
+     "id": "a1",
+     "start": "08:00",
+     "end": "08:20",
+     "title": "Check and respond to emails",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "a2",
+     "start": "08:20",
+     "end": "08:40",
+     "title": "Review daily metrics & KPIs",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "a3",
+     "start": "08:40",
+     "end": "09:00",
+     "title": "Team check-in",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "a4",
+     "start": "09:00",
+     "end": "09:30",
+     "title": "Bug Herds — complete 5 (Rock: under 10)",
+     "sub": "Daily · 30 min — bumped from 20, per your note these take longer than expected.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "a5",
+     "start": "09:30",
+     "end": "09:50",
+     "title": "Cases — complete 10",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "a6",
+     "start": "09:50",
+     "end": "10:10",
+     "title": "Strety",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "a7",
+     "start": "10:10",
+     "end": "11:10",
+     "title": "Rock: navigation redesign — decide site",
+     "sub": "60 min. Still undecided since the Sept 4 deadline — now 28 days overdue, and Q3 closed without it. Decide which site it is, in writing, today.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "a8",
+     "start": "11:10",
+     "end": "11:30",
+     "title": "Fix the carousel board-scan trigger",
+     "sub": "20 min. Carried 28 days now. Approve the pending edit in Cowork, rebind device access — or disable it.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "a9",
+     "start": "11:30",
+     "end": "12:00",
+     "title": "Find people to interview",
+     "sub": "30 min. Push candidate outreach — get more people into the pipeline for the e-comm team. Carried 21 days now.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "a10",
+     "start": "12:00",
+     "end": "12:45",
+     "title": "Audit ads and lower spend",
+     "sub": "45 min. Continue the search-term and ROAS work across both accounts — the goal is lowering spend, not just tightening negatives. Carried 21 days now.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "a11",
+     "start": "12:45",
+     "end": "13:45",
+     "title": "Fix beam listings",
+     "sub": "60 min. Accessories, related items, the BMUH item, ads for beam hangers and beam brackets, plus the new stained asset. Carried 21 days now — get the spreadsheets ready before the updates go in.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "a12",
+     "start": "13:45",
+     "end": "14:05",
+     "title": "Coffered ceiling builder",
+     "sub": "20 min. Promoted from the ideas list — carried 21 days now, push it forward.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "a13",
+     "start": "14:05",
+     "end": "14:25",
+     "title": "Shutters — add a variant help menu",
+     "sub": "20 min. Let customers order custom shutters through a variant help menu. Carried 21 days now.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "a14",
+     "start": "14:25",
+     "end": "14:50",
+     "title": "Redo the faux beams home page + blog posts",
+     "sub": "25 min. Carried 11 days now — push it forward.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "a15",
+     "start": "14:50",
+     "end": "15:20",
+     "title": "Add items missing from our sites to all the sites",
+     "sub": "30 min. Check each site for products listed elsewhere but missing there, and add them across the board. Carried 11 days now.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "a16",
+     "start": "15:20",
+     "end": "15:40",
+     "title": "Go over spend",
+     "sub": "20 min. Block time to review ad spend. Carried 11 days now.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "a17",
+     "start": "15:40",
+     "end": "16:00",
+     "title": "Ceiling & Wall Motifs — send the email",
+     "sub": "20 min. Carried 11 days now — push it out.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "a18",
+     "start": "16:00",
+     "end": "16:20",
+     "title": "Follow up with Andrew's ads",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "a19",
+     "start": "16:20",
+     "end": "16:40",
+     "title": "Wrap",
+     "sub": "Daily · 20 min. Log what got done. Tomorrow gets built from this.",
+     "meeting": false,
+     "done": false
+    }
+   ],
+   "log": []
+  },
+  "2026-10-05": {
+   "blocks": [
+    {
+     "id": "l1",
+     "start": "08:00",
+     "end": "08:20",
+     "title": "Check and respond to emails",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "l2",
+     "start": "08:20",
+     "end": "08:40",
+     "title": "Review daily metrics & KPIs",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "l3",
+     "start": "08:40",
+     "end": "09:00",
+     "title": "Team check-in",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "l4",
+     "start": "09:00",
+     "end": "09:30",
+     "title": "Bug Herds — complete 5 (Rock: under 10)",
+     "sub": "Daily · 30 min — bumped from 20, per your note these take longer than expected.",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "l5",
+     "start": "09:30",
+     "end": "09:50",
+     "title": "Cases — complete 10",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "l6",
+     "start": "09:50",
+     "end": "10:10",
+     "title": "Strety",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "l9",
+     "start": "10:10",
+     "end": "10:40",
+     "title": "Find people to interview",
+     "sub": "30 min. Push candidate outreach — get more people into the pipeline for the e-comm team. Carried 24 days now.",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "l10",
+     "start": "10:40",
+     "end": "11:25",
+     "title": "Audit ads and lower spend",
+     "sub": "45 min. Continue the search-term and ROAS work across both accounts — the goal is lowering spend, not just tightening negatives. Carried 24 days now.",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "k91",
+     "start": "11:25",
+     "end": "11:40",
+     "title": "Mantels: answer Claude's 2 questions",
+     "sub": "15 min. Comment on the two Answer me cards on the Mantels board (off-limits import fields; Miva vs NetSuite categories). Then Claude takes the line from there.",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "k90",
+     "start": "11:40",
+     "end": "13:10",
+     "title": "Navigation redesign: finish and hand off",
+     "sub": "90 min. This replaces the beam listings, coffered ceiling, shutters and faux beams blocks, which are done.",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "l7",
+     "start": "13:10",
+     "end": "14:30",
+     "title": "Rock: navigation redesign: finish it today",
+     "sub": "80 min. You said you are finishing it today. A second block after lunch is held for it too.",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "l15",
+     "start": "14:30",
+     "end": "15:00",
+     "title": "Add items missing from our sites to all the sites",
+     "sub": "30 min. Check each site for products listed elsewhere but missing there, and add them across the board. Carried 14 days now.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "l16",
+     "start": "15:00",
+     "end": "15:20",
+     "title": "Go over spend",
+     "sub": "20 min. Block time to review ad spend. Carried 14 days now.",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "l17",
+     "start": "15:20",
+     "end": "15:40",
+     "title": "Motif emails: send the nudge to Daniel",
+     "sub": "Sent Oct 5.",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "l18",
+     "start": "15:40",
+     "end": "16:00",
+     "title": "Follow up with Andrew's ads",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "l19",
+     "start": "16:00",
+     "end": "16:20",
+     "title": "Wrap",
+     "sub": "Daily · 20 min. Log what got done. Tomorrow gets built from this.",
+     "meeting": false,
+     "done": false
+    }
+   ],
+   "log": [
+    {
+     "t": "08:45",
+     "text": "Status from Brody: nav finishing today. Pacific Columns audit is now Andrew G.'s. Mantels handed to Claude. Beam listings mostly fixed. Hiring in progress. Motif emails waiting on Daniel. Coffered ceiling builder, shutters variant menu, and faux beams home page and blogs are done. Bug Herds at 30. AD negatives and labels approved. Merchant Center works through Brody's browser (request it each run). We manage the other PCI sites' ad spend."
+    }
+   ]
+  },
+  "2026-10-06": {
+   "blocks": [
+    {
+     "id": "oc6-1",
+     "start": "08:00",
+     "end": "08:20",
+     "title": "Check and respond to emails",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "oc6-2",
+     "start": "08:20",
+     "end": "08:40",
+     "title": "Review daily metrics & KPIs",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "oc6-3",
+     "start": "08:40",
+     "end": "09:00",
+     "title": "Team check-in",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "oc6-4",
+     "start": "09:00",
+     "end": "09:30",
+     "title": "Bug Herds — complete 5 (Rock: under 10)",
+     "sub": "Daily · 30 min. At 30 as of Oct 5, target was under 10 by Sep 30.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "oc6-5",
+     "start": "09:30",
+     "end": "09:50",
+     "title": "Cases — complete 10",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "oc6-6",
+     "start": "09:50",
+     "end": "10:10",
+     "title": "Strety",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "oc6-7",
+     "start": "10:10",
+     "end": "11:00",
+     "title": "Audit ads and lower spend — start with G1 + G3",
+     "sub": "50 min. Carried 25 days. Pull early numbers for G1 (spend up 36% in a week, Crown Moulding pMax +156%, AI Max on since Sep 29) and G3 (13.5% YTD ratio) to bring to the 11:00 review. The full G1 + G3 audit is due Thu.",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "oc6-8",
+     "start": "11:00",
+     "end": "12:00",
+     "title": "PPC Ad Review",
+     "sub": "Tue 11:00, per the G1 + G3 audit task. End time isn't on the board, so an hour is held.",
+     "meeting": true,
+     "done": true
+    },
+    {
+     "id": "oc6-9",
+     "start": "12:00",
+     "end": "12:20",
+     "title": "On your PC: approve the 2 Claude setups",
+     "sub": "20 min. Due today. Paste the two blocks from the setup note into Cowork: Pacific Columns findings to Andrew, and the mantels Mon/Thu session.",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "oc6-10",
+     "start": "12:20",
+     "end": "12:35",
+     "title": "Mantels: answer Claude's 2 questions",
+     "sub": "15 min. Due today and still open, though yesterday's block was checked off. Off-limits import fields; Miva vs NetSuite for categories. Skip if already answered.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "oc6-11",
+     "start": "12:35",
+     "end": "13:05",
+     "title": "Rock: navigation redesign — close it out",
+     "sub": "30 min. Due Oct 5. Both nav blocks were checked off yesterday but the Rock is still open. Mark it done if it shipped, or write down what's left.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "oc6-12",
+     "start": "13:05",
+     "end": "13:35",
+     "title": "Find people to interview",
+     "sub": "30 min. Carried 25 days. Keep the pipeline moving ahead of this afternoon's screen.",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "oc6-13",
+     "start": "13:35",
+     "end": "14:20",
+     "title": "Try Fable video generation",
+     "sub": "45 min. Due today, if the new release is out. Test it against an install video shot list so you can compare with the current Flow/Veo output.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "oc6-14",
+     "start": "14:20",
+     "end": "14:30",
+     "title": "Motif emails: check for Daniel's reply",
+     "sub": "10 min. Due today. If he hasn't answered on the GIF thread, ask him at the end of the 2:30 call. He's out Fri.",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "oc6-15",
+     "start": "14:30",
+     "end": "15:00",
+     "title": "Phone interview: Micheal Vanhoogstate",
+     "sub": "Teams, with Daniel. Hayden's friend, for the E-Commerce assistant role; can't start until January.",
+     "meeting": true,
+     "done": true
+    },
+    {
+     "id": "oc6-16",
+     "start": "15:00",
+     "end": "15:40",
+     "title": "Add items missing from our sites to all the sites",
+     "sub": "40 min. Carried 15 days. Check each site for products listed elsewhere but missing there, and add them across the board.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "oc6-17",
+     "start": "15:40",
+     "end": "16:00",
+     "title": "Go over spend",
+     "sub": "20 min. Carried 15 days. Block time to review ad spend.",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "oc6-18",
+     "start": "16:00",
+     "end": "16:20",
+     "title": "Follow up with Andrew's ads",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "oc6-19",
+     "start": "16:20",
+     "end": "16:40",
+     "title": "Wrap",
+     "sub": "Daily · 20 min. Log what got done. Tomorrow gets built from this.",
+     "meeting": false,
+     "done": false
+    }
+   ],
+   "log": []
+  },
+  "2026-10-07": {
+   "blocks": [
+    {
+     "id": "oc7-1",
+     "start": "08:00",
+     "end": "08:20",
+     "title": "Check and respond to emails",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "oc7-2",
+     "start": "08:20",
+     "end": "08:40",
+     "title": "Review daily metrics & KPIs",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "oc7-3",
+     "start": "08:40",
+     "end": "09:00",
+     "title": "Team check-in",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "oc7-4",
+     "start": "09:00",
+     "end": "09:30",
+     "title": "Bug Herds — complete 5 (Rock: under 10)",
+     "sub": "Daily · 30 min. At 30 as of Oct 5, target was under 10 by Sep 30.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "oc7-m1",
+     "start": "09:30",
+     "end": "12:00",
+     "title": "Meeting",
+     "sub": "",
+     "meeting": true,
+     "done": true
+    },
+    {
+     "id": "oc7-8",
+     "start": "12:00",
+     "end": "12:15",
+     "title": "Thursday clash: Algolia demo vs the E-Commerce L-10",
+     "sub": "15 min. Both sit at 11:00 tomorrow. Move one today, and line up the SKU search test from the Trenton thread to bring to the demo. First after the meeting so the move goes out with a day's notice.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "oc7-7",
+     "start": "12:15",
+     "end": "13:15",
+     "title": "G1 + G3 Google Ads audit: bring spend down",
+     "sub": "60 min — trimmed 15 for your 9:30–12 meeting. Due tomorrow, and the audit-and-lower-spend task has carried 26 days. Search terms, keywords, assets, and whether the tROAS targets are low enough to let spend run (G1 up 36% in a week, Crown Moulding pMax +156%, AI Max on since Sep 29; G3 at 13.5% YTD). Fold in the spend review here. Runs on your PC.",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "oc7-5",
+     "start": "13:15",
+     "end": "13:35",
+     "title": "Cases — complete 10",
+     "sub": "Daily · 20 min. Moved after your 9:30–12 meeting.",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "oc7-6",
+     "start": "13:35",
+     "end": "13:55",
+     "title": "Strety",
+     "sub": "Daily · 20 min. Moved after your 9:30–12 meeting.",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "oc7-9",
+     "start": "13:55",
+     "end": "14:15",
+     "title": "Mantels: answer Claude's 2 questions",
+     "sub": "20 min. Carried 1 day. Off-limits import fields; Miva vs NetSuite for categories. Comment on the Answer me cards. Skip if already answered.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "oc7-13",
+     "start": "14:15",
+     "end": "14:25",
+     "title": "Motif emails: nudge Daniel",
+     "sub": "10 min. Carried 1 day. Get his answer on the GIF and a send date before Friday — he's out Oct 9.",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "oc7-10",
+     "start": "14:25",
+     "end": "14:55",
+     "title": "Rock: navigation redesign — close it out",
+     "sub": "30 min. 2 days past due and still open. Mark it done if it shipped, or write down what's left.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "oc7-11",
+     "start": "14:55",
+     "end": "15:20",
+     "title": "Find people to interview",
+     "sub": "25 min — trimmed 5 for the meeting. Carried 26 days. Keep the pipeline moving.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "oc7-12",
+     "start": "15:20",
+     "end": "15:50",
+     "title": "Try Fable video generation",
+     "sub": "30 min — trimmed 15 for the meeting. Carried 1 day, if the new release is out. Run one install-video shot against it so you can compare with the current Flow/Veo output.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "oc7-14",
+     "start": "15:50",
+     "end": "16:20",
+     "title": "Add items missing from our sites to all the sites",
+     "sub": "30 min — trimmed 15 for the meeting. Carried 16 days. Check each site for products listed elsewhere but missing there, and add them across the board.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "oc7-17",
+     "start": "16:20",
+     "end": "16:40",
+     "title": "Follow up with Andrew's ads",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "oc7-18",
+     "start": "16:40",
+     "end": "17:00",
+     "title": "Wrap",
+     "sub": "Daily · 20 min. Log what got done. Install video #3 and the SMS/email review came off today for the meeting — both due Fri, so they go first tomorrow.",
+     "meeting": false,
+     "done": false
+    }
+   ],
+   "log": []
+  },
+  "2026-10-08": {
+   "blocks": [
+    {
+     "id": "oc8-1",
+     "start": "08:00",
+     "end": "08:20",
+     "title": "Check and respond to emails",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "oc8-2",
+     "start": "08:20",
+     "end": "08:40",
+     "title": "Review daily metrics & KPIs",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "oc8-3",
+     "start": "08:40",
+     "end": "09:00",
+     "title": "Team check-in",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "oc8-4",
+     "start": "09:00",
+     "end": "09:30",
+     "title": "Bug Herds — complete 5 (Rock: under 10)",
+     "sub": "Daily · 30 min. At 30 as of Oct 5, target was under 10 by Sep 30.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "oc8-5",
+     "start": "09:30",
+     "end": "09:50",
+     "title": "Cases — complete 10",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "oc8-6",
+     "start": "09:50",
+     "end": "10:00",
+     "title": "Strety",
+     "sub": "Daily · 10 min today, trimmed for the 10:00 interview.",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "oc8-21",
+     "start": "10:00",
+     "end": "10:30",
+     "title": "Phone interview: Jaden Phung",
+     "sub": "Teams, with Daniel. On your calendar but missed in this morning's build.",
+     "meeting": true,
+     "done": true
+    },
+    {
+     "id": "oc8-8",
+     "start": "10:30",
+     "end": "11:00",
+     "title": "Algolia demo prep: SKU search test",
+     "sub": "30 min. Line up the SKU search failure from the Trenton thread to run live. Algolia and the L-10 are both still booked at 11:00, so decide which one you're in.",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "oc8-9",
+     "start": "11:00",
+     "end": "12:00",
+     "title": "Algolia demo / E-Commerce L-10 (both still booked)",
+     "sub": "Both the Algolia demo (Gavin Mahony, Tory) and the E-Commerce L-10 are still on your calendar at 11:00. Power Hour is cancelled. Bring the SKU search test.",
+     "meeting": true,
+     "done": false
+    },
+    {
+     "id": "oc8-7",
+     "start": "12:00",
+     "end": "12:35",
+     "title": "SMS & email workflows: review what runs and what's missing",
+     "sub": "35 min. Moved after the 11:00 slot for the interview. Due tomorrow. Start from the AD Email System page (Sep 25): list the flows that exist, which send SMS, and the gaps.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "oc8-10",
+     "start": "12:35",
+     "end": "13:50",
+     "title": "Install video #3: vinyl shutters",
+     "sub": "75 min. Came off yesterday for your meeting, due tomorrow. Research the install guide, write the INSTALLATION brief (real install-guide figures, never generated install action), then generate and run the evaluator.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "oc8-11",
+     "start": "13:50",
+     "end": "14:10",
+     "title": "G1 + G3 Google Ads audit: apply and close out",
+     "sub": "20 min. Due today. The audit block got done yesterday; apply what's left, note the tROAS changes, and mark the task done if it's finished. Fold in the spend review.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "oc8-12",
+     "start": "14:10",
+     "end": "14:20",
+     "title": "Motif emails: check for Daniel's reply",
+     "sub": "10 min. Carried 2 days. He's out tomorrow, so today is the last chance for the GIF answer and a send date.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "oc8-13",
+     "start": "14:20",
+     "end": "14:40",
+     "title": "Mantels: answer Claude's 2 questions",
+     "sub": "20 min. Carried 2 days. Off-limits import fields; Miva vs NetSuite for categories. Comment on the Answer me cards. Skip if already answered.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "oc8-14",
+     "start": "14:40",
+     "end": "15:10",
+     "title": "Rock: navigation redesign — close it out",
+     "sub": "30 min. 3 days past due and still open. Mark it done if it shipped, or write down what's left.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "oc8-15",
+     "start": "15:10",
+     "end": "15:35",
+     "title": "Find people to interview",
+     "sub": "25 min. Carried 27 days. Keep the pipeline moving.",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "oc8-16",
+     "start": "15:35",
+     "end": "15:55",
+     "title": "Add items missing from our sites to all the sites",
+     "sub": "20 min, trimmed 10 for the interview. Carried 17 days. Check each site for products listed elsewhere but missing there, and add them across the board.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "oc8-17",
+     "start": "15:55",
+     "end": "16:20",
+     "title": "QA all install videos",
+     "sub": "25 min. Due tomorrow. Run the finished install videos through the evaluator and the Review Studio on your PC.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "oc8-19",
+     "start": "16:20",
+     "end": "16:40",
+     "title": "Follow up with Andrew's ads",
+     "sub": "Daily · 20 min",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "oc8-20",
+     "start": "16:40",
+     "end": "17:00",
+     "title": "Wrap",
+     "sub": "Daily · 20 min. Log what got done. Install video #3, the SMS/email review and video QA are due tomorrow. The Fable test moved to tomorrow to make room for the interview. Tomorrow: Daniel is out, Cook 1:1 at 1:00, Team Leads at 2:00.",
+     "meeting": false,
+     "done": false
+    }
+   ],
+   "log": []
+  },
+  "2026-10-09": {
+   "blocks": [
+    {
+     "id": "oc9-1",
+     "start": "08:00",
+     "end": "08:20",
+     "title": "Check and respond to emails",
+     "sub": "Daily · 20 min. Daniel is out today. Your calendar has you out all next week (Oct 12–16), so answer anything that can't wait a week first.",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "oc9-2",
+     "start": "08:20",
+     "end": "08:40",
+     "title": "Review daily metrics & KPIs",
+     "sub": "Daily · 20 min.",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "oc9-3",
+     "start": "08:40",
+     "end": "09:00",
+     "title": "Team check-in",
+     "sub": "Daily · 20 min. Tell the team who covers what while you're out Oct 12–16; your out-of-office note only asks for timecard approval and assignments.",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "oc9-4",
+     "start": "09:00",
+     "end": "09:30",
+     "title": "Bug Herds — complete 5 (Rock: under 10)",
+     "sub": "Daily · 30 min. Rock time. Was at 30 on Oct 5.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "oc9-5",
+     "start": "09:30",
+     "end": "09:50",
+     "title": "Cases — complete 10",
+     "sub": "Daily · 20 min.",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "oc9-6",
+     "start": "09:50",
+     "end": "10:10",
+     "title": "Strety",
+     "sub": "Daily · 20 min.",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "oc9-7",
+     "start": "10:10",
+     "end": "11:20",
+     "title": "Install video #3: vinyl shutters",
+     "sub": "70 min. Due today, carried from yesterday. Research the install guide, write the INSTALLATION brief (real guide figures, never generated install action), generate, run the evaluator.",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "oc9-8",
+     "start": "11:20",
+     "end": "11:50",
+     "title": "SMS & email workflows: review what runs and what's missing",
+     "sub": "30 min. Due today, carried from yesterday. Start from the AD Email System page. List the flows (welcome, abandoned cart, post-purchase, sample follow-up), which send SMS, and the gaps.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "oc9-9",
+     "start": "11:50",
+     "end": "12:25",
+     "title": "QA all install videos",
+     "sub": "35 min. Due today, carried from yesterday. Run each finished install video through the evaluator and the Review Studio on your PC.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "oc9-10",
+     "start": "12:25",
+     "end": "12:40",
+     "title": "Rock: navigation redesign — close it out",
+     "sub": "15 min. Due Oct 5 and still open. Write down where it stands so it doesn't sit for the week you're out.",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "oc9-11",
+     "start": "12:40",
+     "end": "13:00",
+     "title": "Algolia follow-up demo prep: SKU search test",
+     "sub": "20 min. Yesterday's 11:00 demo slot clashed with the L-10. This is the follow-up. Have the SKU search test ready to run live (Searchspring's high-error ticket and the Oct 2 'Big Issues' thread are the reasons to switch).",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "oc9-12",
+     "start": "13:00",
+     "end": "14:00",
+     "title": "Cook One-On-One / Algolia follow-up demo (both booked)",
+     "sub": "Both on your calendar. Cook 1:1 is 1:00–2:00 on Teams with J. Cook. Algolia follow-up demo is 1:00–1:45 on Zoom with Tyler Greff, Gavin Mahony, Tory and Ethan. Pick one and tell the other.",
+     "meeting": true,
+     "done": true
+    },
+    {
+     "id": "oc9-13",
+     "start": "14:00",
+     "end": "15:00",
+     "title": "Team Leads Weekly Meeting",
+     "sub": "Tentative. Teams, organized by Daniel, who is out today. Check it's still on.",
+     "meeting": true,
+     "done": false
+    },
+    {
+     "id": "oc9-14",
+     "start": "15:00",
+     "end": "15:20",
+     "title": "G1 + G3 Google Ads audit: apply and close out",
+     "sub": "20 min. Due Oct 8, carried. Search terms, keywords, assets and whether the tROAS targets are low enough to let spend run. Get changes in before a week away.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "oc9-15",
+     "start": "15:20",
+     "end": "15:45",
+     "title": "Try Fable video generation",
+     "sub": "25 min. Moved here from yesterday for the interview. Test it against the vinyl shutter shot list from this morning so you can compare with the Flow/Veo output.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "oc9-16",
+     "start": "15:45",
+     "end": "16:00",
+     "title": "On your PC: approve 2 Claude setups (Pacific Columns to Andrew, mantels sessions)",
+     "sub": "15 min. Due Oct 6, still open. The mantels Mon/Thu session has to exist on your PC to run while you're out.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "oc9-17",
+     "start": "16:00",
+     "end": "16:20",
+     "title": "Mantels: answer Claude's 2 questions",
+     "sub": "20 min. Due Oct 6, carried. Which import fields are off-limits, and whether categories go through Miva or a NetSuite field. Answer on the Mantels board so the line keeps moving next week.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "oc9-18",
+     "start": "16:20",
+     "end": "16:40",
+     "title": "Follow up with Andrew's ads",
+     "sub": "Daily · 20 min.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "oc9-19",
+     "start": "16:40",
+     "end": "17:00",
+     "title": "Wrap",
+     "sub": "Daily · 20 min. Log what got done. Tomorrow gets built from this. Your calendar has you out Oct 12–16, so hand off anything that can't wait. Didn't fit today: the Motif emails (waiting on Daniel, who is out today), find people to interview, add missing items to all the sites, go over spend.",
+     "meeting": false,
+     "done": false
+    }
+   ],
+   "log": []
+  },
+  "2026-10-12": {
+   "blocks": [
+    {
+     "id": "o12-1",
+     "start": "08:00",
+     "end": "08:20",
+     "title": "Check and respond to emails",
+     "sub": "Daily · 20 min. Your calendar has you out of town all week (Oct 12–16), so this plan is only for if you end up working. No meetings today.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o12-2",
+     "start": "08:20",
+     "end": "08:40",
+     "title": "Review daily metrics & KPIs",
+     "sub": "Daily · 20 min.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o12-3",
+     "start": "08:40",
+     "end": "09:00",
+     "title": "Team check-in",
+     "sub": "Daily · 20 min. Your out-of-office note only asks for cover on timecard approval and assignments.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o12-4",
+     "start": "09:00",
+     "end": "09:30",
+     "title": "Bug Herds — complete 5 (Rock: under 10)",
+     "sub": "Daily · 30 min. Rock time. Was at 30 on Oct 5.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o12-5",
+     "start": "09:30",
+     "end": "09:50",
+     "title": "Cases — complete 10",
+     "sub": "Daily · 20 min.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o12-6",
+     "start": "09:50",
+     "end": "10:10",
+     "title": "Strety",
+     "sub": "Daily · 20 min.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o12-7",
+     "start": "10:10",
+     "end": "10:50",
+     "title": "SMS & email workflows: review what runs and what's missing",
+     "sub": "40 min. Due Oct 9, didn't get done Friday. Start from the AD Email System page. List the flows (welcome, abandoned cart, post-purchase, sample follow-up), which send SMS, and the gaps.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o12-8",
+     "start": "10:50",
+     "end": "11:30",
+     "title": "QA all install videos",
+     "sub": "40 min. Due Oct 9, didn't get done Friday. Include Friday's vinyl shutter video. Run each one through the evaluator and the Review Studio on your PC.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o12-9",
+     "start": "11:30",
+     "end": "12:30",
+     "title": "G1 + G3 Google Ads audit: bring spend down",
+     "sub": "60 min. Due Oct 8, carried twice. Covers 'Go over spend' and 'Audit ads and lower spend' too, since it's the same work. Search terms, keywords, assets, and whether the tROAS targets are low enough to let spend run.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o12-10",
+     "start": "12:30",
+     "end": "12:45",
+     "title": "On your PC: approve 2 Claude setups (Pacific Columns to Andrew, mantels sessions)",
+     "sub": "15 min. Due Oct 6, carried from Friday. The mantels Mon/Thu session has to exist on your PC before it can run.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o12-11",
+     "start": "12:45",
+     "end": "13:05",
+     "title": "Mantels: answer Claude's 2 questions",
+     "sub": "20 min. Due Oct 6, carried from Friday. Which import fields are off-limits, and whether categories go through Miva or a NetSuite field. Answer on the Mantels board.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o12-12",
+     "start": "13:05",
+     "end": "13:35",
+     "title": "Try Fable video generation",
+     "sub": "30 min. Due Oct 6, carried from Friday. Compare it against Friday's vinyl shutter install video from Flow/Veo.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o12-13",
+     "start": "13:35",
+     "end": "13:50",
+     "title": "Motif emails: check in with Daniel",
+     "sub": "15 min. Due Oct 6, still waiting on Daniel, who was out Friday. Ask whether the GIF works and when the emails go out.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o12-14",
+     "start": "13:50",
+     "end": "14:30",
+     "title": "Find people to interview",
+     "sub": "40 min. Due Sep 11 and didn't fit Friday. Push candidate outreach for the e-comm team.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o12-15",
+     "start": "14:30",
+     "end": "15:15",
+     "title": "Add items missing from our sites to all the sites",
+     "sub": "45 min. Due Sep 21 and didn't fit Friday. Check each site for products listed elsewhere but missing there.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o12-16",
+     "start": "15:15",
+     "end": "15:40",
+     "title": "Search platform: write down the next step",
+     "sub": "25 min. Due Oct 8, still open. Note what came out of Friday's Algolia follow-up and what's still needed to decide on switching from Searchspring.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o12-17",
+     "start": "15:40",
+     "end": "16:20",
+     "title": "Bug Herds — second pass",
+     "sub": "40 min. You asked for more daily time on these. Still well over the under-10 target.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o12-18",
+     "start": "16:20",
+     "end": "16:40",
+     "title": "Follow up with Andrew's ads",
+     "sub": "Daily · 20 min.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o12-19",
+     "start": "16:40",
+     "end": "17:00",
+     "title": "Wrap",
+     "sub": "Daily · 20 min. Log what got done. Tomorrow gets built from this. Tomorrow: PPC Ad Review 11:00–12:00 in Creative Lounge (Heath), organized by Lauren, with Daniel, Hayden and the ESM team. The Tuesday Power Hour and the Google sync are cancelled.",
+     "meeting": false,
+     "done": false
+    }
+   ],
+   "log": []
+  },
+  "2026-10-13": {
+   "blocks": [
+    {
+     "id": "o13-1",
+     "start": "08:00",
+     "end": "08:20",
+     "title": "Check and respond to emails",
+     "sub": "Daily · 20 min. Your calendar still has you out of office through Oct 16, so this plan only matters if you end up working. One meeting today: PPC Ad Review 11:00–12:00.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o13-2",
+     "start": "08:20",
+     "end": "08:40",
+     "title": "Review daily metrics & KPIs",
+     "sub": "Daily · 20 min.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o13-3",
+     "start": "08:40",
+     "end": "09:00",
+     "title": "Team check-in",
+     "sub": "Daily · 20 min. Your out-of-office note only asks for cover on timecard approval and assignments.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o13-4",
+     "start": "09:00",
+     "end": "09:30",
+     "title": "Bug Herds — complete 5 (Rock: under 10)",
+     "sub": "Daily · 30 min. Rock time. Was at 30 on Oct 5.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o13-5",
+     "start": "09:30",
+     "end": "09:50",
+     "title": "Cases — complete 10",
+     "sub": "Daily · 20 min.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o13-6",
+     "start": "09:50",
+     "end": "10:10",
+     "title": "Strety",
+     "sub": "Daily · 20 min.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o13-7",
+     "start": "10:10",
+     "end": "11:00",
+     "title": "G1 + G3 Google Ads audit: bring spend down",
+     "sub": "50 min. Due Oct 8, not touched yesterday. Placed right before the PPC Ad Review so you walk in with it. Covers 'Go over spend' and 'Audit ads and lower spend' too. Search terms, keywords, assets, and whether the tROAS targets are low enough to let spend run.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o13-8",
+     "start": "11:00",
+     "end": "12:00",
+     "title": "PPC Ad Review",
+     "sub": "Creative Lounge (Heath). Lauren's meeting, with Daniel, Hayden and the ESM team. Still on your calendar as busy even though you're out. The Power Hour in the same slot was cancelled, to be rescheduled when you're back.",
+     "meeting": true,
+     "done": false
+    },
+    {
+     "id": "o13-9",
+     "start": "12:00",
+     "end": "12:40",
+     "title": "SMS & email workflows: review what runs and what's missing",
+     "sub": "40 min. Due Oct 9, not touched yesterday. Start from the AD Email System page. List the flows (welcome, abandoned cart, post-purchase, sample follow-up), which send SMS, and the gaps.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o13-10",
+     "start": "12:40",
+     "end": "13:20",
+     "title": "QA all install videos",
+     "sub": "40 min. Due Oct 9, not touched yesterday. Include the vinyl shutter video. Run each one through the evaluator and the Review Studio on your PC.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o13-11",
+     "start": "13:20",
+     "end": "13:35",
+     "title": "On your PC: approve 2 Claude setups (Pacific Columns to Andrew, mantels sessions)",
+     "sub": "15 min. Due Oct 6, still open. The mantels Mon/Thu session has to exist on your PC before it can run.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o13-12",
+     "start": "13:35",
+     "end": "13:55",
+     "title": "Mantels: answer Claude's 2 questions",
+     "sub": "20 min. Due Oct 6, still open. Which import fields are off-limits, and whether categories go through Miva or a NetSuite field. Answer on the Mantels board.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o13-13",
+     "start": "13:55",
+     "end": "14:20",
+     "title": "Try Fable video generation",
+     "sub": "25 min. Due Oct 6, still open. Compare it against the vinyl shutter install video from Flow/Veo.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o13-14",
+     "start": "14:20",
+     "end": "14:35",
+     "title": "Motif emails: check in with Daniel",
+     "sub": "15 min. Due Oct 6, still waiting on Daniel. Ask whether the GIF works and when the emails go out. You'll see him at the PPC Ad Review if you're in.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o13-15",
+     "start": "14:35",
+     "end": "15:10",
+     "title": "Find people to interview",
+     "sub": "35 min. Due Sep 11, still open. Push candidate outreach for the e-comm team.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o13-16",
+     "start": "15:10",
+     "end": "15:45",
+     "title": "Add items missing from our sites to all the sites",
+     "sub": "35 min. Due Sep 21, still open. Check each site for products listed elsewhere but missing there.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o13-17",
+     "start": "15:45",
+     "end": "16:00",
+     "title": "Search platform: write down the next step",
+     "sub": "15 min. Due Oct 8, still open. Note what came out of the Algolia follow-up and what's still needed to decide on switching from Searchspring.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o13-18",
+     "start": "16:00",
+     "end": "16:20",
+     "title": "Bug Herds — second pass",
+     "sub": "20 min. You asked for more daily time on these. Still well over the under-10 target.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o13-19",
+     "start": "16:20",
+     "end": "16:40",
+     "title": "Follow up with Andrew's ads",
+     "sub": "Daily · 20 min.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o13-20",
+     "start": "16:40",
+     "end": "17:00",
+     "title": "Wrap",
+     "sub": "Daily · 20 min. Log what got done. Tomorrow gets built from this. Tomorrow: Product Category Group Meetings – Leadership 9:30–12:00 in Creative Lounge (Heath), tentative. The regular Product Category Group meeting and Product Launch – Quality are cancelled.",
+     "meeting": false,
+     "done": false
+    }
+   ],
+   "log": []
+  },
+  "2026-10-14": {
+   "blocks": [
+    {
+     "id": "o14-1",
+     "start": "08:00",
+     "end": "08:20",
+     "title": "Check and respond to emails",
+     "sub": "Daily · 20 min. Your calendar still has you out of office through Oct 16, so this plan only matters if you end up working. One meeting today: Product Category Group Meetings – Leadership 9:30–12:00, tentative.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o14-2",
+     "start": "08:20",
+     "end": "08:40",
+     "title": "Review daily metrics & KPIs",
+     "sub": "Daily · 20 min.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o14-3",
+     "start": "08:40",
+     "end": "09:00",
+     "title": "Team check-in",
+     "sub": "Daily · 20 min. You organize tomorrow's E-Commerce L-10 at 11:00. If you're still out, decide who runs it or cancel it.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o14-4",
+     "start": "09:00",
+     "end": "09:30",
+     "title": "Bug Herds — complete 5 (Rock: under 10)",
+     "sub": "Daily · 30 min. Rock time. Was at 30 on Oct 5.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o14-5",
+     "start": "09:30",
+     "end": "12:00",
+     "title": "Product Category Group Meetings – Leadership",
+     "sub": "Creative Lounge (Heath). Tentative. With Ethan, Daniel, Rob and the category leads. The regular Product Category Group meeting and Product Launch – Quality in the same window are cancelled.",
+     "meeting": true,
+     "done": false
+    },
+    {
+     "id": "o14-6",
+     "start": "12:00",
+     "end": "12:20",
+     "title": "Cases — complete 10",
+     "sub": "Daily · 20 min. Moved after the meeting.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o14-7",
+     "start": "12:20",
+     "end": "12:40",
+     "title": "Strety",
+     "sub": "Daily · 20 min. Moved after the meeting.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o14-8",
+     "start": "12:40",
+     "end": "13:25",
+     "title": "G1 + G3 Google Ads audit: bring spend down",
+     "sub": "45 min. Due Oct 8, still open. Covers 'Go over spend' and 'Audit ads and lower spend' too. Search terms, keywords, assets, and whether the tROAS targets are low enough to let spend run.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o14-9",
+     "start": "13:25",
+     "end": "14:00",
+     "title": "SMS & email workflows: review what runs and what's missing",
+     "sub": "35 min. Due Oct 9, still open. Start from the AD Email System page. List the flows (welcome, abandoned cart, post-purchase, sample follow-up), which send SMS, and the gaps.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o14-10",
+     "start": "14:00",
+     "end": "14:35",
+     "title": "QA all install videos",
+     "sub": "35 min. Due Oct 9, still open. Include the vinyl shutter video. Run each one through the evaluator and the Review Studio on your PC.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o14-11",
+     "start": "14:35",
+     "end": "14:50",
+     "title": "On your PC: approve 2 Claude setups (Pacific Columns to Andrew, mantels sessions)",
+     "sub": "15 min. Due Oct 6, still open. The mantels Mon/Thu session has to exist on your PC before it can run.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o14-12",
+     "start": "14:50",
+     "end": "15:05",
+     "title": "Mantels: answer Claude's 2 questions",
+     "sub": "15 min. Due Oct 6, still open. Which import fields are off-limits, and whether categories go through Miva or a NetSuite field. Answer on the Mantels board.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o14-13",
+     "start": "15:05",
+     "end": "15:25",
+     "title": "Try Fable video generation",
+     "sub": "20 min. Due Oct 6, still open. Compare it against the vinyl shutter install video from Flow/Veo.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o14-14",
+     "start": "15:25",
+     "end": "15:35",
+     "title": "Motif emails: check in with Daniel",
+     "sub": "10 min. Due Oct 6, still waiting on Daniel. Ask whether the GIF works and when the emails go out. He's in this morning's meeting if you are.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o14-15",
+     "start": "15:35",
+     "end": "15:55",
+     "title": "Find people to interview",
+     "sub": "20 min. Due Sep 11, still open. Push candidate outreach for the e-comm team.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o14-16",
+     "start": "15:55",
+     "end": "16:10",
+     "title": "Add items missing from our sites to all the sites",
+     "sub": "15 min. Due Sep 21, still open. Check each site for products listed elsewhere but missing there.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o14-17",
+     "start": "16:10",
+     "end": "16:20",
+     "title": "Search platform: write down the next step",
+     "sub": "10 min. Due Oct 8, still open. Note what came out of the Algolia follow-up and what's still needed to decide on switching from Searchspring.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o14-18",
+     "start": "16:20",
+     "end": "16:40",
+     "title": "Follow up with Andrew's ads",
+     "sub": "Daily · 20 min.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o14-19",
+     "start": "16:40",
+     "end": "17:00",
+     "title": "Wrap",
+     "sub": "Daily · 20 min. Log what got done. Tomorrow gets built from this. Tomorrow: E-Commerce L-10 11:00–12:00 in Creative Lounge (Heath), which you organize. Jordan Caldwell's LIT final presentation 2:30–3:30 on Teams, tentative. The Thursday Power Hour is cancelled.",
+     "meeting": false,
+     "done": false
+    }
+   ],
+   "log": []
+  },
+  "2026-10-15": {
+   "blocks": [
+    {
+     "id": "o15-1",
+     "start": "08:00",
+     "end": "08:20",
+     "title": "Check and respond to emails",
+     "sub": "Daily · 20 min. Your calendar still has you out of office through Oct 16, so this plan only matters if you end up working. Two meetings today: E-Commerce L-10 11:00–12:00, Jordan Caldwell's LIT presentation 2:30–3:30 (tentative).",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o15-2",
+     "start": "08:20",
+     "end": "08:40",
+     "title": "Review daily metrics & KPIs",
+     "sub": "Daily · 20 min.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o15-3",
+     "start": "08:40",
+     "end": "09:00",
+     "title": "Team check-in",
+     "sub": "Daily · 20 min. You organize today's L-10 at 11:00. If you're out, tell the team who runs it or cancel it.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o15-4",
+     "start": "09:00",
+     "end": "09:30",
+     "title": "Bug Herds — complete 5 (Rock: under 10)",
+     "sub": "Daily · 30 min. Rock time.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o15-5",
+     "start": "09:30",
+     "end": "09:50",
+     "title": "Cases — complete 10",
+     "sub": "Daily · 20 min.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o15-6",
+     "start": "09:50",
+     "end": "10:10",
+     "title": "Strety",
+     "sub": "Daily · 20 min. Update scorecards before the L-10.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o15-7",
+     "start": "10:10",
+     "end": "10:30",
+     "title": "L-10 prep",
+     "sub": "20 min. You're running it. Pull scorecards and the issues list from Strety.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o15-8",
+     "start": "10:30",
+     "end": "11:00",
+     "title": "SMS & email workflows: review what runs and what's missing",
+     "sub": "30 min. Due Oct 9, still open. Start from the AD Email System page. List the flows (welcome, abandoned cart, post-purchase, sample follow-up), which send SMS, and the gaps.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o15-9",
+     "start": "11:00",
+     "end": "12:00",
+     "title": "E-Commerce L-10",
+     "sub": "Creative Lounge (Heath) + Teams. You organize. With Cook, Daniel, Lauren, Ethan, Hayden and A. Gonzalez. The Power Hour in this slot is cancelled; Daniel says you can reschedule it when you're back.",
+     "meeting": true,
+     "done": false
+    },
+    {
+     "id": "o15-10",
+     "start": "12:00",
+     "end": "12:45",
+     "title": "G1 + G3 Google Ads audit: bring spend down",
+     "sub": "45 min. Due Oct 8, still open. Covers 'Go over spend' and 'Audit ads and lower spend' too. Search terms, keywords, assets, and whether the tROAS targets are low enough to let spend run.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o15-11",
+     "start": "12:45",
+     "end": "13:20",
+     "title": "QA all install videos",
+     "sub": "35 min. Due Oct 9, still open. Include the vinyl shutter video. Run each one through the evaluator and the Review Studio on your PC.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o15-12",
+     "start": "13:20",
+     "end": "13:35",
+     "title": "On your PC: approve 2 Claude setups (Pacific Columns to Andrew, mantels sessions)",
+     "sub": "15 min. Due Oct 6, still open. The mantels Mon/Thu session has to exist on your PC before it can run.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o15-13",
+     "start": "13:35",
+     "end": "13:50",
+     "title": "Mantels: answer Claude's 2 questions",
+     "sub": "15 min. Due Oct 6, still open. Which import fields are off-limits, and whether categories go through Miva or a NetSuite field. Answer on the Mantels board.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o15-14",
+     "start": "13:50",
+     "end": "14:10",
+     "title": "Try Fable video generation",
+     "sub": "20 min. Due Oct 6, still open. Compare it against the vinyl shutter install video from Flow/Veo.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o15-15",
+     "start": "14:10",
+     "end": "14:20",
+     "title": "Motif emails: check in with Daniel",
+     "sub": "10 min. Due Oct 6, still waiting on Daniel. Ask whether the GIF works and when the emails go out. Easiest right after the L-10.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o15-16",
+     "start": "14:20",
+     "end": "14:30",
+     "title": "Search platform: write down the next step",
+     "sub": "10 min. Due Oct 8, still open. Note what came out of the Algolia follow-up and what's still needed to decide on switching from Searchspring.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o15-17",
+     "start": "14:30",
+     "end": "15:30",
+     "title": "Final Presentation / Graduation – Jordan Caldwell LIT Program",
+     "sub": "Teams (in person in the Division 4 conference room if you're local). Tentative. Organized by S. Pease.",
+     "meeting": true,
+     "done": false
+    },
+    {
+     "id": "o15-18",
+     "start": "15:30",
+     "end": "15:55",
+     "title": "Find people to interview",
+     "sub": "25 min. Due Sep 11, still open. Push candidate outreach for the e-comm team.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o15-19",
+     "start": "15:55",
+     "end": "16:20",
+     "title": "Add items missing from our sites to all the sites",
+     "sub": "25 min. Due Sep 21, still open. Check each site for products listed elsewhere but missing there.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o15-20",
+     "start": "16:20",
+     "end": "16:40",
+     "title": "Follow up with Andrew's ads",
+     "sub": "Daily · 20 min.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o15-21",
+     "start": "16:40",
+     "end": "17:00",
+     "title": "Wrap",
+     "sub": "Daily · 20 min. Log what got done. Tomorrow gets built from this. Tomorrow: Cook one-on-one 1:00–2:00 on Teams, then Team Leads Weekly 2:00–3:00 on Teams (tentative).",
+     "meeting": false,
+     "done": false
+    }
+   ],
+   "log": []
+  },
+  "2026-10-16": {
+   "blocks": [
+    {
+     "id": "o16-1",
+     "start": "08:00",
+     "end": "08:20",
+     "title": "Check and respond to emails",
+     "sub": "Daily · 20 min. Your out-of-office event runs through today, so this plan only matters if you're back. Two meetings today: Cook one-on-one 1:00–2:00, Team Leads Weekly 2:00–3:00 (tentative).",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o16-2",
+     "start": "08:20",
+     "end": "08:40",
+     "title": "Review daily metrics & KPIs",
+     "sub": "Daily · 20 min.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o16-3",
+     "start": "08:40",
+     "end": "09:00",
+     "title": "Team check-in",
+     "sub": "Daily · 20 min. Catch up on what happened while you were out, including whether yesterday's L-10 ran.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o16-4",
+     "start": "09:00",
+     "end": "09:30",
+     "title": "Bug Herds — complete 5 (Rock: under 10)",
+     "sub": "Daily · 30 min. Rock time.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o16-5",
+     "start": "09:30",
+     "end": "09:50",
+     "title": "Cases — complete 10",
+     "sub": "Daily · 20 min.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o16-6",
+     "start": "09:50",
+     "end": "10:10",
+     "title": "Strety",
+     "sub": "Daily · 20 min.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o16-7",
+     "start": "10:10",
+     "end": "10:55",
+     "title": "G1 + G3 Google Ads audit: bring spend down",
+     "sub": "45 min. Due Oct 8, still open. Covers 'Go over spend' and 'Audit ads and lower spend' too. Search terms, keywords, assets, and whether the tROAS targets are low enough to let spend run.",
+     "meeting": false,
+     "done": false,
+     "taskIds": [
+      "wk-ads",
+      "tu96z3a",
+      "t4ad91"
+     ]
+    },
+    {
+     "id": "o16-8",
+     "start": "10:55",
+     "end": "11:30",
+     "title": "SMS & email workflows: review what runs and what's missing",
+     "sub": "35 min. Due Oct 9, still open. Start from the AD Email System page. List the flows (welcome, abandoned cart, post-purchase, sample follow-up), which send SMS, and the gaps.",
+     "meeting": false,
+     "done": false,
+     "taskIds": [
+      "wk-sms"
+     ]
+    },
+    {
+     "id": "o16-9",
+     "start": "11:30",
+     "end": "12:05",
+     "title": "QA all install videos",
+     "sub": "35 min. Due Oct 9, still open. Include the vinyl shutter video. Run each one through the evaluator and the Review Studio on your PC.",
+     "meeting": false,
+     "done": false,
+     "taskIds": [
+      "wk-vidqa"
+     ]
+    },
+    {
+     "id": "o16-10",
+     "start": "12:05",
+     "end": "12:20",
+     "title": "On your PC: approve 2 Claude setups (Pacific Columns to Andrew, mantels sessions)",
+     "sub": "15 min. Due Oct 6, still open. The mantels Mon/Thu session has to exist on your PC before it can run.",
+     "meeting": false,
+     "done": false,
+     "taskIds": [
+      "wk-setup"
+     ]
+    },
+    {
+     "id": "o16-11",
+     "start": "12:20",
+     "end": "12:35",
+     "title": "Mantels: answer Claude's 2 questions",
+     "sub": "15 min. Due Oct 6, still open. Which import fields are off-limits, and whether categories go through Miva or a NetSuite field. Answer on the Mantels board.",
+     "meeting": false,
+     "done": false,
+     "taskIds": [
+      "tmant01"
+     ]
+    },
+    {
+     "id": "o16-12",
+     "start": "12:35",
+     "end": "12:45",
+     "title": "Motif emails: check in with Daniel",
+     "sub": "10 min. Due Oct 6, still waiting on Daniel. Ask whether the GIF works and when the emails go out. He's in the 2:00 Team Leads meeting too.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o16-13",
+     "start": "12:45",
+     "end": "13:00",
+     "title": "Search platform: write down the next step",
+     "sub": "15 min. Due Oct 8, still open. Note what came out of the Algolia follow-up and what's still needed to decide on switching from Searchspring.",
+     "meeting": false,
+     "done": false,
+     "taskIds": [
+      "wk-search"
+     ]
+    },
+    {
+     "id": "o16-14",
+     "start": "13:00",
+     "end": "14:00",
+     "title": "Cook One-On-One",
+     "sub": "Teams, with Cook.",
+     "meeting": true,
+     "done": false
+    },
+    {
+     "id": "o16-15",
+     "start": "14:00",
+     "end": "15:00",
+     "title": "Team Leads Weekly Meeting",
+     "sub": "Teams, run by Daniel, with Ethan, Pease, Bonetti, Kepler, Wright, Caldwell and E. Gonzalez. Tentative.",
+     "meeting": true,
+     "done": false
+    },
+    {
+     "id": "o16-16",
+     "start": "15:00",
+     "end": "15:25",
+     "title": "Try Fable video generation",
+     "sub": "25 min. Due Oct 6, still open. Compare it against the vinyl shutter install video from Flow/Veo.",
+     "meeting": false,
+     "done": false,
+     "taskIds": [
+      "wk-fable"
+     ]
+    },
+    {
+     "id": "o16-17",
+     "start": "15:25",
+     "end": "15:50",
+     "title": "Find people to interview",
+     "sub": "25 min. Due Sep 11, still open. Push candidate outreach for the e-comm team.",
+     "meeting": false,
+     "done": false,
+     "taskIds": [
+      "t7fp22",
+      "w1"
+     ]
+    },
+    {
+     "id": "o16-18",
+     "start": "15:50",
+     "end": "16:20",
+     "title": "Add items missing from our sites to all the sites",
+     "sub": "30 min. Due Sep 21, still open. Check each site for products listed elsewhere but missing there.",
+     "meeting": false,
+     "done": false,
+     "taskIds": [
+      "tk7mswn"
+     ]
+    },
+    {
+     "id": "o16-19",
+     "start": "16:20",
+     "end": "16:40",
+     "title": "Follow up with Andrew's ads",
+     "sub": "Daily · 20 min.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o16-20",
+     "start": "16:40",
+     "end": "17:00",
+     "title": "Wrap",
+     "sub": "Daily · 20 min. Log what got done. Monday gets built from this. Monday: nothing on the calendar yet.",
+     "meeting": false,
+     "done": false
+    }
+   ],
+   "log": []
+  },
+  "2026-10-19": {
+   "blocks": [
+    {
+     "id": "o19-1",
+     "start": "08:00",
+     "end": "08:20",
+     "title": "Check and respond to emails",
+     "sub": "Daily · 20 min. First day back. Clear what piled up while you were out. Daniel cancelled tomorrow's Power Hour so you can reschedule it now that you're back; pick a new slot.",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "o19-2",
+     "start": "08:20",
+     "end": "08:40",
+     "title": "Review daily metrics & KPIs",
+     "sub": "Daily · 20 min. Look at last week's numbers too.",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "o19-3",
+     "start": "08:40",
+     "end": "09:00",
+     "title": "Team check-in",
+     "sub": "Daily · 20 min. Catch up on last week, and confirm Andrew, Hayden and Lauren for 10:00.",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "o19-4",
+     "start": "09:00",
+     "end": "09:30",
+     "title": "Bug Herds — complete 5 (Rock: under 10)",
+     "sub": "Daily · 30 min. Rock time.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o19-5",
+     "start": "09:30",
+     "end": "09:45",
+     "title": "Cases — complete 10",
+     "sub": "15 min, trimmed for the 10:00 meeting.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o19-6",
+     "start": "09:45",
+     "end": "10:00",
+     "title": "Prep: The Future for the E-Comm Team",
+     "sub": "15 min. Write down your own top three areas to improve and what you'd target for the next year, so you can steer the conversation.",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "o19-7",
+     "start": "10:00",
+     "end": "11:00",
+     "title": "The Future for the E-Comm Team",
+     "sub": "Creative Lounge. You're running it, with Andrew, Hayden and Lauren. Capture their ideas on the biggest areas to improve and next year's growth targets.",
+     "meeting": true,
+     "done": true
+    },
+    {
+     "id": "o19-8",
+     "start": "11:00",
+     "end": "11:20",
+     "title": "Strety",
+     "sub": "Daily · 20 min. Get the meeting's takeaways into Strety while they're fresh.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o19-9",
+     "start": "11:20",
+     "end": "12:20",
+     "title": "G1 + G3 Google Ads audit: bring spend down",
+     "sub": "60 min. Due Oct 8, still open. Covers 'Go over spend' and 'Audit ads and lower spend' too. Search terms, keywords, assets, and whether the tROAS targets are low enough to let spend run.",
+     "meeting": false,
+     "done": false,
+     "taskIds": [
+      "wk-ads",
+      "tu96z3a",
+      "t4ad91"
+     ]
+    },
+    {
+     "id": "o19-10",
+     "start": "12:20",
+     "end": "12:55",
+     "title": "SMS & email workflows: review what runs and what's missing",
+     "sub": "35 min. Due Oct 9, still open. Start from the AD Email System page. List the flows (welcome, abandoned cart, post-purchase, sample follow-up), which send SMS, and the gaps.",
+     "meeting": false,
+     "done": false,
+     "taskIds": [
+      "wk-sms"
+     ]
+    },
+    {
+     "id": "o19-11",
+     "start": "12:55",
+     "end": "13:30",
+     "title": "QA all install videos",
+     "sub": "35 min. Due Oct 9, still open. Include the vinyl shutter video. Run each one through the evaluator and the Review Studio on your PC.",
+     "meeting": false,
+     "done": false,
+     "taskIds": [
+      "wk-vidqa"
+     ]
+    },
+    {
+     "id": "o19-12",
+     "start": "13:30",
+     "end": "13:45",
+     "title": "On your PC: approve 2 Claude setups (Pacific Columns to Andrew, mantels sessions)",
+     "sub": "15 min. Due Oct 6, still open. The mantels Mon/Thu session has to exist on your PC before it can run.",
+     "meeting": false,
+     "done": false,
+     "taskIds": [
+      "wk-setup"
+     ]
+    },
+    {
+     "id": "o19-13",
+     "start": "13:45",
+     "end": "14:00",
+     "title": "Mantels: answer Claude's 2 questions",
+     "sub": "15 min. Due Oct 6, still open. Which import fields are off-limits, and whether categories go through Miva or a NetSuite field. Answer on the Mantels board.",
+     "meeting": false,
+     "done": false,
+     "taskIds": [
+      "tmant01"
+     ]
+    },
+    {
+     "id": "o19-14",
+     "start": "14:00",
+     "end": "14:10",
+     "title": "Motif emails: check in with Daniel",
+     "sub": "10 min. Due Oct 6, still waiting on Daniel. Ask whether the GIF works and when the emails go out.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o19-15",
+     "start": "14:10",
+     "end": "14:30",
+     "title": "Search platform: prep for tomorrow's Algolia workshop",
+     "sub": "20 min. Due Oct 8, still open. Tomorrow 1:00–2:00 is the PCI + Algolia Technical Workshop (Zoom, tentative). Accept or decline, and write down what you need answered before deciding on switching from Searchspring.",
+     "meeting": false,
+     "done": false,
+     "taskIds": [
+      "wk-search"
+     ]
+    },
+    {
+     "id": "o19-16",
+     "start": "14:30",
+     "end": "14:55",
+     "title": "Try Fable video generation",
+     "sub": "25 min. Due Oct 6, still open. Compare it against the vinyl shutter install video from Flow/Veo.",
+     "meeting": false,
+     "done": false,
+     "taskIds": [
+      "wk-fable"
+     ]
+    },
+    {
+     "id": "o19-17",
+     "start": "14:55",
+     "end": "15:35",
+     "title": "Find people to interview",
+     "sub": "40 min. Due Sep 11, still open. Push candidate outreach for the e-comm team.",
+     "meeting": false,
+     "done": false,
+     "taskIds": [
+      "t7fp22",
+      "w1"
+     ]
+    },
+    {
+     "id": "o19-18",
+     "start": "15:35",
+     "end": "16:20",
+     "title": "Add items missing from our sites to all the sites",
+     "sub": "45 min. Due Sep 21, still open. Check each site for products listed elsewhere but missing there.",
+     "meeting": false,
+     "done": false,
+     "taskIds": [
+      "tk7mswn"
+     ]
+    },
+    {
+     "id": "o19-19",
+     "start": "16:20",
+     "end": "16:40",
+     "title": "Follow up with Andrew's ads",
+     "sub": "Daily · 20 min.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o19-20",
+     "start": "16:40",
+     "end": "17:00",
+     "title": "Wrap",
+     "sub": "Daily · 20 min. Log what got done. Tomorrow gets built from this. Tomorrow: PPC Ad Review 11:00–12:00 (Lauren, Creative Lounge), PCI + Algolia Technical Workshop 1:00–2:00 (Zoom, tentative). The Tuesday Power Hour is cancelled.",
+     "meeting": false,
+     "done": false
+    }
+   ],
+   "log": []
+  }
+ },
+ "ops": {
+  "2026-10-27": {
+   "asOf": "2026-10-27T22:41:16Z",
+   "since": "2026-10-26",
+   "cases": {
+    "count": 5,
+    "items": [
+     {
+      "no": "0977773",
+      "issue": "Drawing Clarification/Revision",
+      "vendor": "CW Ohio Inc.",
+      "on": "2026-10-26T19:50:24Z",
+      "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJT6hGEAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+     },
+     {
+      "no": "0977714",
+      "issue": "Cannot Be Made As Ordered",
+      "vendor": "Builder's Edge",
+      "on": "2026-10-26T18:20:23Z",
+      "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJT6hF1AAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+     },
+     {
+      "no": "0977697",
+      "issue": "Cannot Be Made As Ordered",
+      "vendor": "Builder's Edge",
+      "on": "2026-10-26T17:50:21Z",
+      "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJT6hFxAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+     },
+     {
+      "no": "0977685",
+      "issue": "Cannot Be Made As Ordered",
+      "vendor": "Builder's Edge",
+      "on": "2026-10-26T17:35:22Z",
+      "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJT6hFrAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+     },
+     {
+      "no": "0977518",
+      "issue": "Cannot Be Made As Ordered",
+      "vendor": "Pearl Mantels Corp.",
+      "on": "2026-10-26T13:00:29Z",
+      "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJT6hElAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+     }
+    ]
+   },
+   "pricing": [
+    {
+     "name": "AP: bills needing pricing review",
+     "what": "Accounts Payable's list for tomorrow's vendor payment run (2026.08.24 Bill Price Needs Review thread).",
+     "on": "2026-10-26T22:34:48Z",
+     "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJT6hGWAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+     "name": "Item Group List Prices need updating (search 11921)",
+     "what": "Grouped List Price doesn't match the sum of component online prices.",
+     "on": "2026-10-27T16:00:51Z",
+     "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJT6hHBAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    }
+   ],
+   "alerts": [
+    {
+     "name": "Parent Item with Default Variant SKU Updates",
+     "kind": "fix",
+     "what": "Parent items whose default variant SKU or image needs updating.",
+     "on": "2026-10-27T08:08:14Z",
+     "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJT6hGeAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+     "name": "Kit Item w/ No Location",
+     "kind": "fix",
+     "what": "Kits missing a preferred location (same location for all parts, else tell procurement).",
+     "on": "2026-10-27T07:00:36Z",
+     "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJT6hGbAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+     "name": "Inaccurate AD Items",
+     "kind": "fix",
+     "what": "Miva AD vs NetSuite mismatches (Monday audit).",
+     "on": "2026-10-26T15:01:08Z",
+     "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJT6hFLAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+     "name": "Inaccurate EkenaMillwork Items",
+     "kind": "fix",
+     "what": "Miva Ekena vs NetSuite mismatches (Monday audit).",
+     "on": "2026-10-26T16:02:17Z",
+     "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJT6hFeAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+     "name": "Inaccurate Miva PCI Items",
+     "kind": "fix",
+     "what": "Miva PCI vs NetSuite mismatches (Monday audit).",
+     "on": "2026-10-26T16:02:17Z",
+     "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJT6hFdAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+     "name": "Active Parent Items with 0 Active Children",
+     "kind": "fix",
+     "what": "Parents that show broken on the sites.",
+     "on": "2026-10-26T15:01:50Z",
+     "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJT6hFMAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+     "name": "Missing Miva.PCI Category Images",
+     "kind": "fix",
+     "what": "Categories with no category image in Miva admin.",
+     "on": "2026-10-26T16:00:11Z",
+     "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJT6hFbAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+     "name": "FAM Lead Time Updates for 10/26",
+     "kind": "fyi",
+     "what": "Leadership-approved lead times for the FAM divisions.",
+     "on": "2026-10-27T07:02:07Z",
+     "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJT6hGcAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    }
+   ]
+  },
+  "2026-10-28": {
+   "asOf": "2026-10-28T17:22:28Z",
+   "since": "2026-10-27",
+   "cases": {
+    "count": 1,
+    "items": [
+     {
+      "no": "0978268",
+      "issue": "Drawing Clarification/Revision",
+      "vendor": "Whitehall Products LLC",
+      "on": "2026-10-28T13:30:19Z",
+      "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJT6hIMAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+     }
+    ]
+   },
+   "pricing": [
+    {
+     "name": "Item Group List Prices need updating (search 11921)",
+     "what": "Grouped List Price on item groups doesn't match the sum of component online prices; attached list needs updating.",
+     "on": "2026-10-28T16:00:42Z",
+     "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJT6hIlAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    }
+   ],
+   "alerts": [
+    {
+     "name": "Athos indexing error",
+     "kind": "fix",
+     "what": "Indexing failed on myhomesupply.com: too many erroneous records in the data feed.",
+     "on": "2026-10-28T15:00:35Z",
+     "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJT6hIXAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+     "name": "Parent Item with Default Variant SKU Updates",
+     "kind": "fix",
+     "what": "Search results attached: parent items whose default variant SKU needs updating.",
+     "on": "2026-10-28T07:34:55Z",
+     "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJT6hH%2BAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+     "name": "Kit Item w/ No Location",
+     "kind": "fix",
+     "what": "Search results attached: kit items with no location set.",
+     "on": "2026-10-28T07:00:23Z",
+     "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJT6hH9AAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+     "name": "Daily Backorder List",
+     "kind": "fyi",
+     "what": "Inventory items low or backordered, including assemblies with a low component.",
+     "on": "2026-10-28T08:11:54Z",
+     "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJT6hH%2FAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+     "name": "FAM Lead Time updates",
+     "kind": "fyi",
+     "what": "Approved lead times for the FAM divisions (Oct 26 list).",
+     "on": "2026-10-27T07:02:07Z",
+     "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJT6hGcAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    }
+   ]
+  },
+  "2026-10-29": {
+   "asOf": "2026-10-29T17:31:00Z",
+   "since": "2026-10-28",
+   "cases": {
+    "count": 4,
+    "items": [
+     {
+      "no": "0978580",
+      "issue": "Drawing Clarification/Revision",
+      "vendor": "Builder's Edge",
+      "on": "2026-10-29T12:45:19Z",
+      "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJT6hJbAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+     },
+     {
+      "no": "0978577",
+      "issue": "Drawing Clarification/Revision",
+      "vendor": "Builder's Edge",
+      "on": "2026-10-29T12:35:19Z",
+      "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJT6hJaAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+     },
+     {
+      "no": "0978573",
+      "issue": "Drawing Clarification/Revision",
+      "vendor": "Atlantic Shutter Systems",
+      "on": "2026-10-29T12:25:18Z",
+      "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJT6hJZAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+     },
+     {
+      "no": "0978268",
+      "issue": "Drawing Clarification/Revision",
+      "vendor": "Whitehall Products LLC",
+      "on": "2026-10-28T13:30:19Z",
+      "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJT6hIMAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+     }
+    ]
+   },
+   "pricing": [
+    {
+     "name": "Item Group List Prices need updating (search 11921)",
+     "what": "Grouped List Price on item groups doesn't match the sum of component online prices; attached list needs updating.",
+     "on": "2026-10-29T16:00:43Z",
+     "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJT6hJvAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    }
+   ],
+   "alerts": [
+    {
+     "name": "Athos indexing error",
+     "kind": "fix",
+     "what": "Indexing failed on myhomesupply.com: too many erroneous records in the data feed.",
+     "on": "2026-10-29T15:00:11Z",
+     "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJT6hJnAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+     "name": "Parent Item with Default Variant SKU Updates",
+     "kind": "fix",
+     "what": "Search results attached: parent items whose default variant SKU needs updating.",
+     "on": "2026-10-29T07:37:10Z",
+     "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJT6hJSAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+     "name": "Kit Item w/ No Location",
+     "kind": "fix",
+     "what": "Search results attached: kit items with no location set.",
+     "on": "2026-10-29T07:00:19Z",
+     "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJT6hJRAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+     "name": "Daily Backorder List",
+     "kind": "fyi",
+     "what": "Inventory items low or backordered, including assemblies with a low component.",
+     "on": "2026-10-29T08:11:41Z",
+     "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJT6hJTAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    }
+   ]
+  },
+  "2026-10-30": {
+   "asOf": "2026-10-30T20:21:47Z",
+   "since": "2026-10-29",
+   "cases": {
+    "count": 31,
+    "items": [
+     {
+      "no": "0979104",
+      "issue": "Drawing Clarification/Revision",
+      "vendor": "AFCO, Industries",
+      "on": "2026-10-30T18:50:17Z",
+      "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJd6Hz5AAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+     },
+     {
+      "no": "0979059",
+      "issue": "Cannot Be Made As Ordered",
+      "vendor": "Builder's Edge",
+      "on": "2026-10-30T17:30:18Z",
+      "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJd6HzuAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+     },
+     {
+      "no": "0979057",
+      "issue": "Cannot Be Made As Ordered",
+      "vendor": "Builder's Edge",
+      "on": "2026-10-30T17:25:19Z",
+      "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJd6HztAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+     },
+     {
+      "no": "0979054",
+      "issue": "Cannot Be Made As Ordered",
+      "vendor": "Builder's Edge",
+      "on": "2026-10-30T17:20:19Z",
+      "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJd6HzrAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+     },
+     {
+      "no": "0979052",
+      "issue": "Cannot Be Made As Ordered",
+      "vendor": "Builder's Edge",
+      "on": "2026-10-30T17:15:18Z",
+      "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJd6HzqAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+     },
+     {
+      "no": "0979046",
+      "issue": "Cannot Be Made As Ordered",
+      "vendor": "Builder's Edge",
+      "on": "2026-10-30T17:05:24Z",
+      "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJd6HzpAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+     },
+     {
+      "no": "0979045",
+      "issue": "Cannot Be Made As Ordered",
+      "vendor": "Builder's Edge",
+      "on": "2026-10-30T17:05:21Z",
+      "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJd6HzoAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+     },
+     {
+      "no": "0979043",
+      "issue": "Drawing Clarification/Revision",
+      "vendor": "Turncraft Architectural",
+      "on": "2026-10-30T17:00:24Z",
+      "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJd6HzmAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+     },
+     {
+      "no": "0979042",
+      "issue": "Cannot Be Made As Ordered",
+      "vendor": "Builder's Edge",
+      "on": "2026-10-30T16:55:30Z",
+      "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJd6HzlAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+     },
+     {
+      "no": "0979040",
+      "issue": "Cannot Be Made As Ordered",
+      "vendor": "Builder's Edge",
+      "on": "2026-10-30T16:55:18Z",
+      "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJd6HzkAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+     },
+     {
+      "no": "0979034",
+      "issue": "Cannot Be Made As Ordered",
+      "vendor": "Builder's Edge",
+      "on": "2026-10-30T16:50:18Z",
+      "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJd6HzjAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+     },
+     {
+      "no": "0979030",
+      "issue": "Cannot Be Made As Ordered",
+      "vendor": "Builder's Edge",
+      "on": "2026-10-30T16:45:23Z",
+      "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJd6HziAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+     },
+     {
+      "no": "0979029",
+      "issue": "Cannot Be Made As Ordered",
+      "vendor": "Builder's Edge",
+      "on": "2026-10-30T16:45:22Z",
+      "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJd6HzhAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+     },
+     {
+      "no": "0979024",
+      "issue": "Cannot Be Made As Ordered",
+      "vendor": "Builder's Edge",
+      "on": "2026-10-30T16:40:28Z",
+      "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJd6HzfAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+     },
+     {
+      "no": "0979023",
+      "issue": "Cannot Be Made As Ordered",
+      "vendor": "Builder's Edge",
+      "on": "2026-10-30T16:40:23Z",
+      "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJd6HzeAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+     },
+     {
+      "no": "0979021",
+      "issue": "Cannot Be Made As Ordered",
+      "vendor": "Builder's Edge",
+      "on": "2026-10-30T16:40:18Z",
+      "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJd6HzdAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+     },
+     {
+      "no": "0979019",
+      "issue": "Cannot Be Made As Ordered",
+      "vendor": "Builder's Edge",
+      "on": "2026-10-30T16:30:28Z",
+      "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJd6HzbAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+     },
+     {
+      "no": "0979018",
+      "issue": "Cannot Be Made As Ordered",
+      "vendor": "Builder's Edge",
+      "on": "2026-10-30T16:30:23Z",
+      "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJd6HzaAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+     },
+     {
+      "no": "0979017",
+      "issue": "Cannot Be Made As Ordered",
+      "vendor": "Builder's Edge",
+      "on": "2026-10-30T16:30:18Z",
+      "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJd6HzZAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+     },
+     {
+      "no": "0979013",
+      "issue": "Cannot Be Made As Ordered",
+      "vendor": "Builder's Edge",
+      "on": "2026-10-30T16:25:31Z",
+      "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJd6HzYAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+     },
+     {
+      "no": "0979012",
+      "issue": "Cannot Be Made As Ordered",
+      "vendor": "Builder's Edge",
+      "on": "2026-10-30T16:25:23Z",
+      "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJd6HzXAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+     },
+     {
+      "no": "0979011",
+      "issue": "Cannot Be Made As Ordered",
+      "vendor": "Builder's Edge",
+      "on": "2026-10-30T16:25:20Z",
+      "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJd6HzWAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+     },
+     {
+      "no": "0979008",
+      "issue": "Cannot Be Made As Ordered",
+      "vendor": "Builder's Edge",
+      "on": "2026-10-30T16:20:20Z",
+      "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJd6HzVAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+     },
+     {
+      "no": "0978993",
+      "issue": "Cannot Be Made As Ordered",
+      "vendor": "Builder's Edge",
+      "on": "2026-10-30T15:45:23Z",
+      "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJd6HzPAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+     },
+     {
+      "no": "0978992",
+      "issue": "Cannot Be Made As Ordered",
+      "vendor": "Builder's Edge",
+      "on": "2026-10-30T15:45:18Z",
+      "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJd6HzOAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+     },
+     {
+      "no": "0978985",
+      "issue": "Cannot Be Made As Ordered",
+      "vendor": "Builder's Edge",
+      "on": "2026-10-30T15:40:17Z",
+      "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJd6HzNAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+     },
+     {
+      "no": "0978982",
+      "issue": "Cannot Be Made As Ordered",
+      "vendor": "Builder's Edge",
+      "on": "2026-10-30T15:35:17Z",
+      "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJd6HzLAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+     },
+     {
+      "no": "0978794",
+      "issue": "Drawing Clarification/Revision",
+      "vendor": "Atlantic Shutter Systems",
+      "on": "2026-10-29T21:00:21Z",
+      "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJT6hKUAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+     },
+     {
+      "no": "0978580",
+      "issue": "Drawing Clarification/Revision",
+      "vendor": "Builder's Edge",
+      "on": "2026-10-29T12:45:19Z",
+      "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJT6hJbAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+     },
+     {
+      "no": "0978577",
+      "issue": "Drawing Clarification/Revision",
+      "vendor": "Builder's Edge",
+      "on": "2026-10-29T12:35:19Z",
+      "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJT6hJaAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+     },
+     {
+      "no": "0978573",
+      "issue": "Drawing Clarification/Revision",
+      "vendor": "Atlantic Shutter Systems",
+      "on": "2026-10-29T12:25:18Z",
+      "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJT6hJZAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+     }
+    ]
+   },
+   "pricing": [
+    {
+     "name": "Item Group List Prices need updating (search 11921)",
+     "what": "Grouped List Price on item groups doesn't match the sum of component online prices; attached list needs updating.",
+     "on": "2026-10-30T16:00:43Z",
+     "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJd6HzRAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    }
+   ],
+   "alerts": [
+    {
+     "name": "Parent Item with Default Variant SKU Updates",
+     "kind": "fix",
+     "what": "Search results attached: parent items whose default variant SKU needs updating.",
+     "on": "2026-10-30T07:32:46Z",
+     "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJd6Hy2AAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+     "name": "Kit Item w/ No Location",
+     "kind": "fix",
+     "what": "Search results attached: kit items with no location set.",
+     "on": "2026-10-30T07:00:55Z",
+     "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJd6Hy1AAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+     "name": "Athos Commerce indexing error",
+     "kind": "fix",
+     "what": "Feed indexing paused on ekenamillwork.com: big drop in products in the latest feed; action needed. (myhomesupply.com indexing also failed this morning.)",
+     "on": "2026-10-30T17:33:58Z",
+     "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJd6HzvAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+     "name": "Daily Backorder List",
+     "kind": "fyi",
+     "what": "Inventory items that are low or backordered, including assemblies with a low component.",
+     "on": "2026-10-30T08:11:12Z",
+     "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJd6Hy3AAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    }
+   ]
+  }
+ }
+}

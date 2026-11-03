@@ -12,3 +12,4 @@ Scripts that rebuilt Brody's board in stages (run in this order, each takes the 
 Each script only swaps the state JSON and inserts app code with exact-match asserts.
 7. `pe.py` — "Write the emails" on each promotion: hands the campaign emails to Claude as a queued task.
 8. `tw.py` — Teams watch panel on the Team tab (state.teamsWatch), fed hourly by the refresh routine.
+9. `v5.py` — trims days older than 14 days into claude-work/board-archive/days.json, adds the Needs you list on Today, links Teams items to existing tasks, and the Friday wrap-up link.
