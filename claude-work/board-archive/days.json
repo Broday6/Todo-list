@@ -1,6 +1,6 @@
 {
  "note": "Days archived from Brody's board. Each entry is the day exactly as it was on the board.",
- "cut": "2026-10-20",
+ "cut": "2026-10-21",
  "days": {
   "2026-09-02": {
    "blocks": [
@@ -5637,6 +5637,345 @@
     }
    ],
    "log": []
+  },
+  "2026-10-20": {
+   "blocks": [
+    {
+     "id": "o20-1",
+     "start": "08:00",
+     "end": "08:20",
+     "title": "Check and respond to emails",
+     "sub": "Daily · 20 min. 4 to-dos from key people, 4 other actions, 3 drafts ready. Work them from the Inbox section above.",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "o20-2",
+     "start": "08:20",
+     "end": "08:40",
+     "title": "Review daily metrics & KPIs",
+     "sub": "Daily · 20 min. Mon $228,383, -9% vs last Mon. Ekena +43%, Millwork.com -28%. Details in the Sales section above.",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "o20-3",
+     "start": "08:40",
+     "end": "09:00",
+     "title": "Team check-in",
+     "sub": "Daily · 20 min. Daniel asked to meet first thing on the E-Comm team ideas from yesterday's meeting (his Google doc). Use this slot if he's free.",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "o20-4",
+     "start": "09:00",
+     "end": "09:30",
+     "title": "Bug Herds — complete 5 (Rock: under 10)",
+     "sub": "Daily · 30 min. Rock time.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o20-5",
+     "start": "09:30",
+     "end": "09:50",
+     "title": "Cases — complete 10",
+     "sub": "Daily · 20 min.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o20-6",
+     "start": "09:50",
+     "end": "10:00",
+     "title": "Prep: phone interview with Joshua Bellmore",
+     "sub": "10 min. Read his resume (attached to the invite) and pick your questions.",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "o20-7",
+     "start": "10:00",
+     "end": "10:30",
+     "title": "Phone interview: Joshua Bellmore",
+     "sub": "Teams, with Daniel. Liam's friend.",
+     "meeting": true,
+     "done": true
+    },
+    {
+     "id": "o20-8",
+     "start": "10:30",
+     "end": "10:50",
+     "title": "Strety",
+     "sub": "Daily · 20 min.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o20-9",
+     "start": "10:50",
+     "end": "11:00",
+     "title": "Motif emails: check in with Daniel",
+     "sub": "10 min. Due Oct 6, still waiting on Daniel. Ask whether the GIF works and when the emails go out.",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "o20-10",
+     "start": "11:00",
+     "end": "12:00",
+     "title": "PPC Ad Review",
+     "sub": "Creative Lounge. Lauren's meeting, with Daniel, Hayden, Andrew and the ESM team. The G1 + G3 spend audit is still open (2:00 today), so bring your questions on spend.",
+     "meeting": true,
+     "done": false
+    },
+    {
+     "id": "o20-11",
+     "start": "12:00",
+     "end": "12:20",
+     "title": "Prep: Algolia workshop",
+     "sub": "20 min. Due Oct 8, still open. Tory wanted question ideas. Write down what you need answered before deciding on switching from Searchspring.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o20-12",
+     "start": "12:20",
+     "end": "13:00",
+     "title": "NetSuite: switch SKU video links to Ekena's videos",
+     "sub": "40 min. From today's triage: Daniel's ask, and you said you'd do the uploads today. File: O:\\! DM\\Video update project from AD to Ekena.",
+     "meeting": false,
+     "done": false,
+     "taskIds": [
+      "in1020-2",
+      "lg1020-4"
+     ]
+    },
+    {
+     "id": "o20-13",
+     "start": "13:00",
+     "end": "14:00",
+     "title": "PCI + Algolia Technical Workshop",
+     "sub": "Zoom, with Gavin Mahony and Tyler Greff (Algolia), Tory, Ethan, Daniel. Tentative.",
+     "meeting": true,
+     "done": true
+    },
+    {
+     "id": "o20-14",
+     "start": "14:00",
+     "end": "14:45",
+     "title": "G1 + G3 Google Ads audit: bring spend down",
+     "sub": "45 min. Due Oct 8, still open. Covers 'Go over spend' and 'Audit ads and lower spend' too. Use what came up in the PPC review: search terms, keywords, assets, and whether the tROAS targets are low enough to let spend run.",
+     "meeting": false,
+     "done": false,
+     "taskIds": [
+      "wk-ads",
+      "tu96z3a",
+      "t4ad91"
+     ]
+    },
+    {
+     "id": "o20-15",
+     "start": "14:45",
+     "end": "15:15",
+     "title": "SMS & email workflows: review what runs and what's missing",
+     "sub": "30 min. Due Oct 9, still open. Start from the AD Email System page. List the flows (welcome, abandoned cart, post-purchase, sample follow-up), which send SMS, and the gaps.",
+     "meeting": false,
+     "done": false,
+     "taskIds": [
+      "wk-sms"
+     ]
+    },
+    {
+     "id": "o20-16",
+     "start": "15:15",
+     "end": "15:45",
+     "title": "QA all install videos",
+     "sub": "30 min. Due Oct 9, still open. Include the vinyl shutter video. Run each one through the evaluator and the Review Studio on your PC.",
+     "meeting": false,
+     "done": false,
+     "taskIds": [
+      "wk-vidqa"
+     ]
+    },
+    {
+     "id": "o20-17",
+     "start": "15:45",
+     "end": "16:05",
+     "title": "On your PC: approve 2 Claude setups, then answer the 2 mantels questions",
+     "sub": "20 min. Both due Oct 6, still open. Approve Pacific Columns to Andrew and the mantels Mon/Thu session. Then on the Mantels board: which import fields are off-limits, and whether categories go through Miva or a NetSuite field.",
+     "meeting": false,
+     "done": false,
+     "taskIds": [
+      "wk-setup",
+      "tmant01"
+     ]
+    },
+    {
+     "id": "o20-18",
+     "start": "16:05",
+     "end": "16:20",
+     "title": "Find people to interview",
+     "sub": "15 min. Due Sep 11, still open. Triage: follow up with the TVCC CS student (Gabriel An), and 5 new Handshake applicants.",
+     "meeting": false,
+     "done": true,
+     "taskIds": [
+      "t7fp22",
+      "w1"
+     ]
+    },
+    {
+     "id": "o20-19",
+     "start": "16:20",
+     "end": "16:40",
+     "title": "Follow up with Andrew's ads",
+     "sub": "Daily · 20 min. His sync topics today: FRP columns on Ekena, gable vents landing page.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o20-20",
+     "start": "16:40",
+     "end": "17:00",
+     "title": "Wrap",
+     "sub": "Daily · 20 min. Log what got done. Tomorrow gets built from this. Fable video test and adding missing items across sites move to tomorrow. Tomorrow: Product Category Group Meetings 9:30–12:00 (Creative Lounge, tentative). The Leadership session and Product Launch - Quality are cancelled.",
+     "meeting": false,
+     "done": false
+    }
+   ],
+   "log": [
+    {
+     "t": "14:19",
+     "text": "Meeting with Andrew at 2 PM"
+    },
+    {
+     "t": "14:19",
+     "text": "Contact colleges again"
+    },
+    {
+     "t": "14:19",
+     "text": "Algolia pull"
+    },
+    {
+     "t": "14:20",
+     "text": "Daniel Video upload"
+    },
+    {
+     "t": "15:27",
+     "text": "Tory searches"
+    }
+   ],
+   "inbox": {
+    "found": true,
+    "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJT445rAAA%3D&exvsurl=1&viewmodel=ReadMessageItem",
+    "subject": "Inbox triage — Tuesday, Oct 20",
+    "counts": {
+     "people": 4,
+     "other": 4,
+     "waiting": 0,
+     "fyi": 28,
+     "low": 73,
+     "drafts": 3
+    },
+    "people": [
+     {
+      "name": "Daniel M.",
+      "taskIds": [
+       "in1020-1",
+       "in1020-2",
+       "in1020-3"
+      ]
+     },
+     {
+      "name": "Ethan S.",
+      "taskIds": [
+       "in1020-4"
+      ]
+     },
+     {
+      "name": "Rob S.",
+      "taskIds": []
+     },
+     {
+      "name": "Tory K.",
+      "taskIds": []
+     },
+     {
+      "name": "Sam P.",
+      "taskIds": []
+     }
+    ],
+    "other": [
+     "in1020-5",
+     "in1020-6",
+     "in1020-7",
+     "in1020-8"
+    ],
+    "fyi": [
+     "Daniel: \"we need two sales people, so think about that.\" Heads-up, no ask.",
+     "Andrew's sync topics today: FRP columns on Ekena, gable vents landing page.",
+     "Barron/AZ Faux: email aliases to sales@, Zoom queues, quote template, NetSuite lead source (Sam, Ryan, Ethan).",
+     "Endura-Stone order won't ship until November. AP has bills needing price review.",
+     "Ethan OK'd the two new Cabinet Column categories. Daniel leaves early Friday.",
+     "TVCC passed along a CS student (Gabriel An) to follow up today. 5 new Handshake applicants.",
+     "Algolia follow-up closed: you answered Tory in Teams on Oct 19."
+    ],
+    "meetings": [],
+    "recap": {
+     "found": true,
+     "subject": "Meeting recap — Monday, Oct 19",
+     "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJT445KAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    }
+   },
+   "pulse": {
+    "found": true,
+    "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJT445pAAA%3D&exvsurl=1&viewmodel=ReadMessageItem",
+    "label": "Monday vs last Monday. Proxy from order confirmations; NetSuite is the source of truth.",
+    "orders": 400,
+    "dollars": 228383,
+    "ordersPrev": 422,
+    "dollarsPrev": 251677,
+    "ordersPct": -5,
+    "dollarsPct": -9,
+    "sites": [
+     {
+      "name": "AD",
+      "orders": 319,
+      "dollars": 185921,
+      "pct": -12
+     },
+     {
+      "name": "Ekena",
+      "orders": 43,
+      "dollars": 28180,
+      "pct": 43
+     },
+     {
+      "name": "Millwork.com",
+      "orders": 31,
+      "dollars": 10744,
+      "pct": -28
+     },
+     {
+      "name": "HomeOver",
+      "orders": 5,
+      "dollars": 3482,
+      "pct": -24
+     },
+     {
+      "name": "FauxBeams",
+      "orders": 2,
+      "dollars": 56,
+      "note": "$14 last wk"
+     }
+    ],
+    "flags": [
+     "1 order at $0, likely a free sample: AD 1750522.",
+     "4 confirmations for older orders ($3,731) may double count.",
+     "9 adPRO trade sign-ups (2 paid adPRO+), up from 6 last Monday."
+    ]
+   }
   }
  },
  "ops": {
