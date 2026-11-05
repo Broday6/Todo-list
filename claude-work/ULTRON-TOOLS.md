@@ -1,0 +1,83 @@
+# Ultron: tools and automations catalog
+
+This is the list of what we built to help Brody's job and what runs on its own. Keep it up to date whenever something is added, changed or retired.
+
+- Board: https://claude.ai/code/artifact/eef4aeae-7777-45e8-9eca-9b231c65b9c7
+- App launcher: `claude-work/ultron-app/Ultron.html`. It opens the board and uses the red mask icon. You can also download it from the board: sidebar › Download app, or Automations › Get the Ultron app.
+- Icon: `claude-work/ultron-app/ultron-icon.svg` and `ultron-icon.png`.
+- Board build scripts: `claude-work/2026-11-05/board-build/`. The patches are idempotent. Run them in this order: unwrap → patch → patch2 → patch3 → patch4 → patch5 → patch6 → bh8705 → patch7 → patch8 → patch9 → patch10.
+
+## Board tools (on the page)
+
+| Tool | Where | What it does |
+|---|---|---|
+| Explain / Dig deeper | Any task | Explains what a task means and where it came from, with links to the source email or tool. Dig deeper sends it to Claude for more. |
+| Send to Claude (answer box) | BugHerd and question tasks | Type an answer and it goes straight to Claude to work. |
+| More info and source links | Plan blocks | Every Schedule block gets More information plus chips that link to the emails or tools it cites (NetSuite, Asana, BugHerd and others). |
+| Progress bar | Anything sent to Claude | Shows live steps until the run finishes. It survives the page reload a save causes. |
+| ⚡ Have Claude do it now | Tasks and blocks | Fires the live-chat routine to do the task right away. |
+| Needs you panel | Today | Shows what needs Brody: answers, sends, Strety, approvals. |
+| Strety tab | Sidebar | Weekly check-in, rocks and to-dos, read from the Monday Strety email. Strety has no connector. |
+| Teams reply drafts and Send in Teams | Team tab | Claude drafts a reply. Send posts it only on Brody's own double tap. Claude never posts by itself. |
+| Email reply drafts | Inbox | Saves reply drafts to Outlook. Claude never sends email. |
+| BugHerd close queue | BugHerd | Ticking Done queues the ticket. The PC task sets it to Done in BugHerd, and the board shows Queued, Closed or Not closed. |
+| Automations tab, live | Automations | Reads each routine's real last run from get_trigger when the tab opens, and flags any that missed a run. |
+| Download app | Sidebar and Automations | Saves Ultron.html with the icon. |
+
+## Cloud routines (Claude Code)
+
+| Routine | Trigger | When (Central) |
+|---|---|---|
+| Sales pulse | trig_01LMcYKXkRzyN2nnwKGkcSUB | Weekdays 6:15 |
+| Inbox triage | trig_01Ah3Ga7TgqSpzoQ1uATtuY2 | Weekdays 6:30 |
+| Ultron morning rebuild | trig_01UqcLyToyZm3yyc7yQyUGdk | Weekdays 6:50 |
+| Cases, alerts & BugHerd check | trig_01MYXtzwUPSaeoWoADbywfUY | Weekdays 7:20, 12:20, 3:20 |
+| Weekday login check | trig_01CAub7W29N3DzeQAyU1iCEY | Weekdays 7:42 |
+| Marketing Category Report | trig_013u32ahu6VztnY5WiA8ByLo | Weekdays 7:51 |
+| Ultron check-ins | trig_01AKYLwWAuUEsDnzF2wci73i | Weekdays 8:47, 11:47, 2:47 |
+| Ultron ads refresh | trig_01899VdPf2gAAkjas5rmebWr | Weekdays 11:23 |
+| Hourly: Teams watch, Team, Promotions & Automations | trig_01TEeBTBTmPV3MxApZH2aeMr | Weekdays hourly 7:12 to 5:12 |
+| Meeting recaps | trig_0118dmodKjFNLoqVAEak6YvS | Weekdays 4:45 |
+| Live chat (fresh session) | trig_01JEYvWdaH6L4s8WcDsLrssJ | When Send or ⚡ is pressed |
+| Weekly website audit | trig_01652c6RPMTQdanSEpgh33XN | Mondays 10:47 |
+| Notion memory sync | trig_01A9Xm1hJZcUvWy1scHirSi6 | Mondays 5:41 |
+| Daybook backup | trig_01RNsTfWSxh9W4b5wT9JArYn | Sundays 1:38am |
+
+**Retire:** the old "Ultron Cases & alerts" routine (trig_015ZuN56zFoa7kgJA3rqnGcf) is still firing. Brody pauses it at claude.ai/code/routines/trig_015ZuN56zFoa7kgJA3rqnGcf.
+
+## Claude app routines
+
+- Daily read of Ultron (trig_01YDFzojud2Xx8LDnqEFoQPH): weekdays 7:43.
+- Morning brief (trig_019ktoFxgsv4GM6hYtaxBQJG): every day 8:06.
+- App check-ins (trig_01PvKJ48mpt8o9CpEVikpvez): every 3 hours from 7:36am to 7:36pm.
+
+## PC tasks (Claude desktop › Scheduled)
+
+- Daily ads + portal guard (AD): Tue–Fri 7:30. Press Run now after signing in.
+- Handshake daily check: 7:35. Press Run now.
+- Weekly ads + portal audit (AD): Mondays 9:30.
+- Monthly full ads + portal audit (AD): the 16th at 9:00.
+- Pacific Columns ads checks: daily Tue–Fri 7:40, weekly on Tuesdays 10:40, monthly on the 16th at 10:40.
+- Ekena carousel board scan: every 3 hours.
+- Still to set up:
+  - BugHerd close: `claude-work/2026-11-05/bugherd-close-pc-task.md`.
+  - BugHerd live pull: `claude-work/2026-11-02/pc-tasks/bugherd-sweep.md`.
+  - NetSuite cases check 16559: `claude-work/2026-11-02/pc-tasks/cases-sweep-16559.md`.
+
+## Rules every tool follows
+
+- **Email:** never send email; Outlook writes are drafts only.
+- **Calendar and Teams:**
+  - never create or change calendar events;
+  - Teams messages go out only on Brody's own double tap.
+- **NetSuite and Ads:**
+  - never change NetSuite or Ads, or ask anyone to, without Brody's OK for that exact change;
+  - files are named `...-NOT-IMPORTED.csv`;
+  - never raise budgets, and never judge on ROAS.
+- **BugHerd:**
+  - never send to Web Dev unless Brody clears the ticket;
+  - never claim a ticket was prepped, moved or worked;
+  - the only BugHerd change is the close queue for tickets Brody ticked Done.
+- **Routine publishes:**
+  - send no capabilities field;
+  - the full declaration is now artifact, sample, downloads, Microsoft 365 (outlook_email_search, read_resource, outlook_send_draft, outlook_send_mail, teams_send_chat_message) and Claude Code Remote (get_session, get_trigger, fire_trigger).
