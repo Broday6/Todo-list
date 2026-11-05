@@ -1,0 +1,8 @@
+
+/* ---------- quick answer (Nov 5) ---------- */
+.qans{margin-top:10px;padding:10px 12px;border-left:3px solid var(--accent);background:var(--accent-soft);border-radius:6px;font-size:13.5px}
+.qans b{display:block;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:4px}
+.qans p{margin:0;white-space:normal}
+.qans small{display:block;margin-top:6px;color:var(--muted);font-size:12px}
+.qans.err{border-left-color:var(--warn);background:var(--warn-soft)}
+.qans .qthink{color:var(--muted)}
