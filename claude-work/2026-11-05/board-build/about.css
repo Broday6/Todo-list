@@ -1,0 +1,13 @@
+.about{flex:1 1 100%;order:-1;margin:2px 0 6px;padding:10px 12px;border:1px solid var(--line);border-left:2px solid var(--accent);border-radius:6px;background:var(--panel)}
+.about h4{margin:0 0 6px;font-size:13px;font-weight:600}
+.about dl{margin:0;display:grid;grid-template-columns:112px minmax(0,1fr);gap:4px 12px;font-size:13px}
+.about dt{color:var(--muted)}
+.about dd{margin:0;overflow-wrap:anywhere}
+.about .muted{color:var(--muted)}
+.about .linkbtn.rel{margin:0 4px 4px 0;font-weight:400}
+.about .cacts{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;align-items:center}
+.about .cacts .btn{padding:6px 12px;font-size:13px}
+.about a.linkbtn{text-decoration:none}
+@media(max-width:560px){.about dl{grid-template-columns:1fr;gap:0 0}.about dd{margin-bottom:6px}}
+.whatq{width:22px;height:22px;padding:0;border:1px solid var(--line-strong);border-radius:50%;background:var(--panel);color:var(--muted);font-size:12px;font-weight:600;line-height:1}
+.whatq:hover{color:var(--accent);border-color:var(--accent)}

@@ -1,0 +1,12 @@
+.blinks{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.blinks .linkbtn{font-size:12px;padding:3px 8px;text-decoration:none;display:inline-flex;align-items:center;gap:3px;max-width:100%;overflow:hidden;text-overflow:ellipsis}
+.blinks .bl-mail{color:var(--accent)}
+.blinks .bl-mail i,.blinks .bl-tool i{font-style:normal;opacity:.8}
+.blinks .bl-info{color:var(--muted)}
+.binfo{margin-top:8px;padding:10px 12px;border:1px solid var(--line);border-left:2px solid var(--accent);border-radius:6px;background:var(--panel)}
+.binfo h4{margin:0 0 6px;font-size:12.5px;font-weight:600;color:var(--muted)}
+.bitasks{list-style:none;margin:0 0 8px;padding:0;display:grid;gap:6px}
+.bitasks li{display:flex;flex-wrap:wrap;gap:4px 10px;align-items:baseline;font-size:12.5px;color:var(--muted)}
+.binfo .msgs{max-height:260px}
+.binfo .cacts{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.binfo .cacts .btn{padding:6px 12px;font-size:13px}

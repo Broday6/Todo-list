@@ -1,0 +1,12 @@
+.prog2:empty{display:none}
+.prog2{flex:1 1 100%;margin-top:8px;padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:var(--sunk)}
+.pbar{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:4px}
+.pbar li{display:flex;flex-direction:column;gap:4px;font-size:11px;color:var(--muted)}
+.pbar li i{display:block;height:4px;border-radius:2px;background:var(--line-strong)}
+.pbar li.ok i{background:var(--ok)}
+.pbar li.cur i{background:var(--accent);animation:pb 1.2s ease-in-out infinite}
+.pbar li.cur span{color:var(--accent);font-weight:600}
+.pbar.done li i{background:var(--ok)}
+@keyframes pb{50%{opacity:.35}}
+@media (prefers-reduced-motion:reduce){.pbar li.cur i{animation:none}}
+.ptxt{margin:6px 0 0;font-size:12.5px;color:var(--ink)}
