@@ -5,7 +5,7 @@ This is the list of what we built to help Brody's job and what runs on its own. 
 - Board: https://claude.ai/code/artifact/eef4aeae-7777-45e8-9eca-9b231c65b9c7
 - App launcher: `claude-work/ultron-app/Ultron.html`. It opens the board and uses the red mask icon. You can also download it from the board: sidebar › Download app, or Automations › Get the Ultron app.
 - Icon (favicon and app only): `claude-work/ultron-app/ultron-icon.svg` and `ultron-icon.png`.
-- Board build scripts: `claude-work/2026-11-05/board-build/`. The patches are idempotent. Run them in this order: unwrap → patch → patch2 → patch3 → patch4 → patch5 → patch6 → bh8705 → patch7 → patch8 → patch9 → patch10 → patch11 → patch12 → patch13 → patch14.
+- Board build scripts: `claude-work/2026-11-05/board-build/`. The patches are idempotent. Run them in this order: unwrap → patch → patch2 → patch3 → patch4 → patch5 → patch6 → bh8705 → patch7 → patch8 → patch9 → patch10 → patch11 → patch12 → patch13 → patch14 → patch15.
 
 ## Board tools (on the page)
 
@@ -23,6 +23,10 @@ This is the list of what we built to help Brody's job and what runs on its own. 
 | BugHerd close queue | BugHerd | Ticking Done queues the ticket. The PC task sets it to Done in BugHerd, and the board shows Queued, Closed or Not closed. |
 | Automations tab, live | Automations | Reads each routine's real last run from get_trigger when the tab opens, and flags any that missed a run. |
 | Follow up | Under Claude's answers | A box under quick answers, Claude's answer on BugHerd cards and plan-block explanations. Block follow-ups answer in the page; the others get a quick answer plus a full run with the earlier answer as context. |
+| Waiting on Claude | Today and Live chat | Every request with no answer yet and how long it has waited. After 15 min: No answer yet + Resend. Claude's "I'll do it next run" promises get a Track it button that queues a task. |
+| Draft it / Draft all | Team tab, what you owe | Claude saves an Outlook draft for each item you owe someone (up to 10 at once). Nothing is sent. |
+| Clear the deck | Tasks tab | Overdue tasks, most-pushed first, with bulk Done, Not needed and Move. |
+| One-tap OK | NetSuite alert tasks and Ads "Your call" | OK records approval of that exact change. NetSuite ones give a Copy PC prompt (imports need your PC). Ads ones queue Claude to draft the request to the group owner. |
 | Never lose a tap | Every save | A save that clashes with a routine's newer version is re-applied on top of it after the reload, instead of being dropped. |
 | Download app | Sidebar and Automations | Saves Ultron.html with the icon. The red mask is the favicon and app icon only; the sidebar keeps the original logo (Brody, Nov 5). |
 | Quick answer | Every Send from the board | Claude answers in the page within seconds while the full run keeps going. The save that reloads the page waits for it. |
