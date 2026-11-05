@@ -5,7 +5,7 @@ This is the list of what we built to help Brody's job and what runs on its own. 
 - Board: https://claude.ai/code/artifact/eef4aeae-7777-45e8-9eca-9b231c65b9c7
 - App launcher: `claude-work/ultron-app/Ultron.html`. It opens the board and uses the red mask icon. You can also download it from the board: sidebar › Download app, or Automations › Get the Ultron app.
 - Icon (favicon and app only): `claude-work/ultron-app/ultron-icon.svg` and `ultron-icon.png`.
-- Board build scripts: `claude-work/2026-11-05/board-build/`. The patches are idempotent. Run them in this order: unwrap → patch → patch2 → patch3 → patch4 → patch5 → patch6 → bh8705 → patch7 → patch8 → patch9 → patch10 → patch11 → patch12.
+- Board build scripts: `claude-work/2026-11-05/board-build/`. The patches are idempotent. Run them in this order: unwrap → patch → patch2 → patch3 → patch4 → patch5 → patch6 → bh8705 → patch7 → patch8 → patch9 → patch10 → patch11 → patch12 → patch13.
 
 ## Board tools (on the page)
 
@@ -22,6 +22,7 @@ This is the list of what we built to help Brody's job and what runs on its own. 
 | Email reply drafts | Inbox | Saves reply drafts to Outlook. Claude never sends email. |
 | BugHerd close queue | BugHerd | Ticking Done queues the ticket. The PC task sets it to Done in BugHerd, and the board shows Queued, Closed or Not closed. |
 | Automations tab, live | Automations | Reads each routine's real last run from get_trigger when the tab opens, and flags any that missed a run. |
+| Never lose a tap | Every save | A save that clashes with a routine's newer version is re-applied on top of it after the reload, instead of being dropped. |
 | Download app | Sidebar and Automations | Saves Ultron.html with the icon. The red mask is the favicon and app icon only; the sidebar keeps the original logo (Brody, Nov 5). |
 | Quick answer | Every Send from the board | Claude answers in the page within seconds while the full run keeps going. The save that reloads the page waits for it. |
 | Claude's answer on the card | BugHerd cards | Shows Claude's latest real reply and its Outlook draft. An unchanged answer that was already worked can't be resent. |
