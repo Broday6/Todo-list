@@ -1,4 +1,4 @@
-# PC scheduled tasks for Brody's board (Nov 2)
+# PC scheduled tasks for Ultron (Brody's board) (Nov 2)
 
 These run in the Claude desktop app on Brody's PC, because they need the PCI Chrome profile
 (NetSuite, BugHerd, Handshake, the Product Marketing Portal). The cloud board session can't

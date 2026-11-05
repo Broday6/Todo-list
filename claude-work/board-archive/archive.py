@@ -1,4 +1,4 @@
-"""Trim Brody's board: move days older than 14 days into days.json and keep stubs; keep days[*].ops for the newest 2 days only.
+"""Trim Ultron (Brody's board): move days older than 14 days into days.json and keep stubs; keep days[*].ops for the newest 2 days only.
 usage: python3 archive.py <board.html> <out.html> <days.json> <TODAY YYYY-MM-DD>
 Prints what moved. Only the state JSON changes; style and app scripts stay byte-for-byte."""
 import json,sys,datetime

@@ -8,7 +8,7 @@
 
 ## Prompt
 
-Read NetSuite saved search 16559 and write the open cases to Brody's board. Read-only in NetSuite:
+Read NetSuite saved search 16559 and write the open cases to Ultron (Brody's board). Read-only in NetSuite:
 open the search results only. Never edit, save, reassign or close a case, never edit the saved
 search (Preview only, never Save), and never export a file to anyone.
 
