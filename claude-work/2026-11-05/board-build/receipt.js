@@ -49,7 +49,7 @@
     return h+'</ul>'+(L.length>10?'<p class="hint">+'+(L.length-10)+' more on the Tasks tab.</p>':'')+'<p class="hint" style="margin:8px 0 0">Every finished task is also logged in Notion: <a href="'+TASK_LOG_URL+'" target="_blank" rel="noopener">Ultron task log</a>.</p></section>';
   }
   document.addEventListener("click",function(e){var b=e.target.closest&&e.target.closest("[data-rcclose],[data-rcthread]");if(!b)return;e.stopPropagation();
-    if(b.dataset.rcclose){var c=document.querySelector('input[data-tchk="'+b.dataset.rcclose.replace(/"/g,'\\"')+'"]');if(c&&!c.checked)c.click();return;}
+    if(b.dataset.rcclose){var ct=findTask(b.dataset.rcclose);if(ct)closeTask(ct,"done");return;}
     if(b.dataset.rcthread){var li=b.closest("li.task")||document;var ta=li.querySelector(".threadrow textarea, .fu-box textarea, textarea");if(ta){ta.focus();ta.scrollIntoView({block:"center",behavior:"smooth"});}return;}
   },true);
   var _claudeRowRc=claudeRow;

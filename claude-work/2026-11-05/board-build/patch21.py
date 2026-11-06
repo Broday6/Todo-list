@@ -24,11 +24,11 @@ if 'Ultron Light (Nov 6' not in css:
     css=re.sub(r'rgba\(255,\s*45,\s*63,','rgba(37,87,214,',css)
     css=re.sub(r'rgba\(8,\s*9,\s*12,\s*\.9\d?\)','rgba(255,255,255,.95)',css)
     css=re.sub(r'rgba\(3,\s*4,\s*6,\s*\.7\)','rgba(16,24,40,.35)',css)
-    css+=open(D+'/light.css').read()
+    css+=open(D+'/light.css').read()+open(D+'/queue.css').read()
     h=h[:i]+css+h[j:]
 if 'function receiptHTML(' not in h:
     a="  function runBtnHTML(r){"
-    assert h.count(a)==1; h=h.replace(a,open(D+'/receipt.js').read()+a)
+    assert h.count(a)==1; h=h.replace(a,open(D+'/receipt.js').read()+open(D+'/queue.js').read()+a)
 m=re.search(r'<script id="state" type="application/json">(.*?)</script>',h,re.S)
 s=json.loads(m.group(1).replace('<\\/','</'))
 NOTE=(" TASK COMPLETION PROTOCOL (Brody, Nov 6: \"read the task then carry out the objective\"; \"a completed task with easy to read ways of when and where the task was completed\"). Any run that works a task assigned to Claude: "

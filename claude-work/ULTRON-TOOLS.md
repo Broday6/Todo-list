@@ -5,7 +5,7 @@ This is the list of what we built to help Brody's job and what runs on its own. 
 - Board: https://claude.ai/code/artifact/eef4aeae-7777-45e8-9eca-9b231c65b9c7
 - App launcher: `claude-work/ultron-app/Ultron.html`. It opens the board and uses the red mask icon. You can also download it from the board: sidebar › Download app, or Automations › Get the Ultron app.
 - Icon (favicon and app only): `claude-work/ultron-app/ultron-icon.svg` and `ultron-icon.png`.
-- Board build scripts: `claude-work/2026-11-05/board-build/`. The patches are idempotent. Run them in this order: unwrap → patch → patch2 → patch3 → patch4 → patch5 → patch6 → bh8705 → patch7 → patch8 → patch9 → patch10 → patch11 → patch12 → patch13 → patch14 → patch15 → patch16 → patch17 → patch18 → patch19 → patch20.
+- Board build scripts: `claude-work/2026-11-05/board-build/`. The patches are idempotent. Run them in this order: unwrap → patch → patch2 → patch3 → patch4 → patch5 → patch6 → bh8705 → patch7 → patch8 → patch9 → patch10 → patch11 → patch12 → patch13 → patch14 → patch15 → patch16 → patch17 → patch18 → patch19 → patch20 → patch21.
 
 ## Board tools (on the page)
 
@@ -35,6 +35,9 @@ This is the list of what we built to help Brody's job and what runs on its own. 
 | Download app | Sidebar and Automations | Saves Ultron.html with the icon. The red mask is the favicon and app icon only; the sidebar keeps the original logo (Brody, Nov 5). |
 | Quick answer | Every Send from the board | Claude answers in the page within seconds while the full run keeps going. The save that reloads the page waits for it. |
 | Queued, not started | Today (Waiting on Claude) | Any task given to Claude 15+ min ago with no run started shows "not started yet" and a Start now button that fires the run. |
+| Do now | Today (top) | One list of everything that needs Brody, each card with one main button that finishes it right there: OK go ahead, Answer and send to Claude, Looks good mark done, Open draft / I sent it, Have Claude draft it, Done / Tomorrow / Give to Claude / Not needed. Filter chips: Decide, Claude finished, Replies, Due. Details opens the full task inline. Undo on every close. |
+| Done by Claude receipt | Every task Claude worked | Green card with when it finished, what Claude did, where it is (links to the Outlook draft, file, Notion page) and what's left for Brody. Mark done or Follow up from the card. Also logged in the Notion Ultron task log. |
+| Light theme | Everywhere | White pages, dark text, one blue for actions, red only for the logo and overdue (Nov 6). |
 | Claude's answer on the card | BugHerd cards | Shows Claude's latest real reply and its Outlook draft. An unchanged answer that was already worked can't be resent. |
 
 ## Cloud routines (Claude Code)
@@ -78,6 +81,8 @@ This is the list of what we built to help Brody's job and what runs on its own. 
   - NetSuite cases check 16559: `claude-work/2026-11-02/pc-tasks/cases-sweep-16559.md`.
 
 ## Rules every tool follows
+
+- **Task completion protocol (Nov 6):** read the task, check the Notion Ultron task log for a past run, carry out the objective (no plans or promises instead of work), write task.receipt, log a row. Lives on the Notion Routine rules page; the live chat and check-in prompts point to it.
 
 - **Website back-end errors:** Tory owns them (feed or indexing failures, Athos errors and similar). Don't ping Brody or create tasks for them (Brody, Nov 6).
 
