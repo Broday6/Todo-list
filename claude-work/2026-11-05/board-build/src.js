@@ -1,0 +1,26 @@
+  /* ===== Sources (Nov 6, Brody: "what additional sources can we add" → "start making these changes"; no API keys).
+     Control room › Sources: each new source, its status, your one step, and a tick when it's set up. state.sources[id] = {done, on, urls} */
+  var SRC_REPO="https://github.com/Broday6/todo-list/blob/claude/brodys-board-v2-fuviv5/claude-work/2026-11-06/sources-setup/";
+  var SRC_LIST=[
+    {id:"onedrive",name:"OneDrive › Ultron folder",what:"Build kits, nav sheets and audit files Claude used to say were “on your PC”.",step:"Copy the build kit in: paste PC prompt 1 into Claude on your PC.",link:SRC_REPO+"pc-1-copy-build-kit.md",open:"https://pacificcolumnscom-my.sharepoint.com/personal/b_simpson_pcienterprises_com/Documents/Ultron",made:true},
+    {id:"netsuite",name:"NetSuite saved searches by email",what:"14837 product data and 15585 sales by item land in Outlook every weekday at 6:00. Unblocks price drift, Pearl checks and fix files.",step:"Paste PC prompt 2 into Claude on your PC (signed in to NetSuite), or set the Email tab by hand.",link:SRC_REPO+"pc-2-netsuite-scheduled-emails.md"},
+    {id:"ads",name:"Google Ads + Microsoft Ads reports by email",what:"Campaigns, search terms, products and disapprovals each morning, so the ads guard runs in the cloud even when your PC is off.",step:"Paste PC prompt 3 into Claude on your PC (signed in to both ad accounts).",link:SRC_REPO+"pc-3-ads-scheduled-reports.md"},
+    {id:"feeds",name:"Product feed links",what:"Every SKU's title, price, availability and images for AD, HomeOver and Ekena, readable without the site's bot block.",step:"Paste the feed URLs below (Merchant Center › Products › Feeds › the fetch URL).",feeds:true},
+    {id:"teams",name:"Teams channels",what:"Asks posted in team channels, not just chats.",step:"Nothing to do. The Teams search already covers channels you're in.",auto:true},
+    {id:"analytics",name:"Analytics report by email (optional)",what:"Landing-page conversion for Faux Metal Beams and the new G5 pages.",step:"In GA4 or Looker Studio, schedule a weekly email of the landing-page report to yourself with the subject “Ultron feed: landing pages weekly”."}
+  ];
+  function srcS(){return state.sources||(state.sources={});}
+  function sourcesHTML(){var S=srcS(),done=SRC_LIST.filter(function(x){return x.auto||(S[x.id]&&S[x.id].done);}).length;
+    var h='<section class="panel ctl-src"><h2>Sources <small><b>'+done+'</b> of '+SRC_LIST.length+' live · no API keys needed</small></h2><p class="hint">Everything comes in through your Outlook or your OneDrive › Ultron folder, which Claude can already read. Tick a source when you’ve set it up; the routines start reading it on their next run.</p><ul class="src-list">';
+    SRC_LIST.forEach(function(x){var s=S[x.id]||{},live=x.auto||s.done;
+      h+='<li class="'+(live?'live':'')+'"><div class="src-top"><span class="stag'+(live?' ok':x.made?' acc':'')+'">'+(live?'Live':x.made?'Folder made':'Waiting on you')+'</span><b>'+esc(x.name)+'</b></div><p class="src-w">'+esc(x.what)+'</p><p class="src-s"><b>Your step:</b> '+esc(x.step)+'</p>';
+      if(x.feeds){var u=s.urls||{};h+='<div class="src-feeds">'+[["ad","Architectural Depot"],["ho","HomeOver"],["ek","Ekena Millwork"]].map(function(f){return '<label>'+f[1]+'<input type="url" data-srcfeed="'+f[0]+'" value="'+esc(u[f[0]]||"")+'" placeholder="https://…"></label>';}).join("")+'<button type="button" class="btn ghost" data-srcsavefeeds="1">Save links</button></div>';}
+      h+='<div class="src-a">'+(x.link?'<a class="linkbtn" href="'+esc(x.link)+'" target="_blank" rel="noopener">Open the steps</a>':'')+(x.open?'<a class="linkbtn" href="'+esc(x.open)+'" target="_blank" rel="noopener">Open the folder</a>':'')+(x.auto?'':'<label class="src-done"><input type="checkbox" data-srcdone="'+esc(x.id)+'"'+(s.done?' checked':'')+'> I set this up'+(s.on?' <span>('+esc(shortDate(s.on))+')</span>':'')+'</label>')+'</div></li>';});
+    return h+'</ul><p class="hint">Not doing (no API keys): BugHerd, NetSuite and Miva APIs. Those stay with the PC tasks.</p></section>';}
+  CTL_TABS.splice(4,0,["sources","Sources"]);
+  var _autoSrc=autoHTML;
+  autoHTML=function(){if(ctlTab!=="sources")return _autoSrc();var h=_autoSrc();var i=h.indexOf('</div>');return h.slice(0,i+6)+sourcesHTML();};
+  document.addEventListener("change",function(e){var el=e.target;if(!el.dataset||!el.dataset.srcdone)return;var S=srcS(),s=S[el.dataset.srcdone]||(S[el.dataset.srcdone]={});s.done=!!el.checked;s.on=el.checked?todayISO():"";save();chip(el.checked?"Marked live. Routines read it from the next run.":"Marked not set up.");});
+  document.addEventListener("click",function(e){var b=e.target.closest&&e.target.closest("[data-srcsavefeeds]");if(!b)return;var S=srcS(),s=S.feeds||(S.feeds={}),u=s.urls||(s.urls={}),n=0;
+    document.querySelectorAll("[data-srcfeed]").forEach(function(inp){var v=String(inp.value||"").trim();if(v&&!/^https?:\/\//i.test(v))return;if(v){u[inp.dataset.srcfeed]=v;n++;}else delete u[inp.dataset.srcfeed];});
+    if(n){s.done=true;s.on=todayISO();}save();chip(n?"Saved "+n+" feed link"+(n>1?"s":"")+".":"Cleared the feed links.");});

@@ -1,0 +1,15 @@
+/* ---------- Sources ---------- */
+.src-list{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.src-list li{padding:14px 16px;border:1px solid var(--line);border-left:4px solid var(--warn);border-radius:10px;background:#fff}
+.src-list li.live{border-left-color:var(--ok)}
+.src-top{display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-size:15.5px}
+.src-w{margin:6px 0 0;font-size:14px;color:var(--muted)}
+.src-s{margin:6px 0 0;font-size:14px}
+.src-feeds{display:grid;grid-template-columns:repeat(3,minmax(0,1fr)) auto;gap:8px;align-items:end;margin-top:10px}
+.src-feeds label{display:grid;gap:4px;font-size:12.5px;font-weight:600;color:var(--muted)}
+.src-feeds input{padding:7px 9px;font-size:13.5px}
+@media(max-width:800px){.src-feeds{grid-template-columns:1fr}}
+.src-a{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:10px}
+.src-a .linkbtn{text-decoration:none}
+.src-done{display:inline-flex;align-items:center;gap:6px;font-size:13.5px;font-weight:600}
+.src-done span{font-weight:400;color:var(--muted)}
