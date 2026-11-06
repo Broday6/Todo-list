@@ -1,0 +1,5 @@
+/* follow-up states (Nov 6) */
+.rc.rc-followup,.rc.rc-working{border-color:#C5D4F7;border-left-color:var(--accent);background:var(--accent-soft)}
+.rc.rc-followup .rc-badge,.rc.rc-working .rc-badge{background:var(--accent)}
+.rc.rc-stopped{border-color:var(--line-strong);border-left-color:var(--muted);background:var(--sunk)}
+.rc.rc-stopped .rc-badge{background:var(--muted)}
