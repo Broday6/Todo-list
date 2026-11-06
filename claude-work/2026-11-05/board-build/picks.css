@@ -1,0 +1,13 @@
+
+/* ---------- Claude's picks (Nov 6) ---------- */
+.picks{border-left:3px solid var(--accent)}
+.pk-list{list-style:none;margin:0;padding:0}
+.pk-list li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 12px;padding:9px 0;border-top:1px solid var(--line);align-items:start}
+.pk-list li:first-child{border-top:0}
+.pk-t{font-size:14px;font-weight:500}
+.pk-t .tx{text-align:left}
+.pk-w{font-size:12.5px;color:var(--muted);margin-top:2px}
+.pk-a{display:flex;gap:6px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+.pk-a .btn{padding:6px 12px;font-size:12.5px}
+.pk-all{margin-top:8px;padding:6px 12px;font-size:12.5px}
+@media(max-width:560px){.pk-list li{grid-template-columns:1fr}.pk-a{justify-content:flex-start}}
