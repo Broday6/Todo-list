@@ -1,0 +1,7 @@
+/* contrast fixes (Nov 6, Brody: "we need to fix this white on light light blue") */
+.fmeta{color:var(--muted)}
+.fnext{color:var(--muted)}
+.fnext span{color:var(--accent);letter-spacing:.04em}
+.fnext b{color:var(--ink)}
+.fdone{color:var(--ok)}
+.group.frozen .gh,.group.frozen .gh .gl{color:#6B7486}
