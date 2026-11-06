@@ -1,0 +1,17 @@
+
+/* ---------- notes (Nov 6) ---------- */
+.pnotes{display:flex;flex-wrap:wrap;gap:4px 10px;align-items:baseline;padding:4px 0 6px;font-size:12.5px}
+.pnotes .nt-tog{font-size:12.5px;color:var(--accent)}
+.pnotes .nt-last{color:var(--muted);font-size:12.5px;min-width:0;overflow-wrap:anywhere}
+.pnotes .nt-list,.pnotes .nt-add{flex:1 1 100%}
+.nt-list{list-style:none;margin:6px 0 0;padding:0}
+.nt-list li{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:8px;padding:6px 0;border-top:1px solid var(--line);font-size:13px;align-items:start}
+.nt-list li:first-child{border-top:0}
+.nt-d{font-family:var(--mono);font-size:11.5px;color:var(--muted);padding-top:1px}
+.nt-del{color:var(--muted)}
+.nt-add{display:flex;gap:8px;align-items:flex-start;margin-top:6px}
+.nt-add textarea{flex:1 1 auto;min-width:0;min-height:38px;padding:7px 10px;border:1px solid var(--line-strong);border-radius:6px;background:var(--bg);font-size:13px;resize:vertical;field-sizing:content}
+.nt-add .btn{flex:none;padding:7px 12px;font-size:12.5px}
+.tnotes{flex:1 1 100%;margin-top:10px;padding-top:10px;border-top:1px solid var(--line)}
+.tnotes h4{margin:0 0 4px;font-size:13px;font-weight:600}
+.tnotes h4 small{font-weight:400;color:var(--muted);font-size:12px;margin-left:6px}

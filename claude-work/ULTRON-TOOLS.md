@@ -5,7 +5,7 @@ This is the list of what we built to help Brody's job and what runs on its own. 
 - Board: https://claude.ai/code/artifact/eef4aeae-7777-45e8-9eca-9b231c65b9c7
 - App launcher: `claude-work/ultron-app/Ultron.html`. It opens the board and uses the red mask icon. You can also download it from the board: sidebar › Download app, or Automations › Get the Ultron app.
 - Icon (favicon and app only): `claude-work/ultron-app/ultron-icon.svg` and `ultron-icon.png`.
-- Board build scripts: `claude-work/2026-11-05/board-build/`. The patches are idempotent. Run them in this order: unwrap → patch → patch2 → patch3 → patch4 → patch5 → patch6 → bh8705 → patch7 → patch8 → patch9 → patch10 → patch11 → patch12 → patch13 → patch14 → patch15 → patch16 → patch17 → patch18.
+- Board build scripts: `claude-work/2026-11-05/board-build/`. The patches are idempotent. Run them in this order: unwrap → patch → patch2 → patch3 → patch4 → patch5 → patch6 → bh8705 → patch7 → patch8 → patch9 → patch10 → patch11 → patch12 → patch13 → patch14 → patch15 → patch16 → patch17 → patch18 → patch19.
 
 ## Board tools (on the page)
 
@@ -29,6 +29,8 @@ This is the list of what we built to help Brody's job and what runs on its own. 
 | One-tap OK | NetSuite alert tasks and Ads "Your call" | OK records approval of that exact change. NetSuite ones give a Copy PC prompt (imports need your PC). Ads ones queue Claude to draft the request to the group owner. |
 | Jump to bar | Every long page | Sticky chips for each section (Team: each person; Tasks: each group plus Collapse all / Expand all), a Back to top button, and on Today the log shows the newest 8 while Needs your eyes and Cases & alerts fold to one line. |
 | Claude wants to take these | Today | Claude's daily picks (state.claudePicks, written by the morning rebuild): up to 6 tasks it can do, each with Take it / Not today, plus Give all. |
+| Project notes / task notes | Tasks tab group headers; inside each opened task | Your notes on a whole project or one task. Claude reads them every time it works the task. |
+| Give to Claude starts now | Everywhere | Giving a task to Claude starts a run right away instead of waiting for the next check-in. |
 | Never lose a tap | Every save | A save that clashes with a routine's newer version is re-applied on top of it after the reload, instead of being dropped. |
 | Download app | Sidebar and Automations | Saves Ultron.html with the icon. The red mask is the favicon and app icon only; the sidebar keeps the original logo (Brody, Nov 5). |
 | Quick answer | Every Send from the board | Claude answers in the page within seconds while the full run keeps going. The save that reloads the page waits for it. |
