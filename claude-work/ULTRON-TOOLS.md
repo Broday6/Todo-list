@@ -5,7 +5,7 @@ This is the list of what we built to help Brody's job and what runs on its own. 
 - Board: https://claude.ai/code/artifact/eef4aeae-7777-45e8-9eca-9b231c65b9c7
 - App launcher: `claude-work/ultron-app/Ultron.html`. It opens the board and uses the red mask icon. You can also download it from the board: sidebar › Download app, or Automations › Get the Ultron app.
 - Icon (favicon and app only): `claude-work/ultron-app/ultron-icon.svg` and `ultron-icon.png`.
-- Board build scripts: `claude-work/2026-11-05/board-build/`. The patches are idempotent. Run them in this order: unwrap → patch → patch2 → patch3 → patch4 → patch5 → patch6 → bh8705 → patch7 → patch8 → patch9 → patch10 → patch11 → patch12 → patch13 → patch14 → patch15 → patch16 → patch17 → patch18 → patch19 → patch20 → patch21 → patch22 → patch23 → patch24.
+- Board build scripts: `claude-work/2026-11-05/board-build/`. The patches are idempotent. Run them in this order: unwrap → patch → patch2 → patch3 → patch4 → patch5 → patch6 → bh8705 → patch7 → patch8 → patch9 → patch10 → patch11 → patch12 → patch13 → patch14 → patch15 → patch16 → patch17 → patch18 → patch19 → patch20 → patch21 → patch22 → patch23 → patch24 → patch25.
 
 ## Board tools (on the page)
 
@@ -46,6 +46,7 @@ This is the list of what we built to help Brody's job and what runs on its own. 
 | Requests | Control room › Requests; Request a change on every page | Ask for any change to Ultron; Claude builds a preview; Ship it or Not yet. Goes to trig_01NqRhkLSC15hY1J2ahMGVXL in this session. |
 | Routines | Control room › Routines | Run now, Pause/Resume (applied by the requests routine). |
 | Follow-ups act | Every task | A thread message, Follow up box, note or OK starts a real run that acts on it; a task never shows Done while your newest word is newer than Claude's receipt. |
+| Sources | Control room › Sources | No-API-key sources: OneDrive › Ultron folder, NetSuite saved-search emails, Google/Microsoft Ads report emails, product feed links, Teams channels, analytics email. Tick each when set up (state.sourceSetup). Setup: claude-work/2026-11-06/sources-setup/. |
 | Claude's answer on the card | BugHerd cards | Shows Claude's latest real reply and its Outlook draft. An unchanged answer that was already worked can't be resent. |
 
 ## Cloud routines (Claude Code)

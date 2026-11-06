@@ -1,7 +1,7 @@
 /* ---------- Sources ---------- */
 .src-list{list-style:none;margin:0;padding:0;display:grid;gap:10px}
 .src-list li{padding:14px 16px;border:1px solid var(--line);border-left:4px solid var(--warn);border-radius:10px;background:#fff}
-.src-list li.live{border-left-color:var(--ok)}
+.src-list li.src-live{border-left-color:var(--ok)}
 .src-top{display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-size:15.5px}
 .src-w{margin:6px 0 0;font-size:14px;color:var(--muted)}
 .src-s{margin:6px 0 0;font-size:14px}
