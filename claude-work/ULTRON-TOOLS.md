@@ -5,7 +5,7 @@ This is the list of what we built to help Brody's job and what runs on its own. 
 - Board: https://claude.ai/code/artifact/eef4aeae-7777-45e8-9eca-9b231c65b9c7
 - App launcher: `claude-work/ultron-app/Ultron.html`. It opens the board and uses the red mask icon. You can also download it from the board: sidebar › Download app, or Automations › Get the Ultron app.
 - Icon (favicon and app only): `claude-work/ultron-app/ultron-icon.svg` and `ultron-icon.png`.
-- Board build scripts: `claude-work/2026-11-05/board-build/`. The patches are idempotent. Run them in this order: unwrap → patch → patch2 → patch3 → patch4 → patch5 → patch6 → bh8705 → patch7 → patch8 → patch9 → patch10 → patch11 → patch12 → patch13 → patch14 → patch15 → patch16 → patch17 → patch18 → patch19 → patch20 → patch21 → patch22 → patch23 → patch24 → patch25.
+- Board build scripts: `claude-work/2026-11-05/board-build/`. The patches are idempotent. Run them in this order: unwrap → patch → patch2 → patch3 → patch4 → patch5 → patch6 → bh8705 → patch7 → patch8 → patch9 → patch10 → patch11 → patch12 → patch13 → patch14 → patch15 → patch16 → patch17 → patch18 → patch19 → patch20 → patch21 → patch22 → patch23 → patch24 → patch25 → patch26.
 
 ## Board tools (on the page)
 
@@ -47,6 +47,17 @@ This is the list of what we built to help Brody's job and what runs on its own. 
 | Routines | Control room › Routines | Run now, Pause/Resume (applied by the requests routine). |
 | Follow-ups act | Every task | A thread message, Follow up box, note or OK starts a real run that acts on it; a task never shows Done while your newest word is newer than Claude's receipt. |
 | Sources | Control room › Sources | No-API-key sources: OneDrive › Ultron folder, NetSuite saved-search emails, Google/Microsoft Ads report emails, product feed links, Teams channels, analytics email. Tick each when set up (state.sourceSetup). Setup: claude-work/2026-11-06/sources-setup/. |
+| G5 plan | Sidebar › G5 plan | The Group 5 game plan (4 quarters, months, owners) with live status from your tasks, Make a task / Hand off per item, your 7 decisions, the scorecard (Claude fills Now monthly) and the weekly rhythm. |
+| Rate results | Every Done by Claude receipt | 👍 / 👎 + what was wrong. A 👎 becomes a lesson on that playbook that Claude follows next time; Save and redo reruns it. |
+| Hand-off brief | Every Hand off | Goal, done means, where results go, links, mode, and Start now or Schedule. Can be switched off. |
+| Reference cards | Control room › Reference | Owners by group, who does what, how to address people, sites, saved searches, vendors. Claude reads the Always cards on every task. |
+| Bulk + scheduled hand-off | Tasks › Select tasks | Tick tasks, Hand off together (one run, in order) or Schedule for a time. |
+| Recurring work | Control room › Recurring | Monday G5 check, Monday OK review, monthly scorecard, quarterly refresh; created on their day with their playbook. |
+| One-tap asks | Inside any task | Ready-made requests per playbook (Check the live page, Draft the reply, Build the fix file...). Editable per playbook. |
+| Links | Inside any task | Paste email, OneDrive or web links; Claude reads them first. |
+| Run history + Retry | Inside any task; Do now | Every run with start, finish and duration; stalled runs get Retry. |
+| Duplicate finder | Tasks tab | Same ticket, case, email thread or near-identical title; Keep the first / Keep the second / Not duplicates. |
+| Copy and open in Teams | Teams reply cards | The connector can't send Teams messages (ChatMessage.Send not granted by IT), so this copies the reply and opens the chat. |
 | Claude's answer on the card | BugHerd cards | Shows Claude's latest real reply and its Outlook draft. An unchanged answer that was already worked can't be resent. |
 
 ## Cloud routines (Claude Code)
