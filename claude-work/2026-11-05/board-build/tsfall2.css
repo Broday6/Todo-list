@@ -1,0 +1,5 @@
+/* Teams reply box (Nov 8) */
+.u6-tbox{flex:1 1 100%;display:grid;gap:8px;margin-top:8px;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--panel-2)}
+.u6-tbox textarea{width:100%;padding:8px 10px;font-size:14px}
+.u6-tacts{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.u6-tacts a.btn{text-decoration:none}
