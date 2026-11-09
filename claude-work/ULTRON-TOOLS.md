@@ -5,7 +5,7 @@ This is the list of what we built to help Brody's job and what runs on its own. 
 - Board: https://claude.ai/code/artifact/eef4aeae-7777-45e8-9eca-9b231c65b9c7
 - App launcher: `claude-work/ultron-app/Ultron.html`. It opens the board and uses the red mask icon. You can also download it from the board: sidebar › Download app, or Automations › Get the Ultron app.
 - Icon (favicon and app only): `claude-work/ultron-app/ultron-icon.svg` and `ultron-icon.png`.
-- Board build scripts: `claude-work/2026-11-05/board-build/`. The patches are idempotent. Run them in this order: unwrap → patch → patch2 → patch3 → patch4 → patch5 → patch6 → bh8705 → patch7 → patch8 → patch9 → patch10 → patch11 → patch12 → patch13 → patch14 → patch15 → patch16 → patch17 → patch18 → patch19 → patch20 → patch21 → patch22 → patch23 → patch24 → patch25 → patch26 → patch27 → patch28 → patch29 → patch30 → patch31.
+- Board build scripts: `claude-work/2026-11-05/board-build/`. The patches are idempotent. Run them in this order: unwrap → patch → patch2 → patch3 → patch4 → patch5 → patch6 → bh8705 → patch7 → patch8 → patch9 → patch10 → patch11 → patch12 → patch13 → patch14 → patch15 → patch16 → patch17 → patch18 → patch19 → patch20 → patch21 → patch22 → patch23 → patch24 → patch25 → patch26 → patch27 → patch28 → patch29 → patch30 → patch31 → patch32.
 
 ## Board tools (on the page)
 
@@ -142,3 +142,28 @@ This is the list of what we built to help Brody's job and what runs on its own. 
 - Claude tab: a blocked task whose note starts "Needs you:" is tagged "Your step" instead of "Stuck".
 - Today: the Sources strip shows only sources that need a look, plus "N others ready".
 - Tasks: the closed clean-up list starts collapsed.
+
+## Reliability pass (patch32, Nov 9)
+
+Brody: "improve automations headaches and other problems that we were having".
+
+- **Live chat routine.** The board can only start a routine that a Claude session made with `create_trigger`
+  (`created_via: meta_mcp`). A routine made in the Claude app, a project or the API is refused
+  ("Agents can only fire routines they created"). Patch30 pointed `CHAT_TRIG` at the routine Brody made in
+  his Ultron project, so every Live chat, Give to Claude, Hand off, ⚡ and Dig deeper send failed from 1:27 pm
+  on Nov 9 until patch32 put it back on `trig_01JEYvWdaH6L4s8WcDsLrssJ`. Never repoint it at a routine that
+  wasn't made with `create_trigger`.
+- **Failed sends.** A chat item that didn't send keeps `err:1` and `why:<reason>`. The hourly routine's
+  step 2a answers those (and `state.chat.pending`) within the hour and clears `err`.
+- **Clear in one sitting** (Claude tab, with a summary on Today). Open tasks that have `unlockBy`, `needs`,
+  `blockedBy`, a `wd-` id or `pcOnly` + `goAsk` are grouped by what clears them: just your answer, Miva admin,
+  NetSuite, Power Automate, Teams, Claude on your PC. Each PC group has one "Copy one prompt" button that lists
+  the tasks, their steps and their PC prompt files. Routines should set `unlockBy` to the single next step,
+  naming the system, and link the PC prompt file in `receipt.where`.
+- **Routine status.** "Missed a run" is only shown from live `get_trigger` data (cached in the browser for
+  36 hours). PC jobs use the newest `state.runs` row whose `job` equals the routine's name
+  (`adsDaily` → "Ads daily check (AD)", `adsWeekly` → "Ads weekly audit (AD)").
+- **Hourly routine** (`trig_01TEeBTBTmPV3MxApZH2aeMr`, prompt saved in
+  `claude-work/2026-11-09/hourly-routine-prompt.txt`): new step 2a (Live chat backlog) and step 3c
+  (missed-mail sweep at 7:12: mail the triage filed under Low or FYI that a person wrote, plus every job
+  application, becomes an inbox task `ms<MMDD>-<n>`).
