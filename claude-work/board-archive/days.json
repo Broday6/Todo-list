@@ -1,6 +1,6 @@
 {
  "note": "Days archived from Brody's board. Each entry is the day exactly as it was on the board.",
- "cut": "2026-10-23",
+ "cut": "2026-10-26",
  "days": {
   "2026-09-02": {
    "blocks": [
@@ -6699,6 +6699,373 @@
        "name": "FauxBeams",
        "orders": 6,
        "dollars": 382.84
+      },
+      {
+       "name": "Other",
+       "orders": 0,
+       "dollars": 0
+      }
+     ]
+    }
+   }
+  },
+  "2026-10-23": {
+   "blocks": [
+    {
+     "id": "o23-1",
+     "start": "08:00",
+     "end": "08:20",
+     "title": "Check and respond to emails",
+     "sub": "Daily · 20 min. 7 to-dos from key people, 6 other actions, 0 drafts ready. Work them from the Inbox section above.",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "o23-2",
+     "start": "08:20",
+     "end": "08:40",
+     "title": "Review daily metrics & KPIs",
+     "sub": "Daily · 20 min. Thu $252,187, +18% vs last Thu. Ekena +56%, Millwork.com -49%. Details in the Sales section above.",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "o23-3",
+     "start": "08:40",
+     "end": "09:00",
+     "title": "Team check-in",
+     "sub": "Daily · 20 min. Lauren is off today (back Monday). Daniel leaves at noon, so catch him this morning.",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "o23-4",
+     "start": "09:00",
+     "end": "09:30",
+     "title": "Bug Herds — complete 5 (Rock: under 10)",
+     "sub": "Daily · 30 min. Rock time. #8982 (CofferCraft search 404) is still open in the triage.",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "o23-5",
+     "start": "09:30",
+     "end": "09:45",
+     "title": "Pick the Algolia pricing call time with Daniel, then book it",
+     "sub": "15 min. Daniel is free any time Monday and leaves at noon today. Gavin's new slots: Mon Oct 26 at 1:00, 1:30 or 2:30 PT (3:00, 3:30, 4:30 CT) and Tue Oct 27. Daniel is in Quitman Tuesday, so Monday is best.",
+     "meeting": false,
+     "done": true,
+     "taskIds": [
+      "cl1022-1"
+     ],
+     "top": true
+    },
+    {
+     "id": "o23-6",
+     "start": "09:45",
+     "end": "10:45",
+     "title": "Clean up the E-Com Cases search with Daniel",
+     "sub": "60 min. Daniel's ask in today's triage, and he leaves at noon. NetSuite search 16559 'ECOM - Pending Cases': move what belongs to Large Accounts, close the old ones in your name, and delegate the 8 new pending cases (set In Progress - Order Processing).",
+     "meeting": false,
+     "done": true,
+     "taskIds": [
+      "cl1022-2",
+      "in1021-4"
+     ],
+     "top": true
+    },
+    {
+     "id": "o23-7",
+     "start": "10:45",
+     "end": "11:05",
+     "title": "Cases — complete 10",
+     "sub": "Daily · 20 min. If the clean-up covered them, tick this too.",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "o23-8",
+     "start": "11:05",
+     "end": "11:25",
+     "title": "Strety",
+     "sub": "Daily · 20 min. Ethan's Custom Field Variant is still listed in the triage (you ticked it Oct 20).",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "o23-9",
+     "start": "11:25",
+     "end": "11:45",
+     "title": "Send Paul categories and headings for the new nav dropdowns",
+     "sub": "20 min. Due Oct 21, carried, and Paul is waiting. Excel template is in his email; row order = display order. Draft is in Outlook. Rock: navigation redesign.",
+     "meeting": false,
+     "done": false,
+     "taskIds": [
+      "in1021-3"
+     ],
+     "top": true
+    },
+    {
+     "id": "o23-10",
+     "start": "12:05",
+     "end": "12:35",
+     "title": "Find people to interview",
+     "sub": "Daily · 30 min. Reply on Handshake to Diya Chataut (UNT, free Monday before 12) and Maryssa Sayavong (Alabama, wants a time this week), then log outreach.",
+     "meeting": false,
+     "done": false,
+     "taskIds": [
+      "t7fp22",
+      "w1",
+      "in1023-4",
+      "in1023-5"
+     ]
+    },
+    {
+     "id": "o23-11",
+     "start": "12:35",
+     "end": "13:15",
+     "title": "SMS & email workflows: review what runs and what's missing",
+     "sub": "Pushed 10 times. Do it today, hand it to Claude, or drop it. Start from the AD Email System page.",
+     "meeting": false,
+     "done": true,
+     "taskIds": [
+      "wk-sms"
+     ]
+    },
+    {
+     "id": "o23-12",
+     "start": "13:15",
+     "end": "13:45",
+     "title": "Balustrade builder: answer Daniel and Tory",
+     "sub": "30 min. New in the triage. Daniel asks if we can rebuild it, better; Tory needs your call to patch the old AD builder after the PHP update or retire it. One decision answers both.",
+     "meeting": false,
+     "done": true,
+     "taskIds": [
+      "in1023-1",
+      "in1023-2"
+     ]
+    },
+    {
+     "id": "o23-13",
+     "start": "14:00",
+     "end": "15:00",
+     "title": "Team Leads Weekly Meeting",
+     "sub": "Teams, with Daniel, Ethan, Tory, Sam and the other leads. Tentative. Daniel leaves at noon, so he may skip.",
+     "meeting": true,
+     "done": true
+    },
+    {
+     "id": "o23-14",
+     "start": "15:20",
+     "end": "15:50",
+     "title": "Add items missing from our sites to all the sites",
+     "sub": "Pushed 21 times. Do it today, hand it to Claude, or drop it. 30 min: pick one site and list what's missing.",
+     "meeting": false,
+     "done": false,
+     "taskIds": [
+      "tk7mswn"
+     ]
+    },
+    {
+     "id": "o23-15",
+     "start": "15:50",
+     "end": "16:20",
+     "title": "Weekly review",
+     "sub": "Re-date or drop overdue tasks, check Waiting on, and pick next week's Top 3.",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "o23-16",
+     "start": "16:20",
+     "end": "16:40",
+     "title": "Follow up with Andrew's ads",
+     "sub": "Daily · 20 min.",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "o23-17",
+     "start": "16:40",
+     "end": "17:00",
+     "title": "Wrap",
+     "sub": "Daily · 20 min. Log what got done. Monday gets built from this. If there's time: QA all install videos, the Fable video test. Monday: Lauren's Q3 review 10:00–11:00 in the Heath conference room.",
+     "meeting": false,
+     "done": true
+    }
+   ],
+   "log": [],
+   "inbox": {
+    "found": true,
+    "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJT44%2FtAAA%3D&exvsurl=1&viewmodel=ReadMessageItem",
+    "subject": "Inbox triage — Friday, Oct 23",
+    "counts": {
+     "people": 7,
+     "other": 6,
+     "waiting": 2,
+     "fyi": 17,
+     "low": 52,
+     "drafts": 0
+    },
+    "people": [
+     {
+      "name": "Daniel M.",
+      "taskIds": [
+       "cl1022-1",
+       "in1023-1",
+       "cl1022-2",
+       "in1020-3"
+      ]
+     },
+     {
+      "name": "Ethan S.",
+      "taskIds": [
+       "in1020-4"
+      ]
+     },
+     {
+      "name": "Rob S.",
+      "taskIds": []
+     },
+     {
+      "name": "Tory K.",
+      "taskIds": [
+       "in1023-2"
+      ]
+     },
+     {
+      "name": "Sam P.",
+      "taskIds": [
+       "in1023-3"
+      ]
+     }
+    ],
+    "other": [
+     "in1023-4",
+     "in1023-5",
+     "in1023-6",
+     "in1021-4",
+     "in1022-2",
+     "in1021-5",
+     "in1020-8"
+    ],
+    "meetings": [],
+    "recap": {
+     "found": true,
+     "subject": "Meeting recap — Thursday, Oct 22",
+     "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJT44%2FGAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    "waiting": [
+     {
+      "who": "Hayden Clow",
+      "what": "Cabinet column updates (products to procurement)",
+      "since": "2026-10-21"
+     },
+     {
+      "who": "Gabriel An, TVCC",
+      "what": "Reply to your outreach",
+      "since": "2026-10-21"
+     }
+    ],
+    "fyi": [
+     "Hayden is removing the Smokey Ridge faux stone panels from the sites (kit items with Urban panels only).",
+     "Cody Meixner replied on the AmeriCraft Red Mahogany update. Kody Goss and Chris Thompson replied on Q3 reviews.",
+     "Strety: the Power Hour L10 is marked complete; Andrew commented on the TailorGrain gallery.",
+     "Virginia Arteaga (Dallas College) sent a summary of Thursday's call. It's on the Hiring tab.",
+     "4 college reply drafts are still in Drafts (Dallas College x2, UT Dallas, TVCC). The Hiring tab tracks each school.",
+     "Daily Backorder List and the NetSuite item group price alert came in.",
+     "Microsoft Ads funds added. Tory fixed the custom issue on AD (a side effect of the PHP update).",
+     "Suspicious: a Google Drive share request for \"SCOPE+\" from a personal Gmail sent to esm.team. Likely Zane's; verify before approving.",
+     "Closed since last digest: Ethan's TM reviews (all three scheduled), Daniel's National Nail pricing, Tory's \"did someone reply to Gavin\"."
+    ]
+   },
+   "pulse": {
+    "found": true,
+    "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJT44%2FsAAA%3D&exvsurl=1&viewmodel=ReadMessageItem",
+    "label": "Thursday vs last Thursday. Proxy from order confirmations; NetSuite is the source of truth.",
+    "orders": 386,
+    "dollars": 252187,
+    "ordersPrev": 380,
+    "dollarsPrev": 213179,
+    "ordersPct": 2,
+    "dollarsPct": 18,
+    "sites": [
+     {
+      "name": "AD",
+      "orders": 310,
+      "dollars": 214245,
+      "pct": 18
+     },
+     {
+      "name": "Ekena",
+      "orders": 29,
+      "dollars": 19415,
+      "pct": 56
+     },
+     {
+      "name": "Millwork.com",
+      "orders": 36,
+      "dollars": 9157,
+      "pct": -49
+     },
+     {
+      "name": "HomeOver",
+      "orders": 10,
+      "dollars": 5875,
+      "note": "$1,373 last wk"
+     },
+     {
+      "name": "FauxBeams",
+      "orders": 1,
+      "dollars": 3495,
+      "note": "$37 last wk"
+     }
+    ],
+    "flags": [
+     "Largest: AD 1752509, $14,621 (80 EverStone faux aged brick panels and 20 cobblestone panels).",
+     "AD 1751708, $9,153: 40 Vulcan fire-stopping soffit vents (older order number).",
+     "Ekena 2101337162, $8,140: 8 Heritage Timber Mena faux wood U-beams with hanger plates and straps.",
+     "1 order at $0, likely a free sample: AD 1752526.",
+     "6 confirmations for older orders ($17,779) may double count.",
+     "Last Thursday (Oct 15) was rebuilt from the order emails because its pulse was missing.",
+     "0 adPRO trade sign-ups, down from 8 last Thursday."
+    ],
+    "week": {
+     "found": true,
+     "label": "Week to date",
+     "start": "2026-10-19",
+     "end": "2026-10-22",
+     "orders": 1567,
+     "dollars": 997468.01,
+     "cmpOrders": 1533,
+     "cmpDollars": 962536.48,
+     "days": "4/4",
+     "partial": false,
+     "sites": [
+      {
+       "name": "AD",
+       "orders": 1245,
+       "dollars": 839427.31
+      },
+      {
+       "name": "Millwork.com",
+       "orders": 139,
+       "dollars": 55023.48
+      },
+      {
+       "name": "Ekena",
+       "orders": 146,
+       "dollars": 84871.69
+      },
+      {
+       "name": "HomeOver",
+       "orders": 30,
+       "dollars": 14268.09
+      },
+      {
+       "name": "FauxBeams",
+       "orders": 7,
+       "dollars": 3877.44
       },
       {
        "name": "Other",
