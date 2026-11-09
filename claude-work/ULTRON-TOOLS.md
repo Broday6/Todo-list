@@ -5,7 +5,7 @@ This is the list of what we built to help Brody's job and what runs on its own. 
 - Board: https://claude.ai/code/artifact/eef4aeae-7777-45e8-9eca-9b231c65b9c7
 - App launcher: `claude-work/ultron-app/Ultron.html`. It opens the board and uses the red mask icon. You can also download it from the board: sidebar › Download app, or Automations › Get the Ultron app.
 - Icon (favicon and app only): `claude-work/ultron-app/ultron-icon.svg` and `ultron-icon.png`.
-- Board build scripts: `claude-work/2026-11-05/board-build/`. The patches are idempotent. Run them in this order: unwrap → patch → patch2 → patch3 → patch4 → patch5 → patch6 → bh8705 → patch7 → patch8 → patch9 → patch10 → patch11 → patch12 → patch13 → patch14 → patch15 → patch16 → patch17 → patch18 → patch19 → patch20 → patch21 → patch22 → patch23 → patch24 → patch25 → patch26 → patch27.
+- Board build scripts: `claude-work/2026-11-05/board-build/`. The patches are idempotent. Run them in this order: unwrap → patch → patch2 → patch3 → patch4 → patch5 → patch6 → bh8705 → patch7 → patch8 → patch9 → patch10 → patch11 → patch12 → patch13 → patch14 → patch15 → patch16 → patch17 → patch18 → patch19 → patch20 → patch21 → patch22 → patch23 → patch24 → patch25 → patch26 → patch27 → patch28.
 
 ## Board tools (on the page)
 
@@ -127,3 +127,6 @@ This is the list of what we built to help Brody's job and what runs on its own. 
 - The Microsoft 365 connector lacks ChatMessage.Send (only IT can grant it), so the board can't post to Teams directly.
 - **Reply in Teams** opens a box with the reply, a Copy button and a plain link to the exact Teams message. "I sent it" marks the card handled.
 - **Send in Teams (optional):** once Brody builds his own Power Automate flow and ticks "Send Teams replies (Power Automate)" in Control room › Sources, a double tap emails the reply to Brody only (subject `ULTRON-TEAMS <chatId>`) and the flow posts it as him. Setup: `claude-work/2026-11-06/sources-setup/teams-send-flow.md`. Routines never send these.
+
+## Radar refresh (patch28, Nov 9)
+- Today's "Also on your radar" now pulls each cloud Routine's last run live (get_trigger), so healthy jobs stop showing "missed a run". Local PC tasks (ads guard, Handshake check) still rely on what they write to the board.
