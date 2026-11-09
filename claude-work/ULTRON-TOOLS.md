@@ -5,7 +5,7 @@ This is the list of what we built to help Brody's job and what runs on its own. 
 - Board: https://claude.ai/code/artifact/eef4aeae-7777-45e8-9eca-9b231c65b9c7
 - App launcher: `claude-work/ultron-app/Ultron.html`. It opens the board and uses the red mask icon. You can also download it from the board: sidebar › Download app, or Automations › Get the Ultron app.
 - Icon (favicon and app only): `claude-work/ultron-app/ultron-icon.svg` and `ultron-icon.png`.
-- Board build scripts: `claude-work/2026-11-05/board-build/`. The patches are idempotent. Run them in this order: unwrap → patch → patch2 → patch3 → patch4 → patch5 → patch6 → bh8705 → patch7 → patch8 → patch9 → patch10 → patch11 → patch12 → patch13 → patch14 → patch15 → patch16 → patch17 → patch18 → patch19 → patch20 → patch21 → patch22 → patch23 → patch24 → patch25 → patch26 → patch27 → patch28 → patch29 → patch30.
+- Board build scripts: `claude-work/2026-11-05/board-build/`. The patches are idempotent. Run them in this order: unwrap → patch → patch2 → patch3 → patch4 → patch5 → patch6 → bh8705 → patch7 → patch8 → patch9 → patch10 → patch11 → patch12 → patch13 → patch14 → patch15 → patch16 → patch17 → patch18 → patch19 → patch20 → patch21 → patch22 → patch23 → patch24 → patch25 → patch26 → patch27 → patch28 → patch29 → patch30 → patch31.
 
 ## Board tools (on the page)
 
@@ -133,3 +133,12 @@ This is the list of what we built to help Brody's job and what runs on its own. 
 
 ## Board chats (patch29, Nov 9)
 - Live chat › "Your board chats" lists every chat the board started (Live chat, Give to Claude, Hand off, ⚡, Dig deeper) with an Open link, newest first (state.chats). The chats also title themselves "Ultron · …" and carry the tag ultron-board (routine "Ultron board chats", trig_0198zV2xEbNR8HrCf183tLAg, in the Ultron Code project since patch30; old trig_01JEYvWdaH6L4s8WcDsLrssJ retired).
+
+## UX pass (patch31, Nov 9)
+- Live chat: the message box is full width again (it was squeezed to about 60px, 26px on a phone); on phones the chat comes before the side panels.
+- Live chat and progress bars say what really happened: "Didn't start: usage limit reached", "Claude stopped to wait for you", or "hit an error", instead of always "Finished".
+- Your board chats shows each chat's state (Working, Needs you, Failed, Done).
+- Inbox: automated alert emails no longer count as "Needs your reply"; they stay as tasks under No reply needed.
+- Claude tab: a blocked task whose note starts "Needs you:" is tagged "Your step" instead of "Stuck".
+- Today: the Sources strip shows only sources that need a look, plus "N others ready".
+- Tasks: the closed clean-up list starts collapsed.
