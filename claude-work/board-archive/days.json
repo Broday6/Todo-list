@@ -1,6 +1,6 @@
 {
  "note": "Days archived from Brody's board. Each entry is the day exactly as it was on the board.",
- "cut": "2026-10-26",
+ "cut": "2026-10-27",
  "days": {
   "2026-09-02": {
    "blocks": [
@@ -7075,6 +7075,403 @@
      ]
     }
    }
+  },
+  "2026-10-26": {
+   "blocks": [
+    {
+     "id": "o26-1",
+     "start": "08:00",
+     "end": "08:20",
+     "title": "Check and respond to emails",
+     "sub": "Daily · 20 min. 5 to-dos from key people, 5 other actions, 0 drafts ready. Work them from the Inbox section above.",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "o26-2",
+     "start": "08:20",
+     "end": "08:40",
+     "title": "Review daily metrics & KPIs",
+     "sub": "Daily · 20 min. Fri–Sun $482,952, +19% vs last Fri–Sun. Millwork.com +48%, Ekena -31%. Details in the Sales section above.",
+     "meeting": false,
+     "done": true
+    },
+    {
+     "id": "o26-3",
+     "start": "08:40",
+     "end": "09:00",
+     "title": "Team check-in",
+     "sub": "Daily · 20 min. Daniel is in Quitman tomorrow and Clarksville Thursday, so catch him today.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o26-4",
+     "start": "09:00",
+     "end": "09:30",
+     "title": "Bug Herds — complete 5 (Rock: under 10)",
+     "sub": "Daily · 30 min. Rock time. None of the BugHerd tickets have been moved or worked yet, including #8913, #7503, #5039, #8863 and #6937.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o26-5",
+     "start": "09:30",
+     "end": "09:50",
+     "title": "Cases — complete 10",
+     "sub": "Daily · 20 min.",
+     "meeting": false,
+     "done": false,
+     "taskIds": [
+      "in1026-3"
+     ]
+    },
+    {
+     "id": "o26-6",
+     "start": "09:50",
+     "end": "10:10",
+     "title": "Strety",
+     "sub": "Daily · 20 min.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o26-7",
+     "start": "10:30",
+     "end": "10:50",
+     "title": "Reply to Diya and Maryssa on Handshake",
+     "sub": "10 min. Both drafts are in your Outlook Drafts and now say you're interested and ask them to email your work address. Open each and send.",
+     "meeting": false,
+     "done": false,
+     "taskIds": [
+      "in1023-4",
+      "in1023-5"
+     ],
+     "top": true
+    },
+    {
+     "id": "o26-19",
+     "start": "10:50",
+     "end": "11:00",
+     "title": "Send Gavin the Algolia confirmation (3:00 CT today)",
+     "sub": "10 min. Your reply is sitting unsent in Drafts and there's no invite yet. Send it now so he can book the call.",
+     "meeting": false,
+     "done": true,
+     "taskIds": [
+      "in1026-1"
+     ],
+     "top": true
+    },
+    {
+     "id": "o26-8",
+     "start": "11:00",
+     "end": "11:30",
+     "title": "Find people to interview: Dallas College PDFs and TVCC file",
+     "sub": "Daily · 30 min. Handshake: 3 more reply drafts are in Outlook (Parth, Ilsa, Mukund); see the rundown on the Hiring tab. Virginia (Dallas College) wants the job descriptions as PDFs with how to apply, due today. Eric (TVCC) still needs the Inside Sales file. UNT replied Friday; Claude can draft that one.",
+     "meeting": false,
+     "done": false,
+     "taskIds": [
+      "t7fp22",
+      "w1"
+     ],
+     "top": true
+    },
+    {
+     "id": "o26-9",
+     "start": "11:30",
+     "end": "11:50",
+     "title": "CMIAmericraftBeams_7909_01",
+     "sub": "20 min (trimmed). Due today; you added it Friday. No email or file under this name turned up, so start from the O: drive or the NetSuite import queue.",
+     "meeting": false,
+     "done": true,
+     "taskIds": [
+      "t1026-cmi"
+     ]
+    },
+    {
+     "id": "o26-10",
+     "start": "11:50",
+     "end": "12:05",
+     "title": "Work 5 BugHerd tickets: #8913, #7503, #5039, #8863, #6937",
+     "sub": "15 min. Not started. Claude can't open BugHerd, so none of these has been moved or worked. Only you decide what goes to Web Dev.",
+     "meeting": false,
+     "done": false,
+     "taskIds": [
+      "cl-sg1023-4"
+     ]
+    },
+    {
+     "id": "o26-11",
+     "start": "12:05",
+     "end": "12:15",
+     "title": "Send Paul categories and headings for the new nav dropdowns",
+     "sub": "Looks done (you replied to Paul on Oct 23 at 2:24 pm with all 19 dropdowns attached). Tick it if so.",
+     "meeting": false,
+     "done": true,
+     "taskIds": [
+      "in1021-3"
+     ]
+    },
+    {
+     "id": "o26-12",
+     "start": "12:30",
+     "end": "13:15",
+     "title": "Add items missing from our sites to all the sites",
+     "sub": "Pushed 22 times. Do it today, hand it to Claude, or drop it. Today's Inaccurate AD Items alert lists the active NetSuite items missing from AD Miva; Claude can group it into a working list (Claude tab).",
+     "meeting": false,
+     "done": false,
+     "taskIds": [
+      "tk7mswn"
+     ]
+    },
+    {
+     "id": "o26-13",
+     "start": "13:15",
+     "end": "14:00",
+     "title": "QA all install videos",
+     "sub": "Pushed 10 times. Do it today, hand it to Claude, or drop it. Run each finished install video through the evaluator and the Review Studio on your PC.",
+     "meeting": false,
+     "done": true,
+     "taskIds": [
+      "wk-vidqa"
+     ]
+    },
+    {
+     "id": "o26-14",
+     "start": "14:20",
+     "end": "14:40",
+     "title": "Daniel video upload: confirm the AD → Ekena video links are switched",
+     "sub": "20 min. The triage said the NetSuite video-link switch closed Oct 21. Check it and tick both if so.",
+     "meeting": false,
+     "done": true,
+     "taskIds": [
+      "lg1020-4",
+      "in1020-2"
+     ]
+    },
+    {
+     "id": "o26-15",
+     "start": "14:40",
+     "end": "15:00",
+     "title": "Open (prep for Algolia: bring the SKU search test)",
+     "sub": "20 min. Fable moved to the Wrap's 'If there's time'.",
+     "meeting": false,
+     "done": true,
+     "taskIds": []
+    },
+    {
+     "id": "o26-20",
+     "start": "15:00",
+     "end": "15:30",
+     "title": "Hold for the Algolia pricing call (3:00, not on your calendar yet)",
+     "sub": "30 min. With Gavin Mahony and Tory. If Gavin doesn't confirm, use it for Install video #3.",
+     "meeting": false,
+     "done": false,
+     "taskIds": [
+      "in1026-1"
+     ]
+    },
+    {
+     "id": "o26-16",
+     "start": "15:30",
+     "end": "16:15",
+     "title": "Install video #3: vinyl shutters",
+     "sub": "45 min. Start the brief from the vinyl shutter install guide (real figures, never generated install action).",
+     "meeting": false,
+     "done": false,
+     "taskIds": [
+      "wk-vid3"
+     ]
+    },
+    {
+     "id": "o26-17",
+     "start": "16:20",
+     "end": "16:40",
+     "title": "Follow up with Andrew's ads",
+     "sub": "Daily · 20 min.",
+     "meeting": false,
+     "done": false
+    },
+    {
+     "id": "o26-18",
+     "start": "16:40",
+     "end": "17:00",
+     "title": "Wrap",
+     "sub": "Daily · 20 min. Log what got done. Tomorrow gets built from this. If there's time: try Fable video generation. Tomorrow: Lauren's Q3 review 10:00–11:00 (Heath conference room), PPC Ad Review 11:00–12:00 (Creative Lounge). Daniel is in Quitman all day; Power Hour and the Google sync are cancelled.",
+     "meeting": false,
+     "done": false,
+     "taskIds": [
+      "wk-fable"
+     ]
+    }
+   ],
+   "log": [],
+   "inbox": {
+    "found": true,
+    "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJT6hFTAAA%3D&exvsurl=1&viewmodel=ReadMessageItem",
+    "subject": "Inbox triage — Monday, Oct 26",
+    "counts": {
+     "people": 5,
+     "other": 5,
+     "waiting": 1,
+     "fyi": 46,
+     "low": 100,
+     "drafts": 0
+    },
+    "people": [
+     {
+      "name": "Daniel M.",
+      "taskIds": [
+       "in1023-1",
+       "in1020-3"
+      ]
+     },
+     {
+      "name": "Ethan S.",
+      "taskIds": [
+       "in1020-4"
+      ]
+     },
+     {
+      "name": "Rob S.",
+      "taskIds": []
+     },
+     {
+      "name": "Tory K.",
+      "taskIds": [
+       "in1026-2",
+       "in1023-2"
+      ]
+     },
+     {
+      "name": "Sam P.",
+      "taskIds": []
+     }
+    ],
+    "other": [
+     "in1026-1",
+     "in1026-3",
+     "in1023-5",
+     "in1026-4",
+     "in1023-6"
+    ],
+    "meetings": [],
+    "recap": {
+     "found": true,
+     "subject": "Meeting recap — Friday, Oct 23",
+     "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJT45BBAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    "waiting": [
+     {
+      "who": "Andrew Gonzalez",
+      "what": "Kit Item w/ No Location (waiting on Allie to confirm ship location)",
+      "since": "2026-10-26"
+     }
+    ],
+    "fyi": [
+     "Onlay names and the AmeriCraft updates are done in NetSuite.",
+     "Sam's TrueCraft issue: Tory is handling it.",
+     "Lauren agreed to Tuesday's Q3 review.",
+     "Search Console flagged issues on fauxbeams.com.",
+     "UNT replied (it's on the Hiring tab).",
+     "Suspicious: a Spotify email, a Google Drive request from zobug921, and a cold pitch from Dean Collins. Don't click."
+    ]
+   },
+   "pulse": {
+    "found": true,
+    "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJT6hFVAAA%3D&exvsurl=1&viewmodel=ReadMessageItem",
+    "label": "Fri–Sun vs last Fri–Sun. Proxy from order confirmations; NetSuite is the source of truth.",
+    "orders": 831,
+    "dollars": 482952,
+    "ordersPrev": 787,
+    "dollarsPrev": 405218,
+    "ordersPct": 6,
+    "dollarsPct": 19,
+    "sites": [
+     {
+      "name": "AD",
+      "orders": 633,
+      "dollars": 403272,
+      "pct": 25
+     },
+     {
+      "name": "Millwork.com",
+      "orders": 101,
+      "dollars": 40089,
+      "pct": 48
+     },
+     {
+      "name": "Ekena",
+      "orders": 80,
+      "dollars": 33019,
+      "pct": -31
+     },
+     {
+      "name": "HomeOver",
+      "orders": 13,
+      "dollars": 6223,
+      "pct": 0
+     },
+     {
+      "name": "FauxBeams",
+      "orders": 4,
+      "dollars": 348,
+      "note": "$28 last wk"
+     }
+    ],
+    "flags": [
+     "Largest: AD 1749177, $67,643 Endura-Stone columns (older order number). It explains most of Friday's +$98K.",
+     "Millwork.com 1302399680, $12,661: Timberthane U-beams.",
+     "AD 1753023, $11,240: rafter tails.",
+     "2 orders at $0: AD 1752570, AD 1753650.",
+     "14 confirmations for older orders ($85,289) may double count.",
+     "Fri–Sun is 3 days, so its bar in the trend is about 3x a normal day."
+    ],
+    "week": {
+     "found": true,
+     "label": "Last week",
+     "start": "2026-10-19",
+     "end": "2026-10-25",
+     "orders": 2398,
+     "dollars": 1480420.29,
+     "cmpOrders": 2320,
+     "cmpDollars": 1367754.19,
+     "days": "7/7",
+     "partial": false,
+     "sites": [
+      {
+       "name": "AD",
+       "orders": 1878,
+       "dollars": 1242699.45
+      },
+      {
+       "name": "Millwork.com",
+       "orders": 240,
+       "dollars": 95112.68
+      },
+      {
+       "name": "Ekena",
+       "orders": 226,
+       "dollars": 117891.08
+      },
+      {
+       "name": "HomeOver",
+       "orders": 43,
+       "dollars": 20491.36
+      },
+      {
+       "name": "FauxBeams",
+       "orders": 11,
+       "dollars": 4225.72
+      },
+      {
+       "name": "Other",
+       "orders": 0,
+       "dollars": 0
+      }
+     ]
+    }
+   }
   }
  },
  "ops": {
@@ -8016,6 +8413,221 @@
      "what": "Inventory items low or backordered, including assemblies with a low component; list attached.",
      "on": "2026-11-04T09:11:31Z",
      "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJgjqRkAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    }
+   ]
+  },
+  "2026-11-05": {
+   "asOf": "2026-11-05T18:30:00.000Z",
+   "since": "2026-11-04",
+   "cases": {
+    "count": 7,
+    "items": [
+     {
+      "no": "0980079",
+      "issue": "Drawing Clarification/Revision",
+      "vendor": "CW Ohio Inc.",
+      "on": "2026-11-05T17:50:19Z",
+      "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJiBJeEAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+     },
+     {
+      "no": "0979931",
+      "issue": "Drawing Clarification/Revision",
+      "vendor": "AFCO, Industries",
+      "on": "2026-11-05T14:20:18Z",
+      "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJiBJd0AAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+     },
+     {
+      "no": "0979914",
+      "issue": "Drawing Clarification/Revision",
+      "vendor": "Alpha Systems LLC",
+      "on": "2026-11-05T13:40:25Z",
+      "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJiBJdyAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+     },
+     {
+      "no": "0979913",
+      "issue": "Drawing Clarification/Revision",
+      "vendor": "Alpha Systems LLC",
+      "on": "2026-11-05T13:40:19Z",
+      "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJiBJdxAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+     },
+     {
+      "no": "0979912",
+      "issue": "Drawing Clarification/Revision",
+      "vendor": "CW Ohio Inc.",
+      "on": "2026-11-05T13:25:16Z",
+      "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJiBJdvAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+     },
+     {
+      "no": "0979807",
+      "issue": "Drawing Clarification/Revision",
+      "vendor": "CW Ohio Inc.",
+      "on": "2026-11-04T20:30:25Z",
+      "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJgjqSIAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+     },
+     {
+      "no": "0979748",
+      "issue": "Drawing Clarification/Revision",
+      "vendor": "Alpha Systems LLC",
+      "on": "2026-11-04T18:35:23Z",
+      "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJgjqR8AAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+     }
+    ],
+    "note": "From the search 16559 \"New Case Created\" alerts assigned to you. Status is as of each email; check NetSuite."
+   },
+   "pricing": [
+    {
+     "name": "Item Group List Prices need updating (search 11921)",
+     "what": "Grouped List Price on some item groups doesn't match the sum of their components' online prices. Your open task covers it.",
+     "on": "2026-11-05T17:00:51Z",
+     "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJiBJd%2FAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    }
+   ],
+   "alerts": [
+    {
+     "name": "Parent Item with Default Variant SKU Updates",
+     "kind": "fix",
+     "what": "Today's list of parents whose default variant SKU needs updating (attached).",
+     "on": "2026-11-05T08:40:32Z",
+     "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJgjqSgAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+     "name": "Kit Item w/ No Location",
+     "kind": "fix",
+     "what": "Today's list of kit items with no location (attached).",
+     "on": "2026-11-05T08:00:18Z",
+     "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJgjqSeAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+     "name": "Athos Commerce - Indexing Error",
+     "kind": "fix",
+     "what": "Indexing error again Wed afternoon; ekenamillwork.com feed still paused and myhomesupply failing (see your Athos task).",
+     "on": "2026-11-04T18:48:28Z",
+     "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJgjqR9AAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+     "name": "Products Without Marketing Category",
+     "kind": "fix",
+     "what": "Wednesday's list of products missing a marketing category (attached).",
+     "on": "2026-11-04T08:02:45Z",
+     "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJgjqRiAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+     "name": "Daily Backorder List",
+     "kind": "fyi",
+     "what": "Today's low-stock and backordered items (attached).",
+     "on": "2026-11-05T09:11:27Z",
+     "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJh8lAvAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+     "name": "FAM Lead Time Updates for 11/04/2026",
+     "kind": "fyi",
+     "what": "Leadership-approved FAM lead times (attached).",
+     "on": "2026-11-05T08:02:06Z",
+     "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJgjqSfAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+     "name": "FAM Lead Times (Past 7 Days)",
+     "kind": "fyi",
+     "what": "FAM average lead times from last week's shipped orders (attached).",
+     "on": "2026-11-04T20:13:02Z",
+     "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJgjqSFAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    }
+   ]
+  },
+  "2026-11-06": {
+   "asOf": "2026-11-06T21:20:00.000Z",
+   "since": "2026-11-05",
+   "cases": {
+    "count": 5,
+    "items": [
+     {
+      "no": "0980306",
+      "issue": "Drawing Clarification/Revision",
+      "vendor": "CW Ohio Inc.",
+      "on": "2026-11-06T15:35:19Z",
+      "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJim63PAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+     },
+     {
+      "no": "0979931",
+      "issue": "Drawing Clarification/Revision",
+      "vendor": "AFCO, Industries",
+      "on": "2026-11-05T14:20:18Z",
+      "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJiBJd0AAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+     },
+     {
+      "no": "0979914",
+      "issue": "Drawing Clarification/Revision",
+      "vendor": "Alpha Systems LLC",
+      "on": "2026-11-05T13:40:25Z",
+      "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJiBJdyAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+     },
+     {
+      "no": "0979913",
+      "issue": "Drawing Clarification/Revision",
+      "vendor": "Alpha Systems LLC",
+      "on": "2026-11-05T13:40:19Z",
+      "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJiBJdxAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+     },
+     {
+      "no": "0979912",
+      "issue": "Drawing Clarification/Revision",
+      "vendor": "CW Ohio Inc.",
+      "on": "2026-11-05T13:25:16Z",
+      "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJiBJdvAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+     }
+    ],
+    "note": "From the search 16559 \"New Case Created\" alerts assigned to you. Status is as of each email; check NetSuite."
+   },
+   "pricing": [
+    {
+     "name": "Item Group List Prices need updating (search 11921)",
+     "what": "Grouped List Price on some item groups doesn't match the sum of their components' online prices. Your open task covers it.",
+     "on": "2026-11-06T17:00:51Z",
+     "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJim63WAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    }
+   ],
+   "alerts": [
+    {
+     "name": "Parent Item with Default Variant SKU Updates",
+     "kind": "fix",
+     "what": "Today's list of parents whose default variant SKU needs updating (attached).",
+     "on": "2026-11-06T08:40:49Z",
+     "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJim63CAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+     "name": "Kit Item w/ No Location",
+     "kind": "fix",
+     "what": "Today's list of kit items with no location (attached).",
+     "on": "2026-11-06T08:00:31Z",
+     "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJijlpoAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+     "name": "Products Without Marketing Category",
+     "kind": "fix",
+     "what": "Friday's list of products missing a marketing category (attached, truncated at the limit).",
+     "on": "2026-11-06T08:03:09Z",
+     "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJijlppAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+     "name": "Athos Commerce - Indexing Error",
+     "kind": "fix",
+     "what": "Fri 9:00 am: myhomesupply.com indexing failed again (too many erroneous feed records). Thu 1:16 pm the ekenamillwork.com feed was paused after a big drop in product count.",
+     "on": "2026-11-06T15:00:16Z",
+     "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJim63OAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+     "name": "Daily Backorder List",
+     "kind": "fyi",
+     "what": "Today's low-stock and backordered items (attached).",
+     "on": "2026-11-06T09:12:13Z",
+     "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJim63DAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+     "name": "FAM Lead Time Updates for 11/04/2026",
+     "kind": "fyi",
+     "what": "Leadership-approved FAM lead times (attached).",
+     "on": "2026-11-05T08:02:06Z",
+     "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJgjqSfAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
     }
    ]
   }
