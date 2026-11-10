@@ -75,3 +75,10 @@ Each run, after Jobs A and B:
    "From the PC:", task.receipt {at, status, summary, where, left}, claudeStatus "ready" or "blocked".
 5. Publish once (state JSON only, NO capabilities field) and add a Notion "Ultron run log" row (Job "PC worker
    Job C", Where "pc").
+
+## Job D: Strety scorecards (Nov 10)
+If any open Ultron task has pcJob or pcLookup that mentions Strety or scorecards, or a pc-queue file has
+"kind":"strety", follow claude-work/pc-jobs/strety-scorecards.md in Broday6/todo-list (branch
+claude/brodys-board-v2-fuviv5) exactly. Never improvise a Strety prompt from the task text.
+Also create, once, a Claude desktop scheduled task "Strety weekly scorecards": Wednesdays 8:20 am, prompt
+"Follow claude-work/pc-jobs/strety-scorecards.md in Broday6/todo-list (branch claude/brodys-board-v2-fuviv5)."
