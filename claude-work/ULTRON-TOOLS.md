@@ -5,7 +5,7 @@ This is the list of what we built to help Brody's job and what runs on its own. 
 - Board: https://claude.ai/code/artifact/eef4aeae-7777-45e8-9eca-9b231c65b9c7
 - App launcher: `claude-work/ultron-app/Ultron.html`. It opens the board and uses the red mask icon. You can also download it from the board: sidebar › Download app, or Automations › Get the Ultron app.
 - Icon (favicon and app only): `claude-work/ultron-app/ultron-icon.svg` and `ultron-icon.png`.
-- Board build scripts: `claude-work/2026-11-05/board-build/`. The patches are idempotent. Run them in this order: unwrap → patch → patch2 → patch3 → patch4 → patch5 → patch6 → bh8705 → patch7 → patch8 → patch9 → patch10 → patch11 → patch12 → patch13 → patch14 → patch15 → patch16 → patch17 → patch18 → patch19 → patch20 → patch21 → patch22 → patch23 → patch24 → patch25 → patch26 → patch27 → patch28 → patch29 → patch30 → patch31 → patch32 → patch33.
+- Board build scripts: `claude-work/2026-11-05/board-build/`. The patches are idempotent. Run them in this order: unwrap → patch → patch2 → patch3 → patch4 → patch5 → patch6 → bh8705 → patch7 → patch8 → patch9 → patch10 → patch11 → patch12 → patch13 → patch14 → patch15 → patch16 → patch17 → patch18 → patch19 → patch20 → patch21 → patch22 → patch23 → patch24 → patch25 → patch26 → patch27 → patch28 → patch29 → patch30 → patch31 → patch32 → patch33 → patch34 (`patch34.py <in> <out> claude-work/tools/evaluate_board.py`).
 
 ## Board tools (on the page)
 
@@ -183,3 +183,27 @@ Brody: "continue to improve the ui and ux".
   sweep's results); tasks whose id or mail.uri already exists are skipped.
 - `.claude/settings.json` (repo root) allows three read-only Claude Code Remote lookups so routine runs with
   this repo attached don't stop for approval.
+
+## Health, Log in, approvals that stick (patch34, Nov 9)
+
+- **Watchdog and evaluator.** `claude-work/tools/evaluate_board.py <board.html>` prints `state.health`: a
+  watchdog list (each automation judged by what it left on the board) and an evaluator (board score, task
+  checks, 7-day numbers). The routine "Ultron — watchdog and evaluator" (`trig_01T99AD5i28qLXvSnPtoe66k`,
+  weekdays 7:27 and 1:27, push on, no connectors) reads the script from `state._tools.evaluator.src`, checks
+  its sha256 against the hash pinned in the routine's prompt, runs it and writes `state.health` and
+  `state.healthLog`. **To change the script:** edit the file, re-run patch34 (it refreshes `state._tools`),
+  publish, then put the new sha256 into that routine's prompt with `update_trigger`.
+- **Health tab** (Control room, first tab) shows it; watchdog problems also appear on Today's Needs you list.
+- **Log in.** `state.logins = [{name,url}]`. Buttons on Today and Health open every sign-in page; "Put a Log in
+  button on my desktop" saves `Ultron Log in.cmd` (falls back to an .html page).
+- **Approvals that stick.** `state.pcApprovals[<alert type>]` mirrors each go Brody gives on a PC alert task.
+  The PC-side change that makes the worker honor it is in
+  `claude-work/2026-11-09/pc-automation-fixes-PC-PROMPT.md`.
+- **Morning rebuild.** Its prompt is `claude-work/routines/morning-rebuild.md`; the routine itself only says
+  "read and follow that file". The hourly's 7:12 run builds the day from the same file if the 6:50 run didn't
+  (Notion "Routine rules"). `morning-rebuild-FRESH-ROUTINE-SETUP.md` is Brody's 2-minute step to make it a
+  fresh-session routine: a routine created by `create_trigger` from a chat gets no connectors and no repo.
+- **Weekday Login Check** now covers NetSuite, Marketing Portal, Google Ads, Microsoft Ads, Merchant Center,
+  BugHerd, Handshake and Indeed.
+- **BugHerd close** (`claude-work/2026-11-05/bugherd-close-pc-task.md`) only closes a ticket after it has
+  checked the fix itself, and records what it saw in `bh.closeCheck`.

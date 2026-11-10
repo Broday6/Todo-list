@@ -185,7 +185,11 @@ def main():
         parts += [str(x.get("text", "")) for x in (t.get("thread") or []) if isinstance(x, dict)]
         return " ".join(parts)
 
-    pii = [t for t in tasks if not t.get("done") and (em.search(text_of(t)) or ph.search(text_of(t)))]
+    def personal_phone(txt):
+        # toll-free numbers are company lines (for example a support number in policy wording), not personal
+        return any(not re.match(r"\D*1?\D*8(00|33|44|55|66|77|88)\D", m.group(0)) for m in ph.finditer(txt))
+
+    pii = [t for t in tasks if not t.get("done") and (em.search(text_of(t)) or personal_phone(text_of(t)))]
     chk("contact", "Email address or phone number stored", pii, 3, 0, "Your rule: no email addresses or phone numbers on the board.", "Claude should remove the address or number from the task text.")
 
     score = 100.0
