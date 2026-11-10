@@ -1,6 +1,6 @@
 {
  "date": "2026-11-10",
- "status": "ready",
+ "status": "imported",
  "queuedBy": "Ultron main chat (backfill; the routine's Suggested task card never ran)",
  "files": [
   {
@@ -9,5 +9,14 @@
    "rows": 66,
    "sha256": "2ab95c0bb8b20b61798e64d234584fbd0e79333c29061a083efc206428fd04c2"
   }
- ]
+ ],
+ "imported": {
+  "job": "698336544",
+  "processed": 66,
+  "updated": 66,
+  "errors": 0,
+  "held": 0,
+  "at": "2026-11-10T15:05:00Z",
+  "note": "Import ran at 9:05 am CT under Brody's login; the 10:37 PC worker found it on CSV Import Status and confirmed all 66 items show their value"
+ }
 }
