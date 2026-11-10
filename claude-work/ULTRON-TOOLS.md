@@ -5,7 +5,7 @@ This is the list of what we built to help Brody's job and what runs on its own. 
 - Board: https://claude.ai/code/artifact/eef4aeae-7777-45e8-9eca-9b231c65b9c7
 - App launcher: `claude-work/ultron-app/Ultron.html`. It opens the board and uses the red mask icon. You can also download it from the board: sidebar › Download app, or Automations › Get the Ultron app.
 - Icon (favicon and app only): `claude-work/ultron-app/ultron-icon.svg` and `ultron-icon.png`.
-- Board build scripts: `claude-work/2026-11-05/board-build/`. The patches are idempotent. Run them in this order: unwrap → patch → patch2 → patch3 → patch4 → patch5 → patch6 → bh8705 → patch7 → patch8 → patch9 → patch10 → patch11 → patch12 → patch13 → patch14 → patch15 → patch16 → patch17 → patch18 → patch19 → patch20 → patch21 → patch22 → patch23 → patch24 → patch25 → patch26 → patch27 → patch28 → patch29 → patch30 → patch31 → patch32.
+- Board build scripts: `claude-work/2026-11-05/board-build/`. The patches are idempotent. Run them in this order: unwrap → patch → patch2 → patch3 → patch4 → patch5 → patch6 → bh8705 → patch7 → patch8 → patch9 → patch10 → patch11 → patch12 → patch13 → patch14 → patch15 → patch16 → patch17 → patch18 → patch19 → patch20 → patch21 → patch22 → patch23 → patch24 → patch25 → patch26 → patch27 → patch28 → patch29 → patch30 → patch31 → patch32 → patch33.
 
 ## Board tools (on the page)
 
@@ -167,3 +167,19 @@ Brody: "improve automations headaches and other problems that we were having".
   `claude-work/2026-11-09/hourly-routine-prompt.txt`): new step 2a (Live chat backlog) and step 3c
   (missed-mail sweep at 7:12: mail the triage filed under Low or FYI that a person wrote, plus every job
   application, becomes an inbox task `ms<MMDD>-<n>`).
+
+## UI pass 2 (patch33, Nov 9)
+
+Brody: "continue to improve the ui and ux".
+
+- **Tasks:** rows are compact until opened: title, one line of why, one line of what unblocks it. The note and
+  last-update lines show when the task is opened, or for every task with the **Full details** switch (saved in
+  the browser). Groups longer than 10 show 8 rows with **Show all N**; a search, "Claude can do" or an opened
+  task always shows. Desktop page height went from about 17,300 px to 8,300 px.
+- **Inbox:** each row shows its main actions (Write reply or Read draft, Claude drafts the reply, Done). Read
+  email, Open in Outlook, Task, Hold and No longer needed sit under **More**, which stays open while you use it.
+- **Claude tab:** "Clear in one sitting" shows 3 per group with **Show all**.
+- `patch33.py <in> <out> [tasks.json]` can also add inbox tasks from a JSON file (used for the missed-mail
+  sweep's results); tasks whose id or mail.uri already exists are skipped.
+- `.claude/settings.json` (repo root) allows three read-only Claude Code Remote lookups so routine runs with
+  this repo attached don't stop for approval.

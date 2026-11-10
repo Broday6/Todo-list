@@ -1,0 +1,121 @@
+[
+ {
+  "id": "ms1109-3",
+  "group": "inbox",
+  "title": "11 new applicants on Indeed: review and reply",
+  "note": "Found by the mail sweep. All for E-Com Marketing & Online Merchandising, after the 14 already on your list: Kalee, Lilly, Brittany, Danu, plus a 7-person Indeed digest (Jordan, Weldon, Richard and 4 unnamed; the digest needs you signed in to Indeed). Daniel added you to the PCI Indeed account Monday at 4:47 pm and forwarded Kalee, Cindy and Cynthia to Garrett as possible Sales fits.",
+  "done": false,
+  "since": "2026-11-09",
+  "due": "2026-11-10",
+  "from": "Indeed applicants",
+  "source": "missed-mail sweep 2026-11-09",
+  "why": "Hiring is active and candidates go cold quickly. Job applications are never Low.",
+  "mail": {
+   "uri": "mail:///messages/AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU_Hcc2AAAAAAEMAABCgVnAZCBUTa752dU_Hcc2AAJksP-SAAA%3D",
+   "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJksP%2FSAAA%3D&exvsurl=1&viewmodel=ReadMessageItem",
+   "subject": "[Action required] New application for E-Com Marketing & Online Merchandising, Rockwall, TX",
+   "from": "Applicant",
+   "on": "2026-11-09T18:18:09Z"
+  },
+  "applicantsThrough": "2026-11-10T01:57:00Z",
+  "reply": {
+   "state": "needs",
+   "note": "New applicants since the first 14."
+  }
+ },
+ {
+  "id": "ms1109-4",
+  "group": "inbox",
+  "title": "Answer Andrew: can his Claude referral be used to set up the team accounts?",
+  "note": "Found by the mail sweep. Andrew forwarded a Claude guest-pass reminder with that question on Monday at 9:59 am. Unread, and no reply from you in Sent.",
+  "done": false,
+  "since": "2026-11-09T15:59:37Z",
+  "due": "2026-11-10",
+  "from": "Andrew Gonzalez",
+  "source": "missed-mail sweep 2026-11-09",
+  "why": "It ties into the team Claude access you are settling with Ethan.",
+  "mail": {
+   "uri": "mail:///messages/AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU_Hcc2AAAAAAEMAABCgVnAZCBUTa752dU_Hcc2AAJksP_8AAA%3D",
+   "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJksP%2B8AAA%3D&exvsurl=1&viewmodel=ReadMessageItem",
+   "subject": "Fw: Reminder: Share your 3 Claude guest passes",
+   "from": "Andrew Gonzalez",
+   "on": "2026-11-09T15:59:37Z"
+  }
+ },
+ {
+  "id": "ms1109-5",
+  "group": "inbox",
+  "title": "Find out why two sample orders shipped Vantage shutter samples we don't sell",
+  "note": "Found by the mail sweep. Jordan asks you, Daniel and Ethan to make sure the correct samples are sent; Daniel asked for photos. No reply from you yet.",
+  "done": false,
+  "since": "2026-11-09T20:47:29Z",
+  "due": "2026-11-10",
+  "from": "Jordan Caldwell",
+  "source": "missed-mail sweep 2026-11-09",
+  "why": "Customers are calling about samples for a product we don't offer.",
+  "mail": {
+   "uri": "mail:///messages/AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU_Hcc2AAAAAAEMAABCgVnAZCBUTa752dU_Hcc2AAJksP-hAAA%3D",
+   "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJksP%2FhAAA%3D&exvsurl=1&viewmodel=ReadMessageItem",
+   "subject": "03-4237587 & 03-4245541 - Vantage Shutter Samples",
+   "from": "Jordan Caldwell",
+   "on": "2026-11-09T20:47:29Z"
+  }
+ },
+ {
+  "id": "ms1109-6",
+  "group": "inbox",
+  "title": "Answer Andrew in Asana: his question on the Columns - All ad group targets",
+  "note": "Missed by Monday's triage. His Friday comment on the Weekly 2 Nov G2 Columns - All card asks whether the target should change on the Columns - All ad groups too. He also set the Columns - PVC card to 90 instead of 60. Asana itself wasn't checked.",
+  "done": false,
+  "since": "2026-11-06T22:21:25Z",
+  "due": "2026-11-10",
+  "from": "Andrew Gonzalez",
+  "source": "missed-mail sweep 2026-11-09",
+  "why": "He is waiting on you; your Fire Vent task covers only that one card.",
+  "mail": {
+   "uri": "mail:///messages/AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU_Hcc2AAAAAAEMAABCgVnAZCBUTa752dU_Hcc2AAJim63iAAA%3D",
+   "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJim63iAAA%3D&exvsurl=1&viewmodel=ReadMessageItem",
+   "subject": "💬 New comment on: [Weekly 2 Nov] G2 · Co…",
+   "from": "Andrew Gonzalez",
+   "on": "2026-11-06T22:21:25Z"
+  }
+ },
+ {
+  "id": "ms1109-7",
+  "group": "inbox",
+  "title": "Approve or decline Matthew Durham's Drive access request (PNU22X44TBCR image)",
+  "note": "Missed by Monday's triage. A Google Drive share request sent Friday to the team shared mailbox, still unread. I couldn't check whether access was already granted.",
+  "done": false,
+  "since": "2026-11-06T22:56:08Z",
+  "due": "2026-11-10",
+  "from": "Matthew Durham",
+  "source": "missed-mail sweep 2026-11-09",
+  "why": "He can't open the product image until someone approves.",
+  "mail": {
+   "uri": "mail:///messages/AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU_Hcc2AAAAAAEMAABCgVnAZCBUTa752dU_Hcc2AAJim63mAAA%3D",
+   "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJim63mAAA%3D&exvsurl=1&viewmodel=ReadMessageItem",
+   "subject": "Share request for \"PNU22X44TBCR_2521994.jpg\"",
+   "from": "Matthew Durham",
+   "on": "2026-11-06T22:56:08Z"
+  }
+ },
+ {
+  "id": "ms1109-8",
+  "group": "inbox",
+  "title": "Ekena return policy: remove the trademark icon (Daniel OK'd your text)",
+  "note": "Found by the mail sweep. Daniel replied Monday at 1:00 pm: \"Yeah that's fine. Let's remove the trademark icon.\" It came after your last reply, on the thread of a task you already closed.",
+  "done": false,
+  "since": "2026-11-09T19:00:14Z",
+  "due": "2026-11-10",
+  "from": "Daniel Milkie",
+  "source": "missed-mail sweep 2026-11-09",
+  "why": "The Ekena policy page is blank and order confirmations link to it.",
+  "mail": {
+   "uri": "mail:///messages/AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU_Hcc2AAAAAAEMAABCgVnAZCBUTa752dU_Hcc2AAJksP-XAAA%3D",
+   "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJksP%2FXAAA%3D&exvsurl=1&viewmodel=ReadMessageItem",
+   "subject": "RE: Ekena shipping and return policy page wording",
+   "from": "Daniel Milkie",
+   "on": "2026-11-09T19:00:14Z"
+  }
+ }
+]
