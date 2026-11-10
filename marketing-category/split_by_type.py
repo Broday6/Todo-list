@@ -70,6 +70,36 @@ PREFIX_RULES = {
 }
 
 
+# When a row's Product Category has no rule, fill it from words in the
+# Description instead of leaving it for Brody (Brody, Nov 10: "do these
+# automatically"). First match wins, so the more specific words come first.
+DESCRIPTION_RULES = [
+    (r"\bmantels?\b", "Mantels"),
+    (r"\bbeams?\b", "Beams"),
+    (r"\bshutters?\b", "Shutters"),
+    (r"\bgable vents?\b|\bvents?\b|\bventilation\b", "Ventilation"),
+    (r"\bporch posts?\b|\bcolumns?\b", "Columns"),
+    (r"\bcorbels?\b|\bbrackets?\b", "Brackets & Corbels"),
+    (r"\bbalustrades?\b|\bbalusters?\b|\bnewels?\b", "Balustrade"),
+    (r"\brailings?\b", "Railing"),
+    (r"\bdoor trim\b|\bwindow trim\b|\bcrossheads?\b|\bpediments?\b|\bwindow headers?\b", "Door & Window Trim"),
+    (r"\bmouldings?\b|\bmoldings?\b|\bcasings?\b|\bbaseboards?\b|\brosettes?\b|\bplinth blocks?\b|\btrim\b", "Moulding & Trim"),
+    (r"\bceiling\b", "Ceiling Accents"),
+    (r"\bwall panels?\b|\bslat walls?\b|\bwainscot\w*|\bbacksplash\w*|\bfretwork\b", "Wall Accents"),
+    (r"\bsiding\b|\bfaux stone\b|\bfaux brick\b", "Siding & Components"),
+    (r"\bplanters?\b|\bpergolas?\b|\bawnings?\b|\bwindow box(es)?\b|\bgarden\b", "Yard & Garden"),
+    (r"\bonlays?\b|\bappliques?\b", "Decorative Accents"),
+    (r"\bscrews?\b|\bfasteners?\b|\badhesives?\b|\bhardware\b", "Hardware, Fasteners & Adhesives"),
+]
+
+
+def category_from_description(description):
+    for pattern, mc in DESCRIPTION_RULES:
+        if re.search(pattern, description, re.I):
+            return mc
+    return ""
+
+
 def category_for(product_category, mapping, marketing_values):
     pc = product_category.strip()
     if pc in mapping:
@@ -108,12 +138,18 @@ def main(src, out_dir):
     pc_col = find_col(fields, "product categories", "product category")
     mc_col = find_col(fields, "marketing product categories", "marketing product category")
 
+    desc_col = next((f for f in fields if f.strip().lower() == "description"), None)
     by_type = defaultdict(list)
     review = []
     cats = Counter()
+    inferred = Counter()
     for r in rows:
         if not r.get(mc_col, "").strip():
             r[mc_col] = category_for(r.get(pc_col, ""), mapping, marketing_values)
+            if not r[mc_col] and desc_col:
+                r[mc_col] = category_from_description(r.get(desc_col, ""))
+                if r[mc_col]:
+                    inferred[(r.get(pc_col, "") or "(blank)", r[mc_col])] += 1
         if r[mc_col]:
             by_type[r[type_col].strip()].append(r)
             cats[r[mc_col]] += 1
@@ -138,6 +174,8 @@ def main(src, out_dir):
         print(f"  {safe_name(t)}.csv: {len(data)}")
     for c, n in cats.most_common():
         print(f"  category {c}: {n}")
+    for (pc, mc), n in sorted(inferred.items()):
+        print(f"  filled from description: {pc} -> {mc} ({n} rows)")
     print(f"  Needs review.csv: {len(review)}"
           + (" (" + ", ".join(sorted({r[pc_col] or '(blank)' for r in review})) + ")" if review else ""))
 
