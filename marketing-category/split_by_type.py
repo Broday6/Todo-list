@@ -77,6 +77,9 @@ def category_for(product_category, mapping, marketing_values):
     for prefix, mc in PREFIX_RULES.items():
         if pc.upper().startswith(prefix):
             return mc
+    # "Samples - Beams" -> the category of what it samples (Beams)
+    if pc.lower().startswith("samples - "):
+        return category_for(pc[len("samples - "):], mapping, marketing_values)
     # "Columns - Round" -> "Columns", "Shutters - Steel" -> "Shutters"
     prefix = pc.split(" - ")[0].strip()
     for known_pc, mc in mapping.items():
