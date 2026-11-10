@@ -3,7 +3,8 @@
     "allow": [
       "mcp__claude-code-remote__get_session",
       "mcp__claude-code-remote__list_triggers",
-      "mcp__claude-code-remote__get_trigger"
+      "mcp__claude-code-remote__get_trigger",
+      "mcp__Notion"
     ]
   }
 }
