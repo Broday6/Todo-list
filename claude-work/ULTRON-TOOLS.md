@@ -5,7 +5,7 @@ This is the list of what we built to help Brody's job and what runs on its own. 
 - Board: https://claude.ai/code/artifact/eef4aeae-7777-45e8-9eca-9b231c65b9c7
 - App launcher: `claude-work/ultron-app/Ultron.html`. It opens the board and uses the red mask icon. You can also download it from the board: sidebar › Download app, or Automations › Get the Ultron app.
 - Icon (favicon and app only): `claude-work/ultron-app/ultron-icon.svg` and `ultron-icon.png`.
-- Board build scripts: `claude-work/2026-11-05/board-build/`. The patches are idempotent. Run them in this order: unwrap → patch → patch2 → patch3 → patch4 → patch5 → patch6 → bh8705 → patch7 → patch8 → patch9 → patch10 → patch11 → patch12 → patch13 → patch14 → patch15 → patch16 → patch17 → patch18 → patch19 → patch20 → patch21 → patch22 → patch23 → patch24 → patch25 → patch26 → patch27 → patch28 → patch29 → patch30 → patch31 → patch32 → patch33 → patch34 (`patch34.py <in> <out> claude-work/tools/evaluate_board.py`).
+- Board build scripts: `claude-work/2026-11-05/board-build/`. The patches are idempotent. Run them in this order: unwrap → patch → patch2 → patch3 → patch4 → patch5 → patch6 → bh8705 → patch7 → patch8 → patch9 → patch10 → patch11 → patch12 → patch13 → patch14 → patch15 → patch16 → patch17 → patch18 → patch19 → patch20 → patch21 → patch22 → patch23 → patch24 → patch25 → patch26 → patch27 → patch28 → patch29 → patch30 → patch31 → patch32 → patch33 → patch34 (`patch34.py <in> <out> claude-work/tools/evaluate_board.py`) → patch35 → patch36 (data only).
 
 ## Board tools (on the page)
 
@@ -207,3 +207,20 @@ Brody: "continue to improve the ui and ux".
   BugHerd, Handshake and Indeed.
 - **BugHerd close** (`claude-work/2026-11-05/bugherd-close-pc-task.md`) only closes a ticket after it has
   checked the fix itself, and records what it saw in `bh.closeCheck`.
+
+## Nov 10: autonomy ladder, tests, routine prompts in the repo, split build
+
+- **Before any publish:** `bash claude-work/tests/run.sh /abs/board.html` must print ALL PASSED (state check,
+  evaluator, 28 browser checks, about 70 seconds). Never publish a build that fails it.
+- **Autonomy (patch35).** After 5 clean runs in a row since its last mode change, a playbook moves to its
+  highest allowed mode; 2 redos in the last 5 step it back. `state.autoLadder` false turns it off. Auto still
+  means drafts only. A switched-off chat, hourly, rebuild or watchdog routine shows as a problem on Today.
+- **Routine prompts are files:** `claude-work/routines/hourly.md` and `morning-rebuild.md`. The triggers only
+  say "read and follow the file". Edit the file, commit, push; no trigger update needed.
+- **Summaries must be true:** the Notion "Routine rules" page has the rules (sent means it is in Sent Items);
+  `morning-rebuild.md` step 4b verifies the triage's claims before copying them.
+- **Split build (not live yet).** `claude-work/split/`: `patch_split.py`, `split.py`, `join.py`,
+  `test_split.js`. A test copy is at https://claude.ai/artifact/TNVnc9CVNdhbrdrYxCRksc. To ship: unwrap the
+  live page, `patch_split.py live.html p.html`, `split.py p.html out`, run the tests on p.html, publish
+  `out/index.html` with files `{"app.js","app.css"}` in ONE publish. Afterwards every change is: read
+  index.html + app.js + app.css, `join.py`, patch the single file, `split.py`, publish all three together.
