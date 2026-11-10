@@ -1,4 +1,4 @@
-# PC worker: run cases and marketing category imports on its own (paste into Claude Code on your PC)
+# PC worker: cases and marketing category imports run on their own (paste into Claude Code on your PC)
 
 Brody, Nov 10, 2026: "cases didnt automatically start. Marketing categories didnt automatically start."
 Why: both jobs need NetSuite, which only your PC can reach. The cloud left them as Suggested task cards or
@@ -30,17 +30,32 @@ Add these two jobs to every run, after the jobs it already does:
 This job runs even while the worker is in dry-run mode for other alert fixes, because you approved this
 import as a standing job. If you'd rather it waited, tell me now and I'll leave it in dry-run.
 
-## B. Case lookups (read only)
-1. Read Ultron (https://claude.ai/code/artifact/eef4aeae-7777-45e8-9eca-9b231c65b9c7) and find open tasks in
-   group "cases" that have task.pcLookup.
-2. For each, open the case in NetSuite (search 16559 or the case number) and READ ONLY: the vendor's question
-   or message, the Assigned To, the status, the sales order and whether it is big-box (Home Depot or Lowe's).
-   Never change any field, never reply in NetSuite, never send email.
-3. Write one thread message on that task: {role:"claude", text:"From NetSuite: <what you read, plain words,
-   no customer names, emails or phone numbers>", t:now}, remove task.pcLookup, set claudeStatus "queued" so
-   the next hourly cloud run drafts the reply or the hand-off note. If you couldn't read it, say why in the
-   thread and leave pcLookup.
-4. Publish the board the way its state._note describes (only the state JSON replaced, NO capabilities field).
+## B. Cases: look them up, hand Kody his, do approved case updates
+Brody, Nov 10: "It should look these up in netsuite without me telling it too. Then if it is from amazon lowes
+homedepot or wayfair it assigns them to kody." Every run, with NetSuite open in Claude in Chrome (take and
+release the Chrome lock; never type a password; if signed out, stop this job and say so on the board):
+
+1. Open saved search 16559 "ECOM - Pending Cases" (Preview only, never edit or save the search) and list every
+   case on it. Also include every open task in group "cases" on Ultron and any with task.pcLookup.
+2. For each case, open it and READ: Assigned To, the order and its channel (Amazon, Lowe's, Home Depot,
+   Wayfair, Architectural Depot, other), order date, case status, the vendor's message or question, the
+   cancellation reason, Quick Notes, and the order lines (item and quantity). Write on the board task
+   cs<case#> (add the task in group "cases" if it is missing and the case is assigned to Brody):
+   task.case.facts = {asOf, assignedTo, channel, order, orderDate, status, vendorMessage, cancelReason,
+   quickNotes, lines} and one thread message "From NetSuite: <plain summary>". No customer names, emails,
+   phone numbers or the Company field anywhere on the board.
+3. Assigned to Kody Goss already: write facts.assignedTo "Kody Goss" and leave it; the cloud closes the task.
+4. Channel is Amazon, Lowe's, Home Depot or Wayfair and Assigned To is Brody: set Assigned To = Kody Goss and
+   save. This is the ONLY field you may change without a new OK (Brody's standing OK, Nov 10). Reload and
+   confirm it saved, then write facts.assignedTo "Kody Goss", facts.reassigned {t, from:"Brody Simpson"} and a
+   thread message "Reassigned to Kody in NetSuite (marketplace order: <channel>)."
+5. Brody approved a case update (task.approved, or task.pcApprovals for the case, after a "Proposed:" thread
+   message): add the Quick Note to Sarah exactly as written in the proposal, set the status to "In Progress -
+   Order Processing", save, confirm, and write "Done in NetSuite: Quick Note added, status set" in the thread.
+   Change nothing else.
+6. Clear task.pcLookup on every task you handled and publish the board once (only the state JSON replaced, NO
+   capabilities field). Add one row to the Notion "Ultron run log" (Job "Cases (PC)", Where "pc").
+The cloud hourly then builds Brody's proposed solutions from those facts.
 
 Also confirm the "NetSuite cases check (search 16559)" scheduled task exists and has run. If it does not
 exist, create it from claude-work/2026-11-02/pc-tasks/cases-sweep-16559.md (weekdays 7:10 and 12:10), run it
