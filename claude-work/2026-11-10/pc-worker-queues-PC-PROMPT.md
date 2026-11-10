@@ -60,3 +60,18 @@ The cloud hourly then builds Brody's proposed solutions from those facts.
 Also confirm the "NetSuite cases check (search 16559)" scheduled task exists and has run. If it does not
 exist, create it from claude-work/2026-11-02/pc-tasks/cases-sweep-16559.md (weekdays 7:10 and 12:10), run it
 once, and confirm it wrote state.casesSweep on the board.
+
+## Job C: queued PC steps (Nov 10, Brody: "look at alot of my problems or tasks that arent being completed")
+Why: cloud chats stop at the PC line (Miva, NetSuite, Strety, Marketing Portal, Merchant Center, ads accounts)
+and used to ask Brody to paste a prompt, while this worker skipped 27 of 28 runs with "nothing approved".
+Each run, after Jobs A and B:
+1. Read every open task on Ultron with task.pcJob.status "queued" (oldest first, at most 3 a run).
+2. Do task.pcJob.step in Chrome (PCI profile). Reads, research, lookups, exports and drafts: do them now.
+   Any change in NetSuite, Miva, Strety, Google Ads or Microsoft Ads: only if the task has task.approved (or a
+   pcApprovals entry) covering that exact change; otherwise stop at the change and write the exact proposed
+   change in a "Proposed:" thread message so it shows in Approvals.
+3. If a site needs a sign-in you don't have, set task.pcJob.status "needs_signin" with the site name and stop.
+4. Write the result on the task: task.pcJob.status "done" or "proposed", pcJob.at, a thread message starting
+   "From the PC:", task.receipt {at, status, summary, where, left}, claudeStatus "ready" or "blocked".
+5. Publish once (state JSON only, NO capabilities field) and add a Notion "Ultron run log" row (Job "PC worker
+   Job C", Where "pc").
