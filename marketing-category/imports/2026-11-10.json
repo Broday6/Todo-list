@@ -1,0 +1,13 @@
+{
+ "date": "2026-11-10",
+ "status": "ready",
+ "queuedBy": "Ultron main chat (backfill; the routine's Suggested task card never ran)",
+ "files": [
+  {
+   "name": "2026-11-10 Assembly-Bill of Materials.csv",
+   "recordType": "Assembly Item (Assembly/Bill of Materials)",
+   "rows": 66,
+   "sha256": "2ab95c0bb8b20b61798e64d234584fbd0e79333c29061a083efc206428fd04c2"
+  }
+ ]
+}
