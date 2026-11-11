@@ -79,3 +79,5 @@ STEPS
 CHAT LINKS AND PC STEPS (Brody, Nov 10, 2026): when this run works a board task, stamp its chat link: read $CLAUDE_CODE_REMOTE_SESSION_ID with Bash, change cse_ to session_, set task.receipt.session and task.chatSid, and add sid to the newest task.runs entry (never call a Claude_Code_Remote tool for this). When a task stops only because the next step needs Brody's PC, set task.pcJob {t, by:"Claude", step, status:"queued"} so the PC worker's Job C runs it, instead of asking Brody to paste a prompt. Full rule: the Notion Routine rules page, "Chat links and PC steps".
 
 DONE ARCHIVE (Brody, Nov 11, 2026): tasks done 2+ weeks ago leave state.tasks and go to state.doneArchive (shown on the Week tab as Done this quarter; cleared when the quarter ends). Before adding any inbox task, case or BugHerd task, check state.doneArchive as well as state.tasks: an id there, or the same ask from the same person, is closed. Never re-add or reopen it.
+
+PROMOS SHAPE (Nov 11): when adding or editing state.promos.items, write sites as a list (["AD","PC"]), never text like "AD, PC", and todo as a list of {text}. A text value crashed the Promotions tab.
