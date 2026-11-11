@@ -116,6 +116,15 @@ later, and for every New one whose resume has been read:
 - stageOn: the date (YYYY-MM-DD) the stage last changed.
 - note: keep Brody's own note text; append one dated line per stage change, never rewrite what's there.
 
+- profile (Brody, Nov 11, 2026: "Allow me to click on their name and get more information it is still extremely
+  limited"): the full record behind the panel that opens when Brody clicks a name on the Hiring tab (board patch49).
+  {summary, city, relocate, workAuth, replies:[{on:"Nov 10, 4:24 PM", about:"answer to the screening email", text:
+  <their words verbatim, up to 600 characters, "[...]" where cut>}], roles:[{title, org, dates, did}] (up to 3, newest
+  first), education, skills:[...], redFlags:[...], resumeOn, emails:[{on, what}] (every email or message we sent, and
+  each draft waiting, in order), links:[{label, url}] (their newest email's Outlook webLink; Handshake for Handshake
+  people)}. Whoever reads a new reply appends it to replies and adds the stage email to emails; whoever reads the
+  resume (PC Job H or a live chat) fills city through redFlags. Never drop older replies.
+
 Privacy: no email addresses, phone numbers, street addresses, age, photos, family, health, religion or ethnicity on
 the board, in Notion or in the repo. City and state are fine. Contact details stay in Outlook.
 
