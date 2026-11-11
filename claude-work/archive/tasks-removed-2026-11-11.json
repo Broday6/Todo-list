@@ -1,0 +1,598 @@
+[
+ {
+  "id": "cl1022-1",
+  "group": "now",
+  "title": "Message Daniel and Ethan to book the Algolia pricing call",
+  "note": "Tory asked on Oct 22 (Fw: PCI + Algolia Next Steps) whether anyone had booked Gavin's pricing call. Nobody has. His open 30-min slots in Central time: Fri Oct 23 11:30-1:00, 2:00-2:30, 3:00-4:00; Mon Oct 26 11:30-12:30, 1:00-1:30, 2:00-3:00. Tory can do any of them. Agree a time with Daniel and Ethan, then book it with Gavin's calendar link in that email.",
+  "due": "2026-10-23",
+  "done": true,
+  "doneOn": "2026-10-23",
+  "doneVia": "o23-5"
+ },
+ {
+  "id": "cl1022-2",
+  "group": "now",
+  "title": "Clear the old e-com cases in your name",
+  "note": "Daniel (Oct 14, RE: 03-4112172 Credit for Order): 169 open e-com cases, many old and assigned to you. Kaylyn asked for a sweep of your queue. The list is NetSuite search 16559 'ECOM - Pending Cases'. Sign in to NetSuite in Chrome so Claude can pull it and sort each case into close, fix or hand off. Covers the new pending-case alerts too.",
+  "due": "2026-10-23",
+  "done": true,
+  "doneOn": "2026-10-23"
+ },
+ {
+  "id": "tnn1022",
+  "group": "now",
+  "title": "Update the National Nail pricing",
+  "note": "Added Oct 22: first thing after the L-10.",
+  "due": "2026-10-22",
+  "done": true,
+  "doneOn": "2026-10-22",
+  "doneVia": "o22-21"
+ },
+ {
+  "id": "t4ad91",
+  "group": "now",
+  "title": "Audit ads and lower spend",
+  "note": "Continue following up on search terms and ROAS across both accounts — the goal now is lowering spend, not just tightening negatives.",
+  "due": "2026-09-11",
+  "done": true,
+  "doneOn": "2026-10-21",
+  "doneVia": "o21-13"
+ },
+ {
+  "id": "tu96z3a",
+  "group": "now",
+  "title": "Go over spend",
+  "note": "Block time to review ad spend.",
+  "due": "2026-09-21",
+  "done": true,
+  "doneOn": "2026-10-21",
+  "doneVia": "o21-13"
+ },
+ {
+  "id": "tmant01",
+  "group": "now",
+  "title": "Mantels: Claude owns the line. Answer its 2 open questions",
+  "note": "Oct 5: you handed the mantels line to Claude. Two questions on the Mantels board block the next step: which import fields are off-limits, and whether categories are created and assigned in Miva or through a NetSuite field. Answer by commenting on those Answer me cards.",
+  "due": "2026-10-06",
+  "done": true,
+  "doneOn": "2026-10-21",
+  "doneVia": "o21-14"
+ },
+ {
+  "id": "wk-ads",
+  "group": "now",
+  "title": "G1 + G3 Google Ads audit: bring spend down",
+  "note": "Spend is high in both groups. Check search terms and keywords, assets and general performance, and whether the tROAS targets are set low enough to let spend run. Already on the AD Ads Audit board: G1 spend rose 36% in one week (Crown Moulding pMax +156%, AI Max switched on for 2 campaigns Sep 29). G3's spend ratio is 13.5% YTD, 18.1% over 90 days, 21.2% in August. Needs your Google Ads sign-in, so it runs on your PC. PPC Ad Review is Tue 11:00, a good place to bring early findings.",
+  "due": "2026-10-08",
+  "done": true,
+  "doneOn": "2026-10-21",
+  "doneVia": "o21-13"
+ },
+ {
+  "id": "wk-vid3",
+  "group": "now",
+  "title": "Install video #3: vinyl shutters",
+  "note": "Steps: research the vinyl shutter install guide, then write an INSTALLATION video brief (real install-guide figures, never generated install action), then generate, run the evaluator, and review in the Review Studio.",
+  "due": "2026-10-09",
+  "done": true,
+  "claudeCan": {
+   "how": "Research the vinyl shutter install guide and write the INSTALLATION video brief (real guide figures, nothing generated).",
+   "steps": [
+    "Find the vinyl shutter install guide PDF on the Ekena and AD product pages.",
+    "List the install steps and the figures that show each one.",
+    "Write the INSTALLATION video brief: shot list from the real figures, timeline text overlays, length.",
+    "Save the brief to the todo-list repo and post the link in this task's thread."
+   ]
+  },
+  "doneOn": "2026-10-27",
+  "doneVia": "o27-16"
+ },
+ {
+  "id": "wk-vidqa",
+  "group": "now",
+  "title": "QA all install videos",
+  "note": "Run every finished install video through the evaluator and the Review Studio on your PC. The published Review Studio page only holds the demo project, not the real videos.",
+  "due": "2026-10-09",
+  "done": true,
+  "doneOn": "2026-10-26",
+  "doneVia": "o26-13"
+ },
+ {
+  "id": "wk-sms",
+  "group": "now",
+  "title": "SMS & email workflows: review what runs and what's missing",
+  "note": "Start from the AD Email System page (Sep 25). List the flows that exist (welcome, abandoned cart, post-purchase, sample follow-up), which ones send SMS, and the gaps.",
+  "due": "2026-10-09",
+  "done": true,
+  "doneOn": "2026-10-23",
+  "doneVia": "o23-11"
+ },
+ {
+  "id": "wk-setup",
+  "group": "now",
+  "title": "On your PC: approve 2 Claude setups (Pacific Columns to Andrew, mantels sessions)",
+  "note": "The three Pacific Columns audits run on your PC, so their change to assign findings to Andrew needs your approval there. The mantels Mon/Thu session has to be created there too. Paste the two blocks from the setup note into a Cowork conversation on your PC.",
+  "due": "2026-10-06",
+  "done": true,
+  "doneOn": "2026-10-21",
+  "doneVia": "o21-14"
+ },
+ {
+  "id": "in1020-1",
+  "group": "inbox",
+  "title": "Meet Daniel on the E-Comm team ideas (his Google doc)",
+  "note": "Daniel M. · Teams · asked for first thing this morning. Triage dropped it Oct 21 (it was for Oct 20).",
+  "due": "2026-10-20",
+  "done": true,
+  "from": "Daniel M.",
+  "draft": false,
+  "since": "2026-10-20",
+  "source": "triage 2026-10-20",
+  "doneOn": "2026-10-26"
+ },
+ {
+  "id": "in1020-2",
+  "group": "inbox",
+  "title": "Switch NetSuite SKU video links from AD's videos to Ekena's",
+  "note": "Daniel M. · Teams · open since Oct 19, and yesterday's log says 'Daniel video upload'. File: O:\\! DM\\Video update project from AD to Ekena. Triage says closed Oct 22.",
+  "due": "2026-10-21",
+  "done": true,
+  "from": "Daniel M.",
+  "draft": false,
+  "since": "2026-10-20",
+  "source": "triage 2026-10-20",
+  "doneOn": "2026-10-26",
+  "doneVia": "o26-14"
+ },
+ {
+  "id": "in1020-5",
+  "group": "inbox",
+  "title": "Reply to Matt Durham on Heritage Timber mantel line drawings",
+  "note": "Matt Durham · email · 3D Viz doesn't usually upload line drawings (Ryan's team does). If they can, he wants an Excel of the internal IDs affected. Draft ready in Outlook.",
+  "due": "2026-10-20",
+  "done": true,
+  "from": "Matt Durham",
+  "draft": true,
+  "since": "2026-10-20",
+  "source": "triage 2026-10-20",
+  "doneOn": "2026-10-26"
+ },
+ {
+  "id": "in1020-6",
+  "group": "inbox",
+  "title": "Reply to Criteo about holiday planning time",
+  "note": "Mac (Criteo) · email · wants time this week or next to align on holiday strategy. Draft ready in Outlook.",
+  "due": "2026-10-20",
+  "done": true,
+  "from": "Mac (Criteo)",
+  "draft": true,
+  "since": "2026-10-20",
+  "source": "triage 2026-10-20",
+  "doneOn": "2026-10-26"
+ },
+ {
+  "id": "in1020-7",
+  "group": "inbox",
+  "title": "Answer Andrew: which location should vendor kit items use?",
+  "note": "Andrew Gonzalez · email · from the Kit Item w/ No Location alert. Draft ready in Outlook.",
+  "due": "2026-10-20",
+  "done": true,
+  "from": "Andrew G.",
+  "draft": true,
+  "since": "2026-10-20",
+  "source": "triage 2026-10-20",
+  "doneOn": "2026-10-26"
+ },
+ {
+  "id": "rm-mahogany",
+  "group": "now",
+  "title": "Red Mahagony fix: send procurement the corrected titles (BugHerd #8627)",
+  "note": "Pull is set up: 14837 preview (BMW, AmeriCraft, Finish = Red Mahagony, Beams, active) = 24,887 items; only Description and the Finish field contain the typo. Tomorrow: save the CSV to your PCI OneDrive or email it to yourself, then Claude builds the procurement file (Internal ID + corrected title) and drafts the email. After that: create Red Mahogany in the Marketing Portal, move the finish (parent session), rename the swatch file to variant_finish_red_mahogany.jpg.",
+  "due": "2026-10-21",
+  "done": true,
+  "doneOn": "2026-10-22",
+  "doneVia": "o22-11"
+ },
+ {
+  "id": "lg1020-1",
+  "group": "now",
+  "title": "Meeting with Andrew at 2 PM",
+  "note": "From your board log, Oct 20 at 14:19.",
+  "due": "2026-10-21",
+  "done": true,
+  "doneOn": "2026-10-21",
+  "doneVia": "o21-11"
+ },
+ {
+  "id": "lg1020-2",
+  "group": "now",
+  "title": "Contact colleges again",
+  "note": "From your board log, Oct 20 at 14:19.",
+  "due": "2026-10-21",
+  "done": true,
+  "doneOn": "2026-10-21",
+  "doneVia": "o21-3"
+ },
+ {
+  "id": "lg1020-3",
+  "group": "now",
+  "title": "Algolia pull",
+  "note": "From your board log, Oct 20 at 14:19.",
+  "due": "2026-10-21",
+  "done": true,
+  "doneOn": "2026-10-21",
+  "doneVia": "o21-12"
+ },
+ {
+  "id": "lg1020-4",
+  "group": "now",
+  "title": "Daniel video upload",
+  "note": "From your board log, Oct 20 at 14:20.",
+  "due": "2026-10-21",
+  "done": true,
+  "doneOn": "2026-10-26",
+  "doneVia": "o26-14"
+ },
+ {
+  "id": "lg1020-5",
+  "group": "now",
+  "title": "Tory searches",
+  "note": "From your board log, Oct 20 at 15:27.",
+  "due": "2026-10-21",
+  "done": true,
+  "doneOn": "2026-10-21",
+  "doneVia": "o21-12"
+ },
+ {
+  "id": "in1021-3",
+  "group": "inbox",
+  "title": "Send Paul categories and headings for the new nav dropdowns",
+  "note": "Paul Hernandez · New Navigation Dropdowns email · Excel template attached, row order = display order. You forwarded it to the team for Thursday. Draft ready in Outlook.",
+  "due": "2026-10-21",
+  "done": true,
+  "from": "Paul Hernandez",
+  "draft": true,
+  "since": "2026-10-21",
+  "source": "triage 2026-10-21",
+  "doneOn": "2026-10-26"
+ },
+ {
+  "id": "in1021-4",
+  "group": "inbox",
+  "title": "Review and delegate the 5 new pending cases in NetSuite",
+  "note": "NetSuite alert · ALERT - ECOM - Pending Cases email x8 · carried in today's triage. Delegate each to a category leader and set status to In Progress - Order Processing.",
+  "due": "2026-10-23",
+  "done": true,
+  "from": "NetSuite alert",
+  "draft": false,
+  "since": "2026-10-21",
+  "source": "triage 2026-10-21",
+  "doneOn": "2026-10-23",
+  "doneVia": "o23-6"
+ },
+ {
+  "id": "in1021-5",
+  "group": "inbox",
+  "title": "Fix BugHerd #8982: CofferCraft search gives a 404",
+  "note": "BugHerd · assigned to you · CofferCraft search returns a 404, carried in today's triage. Suggested comment: \"Searching CofferCraft gives a 404.\" Severity important. The card stays where it is unless you clear it for Web Dev.",
+  "due": "2026-10-23",
+  "done": true,
+  "from": "BugHerd",
+  "draft": false,
+  "since": "2026-10-21",
+  "source": "triage 2026-10-21",
+  "doneOn": "2026-10-23"
+ },
+ {
+  "id": "in1022-1",
+  "group": "inbox",
+  "title": "Schedule Ecom's quarterly TM reviews by Nov 6 and fill out the Q3 template",
+  "note": "Ethan S. · RE: Q3 TM Commissions + Quarterly Reviews email · you lead, with Daniel. Invite each TM and the Director (BU Leader optional). You and each TM fill out the attached Q3 2026 review template first. TL reviews are Nov 9 to 13.",
+  "due": "2026-10-22",
+  "done": true,
+  "from": "Ethan S.",
+  "draft": false,
+  "since": "2026-10-22",
+  "source": "triage 2026-10-22",
+  "doneOn": "2026-10-22"
+ },
+ {
+  "id": "rs-check",
+  "group": "now",
+  "title": "Check the Resawn imports finished, then recount Rough Sawn (BugHerd #8922)",
+  "note": "7 portal uploads (3906-3912; templates 805 Assembly, 806 Inventory) queued Oct 22 behind 64 video-link jobs on queues 2-5. Ask Claude: \"check the Resawn jobs\". Target: 0 On-Depot AmeriCraft items with \"Rough Sawn\" (was 34,943). Then close BugHerd #8922, #8921, #8914. Done Oct 22: Brody re-ran the Resawn files as new multi-threaded imports (807/808) and confirmed they finished.",
+  "due": "2026-10-26",
+  "done": true,
+  "source": "claude 2026-10-22",
+  "doneOn": "2026-10-22"
+ },
+ {
+  "id": "in1023-1",
+  "group": "inbox",
+  "title": "Answer Daniel: can we rebuild the AD balustrade builder, better?",
+  "note": "Daniel M. · RE: Balustrade Builder email · he used it for every balustrade quote and asks \"Can we re-create it, better?\" Your call, so no draft.",
+  "due": "2026-10-23",
+  "done": true,
+  "from": "Daniel M.",
+  "draft": false,
+  "since": "2026-10-23",
+  "source": "triage 2026-10-23",
+  "doneOn": "2026-10-23",
+  "mail": {
+   "uri": "mail:///messages/AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU_Hcc2AAAAAAEMAABCgVnAZCBUTa752dU_Hcc2AAJT44-gAAA%3D",
+   "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJT44%2FgAAA%3D&exvsurl=1&viewmodel=ReadMessageItem",
+   "subject": "RE: Balustrade Builder",
+   "from": "Daniel Milkie",
+   "on": "2026-10-23T03:00:52Z"
+  }
+ },
+ {
+  "id": "in1023-2",
+  "group": "inbox",
+  "title": "Decide for Tory: patch the old AD balustrade builder or retire it",
+  "note": "Tory K. · Balustrade Builder email · after the PHP update, patch the old builder on AD or retire it. Your decision, so no draft.",
+  "due": "2026-10-23",
+  "done": true,
+  "from": "Tory K.",
+  "draft": false,
+  "since": "2026-10-23",
+  "source": "triage 2026-10-23",
+  "doneOn": "2026-10-23",
+  "mail": {
+   "uri": "mail:///messages/AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU_Hcc2AAAAAAEMAABCgVnAZCBUTa752dU_Hcc2AAJT44-gAAA%3D",
+   "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJT44%2FgAAA%3D&exvsurl=1&viewmodel=ReadMessageItem",
+   "subject": "RE: Balustrade Builder",
+   "from": "Daniel Milkie",
+   "on": "2026-10-23T03:00:52Z"
+  }
+ },
+ {
+  "id": "in1023-3",
+  "group": "inbox",
+  "title": "Answer Sam: why wasn't that non-Ekena photo replaced with real product?",
+  "note": "Sam P. · Teams · he asked if you remember why a photo with no real Ekena product in it was never swapped. May already be answered in Teams.",
+  "due": "2026-10-23",
+  "done": true,
+  "from": "Sam P.",
+  "draft": false,
+  "since": "2026-10-23",
+  "source": "triage 2026-10-23",
+  "doneOn": "2026-10-23"
+ },
+ {
+  "id": "in1023-4",
+  "group": "inbox",
+  "title": "Reply to Diya Chataut (UNT): she can talk Monday before 12",
+  "note": "Diya Chataut (UNT) · Handshake · free any time Monday before noon and asks if that works. Lauren's Q3 review is Mon 10:00–11:00.",
+  "due": "2026-10-23",
+  "done": true,
+  "from": "Diya Chataut (UNT)",
+  "draft": false,
+  "since": "2026-10-23",
+  "source": "triage 2026-10-23",
+  "outlookDraft": {
+   "subject": "RE: You have a new message from Diya Chataut",
+   "toNames": "Diya Chataut (via Handshake)",
+   "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEPAABCgVnAZCBUTa752dU%2BHcc2AAJT5AVkAAA%3D&exvsurl=1&viewmodel=ReadMessageItem",
+   "t": "2026-10-26T16:05:00.000Z"
+  },
+  "mail": {
+   "uri": "mail:///messages/AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU_Hcc2AAAAAAEMAABCgVnAZCBUTa752dU_Hcc2AAJT44_WAAA%3D",
+   "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJT44%2BWAAA%3D&exvsurl=1&viewmodel=ReadMessageItem",
+   "subject": "You have a new message from Diya Chataut (University of North Texas)",
+   "from": "Handshake",
+   "on": "2026-10-22T17:01:27Z"
+  },
+  "doneOn": "2026-10-27",
+  "doneVia": "o27-11",
+  "reply": {
+   "state": "replied",
+   "how": "Handshake",
+   "at": "2026-10-27T21:21:58Z",
+   "note": "You replied in Handshake on Oct 27. The Oct 26 Outlook draft isn’t needed; delete it."
+  }
+ },
+ {
+  "id": "in1023-5",
+  "group": "inbox",
+  "title": "Reply to Maryssa Sayavong (Alabama) about the marketing specialist role",
+  "note": "Maryssa Sayavong (Alabama) · Handshake · following up and asks which times work this week.",
+  "due": "2026-10-23",
+  "done": true,
+  "from": "Maryssa Sayavong (Alabama)",
+  "draft": false,
+  "since": "2026-10-23",
+  "source": "triage 2026-10-23",
+  "outlookDraft": {
+   "subject": "RE: You have a new message from Maryssa Sayavong",
+   "toNames": "Maryssa Sayavong (via Handshake)",
+   "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEPAABCgVnAZCBUTa752dU%2BHcc2AAJT5AVlAAA%3D&exvsurl=1&viewmodel=ReadMessageItem",
+   "t": "2026-10-26T16:05:00.000Z"
+  },
+  "mail": {
+   "uri": "mail:///messages/AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU_Hcc2AAAAAAEMAABCgVnAZCBUTa752dU_Hcc2AAJT449nAAA%3D",
+   "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJT449nAAA%3D&exvsurl=1&viewmodel=ReadMessageItem",
+   "subject": "You have a new message from Maryssa Sayavong (The University of Alabama)",
+   "from": "Handshake",
+   "on": "2026-10-22T13:16:02Z"
+  },
+  "doneOn": "2026-10-27",
+  "doneVia": "o27-11",
+  "reply": {
+   "state": "replied",
+   "how": "Handshake",
+   "at": "2026-10-27T21:21:58Z",
+   "note": "You replied in Handshake on Oct 27. The Oct 26 Outlook draft isn’t needed; delete it."
+  }
+ },
+ {
+  "id": "in1023-6",
+  "group": "inbox",
+  "title": "Fix the Athos indexing failure on myhomesupply.com",
+  "note": "Athos Commerce · email · indexing failed on myhomesupply.com because of too many erroneous records.",
+  "due": "2026-10-23",
+  "done": true,
+  "from": "Athos Commerce",
+  "draft": false,
+  "since": "2026-10-23",
+  "source": "triage 2026-10-23",
+  "doneOn": "2026-10-23",
+  "mail": {
+   "uri": "mail:///messages/AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU_Hcc2AAAAAAEMAABCgVnAZCBUTa752dU_Hcc2AAJT6hFKAAA%3D",
+   "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJT6hFKAAA%3D&exvsurl=1&viewmodel=ReadMessageItem",
+   "subject": "Athos Commerce - Indexing Error",
+   "from": "Athos Commerce",
+   "on": "2026-10-26T15:00:14Z"
+  }
+ },
+ {
+  "id": "t1026-cmi",
+  "group": "now",
+  "title": "CMIAmericraftBeams_7909_01",
+  "note": "Added Oct 23 for Monday. No email or file found under this name yet.",
+  "due": "2026-10-26",
+  "done": true,
+  "doneOn": "2026-10-26",
+  "doneVia": "o26-9"
+ },
+ {
+  "id": "clevgjh",
+  "group": "now",
+  "title": "Handshake replies to Diya and Maryssa: drafts in your Outlook",
+  "note": "Both asked for a time to talk. I can read your calendar and offer slots that are actually open. You get: Two paste-ready Handshake replies.",
+  "due": "2026-10-26",
+  "done": true,
+  "assignee": "claude",
+  "claudeStatus": "ready",
+  "workflow": [
+   {
+    "text": "Use your brief: say we're interested and ask them to email your work address.",
+    "done": true
+   },
+   {
+    "text": "Rewrite Diya's Handshake reply draft in Outlook.",
+    "done": true,
+    "note": "Updated, nothing sent."
+   },
+   {
+    "text": "Rewrite Maryssa's Handshake reply draft in Outlook.",
+    "done": true,
+    "note": "Updated, nothing sent."
+   }
+  ],
+  "suggestionId": "sg1023-5",
+  "brief": "Give them messages that we are intersted and have them reach out to my work email adress at your address",
+  "relatedTaskIds": [
+   "in1023-4",
+   "in1023-5"
+  ],
+  "thread": [
+   {
+    "role": "user",
+    "text": "Assigned to Claude with 4 steps.\nWhat you needed: Give them messages that we are intersted and have them reach out to my work email adress at your address",
+    "t": "2026-10-26T15:39:24.971Z"
+   },
+   {
+    "role": "claude",
+    "t": "2026-10-26T16:05:00.000Z",
+    "text": "Done. I rewrote both Handshake reply drafts in your Outlook Drafts. They say we're interested in talking about the E-Commerce Sales & Marketing Specialist role and ask them to email you at your work address. No times offered. Nothing sent.\nDiya: https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEPAABCgVnAZCBUTa752dU%2BHcc2AAJT5AVkAAA%3D&exvsurl=1&viewmodel=ReadMessageItem\nMaryssa: https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEPAABCgVnAZCBUTa752dU%2BHcc2AAJT5AVlAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+   }
+  ],
+  "outlookDraft": {
+   "subject": "RE: You have a new message from Diya Chataut (Maryssa's is next to it)",
+   "toNames": "Diya and Maryssa (via Handshake)",
+   "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEPAABCgVnAZCBUTa752dU%2BHcc2AAJT5AVkAAA%3D&exvsurl=1&viewmodel=ReadMessageItem",
+   "t": "2026-10-26T16:05:00.000Z"
+  },
+  "doneOn": "2026-10-27",
+  "doneVia": "o27-11",
+  "reply": {
+   "state": "replied",
+   "how": "Handshake",
+   "at": "2026-10-27T21:21:58Z",
+   "note": "You answered both in Handshake on Oct 27. Delete the two Outlook drafts."
+  }
+ },
+ {
+  "id": "in1026-1",
+  "group": "inbox",
+  "title": "Send Gavin the Algolia confirmation for today 3:00 CT, and get the invite",
+  "note": "Algolia · your reply to Gavin Mahony confirming today 1:00 PT / 3:00 CT is still unsent in Drafts, and there's no invite on your calendar. Send it before noon so he can book it.",
+  "due": "2026-10-26",
+  "done": true,
+  "from": "Gavin Mahony (Algolia)",
+  "draft": true,
+  "since": "2026-10-26",
+  "source": "triage 2026-10-26",
+  "doneOn": "2026-10-26",
+  "doneVia": "o26-19"
+ },
+ {
+  "id": "in1027-1",
+  "group": "inbox",
+  "title": "Update the Mayne 2027 dealer price list and add the products we're missing",
+  "note": "Daniel M. · email · FW: Mayne - 2027 US Web Dealer Pricing List. Update anything that needs it on the list and add the Mayne products we don't carry yet.",
+  "due": "2026-10-27",
+  "done": true,
+  "from": "Daniel M.",
+  "draft": false,
+  "since": "2026-10-26",
+  "source": "triage 2026-10-27",
+  "mail": {
+   "uri": "mail:///messages/AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU_Hcc2AAAAAAEMAABCgVnAZCBUTa752dU_Hcc2AAJT6hGPAAA%3D",
+   "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJT6hGPAAA%3D&exvsurl=1&viewmodel=ReadMessageItem",
+   "subject": "FW: Mayne - 2027 US Web Dealer Pricing List",
+   "from": "Daniel Milkie",
+   "on": "2026-10-26T20:36:45Z",
+   "dom": "pcienterprises.com"
+  },
+  "reply": {
+   "state": "draft",
+   "link": "https://outlook.office365.com/owa/?ItemID=AAkALgAAAAAAHYQDEapmEc2byACqAC%2FEWg0AQoFZwGQgVE2u%2BdnVPh3HNgACU%2BrvVwAA&exvsurl=1&viewmodel=ReadMessageItem",
+   "subject": "RE: FW: Mayne - 2027 US Web Dealer Pricing List",
+   "at": "2026-10-27T21:21:58Z",
+   "note": "Reply-all to Daniel and Lauren: price updates before Nov 16, and you’ll ask Mayne for the inventory feed.",
+   "warn": "It says the team will update Mayne prices and pull discontinued items (NetSuite). Check that’s the plan before you send."
+  },
+  "doneOn": "2026-10-27",
+  "doneVia": "o27-14"
+ },
+ {
+  "id": "in1027-3",
+  "group": "inbox",
+  "title": "Rebook the Algolia pricing call with Gavin; your Monday reply never sent",
+  "note": "Gavin Mahony (Algolia) · email · your reply is still an unsent draft and the Mon 1:00 PM PT slot has passed.",
+  "due": "2026-10-27",
+  "done": true,
+  "from": "Gavin Mahony (Algolia)",
+  "draft": false,
+  "since": "2026-10-26",
+  "source": "triage 2026-10-27",
+  "claudeCan": {
+   "how": "Draft a reply to Gavin Mahony at Algolia asking for new pricing-call times, saved in your Outlook Drafts.",
+   "steps": [
+    "Read the Algolia thread with Gavin and your unsent Monday draft.",
+    "Write a short reply: sorry the Monday slot slipped, and ask him for a few new times.",
+    "Save it as a reply draft in your Outlook Drafts. Nothing is sent.",
+    "Post the draft link in this task's thread."
+   ]
+  },
+  "mail": {
+   "uri": "mail:///messages/AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU_Hcc2AAAAAAEPAABCgVnAZCBUTa752dU_Hcc2AAJT5AVJAAA%3D",
+   "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEPAABCgVnAZCBUTa752dU%2BHcc2AAJT5AVJAAA%3D&exvsurl=1&viewmodel=ReadMessageItem",
+   "subject": "RE: PCI + Algolia Next Steps",
+   "from": "Gavin Mahony (Algolia) · your unsent reply",
+   "on": "2026-10-23T15:59:21Z",
+   "dom": "algolia.com"
+  },
+  "doneOn": "2026-10-27",
+  "doneVia": "o27-12",
+  "reply": {
+   "state": "draft",
+   "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEPAABCgVnAZCBUTa752dU%2BHcc2AAJT5AVJAAA%3D&exvsurl=1&viewmodel=ReadMessageItem",
+   "subject": "RE: PCI + Algolia Next Steps",
+   "at": "2026-10-27T21:21:58Z",
+   "warn": "It still says Monday Oct 26 at 1:00 PT, which has passed. Change it to ask Gavin for new times."
+  }
+ }
+]
