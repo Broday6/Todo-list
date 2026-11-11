@@ -1,8 +1,8 @@
 {
  "date": "2026-11-11",
- "status": "ready",
+ "status": "held",
  "queuedBy": "Marketing Category Report routine (cloud)",
- "note": "NetSuite capped the emailed report at 10,000 rows; more RealGrain beams remain and will show on later reports.",
+ "note": "NetSuite capped the emailed report at 10,000 rows; more RealGrain beams remain and will show on later reports. | PC worker 2026-11-11 15:45 CT: nothing imported. Assembly-Bill of Materials (9,811 rows) held as over the 5,000-row limit, waiting for Brody (board task mc-2026-11-11). Kit-Package (189 rows) passed the blank check and mapping, but the PC auto-mode permission check blocked Save & Run 3 times; retries stopped, waiting for Brody (board task mc-2026-11-11-kit).",
  "files": [
   {
    "name": "2026-11-11 Assembly-Bill of Materials.csv",
