@@ -145,7 +145,9 @@ Digest-only applicants ("X and 7 others applied") have no relay email: list thei
   what the draft says, plus the stale drafts to delete. Group the list by tier (A, then B). Refresh it each run instead of adding new tasks, and close
   the older hire<MMDD> tasks by setting dropped (they were replaced, not done). This replaces the grouped "<N> new
   applicants on Indeed: review and reply" tasks.
-- The Hiring tab shows a Tiers block (A, B, C, D, each name with its tierWhy) above the candidate rows, and each row
-  shows tier, top, loc, flags and next.
+- The Hiring tab shows a tier list above the candidate rows (Brody, Nov 11, 2026: "Build this like a Teirlist"): one
+  horizontal row per tier stacked A, B, C, D from the top, each person a card in that row (name, city, stage, next);
+  tierWhy shows on hover and every name opens the full profile. Each candidate row below shows tier, top, loc, flags
+  and next.
 - When Sent Items shows Brody sent a stage email, move the stage and next. When a candidate replies, move them and
   write the profile in the same run.
