@@ -1,6 +1,6 @@
 {
  "note": "Days archived from Brody's board. Each entry is the day exactly as it was on the board.",
- "cut": "2026-10-27",
+ "cut": "2026-10-28",
  "days": {
   "2026-09-02": {
    "blocks": [
@@ -7463,6 +7463,361 @@
        "name": "FauxBeams",
        "orders": 11,
        "dollars": 4225.72
+      },
+      {
+       "name": "Other",
+       "orders": 0,
+       "dollars": 0
+      }
+     ]
+    }
+   }
+  },
+  "2026-10-27": {
+   "blocks": [
+    {
+     "id": "o27-1",
+     "start": "08:00",
+     "end": "08:20",
+     "title": "Check and respond to emails",
+     "sub": "Daily · 20 min. 6 to-dos from key people, 4 other actions, 0 drafts ready. Work them from the Inbox section above.",
+     "done": true
+    },
+    {
+     "id": "o27-2",
+     "start": "08:20",
+     "end": "08:40",
+     "title": "Review daily metrics & KPIs",
+     "sub": "Daily · 20 min. Mon $235,378, +3% vs last Mon. HomeOver +10%, Ekena -8%. Details in the Sales section above.",
+     "done": true
+    },
+    {
+     "id": "o27-3",
+     "start": "08:40",
+     "end": "09:00",
+     "title": "Team check-in",
+     "sub": "Daily · 20 min. Daniel is in Quitman all day (phone and email work). Power Hour and the Google sync are cancelled.",
+     "done": true
+    },
+    {
+     "id": "o27-4",
+     "start": "09:00",
+     "end": "09:30",
+     "title": "Bug Herds — complete 5 (Rock: under 10)",
+     "sub": "Daily · 30 min. Rock time. #8913, #7503, #5039, #8863 and #6937 still haven't been moved or worked. Only you decide what goes to Web Dev.",
+     "done": true
+    },
+    {
+     "id": "o27-5",
+     "start": "09:30",
+     "end": "09:50",
+     "title": "Cases — complete 10",
+     "sub": "Daily · 20 min. The triage has 5 new pending cases from Monday to delegate and set In Progress - Order Processing.",
+     "done": true
+    },
+    {
+     "id": "o27-6",
+     "start": "09:50",
+     "end": "10:00",
+     "title": "Prep: skim Lauren's Q3 review answers",
+     "sub": "10 min. She sent them yesterday (triage FYI). Review is at 10:00.",
+     "done": true,
+     "taskIds": []
+    },
+    {
+     "id": "o27-7",
+     "start": "10:00",
+     "end": "11:00",
+     "title": "Q3 review: Lauren Milkie",
+     "sub": "Heath conference room, with Lauren and Ethan. Daniel is invited but in Quitman.",
+     "done": true,
+     "meeting": true
+    },
+    {
+     "id": "o27-8",
+     "start": "11:00",
+     "end": "12:00",
+     "title": "PPC Ad Review",
+     "sub": "Creative Lounge, with Lauren, Hayden, James and Andrew.",
+     "done": true,
+     "meeting": true
+    },
+    {
+     "id": "o27-9",
+     "start": "12:00",
+     "end": "12:20",
+     "title": "Strety",
+     "sub": "Daily · 20 min (moved after the meetings).",
+     "done": true
+    },
+    {
+     "id": "o27-10",
+     "start": "12:45",
+     "end": "13:15",
+     "title": "Find people to interview",
+     "sub": "Daily · 30 min. 5 Handshake reply drafts are waiting in Outlook (Diya, Maryssa, Parth, Mukund, Ilsa). Colleges waiting on you: TVCC (send Eric the Inside Sales job description), Dallas College (Virginia's PDFs), UNT (reply-all to Suman and Brian).",
+     "done": true,
+     "taskIds": [
+      "t7fp22",
+      "w1"
+     ]
+    },
+    {
+     "id": "o27-11",
+     "start": "13:15",
+     "end": "13:30",
+     "title": "Reply to Diya and Maryssa on Handshake",
+     "sub": "15 min. Both drafts are in your Outlook Drafts. Send them from Outlook or the Drafts in Outlook panel on the Inbox page.",
+     "done": true,
+     "top": true,
+     "taskIds": [
+      "in1023-4",
+      "in1023-5",
+      "clevgjh"
+     ]
+    },
+    {
+     "id": "o27-12",
+     "start": "13:30",
+     "end": "13:45",
+     "title": "Rebook the Algolia pricing call with Gavin",
+     "sub": "15 min. From the triage: your Monday reply to Gavin never sent and the 1:00 PT slot passed. Claude can do this; give it to Claude from the Tasks tab.",
+     "done": true,
+     "top": true,
+     "taskIds": [
+      "in1027-3"
+     ]
+    },
+    {
+     "id": "o27-13",
+     "start": "13:45",
+     "end": "14:00",
+     "title": "Review Claude's work: Barron accessory names",
+     "sub": "15 min. Claude posted draft names in the task's thread for your OK. Also waiting on you: the UNT question (career fair or just the posting?) and the alert CSVs saved to OneDrive for two clean-up tasks.",
+     "done": false,
+     "taskIds": [
+      "cl1022-3"
+     ]
+    },
+    {
+     "id": "o27-14",
+     "start": "14:00",
+     "end": "14:45",
+     "title": "Mayne 2027 dealer price list: update it and add what we're missing",
+     "sub": "45 min. From the triage: Daniel sent it Oct 26. Update anything that needs it and add the Mayne products we don't carry yet.",
+     "done": true,
+     "top": true,
+     "taskIds": [
+      "in1027-1"
+     ]
+    },
+    {
+     "id": "o27-15",
+     "start": "15:05",
+     "end": "15:50",
+     "title": "Add items missing from our sites to all the sites",
+     "sub": "Pushed 23 times. Do it today, hand it to Claude, or drop it. 45 min. Claude's working list from Monday's Inaccurate AD Items alert is stuck until the CSVs are on OneDrive. Claude can do this; give it to Claude from the Tasks tab.",
+     "done": false,
+     "taskIds": [
+      "tk7mswn"
+     ]
+    },
+    {
+     "id": "o27-16",
+     "start": "15:50",
+     "end": "16:20",
+     "title": "Install video #3: vinyl shutters",
+     "sub": "30 min (trimmed). Start the brief from the vinyl shutter install guide (real figures, never generated install action). Claude can do this; give it to Claude from the Tasks tab.",
+     "done": true,
+     "taskIds": [
+      "wk-vid3"
+     ]
+    },
+    {
+     "id": "o27-17",
+     "start": "16:20",
+     "end": "16:40",
+     "title": "Follow up with Andrew's ads",
+     "sub": "Daily · 20 min.",
+     "done": true
+    },
+    {
+     "id": "o27-18",
+     "start": "16:40",
+     "end": "17:00",
+     "title": "Wrap",
+     "sub": "Daily · 20 min. Log what got done. Tomorrow gets built from this. If there's time: the Google Ads enhanced conversions errors (Claude can write the fix steps), try Fable video generation. Tomorrow: Product Category Group Meetings – Leadership 9:30–12:00 (tentative, Creative Lounge). Thursday: Daniel is in Clarksville and Andrew starts late.",
+     "done": true
+    }
+   ],
+   "log": [],
+   "inbox": {
+    "found": true,
+    "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJT6hGjAAA%3D&exvsurl=1&viewmodel=ReadMessageItem",
+    "subject": "Inbox triage — Tuesday, Oct 27",
+    "counts": {
+     "people": 6,
+     "other": 4,
+     "waiting": 1,
+     "fyi": 40,
+     "low": 52,
+     "drafts": 0
+    },
+    "people": [
+     {
+      "name": "Daniel M.",
+      "taskIds": [
+       "in1027-1",
+       "in1023-1",
+       "in1020-3"
+      ]
+     },
+     {
+      "name": "Ethan S.",
+      "taskIds": [
+       "in1020-4"
+      ]
+     },
+     {
+      "name": "Rob S.",
+      "taskIds": []
+     },
+     {
+      "name": "Tory K.",
+      "taskIds": [
+       "in1023-2",
+       "in1026-2"
+      ]
+     },
+     {
+      "name": "Sam P.",
+      "taskIds": []
+     }
+    ],
+    "other": [
+     "in1027-2",
+     "in1026-3",
+     "in1023-6",
+     "in1027-3"
+    ],
+    "meetings": [],
+    "recap": {
+     "found": false
+    },
+    "waiting": [
+     {
+      "who": "Andrew Gonzalez",
+      "what": "Kit Item w/ No Location (waiting on Allie to confirm ship location)",
+      "since": "2026-10-26",
+      "replied": {
+       "t": "2026-10-27T14:23:59Z",
+       "why": "Replied Oct 27: Allie answered and he updated the sheet; he's emailing Procurement next"
+      },
+      "mail": {
+       "uri": "mail:///messages/AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU_Hcc2AAAAAAEMAABCgVnAZCBUTa752dU_Hcc2AAJT6hGwAAA%3D",
+       "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJT6hGwAAA%3D&exvsurl=1&viewmodel=ReadMessageItem",
+       "subject": "Re: E-Commerce Alert: Kit Item w/ No Location",
+       "from": "Andrew Gonzalez",
+       "on": "2026-10-27T14:24:07Z"
+      }
+     }
+    ],
+    "fyi": [
+     "FAM lead time updates approved by leadership (attached to today's email).",
+     "Melissa: Beam Section ready for final pass (to Daniel and Ethan). Ethan is reviewing the EnduraCraft escalation with Rob.",
+     "Jill and Andrew: Endura-Stone split charges thread. Andrew resolved the item group price alert and the Miva item uploads.",
+     "Onlay names and new categories updates (Justin, Sam, Selina). Tory: the team will fix TrueCraft PVC.",
+     "Lauren sent her Q3 review answers (review today 10–11).",
+     "Two older drafts have gaps, finish or delete them: RE: Balustrade Builder and RE: 03-4214983/Div 12.",
+     "Closed since last digest: Daniel's split medallions question (you answered Oct 26: same listing via alternative parents).",
+     "Suspicious: a cold pitch from Cade Bullock and a Microsoft quarantine notice. Review quarantine in the Security Center, not via the email link."
+    ]
+   },
+   "pulse": {
+    "found": true,
+    "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJT6hGiAAA%3D&exvsurl=1&viewmodel=ReadMessageItem",
+    "label": "Mon vs last Mon. Proxy from order confirmations; NetSuite is the source of truth.",
+    "orders": 410,
+    "dollars": 235378,
+    "ordersPrev": 400,
+    "dollarsPrev": 228383,
+    "ordersPct": 2,
+    "dollarsPct": 3,
+    "sites": [
+     {
+      "name": "AD",
+      "orders": 335,
+      "dollars": 194279,
+      "pct": 4
+     },
+     {
+      "name": "Ekena",
+      "orders": 39,
+      "dollars": 25948,
+      "pct": -8
+     },
+     {
+      "name": "Millwork.com",
+      "orders": 28,
+      "dollars": 11266,
+      "pct": 5
+     },
+     {
+      "name": "HomeOver",
+      "orders": 7,
+      "dollars": 3847,
+      "pct": 10
+     },
+     {
+      "name": "FauxBeams",
+      "orders": 1,
+      "dollars": 38,
+      "note": "$56 last wk"
+     }
+    ],
+    "flags": [
+     "Largest: AD 1753952, $11,028: 14 Heritage Timber Mena beams 192\"L in Kona Brown, plus 5 at 120\"L.",
+     "Ekena 2101337236, $7,421: Timberthane rough cedar 6x6 beams in four lengths.",
+     "AD 1753789, $6,277: 13 pairs of AmeriCraft Hawaiian mango louver shutters.",
+     "1 order at $0 (usually free samples): AD 1753938.",
+     "5 confirmations for older order numbers ($3,300) may double count."
+    ],
+    "week": {
+     "found": true,
+     "label": "Week to date",
+     "start": "2026-10-26",
+     "end": "2026-10-26",
+     "orders": 410,
+     "dollars": 235378.27,
+     "cmpOrders": 400,
+     "cmpDollars": 228382.86,
+     "days": "1/1",
+     "partial": false,
+     "sites": [
+      {
+       "name": "AD",
+       "orders": 335,
+       "dollars": 194279.26
+      },
+      {
+       "name": "Millwork.com",
+       "orders": 28,
+       "dollars": 11266.04
+      },
+      {
+       "name": "Ekena",
+       "orders": 39,
+       "dollars": 25947.6
+      },
+      {
+       "name": "HomeOver",
+       "orders": 7,
+       "dollars": 3847.11
+      },
+      {
+       "name": "FauxBeams",
+       "orders": 1,
+       "dollars": 38.26
       },
       {
        "name": "Other",
