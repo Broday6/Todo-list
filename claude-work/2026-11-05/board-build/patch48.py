@@ -9,19 +9,19 @@ if 'var HZ48_OLD=' not in post:
     a="  function runBtnHTML(r){"
     assert post.count(a)==1; post=post.replace(a,open(D+"/ux48.js",encoding='utf-8').read()+a)
 s=json.loads(st.replace('<\\/','</'))
-now=datetime.datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%S.000Z')
+now=datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%S.000Z')
 # playbooks: the hiring ones follow the workflow (claude-work/routines/hiring-workflow.md)
 PB={
  'hiring':{'steps':["Read the candidate's newest email in full, and their resume when on the PC",
-   "Set their stage and write top qualities, location, fit and next on the Hiring tab (hiring workflow sections 1 and 4)",
-   "Draft only the next stage email (phone screen for Strong); never a second screening question",
+   "Set their stage and write top qualities, location, tier (A to D) with why, and next on the Hiring tab (hiring workflow sections 1 and 4)",
+   "Draft only the next stage email (phone screen for tier A); tier C or D is not hired, no email; never a second screening question",
    "List stale drafts to delete and what needs Brody"],
    'output':"Profile on the Hiring tab plus the next-stage draft",
-   'done':"Every candidate who replied has top qualities, a fit and a next step",
+   'done':"Every candidate who replied has top qualities, a tier with why, and a next step",
    'stop':"Never ask anyone a second screening question. No Outlook drafts to Handshake candidates. Brody sends every email."},
  'blk-hire':{'steps':["Read today's hire task and the Hiring tab",
-   "Check every candidate who replied has top qualities, fit and next; fill gaps from their email",
-   "List who Brody decides on and which drafts are ready to send"],
+   "Check every candidate who replied has top qualities, a tier with why, and next; fill gaps from their email",
+   "List the tier A and B people Brody decides on and which drafts are ready to send"],
    'output':"Decision list and ready drafts",
    'done':"Brody can decide on everyone waiting in a few minutes",
    'stop':"No second screening questions; no Outlook drafts to Handshake candidates; E-Commerce only for now"}}
@@ -40,7 +40,7 @@ for row in data.get('candidates',[]):
     c={'id':row.get('id') or 'hc'+key(row['name'])[:10],'name':row['name'],'school':row.get('school',''),'source':row.get('source',''),
        'role':'ecom','stage':row.get('stage','New'),'interview':None,'where':'','note':''}
     C.append(c); byname[key(row['name'])]=c
-  for k in ('stage','top','loc','fit','flags','next','stageOn','resumeOn','interview','where','school','source'):
+  for k in ('stage','top','loc','tier','tierWhy','flags','next','stageOn','resumeOn','interview','where','school','source'):
     if k in row: c[k]=row[k]
   if row.get('noteAdd'):
     c['note']=((c.get('note') or '').rstrip()+' '+row['noteAdd']).strip()
