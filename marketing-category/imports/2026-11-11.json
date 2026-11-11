@@ -1,0 +1,20 @@
+{
+ "date": "2026-11-11",
+ "status": "ready",
+ "queuedBy": "Marketing Category Report routine (cloud)",
+ "note": "NetSuite capped the emailed report at 10,000 rows; more RealGrain beams remain and will show on later reports.",
+ "files": [
+  {
+   "name": "2026-11-11 Assembly-Bill of Materials.csv",
+   "recordType": "Assembly Item (Assembly/Bill of Materials)",
+   "rows": 9811,
+   "sha256": "335b1a4feb830cc68929ac9fb12ab5729d080b51816aaa624868602c9f714899"
+  },
+  {
+   "name": "2026-11-11 Kit-Package.csv",
+   "recordType": "Kit/Package Item (Kit/Package)",
+   "rows": 189,
+   "sha256": "8304d41f4ec2a22d8b5273c87a9342f65ea2f8688f2f1f08bd856b96b2b7faf3"
+  }
+ ]
+}
