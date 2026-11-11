@@ -1,3 +1,9 @@
+> **RETIRED Nov 11, 2026 (Brody: "shut down ultrons version because its not working").** Do not follow this file.
+> Strety scorecards are entered only by the Claude Code scheduled task `strety-scorecards` on Brody's PC
+> (Wednesdays 8:20 Central, Thursday catch-up), on both boards, using each team's permanent Scorecards page.
+> The meeting links below go stale every week. Ultron runs never queue, prompt or claim Strety work:
+> see the Notion pages "Routine rules" (section "Strety is not an Ultron job any more") and "Strety weekly scorecard update".
+
 # PC job: Strety weekly scorecards (both meetings)
 
 Single source of truth for entering Brody's Strety scorecard numbers. Do not rewrite this as a new prompt per
