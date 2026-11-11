@@ -105,7 +105,9 @@ later, and for every New one whose resume has been read:
   - B, backup: a real fit with one gap: relocating (L3) with real experience, or local with lighter or vaguer
     experience. Next: Brody picks, or they move up if the A people don't work out.
   - C, not hired: little that fits the role, a thin answer with a thin resume, or not local with only some
-    relevant experience. Stage Passed, no email.
+    relevant experience. Also anyone too senior for the role (Brody, Nov 11, 2026: "generally with hiring I am not
+    looking for Director styled employees normally they cost too much and this role is beneeth them"): a director,
+    head-of, VP or senior-manager title, or 10+ years in senior roles. Stage Passed, no email.
   - D, not hired: a hard no: needs sponsorship, remote-only, out of state and not relocating, or an unrelated field.
     Stage Passed, no email.
   - Tier only from what the reply and resume show; when the resume isn't read yet, tier from the reply and add the
