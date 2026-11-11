@@ -74,6 +74,10 @@ goes through Indeed messaging), anyone else a reply draft on their newest email 
   Times: the next 3 working days, inside 9:00 to 4:30 Central, from free time on Brody's calendar (outlook_calendar_search;
   skip anything busy or tentative and the 11:00 to 12:00 meetings). His calendar is incomplete, so the task says
   "check the times before you send".
+  Brody is OUT Thu Nov 12 and Fri Nov 13, 2026 (Brody, Nov 11: "I will now be out of town thursday and friday ... please
+  remove those as dates and try to target around tuesday"). Never offer those two days. Until Nov 18, lead with Tue
+  Nov 17 (9:00 to 11:00 AM, 1:00 to 2:00 PM, 2:30 to 4:30 PM), then Mon Nov 16 1:00 to 4:00 PM and Wed Nov 18 1:00 to
+  4:00 PM. Delete this paragraph after Nov 18.
 - TIME PICKED (they chose a time): "That works. I'll send the Teams invite for <Day, Mon D at h:mm> Central." Then a
   task for Brody: "Send <name> the Teams invite for <time>". Claude never creates calendar events.
 - AFTER THE PHONE SCREEN (its calendar time has passed): no email. A task for Brody: "How did <name>'s phone screen
