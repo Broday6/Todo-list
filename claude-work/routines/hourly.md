@@ -81,3 +81,5 @@ CHAT LINKS AND PC STEPS (Brody, Nov 10, 2026): when this run works a board task,
 DONE ARCHIVE (Brody, Nov 11, 2026): tasks done 2+ weeks ago leave state.tasks and go to state.doneArchive (shown on the Week tab as Done this quarter; cleared when the quarter ends). Before adding any inbox task, case or BugHerd task, check state.doneArchive as well as state.tasks: an id there, or the same ask from the same person, is closed. Never re-add or reopen it.
 
 PROMOS SHAPE (Nov 11): when adding or editing state.promos.items, write sites as a list (["AD","PC"]), never text like "AD, PC", and todo as a list of {text}. A text value crashed the Promotions tab.
+
+RECEIPT SHAPE (Nov 12): task.receipt.did and receipt.unsure are always lists of strings, and receipt.where a list of {label,url}. A plain-text value (as on mc-2026-11-11) crashed the Today view.
