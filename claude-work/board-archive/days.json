@@ -1,6 +1,6 @@
 {
  "note": "Days archived from Brody's board. Each entry is the day exactly as it was on the board.",
- "cut": "2026-10-28",
+ "cut": "2026-10-29",
  "days": {
   "2026-09-02": {
    "blocks": [
@@ -7827,6 +7827,339 @@
      ]
     }
    }
+  },
+  "2026-10-28": {
+   "blocks": [
+    {
+     "id": "o28-1",
+     "start": "08:00",
+     "end": "08:20",
+     "title": "Check and respond to emails",
+     "sub": "Daily · 20 min. 10 to-dos from key people, 3 other actions, 0 drafts ready. Work them from the Inbox section above. The Leadership meeting at 9:30 is tentative.",
+     "done": true
+    },
+    {
+     "id": "o28-2",
+     "start": "08:20",
+     "end": "08:40",
+     "title": "Review daily metrics & KPIs",
+     "sub": "Daily · 20 min. Tue $248,190, +1% vs last Tue (orders +13%). Millwork.com -17%, HomeOver $5,470 vs $2,002. Details in the Sales section above.",
+     "done": true
+    },
+    {
+     "id": "o28-3",
+     "start": "08:40",
+     "end": "09:00",
+     "title": "Team check-in",
+     "sub": "Daily · 20 min. Tomorrow Andrew starts late (vet, until 11) and Daniel is in Clarksville.",
+     "done": true
+    },
+    {
+     "id": "o28-4",
+     "start": "09:00",
+     "end": "09:30",
+     "title": "Bug Herds — complete 5 (Rock: under 10)",
+     "sub": "Rock time · 30 min. 37 open (2 new, 0 with new comments since yesterday; oldest 8 days). Do these 5: #8982 CofferCraft search-bar results give a 404…; #6448 MANRR: make it clear it's concrete; #4549 BMSTRP06X08H: add 'faux' to the description; #5959, #8150 A09-P06: thickness says 1\", should be…; #6029 1360350: 110 lb in copy vs 100 lb on package. Only you decide what goes to Web Dev.",
+     "done": true
+    },
+    {
+     "id": "o28-5",
+     "start": "09:30",
+     "end": "12:00",
+     "title": "Product Category Group Meetings - Leadership",
+     "sub": "Tentative. Creative Lounge, with Emily, Ethan, Daniel, Rob, Ryan, Kody, Isabel, Shelby and Cody. The general group meeting and Product Launch - Quality are cancelled.",
+     "done": true,
+     "meeting": true
+    },
+    {
+     "id": "o28-6",
+     "start": "12:00",
+     "end": "12:20",
+     "title": "Cases — complete 10",
+     "sub": "Daily · 20 min. Work your pending cases in NetSuite search 16559. The board no longer lists cases from the old alert emails.",
+     "done": true
+    },
+    {
+     "id": "o28-7",
+     "start": "12:20",
+     "end": "12:40",
+     "title": "Strety",
+     "sub": "Daily · 20 min (moved after the meeting).",
+     "done": true
+    },
+    {
+     "id": "o28-8",
+     "start": "13:05",
+     "end": "13:35",
+     "title": "Halloween sale: email images for Daniel",
+     "sub": "30 min. From the triage: $25 off $250 runs Thursday to Monday, with a countdown banner like Labor Day. Daniel needs the email images before it starts.",
+     "done": false,
+     "top": true,
+     "taskIds": [
+      "in1028-1"
+     ]
+    },
+    {
+     "id": "o28-9",
+     "start": "13:35",
+     "end": "13:55",
+     "title": "Answer Daniel's three calls: TrueWood emails, PPC Secure, Bahama shutters",
+     "sub": "20 min. From the triage, all new last night. PPC Secure is billed to James's card, so he is waiting on keep or cancel. Claude can draft the TrueWood email and sum up the shutter price list; give them to Claude from the Tasks tab.",
+     "done": false,
+     "top": true,
+     "taskIds": [
+      "in1028-2",
+      "in1028-3",
+      "in1028-4"
+     ]
+    },
+    {
+     "id": "o28-10",
+     "start": "13:55",
+     "end": "14:15",
+     "title": "Review AP's bill pricing list",
+     "sub": "20 min. Carried from yesterday: AP asked which bills are good for the vendor payment run, so tell them today. Pricing reviews stay with you.",
+     "done": false,
+     "top": true,
+     "taskIds": [
+      "pr1027-1"
+     ]
+    },
+    {
+     "id": "o28-11",
+     "start": "14:15",
+     "end": "14:30",
+     "title": "Review Claude's work: Barron accessory names, UNT reply",
+     "sub": "15 min. Claude's draft Barron accessory names are in that task's thread for your OK, and the UNT reply-all to Suman and Brian is ready in your Outlook Drafts.",
+     "done": false,
+     "taskIds": [
+      "cl1022-3",
+      "clwovvb"
+     ]
+    },
+    {
+     "id": "o28-12",
+     "start": "14:50",
+     "end": "15:20",
+     "title": "Find people to interview",
+     "sub": "Daily · 30 min. Handshake: Maryssa (E-Commerce) confirmed Fri 4:00 PM CT; reply in Handshake and send her the Teams invite. Colleges waiting on you: TVCC (send Eric the Inside Sales job description), Dallas College (Virginia's PDFs), UNT (Claude's reply-all draft is ready).",
+     "done": false,
+     "taskIds": [
+      "t7fp22",
+      "w1"
+     ]
+    },
+    {
+     "id": "o28-13",
+     "start": "15:20",
+     "end": "16:05",
+     "title": "Add items missing from our sites to all the sites",
+     "sub": "Pushed 24 times. Do it today, hand it to Claude, or drop it. 45 min. Claude's working list from Monday's Inaccurate AD Items alert is still blocked on the alert CSVs. Claude can do this; give it to Claude from the Tasks tab.",
+     "done": false,
+     "taskIds": [
+      "tk7mswn"
+     ]
+    },
+    {
+     "id": "o28-14",
+     "start": "16:20",
+     "end": "16:40",
+     "title": "Follow up with Andrew's ads",
+     "sub": "Daily · 20 min. Andrew starts late tomorrow, so catch him today. Today's full audit put 5 new G2 cards on the Asana board, ≈$35.4k through Dec 31 with the Fiberglass card: Fire Vent (budget $450 → $300) and Columns - Fiberglass (tROAS 200% → 300%) first. None are applied yet. Details on the Ads tab.",
+     "done": false
+    },
+    {
+     "id": "o28-15",
+     "start": "16:40",
+     "end": "17:00",
+     "title": "Wrap",
+     "sub": "Daily · 20 min. Log what got done. Tomorrow gets built from this. If there's time: the Google Ads enhanced conversions errors (Claude can write the fix steps), Tory's not-reviewed reviews and images, try Fable video generation. Tomorrow: E-Commerce L-10 at 11:00. Andrew starts late (until 11) and Daniel is in Clarksville all day; Power Hour is cancelled.",
+     "done": false
+    }
+   ],
+   "log": [],
+   "inbox": {
+    "found": true,
+    "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJT6hICAAA%3D&exvsurl=1&viewmodel=ReadMessageItem",
+    "subject": "Inbox triage — Wednesday, Oct 28",
+    "counts": {
+     "people": 10,
+     "other": 3,
+     "waiting": 1,
+     "fyi": 28,
+     "low": 42,
+     "drafts": 0
+    },
+    "people": [
+     {
+      "name": "Daniel M.",
+      "taskIds": [
+       "in1028-1",
+       "in1028-2",
+       "in1028-3",
+       "in1028-4",
+       "in1020-3"
+      ]
+     },
+     {
+      "name": "Ethan S.",
+      "taskIds": [
+       "in1020-4"
+      ]
+     },
+     {
+      "name": "Rob S.",
+      "taskIds": []
+     },
+     {
+      "name": "Tory K.",
+      "taskIds": [
+       "in1028-5",
+       "in1026-2"
+      ]
+     },
+     {
+      "name": "Sam P.",
+      "taskIds": []
+     }
+    ],
+    "other": [
+     "in1027-2",
+     "in1026-3"
+    ],
+    "meetings": [],
+    "recap": {
+     "found": true,
+     "subject": "Meeting recap — Tuesday, Oct 27",
+     "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJT6hHiAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    "waiting": [
+     {
+      "who": "Andrew Gonzalez",
+      "what": "Emailing Procurement about Kit Item locations (cc you and Daniel)",
+      "since": "2026-10-26",
+      "mail": {
+       "uri": "mail:///messages/AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU_Hcc2AAAAAAEMAABCgVnAZCBUTa752dU_Hcc2AAJT6hGwAAA%3D",
+       "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJT6hGwAAA%3D&exvsurl=1&viewmodel=ReadMessageItem",
+       "subject": "Re: E-Commerce Alert: Kit Item w/ No Location",
+       "from": "Andrew Gonzalez",
+       "on": "2026-10-27T14:24:07Z"
+      },
+      "replied": {
+       "t": "2026-10-27T14:38:00Z",
+       "why": "Replied Oct 27"
+      }
+     },
+     {
+      "who": "Daniel, Tory and Sam",
+      "what": "Pick candidates to screen from your shortlists",
+      "since": "2026-10-28"
+     }
+    ],
+    "fyi": [
+     "Maryssa Sayavong confirmed Friday 4:00 PM CT for her call.",
+     "Daniel: Beam Section notes added, Video Assets Under AD fixed, a \"Hunters\" target note, and HB&G both lines worth adding.",
+     "Advaning Black Friday/Cyber Monday promo request (Daniel to Lauren, cc you).",
+     "Porch post kits need a preferred location (Andrew). Endura-Stone split charge (Jill and Jacob).",
+     "Hayden posted Barron closest-match substitutes. Sidney handled the Houston price list.",
+     "\"payroll question, Brody\" from hallaccountingco.co is a cold pitch; don't reply.",
+     "Two Microsoft quarantine notices: review them in the Security Center, not via email links.",
+     "Closed since last digest: Mayne 2027 pricing list (you replied Oct 27), Algolia meeting (Mon Nov 2, 1:00 PM CT; Gavin accepted), Daniel's Teams \"clear out cases\" (you said you'd handle)."
+    ]
+   },
+   "pulse": {
+    "found": true,
+    "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJT6hIBAAA%3D&exvsurl=1&viewmodel=ReadMessageItem",
+    "label": "Tue vs last Tue. Proxy from order confirmations; NetSuite is the source of truth.",
+    "orders": 433,
+    "dollars": 248190,
+    "ordersPrev": 382,
+    "dollarsPrev": 246462,
+    "ordersPct": 13,
+    "dollarsPct": 1,
+    "sites": [
+     {
+      "name": "AD",
+      "orders": 349,
+      "dollars": 222889,
+      "pct": 0
+     },
+     {
+      "name": "Ekena",
+      "orders": 45,
+      "dollars": 12595,
+      "pct": -7
+     },
+     {
+      "name": "Millwork.com",
+      "orders": 33,
+      "dollars": 7236,
+      "pct": -17
+     },
+     {
+      "name": "HomeOver",
+      "orders": 6,
+      "dollars": 5470,
+      "note": "$2,002 last wk"
+     },
+     {
+      "name": "FauxBeams",
+      "orders": 0,
+      "dollars": 0,
+      "note": "$56 last wk"
+     }
+    ],
+    "flags": [
+     "Largest: AD 1754328, $14,549: 22 pairs of 18\"x55\" EnduraCore composite louver shutters, plus 7 pairs at 18\"x49\".",
+     "AD 1754661, $8,982: 3 Timberthane rough cedar U-beams 6x12x324\" and 2 L-beams.",
+     "AD 1754454, $8,344: 145 TrueCraft PVC Newport corbels 6x8x12\".",
+     "6 confirmations for older order numbers ($2,165) may double count."
+    ],
+    "week": {
+     "found": true,
+     "label": "Week to date",
+     "start": "2026-10-26",
+     "end": "2026-10-27",
+     "orders": 843,
+     "dollars": 483568.19,
+     "cmpOrders": 782,
+     "cmpDollars": 474844.77,
+     "days": "2/2",
+     "partial": false,
+     "sites": [
+      {
+       "name": "AD",
+       "orders": 684,
+       "dollars": 417168.47
+      },
+      {
+       "name": "Millwork.com",
+       "orders": 61,
+       "dollars": 18502.07
+      },
+      {
+       "name": "Ekena",
+       "orders": 84,
+       "dollars": 38542.23
+      },
+      {
+       "name": "HomeOver",
+       "orders": 13,
+       "dollars": 9317.16
+      },
+      {
+       "name": "FauxBeams",
+       "orders": 1,
+       "dollars": 38.26
+      },
+      {
+       "name": "Other",
+       "orders": 0,
+       "dollars": 0
+      }
+     ]
+    }
+   }
   }
  },
  "ops": {
@@ -8983,6 +9316,261 @@
      "what": "Leadership-approved FAM lead times (attached).",
      "on": "2026-11-05T08:02:06Z",
      "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJgjqSfAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    }
+   ]
+  },
+  "2026-11-09": {
+   "asOf": "2026-11-09T18:32:00.000Z",
+   "since": "2026-11-06",
+   "cases": {
+    "count": 2,
+    "items": [
+     {
+      "no": "0980658",
+      "issue": "Cannot Be Made As Ordered",
+      "vendor": "Turncraft Architectural",
+      "on": "2026-11-09T14:55:22Z",
+      "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJksP%2BvAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+     },
+     {
+      "no": "0980306",
+      "issue": "Drawing Clarification/Revision",
+      "vendor": "CW Ohio Inc.",
+      "on": "2026-11-06T15:35:19Z",
+      "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJim63PAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+     }
+    ],
+    "note": "From the search 16559 \"New Case Created\" alerts assigned to you. Status is as of each email; check NetSuite."
+   },
+   "pricing": [
+    {
+     "name": "Bill Price Needs Review (Nov 9 list)",
+     "what": "Sidney (Accounting) sent the updated list and asks which bills can go on tomorrow's payment; prioritize the older Mid-America and Builder's Edge ones",
+     "on": "2026-11-09T17:29:23Z",
+     "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJksP%2FPAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+     "name": "Item Group List Prices need updating (search 11921)",
+     "what": "Grouped List Price on some item groups doesn't match the sum of their components",
+     "on": "2026-11-09T17:00:55Z",
+     "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJksP%2FMAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    }
+   ],
+   "alerts": [
+    {
+     "name": "Inaccurate EkenaMillwork Items",
+     "kind": "fix",
+     "what": "Ekena items checked in NetSuite but missing in Miva Ekena, and the reverse (CSV attached).",
+     "on": "2026-11-09T16:02:13Z",
+     "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJksP%2FBAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+     "name": "Inaccurate Miva PCI Items",
+     "kind": "fix",
+     "what": "PCI items checked in NetSuite but missing in Miva PCI, and the reverse (CSV attached).",
+     "on": "2026-11-09T16:02:08Z",
+     "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJksP%2FAAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+     "name": "Missing Miva.PCI Category Images",
+     "kind": "fix",
+     "what": "Categories missing a category image in Miva Admin (spreadsheet attached).",
+     "on": "2026-11-09T16:00:08Z",
+     "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJksP%2B9AAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+     "name": "Inaccurate AD Items",
+     "kind": "fix",
+     "what": "AD items checked in NetSuite but missing in Miva, and the reverse (CSV attached).",
+     "on": "2026-11-09T15:01:13Z",
+     "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJksP%2BxAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+     "name": "Parent Item with Default Variant SKU Updates",
+     "kind": "fix",
+     "what": "Nightly search results attached.",
+     "on": "2026-11-09T08:36:56Z",
+     "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJj6Y7YAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+     "name": "Products Without Marketing Category",
+     "kind": "fix",
+     "what": "Results truncated at the limit, so the list is long.",
+     "on": "2026-11-09T08:02:23Z",
+     "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJj6Y7XAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+     "name": "Kit Item w/ No Location",
+     "kind": "fix",
+     "what": "Nightly search results attached.",
+     "on": "2026-11-09T08:01:04Z",
+     "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJj6Y7WAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+     "name": "AD Category Images Check",
+     "kind": "fyi",
+     "what": "2 AD categories missing images out of 696 active checked.",
+     "on": "2026-11-09T15:05:05Z",
+     "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJksP%2ByAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+     "name": "Daily Backorder List",
+     "kind": "fyi",
+     "what": "Low-stock and backordered items, including assemblies.",
+     "on": "2026-11-09T09:11:06Z",
+     "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJj6Y7ZAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+     "name": "FAM Lead Times (Past 7 Days)",
+     "kind": "fyi",
+     "what": "FAM's average lead time from orders shipped in the past 7 days.",
+     "on": "2026-11-08T15:45:48Z",
+     "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJj6Y7JAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    }
+   ]
+  },
+  "2026-11-10": {
+   "asOf": "2026-11-10T18:32:00Z",
+   "since": "2026-11-09",
+   "cases": {
+    "count": 6,
+    "items": [
+     {
+      "no": "0981055",
+      "issue": "Drawing Clarification/Revision",
+      "vendor": "CW Ohio Inc.",
+      "on": "2026-11-10T16:40:23Z",
+      "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJlWpYwAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+     },
+     {
+      "no": "0981036",
+      "issue": "Drawing Clarification/Revision",
+      "vendor": "CW Ohio Inc.",
+      "on": "2026-11-10T16:05:21Z",
+      "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJlWpYtAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+     },
+     {
+      "no": "0980968",
+      "issue": "Drawing Clarification/Revision",
+      "vendor": "AFCO, Industries",
+      "on": "2026-11-10T14:10:18Z",
+      "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJlWpYmAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+     },
+     {
+      "no": "0980858",
+      "issue": "Drawing Clarification/Revision",
+      "vendor": "Atlantic Shutter Systems",
+      "on": "2026-11-09T21:40:22Z",
+      "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJksP%2FrAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+     },
+     {
+      "no": "0980658",
+      "issue": "Cannot Be Made As Ordered",
+      "vendor": "Turncraft Architectural",
+      "on": "2026-11-09T14:55:22Z",
+      "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJksP%2BvAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+     },
+     {
+      "no": "0980306",
+      "issue": "Drawing Clarification/Revision",
+      "vendor": "CW Ohio Inc.",
+      "on": "2026-11-06T15:35:19Z",
+      "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJim63PAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+     }
+    ],
+    "note": "From the search 16559 \"New Case Created\" alerts assigned to you. Status is as of each email; check NetSuite."
+   },
+   "pricing": [
+    {
+     "name": "Bill Price Needs Review (Nov 9 list)",
+     "what": "Sidney (Accounting) sent the updated list and asks which bills can go on tomorrow's payment; prioritize the older Mid-America and Builder's Edge ones",
+     "on": "2026-11-09T17:29:23Z",
+     "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJksP%2FPAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+     "name": "Item Group List Prices need updating (search 11921)",
+     "what": "Grouped List Price on some item groups doesn't match the sum of their components",
+     "on": "2026-11-10T17:00:47Z",
+     "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJlWpY0AAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    }
+   ],
+   "alerts": [
+    {
+     "name": "Inaccurate AD Items",
+     "kind": "fix",
+     "what": "AD items checked in NetSuite but missing in Miva, and the reverse (CSV attached).",
+     "on": "2026-11-09T15:01:13Z",
+     "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJksP%2BxAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+     "name": "Missing Miva.PCI Category Images",
+     "kind": "fix",
+     "what": "Categories missing a category image in Miva Admin (spreadsheet attached).",
+     "on": "2026-11-09T16:00:08Z",
+     "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJksP%2B9AAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+     "name": "Inaccurate Miva PCI Items",
+     "kind": "fix",
+     "what": "PCI items checked in NetSuite but missing in Miva PCI, and the reverse (CSV attached).",
+     "on": "2026-11-09T16:02:08Z",
+     "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJksP%2FAAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+     "name": "Inaccurate EkenaMillwork Items",
+     "kind": "fix",
+     "what": "Ekena items checked in NetSuite but missing in Miva Ekena, and the reverse (CSV attached).",
+     "on": "2026-11-09T16:02:13Z",
+     "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJksP%2FBAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+     "name": "Kit Item w/ No Location",
+     "kind": "fix",
+     "what": "Nightly search results attached.",
+     "on": "2026-11-10T08:00:32Z",
+     "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJk%2BkTJAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+     "name": "Products Without Marketing Category",
+     "kind": "fix",
+     "what": "Nightly search results attached.",
+     "on": "2026-11-10T08:02:58Z",
+     "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJk%2BkTLAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+     "name": "Parent Item with Default Variant SKU Updates",
+     "kind": "fix",
+     "what": "Nightly search results attached.",
+     "on": "2026-11-10T08:42:53Z",
+     "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJk%2BkTMAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+     "name": "FAM Lead Times (Past 7 Days)",
+     "kind": "fyi",
+     "what": "FAM's average lead time from orders shipped in the past 7 days.",
+     "on": "2026-11-08T15:45:48Z",
+     "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJj6Y7JAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+     "name": "AD Category Images Check",
+     "kind": "fyi",
+     "what": "2 AD categories missing images out of 696 active checked.",
+     "on": "2026-11-09T15:05:05Z",
+     "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJksP%2ByAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+     "name": "FAM Lead Time Updates",
+     "kind": "fyi",
+     "what": "Leadership-approved lead time ranges for the FAM divisions (attachment).",
+     "on": "2026-11-10T08:02:08Z",
+     "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJk%2BkTKAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+     "name": "Daily Backorder List",
+     "kind": "fyi",
+     "what": "Low-stock and backordered items, including assemblies with a low component.",
+     "on": "2026-11-10T09:11:13Z",
+     "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJk%2BkTNAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
     }
    ]
   }
