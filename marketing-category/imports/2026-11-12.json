@@ -1,0 +1,20 @@
+{
+ "date": "2026-11-12",
+ "status": "ready",
+ "queuedBy": "Marketing Category Report routine (cloud)",
+ "note": "Full report (5,195 rows, under NetSuite's 10,000 email cap). The Assembly file is 5,188 rows, over the PC worker's 5,000-row standing limit: hold it with an OVER_LIMIT card in Ultron state.actions (Routine rules, Actions) and import it on Brody's Go for this sha256. None of the 10,000 Internal IDs in the 2026-11-11 files are blank in today's report.",
+ "files": [
+  {
+   "name": "2026-11-12 Assembly-Bill of Materials.csv",
+   "recordType": "Assembly Item (Assembly/Bill of Materials)",
+   "rows": 5188,
+   "sha256": "5bdb9fe447ea63bee18601581e3c89484c3538c98edcd06bd45d1aaa39846b72"
+  },
+  {
+   "name": "2026-11-12 Inventory Item.csv",
+   "recordType": "Inventory Item (Inventory Item)",
+   "rows": 7,
+   "sha256": "24d37b1da8b27a09d0f2aa3c8c1e54838dbc72c11968037b623e836a9d148926"
+  }
+ ]
+}
