@@ -1,6 +1,6 @@
 {
  "note": "Days archived from Brody's board. Each entry is the day exactly as it was on the board.",
- "cut": "2026-10-29",
+ "cut": "2026-10-30",
  "days": {
   "2026-09-02": {
    "blocks": [
@@ -8160,6 +8160,365 @@
      ]
     }
    }
+  },
+  "2026-10-29": {
+   "inbox": {
+    "found": true,
+    "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJT6hJWAAA%3D&exvsurl=1&viewmodel=ReadMessageItem",
+    "subject": "Inbox triage — Thursday, Oct 29",
+    "counts": {
+     "people": 3,
+     "other": 6,
+     "waiting": 2,
+     "fyi": 26,
+     "low": 44,
+     "drafts": 0
+    },
+    "people": [
+     {
+      "name": "Daniel M.",
+      "taskIds": [
+       "in1020-3"
+      ]
+     },
+     {
+      "name": "Ethan S.",
+      "taskIds": [
+       "in1020-4"
+      ]
+     },
+     {
+      "name": "Rob S.",
+      "taskIds": []
+     },
+     {
+      "name": "Tory K.",
+      "taskIds": [
+       "in1026-2"
+      ]
+     },
+     {
+      "name": "Sam P.",
+      "taskIds": []
+     }
+    ],
+    "other": [
+     "in1029-1",
+     "in1029-2",
+     "in1029-3",
+     "in1029-4"
+    ],
+    "meetings": [],
+    "recap": {
+     "found": true,
+     "subject": "Meeting recap — Wednesday, Oct 28",
+     "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJT6hJHAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    "waiting": [
+     {
+      "who": "Andrew Gonzalez",
+      "what": "His answer on the Procurement response examples (you forwarded them to Ethan)",
+      "since": "2026-10-29",
+      "mail": {
+       "uri": "mail:///messages/AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU_Hcc2AAAAAAEMAABCgVnAZCBUTa752dU_Hcc2AAJT6hJAAAA%3D",
+       "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJT6hJAAAA%3D&exvsurl=1&viewmodel=ReadMessageItem",
+       "subject": "Procurement Examples",
+       "from": "Andrew Gonzalez",
+       "on": "2026-10-28T20:04:15Z"
+      }
+     },
+     {
+      "who": "Procurement and Andrew",
+      "what": "Porch post kit locations (kit vs item group setup)",
+      "since": "2026-10-26",
+      "mail": {
+       "uri": "mail:///messages/AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU_Hcc2AAAAAAEMAABCgVnAZCBUTa752dU_Hcc2AAJT6hI-AAA%3D",
+       "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJT6hI%2FAAA%3D&exvsurl=1&viewmodel=ReadMessageItem",
+       "subject": "Re: Porch Post Kits Missing Preferred Location - Update Needed",
+       "from": "Tory Kepler",
+       "on": "2026-10-28T19:46:51Z"
+      },
+      "replied": {
+       "t": "2026-10-29T17:26:57Z",
+       "why": "Replied Oct 29"
+      }
+     }
+    ],
+    "fyi": [
+     "Tory confirms multiple non-inventory items need an item group; kits don't work for them (porch post kits).",
+     "Selina fixed the missing parent SKU descriptions for Americraft, Heritage and Timberthane in NS.",
+     "Andrew sent the new Turncraft two-piece porch posts to Procurement to create.",
+     "Andrew asks to move the October sale to mid/late September; Lauren agrees (AD Emails).",
+     "Hayden will make assets for the vinyl siding color-picking idea.",
+     "Halloween sale images are done; the sale runs Thu to Mon.",
+     "Daniel on Teams: timing moves to tomorrow morning if his notes are in, else Friday earlier. He liked the Viewrail design tool.",
+     "Paul: nav feature cards are live. UNT will promote the Handshake posting.",
+     "Closed since last digest: Halloween images, TrueWood beam buyers, PPC Secure, Bahama shutters, Balustrade Builder (left to Andrew), Tory's Handshake job owner."
+    ]
+   },
+   "pulse": {
+    "found": true,
+    "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJT6hJUAAA%3D&exvsurl=1&viewmodel=ReadMessageItem",
+    "label": "Wed vs last Wed. Proxy from order confirmations; NetSuite is the source of truth.",
+    "orders": 381,
+    "dollars": 212621,
+    "ordersPrev": 399,
+    "dollarsPrev": 270436,
+    "ordersPct": -5,
+    "dollarsPct": -21,
+    "sites": [
+     {
+      "name": "AD",
+      "orders": 304,
+      "dollars": 173263,
+      "pct": -20
+     },
+     {
+      "name": "Ekena",
+      "orders": 44,
+      "dollars": 32413,
+      "pct": 36
+     },
+     {
+      "name": "Millwork.com",
+      "orders": 28,
+      "dollars": 6453,
+      "pct": -76
+     },
+     {
+      "name": "HomeOver",
+      "orders": 5,
+      "dollars": 492,
+      "pct": -83
+     },
+     {
+      "name": "FauxBeams",
+      "orders": 0,
+      "dollars": 0,
+      "note": "$271 last wk"
+     }
+    ],
+    "flags": [
+     "Largest: AD 1755138, $9,704 (90 Endurathane 7 3/4\" crown, big quantity).",
+     "Ekena 2101337519, $9,673 (90 AmeriCraft white oak WM163 baseboard).",
+     "AD 1754831, $8,792 (Timberthane U- and L-beams).",
+     "5 confirmations for older order numbers, $3,741: edits or re-sends, may double count.",
+     "Millwork.com and HomeOver are well below last Wed (Millwork.com had a $10.7k order last Wed)."
+    ],
+    "week": {
+     "found": true,
+     "label": "Week to date",
+     "start": "2026-10-26",
+     "end": "2026-10-28",
+     "orders": 1224,
+     "dollars": 696189,
+     "cmpOrders": 1181,
+     "cmpDollars": 745280.78,
+     "days": "3/3",
+     "partial": false,
+     "sites": [
+      {
+       "name": "AD",
+       "orders": 988,
+       "dollars": 590431.71
+      },
+      {
+       "name": "Millwork.com",
+       "orders": 89,
+       "dollars": 24954.84
+      },
+      {
+       "name": "Ekena",
+       "orders": 128,
+       "dollars": 70954.74
+      },
+      {
+       "name": "HomeOver",
+       "orders": 18,
+       "dollars": 9809.45
+      },
+      {
+       "name": "FauxBeams",
+       "orders": 1,
+       "dollars": 38.26
+      },
+      {
+       "name": "Other",
+       "orders": 0,
+       "dollars": 0
+      }
+     ]
+    }
+   },
+   "blocks": [
+    {
+     "id": "o29-1",
+     "start": "08:00",
+     "end": "08:20",
+     "title": "Check and respond to emails",
+     "sub": "Daily · 20 min. 3 to-dos from key people, 6 other actions, 0 drafts ready. Work them from the Inbox section above.",
+     "done": true
+    },
+    {
+     "id": "o29-2",
+     "start": "08:20",
+     "end": "08:40",
+     "title": "Review daily metrics & KPIs",
+     "sub": "Daily · 20 min. Wed $212,621, -21% vs last Wed. HomeOver -83%, Millwork.com -76% (Ekena +36%). Details in the Sales section above.",
+     "done": true
+    },
+    {
+     "id": "o29-3",
+     "start": "08:40",
+     "end": "09:00",
+     "title": "Team check-in",
+     "sub": "Daily · 20 min. Andrew starts late (vet, in by 11) and Daniel is in Clarksville all day.",
+     "done": true
+    },
+    {
+     "id": "o29-4",
+     "start": "09:00",
+     "end": "09:30",
+     "title": "Bug Herds — complete 5 (Rock: under 10)",
+     "sub": "Rock time · 30 min. 35 open in BugHerd (26 To Do, 4 Doing, 5 Backlog) after you archived 7 today (#6359, #6976, #6961, #5039, #7152, #8608, #8607). Do these 5: #6448 MANRR: make it clear it's concrete; #4549 BMSTRP06X08H: add 'faux' to the description; #5959, #8150 A09-P06 thickness and polished brass; #8824 MANURUS / MANURD duplicate swatches; #6129 fastener packs sold by weight. Only you decide what goes to Web Dev.",
+     "done": true
+    },
+    {
+     "id": "o29-5",
+     "start": "09:30",
+     "end": "09:50",
+     "title": "Cases — complete 10",
+     "sub": "Daily · 20 min. 4 new cases since Wednesday: Case 0978580 (Drawing Clarification/Revision, Builder's Edge), Case 0978577 (Drawing Clarification/Revision, Builder's Edge), Case 0978573 (Drawing Clarification/Revision, Atlantic Shutter Systems). Details in Cases & alerts. Assign them in NetSuite search 16559.",
+     "done": true
+    },
+    {
+     "id": "o29-6",
+     "start": "09:50",
+     "end": "10:10",
+     "title": "Strety",
+     "sub": "Daily · 20 min.",
+     "done": true
+    },
+    {
+     "id": "o29-7",
+     "start": "10:10",
+     "end": "10:50",
+     "title": "Answer the Oct 28 ads audit: what's left after G1",
+     "sub": "Due today · 40 min. G1 went in Oct 28. Still open on the Asana \"Answer me\" card: G4 productive-spend lines (about $12.4k), whether G3 chases 12% (+11.9% projected), the G5 cap (about $53k) and the Retargeting and Brand labels. Check the Product Marketing Portal numbers first.",
+     "done": true,
+     "taskIds": [
+      "ads1028-1"
+     ],
+     "top": true
+    },
+    {
+     "id": "o29-8",
+     "start": "11:00",
+     "end": "12:00",
+     "title": "E-Commerce L-10: cancelled today",
+     "sub": "You cancelled today's L-10 at 10:06. It's this one only; the series is unchanged. Power Hour is cancelled too.",
+     "done": true,
+     "meeting": false
+    },
+    {
+     "id": "o29-9",
+     "start": "12:30",
+     "end": "12:55",
+     "title": "Settle the Heritage inside openings with Justin",
+     "sub": "From the triage · 25 min. Justin needs one answer for BMMAS3C00400X0400X120KB: our 1 1/2\"W x 2 1/2\"H or the current NS 2\"W x 2 3/4\"H. Heritage SKUs have drawings, so check the drawing first. It affects all Heritage beams.",
+     "done": true,
+     "taskIds": [
+      "in1029-1"
+     ],
+     "top": true
+    },
+    {
+     "id": "o29-10",
+     "start": "12:55",
+     "end": "13:15",
+     "title": "Review AP's bill pricing list",
+     "sub": "20 min. Carried from yesterday. AP asked which bills are good for the vendor payment run; Claude's reply draft is in your Outlook Drafts.",
+     "done": true,
+     "taskIds": [
+      "pr1027-1"
+     ]
+    },
+    {
+     "id": "o29-11",
+     "start": "13:15",
+     "end": "13:30",
+     "title": "Review Claude's work: Barron accessory names, UNT reply",
+     "sub": "15 min. Barron accessory names are ready in the task thread. UNT is ticked: you replied to Suman and Brian on Oct 28.",
+     "done": true,
+     "taskIds": [
+      "cl1022-3",
+      "clwovvb"
+     ]
+    },
+    {
+     "id": "o29-12",
+     "start": "13:30",
+     "end": "14:00",
+     "title": "Find people to interview",
+     "sub": "Daily · 30 min. Maryssa is set: her interview moved to Fri Nov 6, 4:00 PM CT, the Teams invite is sent and you apologised in Handshake. Colleges waiting on you: TVCC (send Eric the Inside Sales job description), Dallas College (Virginia's PDFs). 3 new E-Commerce applicants: David, Sahira, Martin.",
+     "done": false,
+     "taskIds": [
+      "t7fp22",
+      "w1"
+     ],
+     "top": true
+    },
+    {
+     "id": "o29-13",
+     "start": "14:00",
+     "end": "14:45",
+     "title": "Add items missing from our sites to all the sites",
+     "sub": "Pushed 7 times. Do it today, hand it to Claude, or drop it. Claude can do this; give it to Claude from the Tasks tab.",
+     "done": false,
+     "taskIds": [
+      "tk7mswn"
+     ]
+    },
+    {
+     "id": "o29-14",
+     "start": "15:05",
+     "end": "15:35",
+     "title": "Fix the Google Ads enhanced conversions errors",
+     "sub": "30 min. From Tuesday's triage: some enhanced conversions weren't processed (no CSS selector or JS variable for user data). Claude can do this; give it to Claude from the Tasks tab.",
+     "done": true,
+     "taskIds": [
+      "in1027-2"
+     ]
+    },
+    {
+     "id": "o29-15",
+     "start": "15:35",
+     "end": "16:00",
+     "title": "Tory's not-reviewed reviews and images",
+     "sub": "25 min. Tory's Strety to-do, open since Oct 23: approve or disapprove every review and customer image still marked not reviewed.",
+     "done": false,
+     "taskIds": [
+      "in1026-2"
+     ]
+    },
+    {
+     "id": "o29-16",
+     "start": "16:20",
+     "end": "16:40",
+     "title": "Follow up with Andrew's ads",
+     "sub": "Daily · 20 min. Andrew applied Fire Vent this morning ($450 → $300 budget, target 380% → 420%; 14-day check Nov 12), and the \"vulcan\" negative is withdrawn. Still open on his Oct 28 cards: Columns - Fiberglass (+26% over 7 days), GVV, Columns - PVC, Square Columns, Ventilation. No portal read today. Details on the Ads tab.",
+     "done": true
+    },
+    {
+     "id": "o29-17",
+     "start": "16:40",
+     "end": "17:00",
+     "title": "Wrap",
+     "sub": "Daily · 20 min. Log what got done. Tomorrow gets built from this. If there's time: Jonee's 5-1/4\" width fix on MLDW01X05WM163PP, the SteelTek French Cleat kit price, Chris's fix on BugHerd #9013, try Fable video generation. Tomorrow: Hayden's Q3 review 8:00–9:00 (moved up from 3:00; his answers are due today), Joshua Bellmore video interview 10:00, Team Leads 2:00 (tentative). Maryssa's interview moved to Fri Nov 6, 4:00 PM.",
+     "done": false
+    }
+   ],
+   "log": []
   }
  },
  "ops": {
