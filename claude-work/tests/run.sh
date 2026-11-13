@@ -21,6 +21,8 @@ print("PASS evaluator score %s (bad %s, warn %s)" % (s, j.get("bad"), j.get("war
 
 echo "== 3/3 board_tests.js"
 NODE_PATH="$(npm root -g)" node "$DIR/board_tests.js" "$B" || fail=1
+echo "== tabs"
+NODE_PATH="$(npm root -g)" node "$DIR/tabs_test.js" "$B" || fail=1
 
 if [ "$fail" = 0 ]; then echo "ALL PASSED"; else echo "FAILED"; fi
 exit $fail
