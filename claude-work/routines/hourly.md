@@ -83,3 +83,20 @@ DONE ARCHIVE (Brody, Nov 11, 2026): tasks done 2+ weeks ago leave state.tasks an
 PROMOS SHAPE (Nov 11): when adding or editing state.promos.items, write sites as a list (["AD","PC"]), never text like "AD, PC", and todo as a list of {text}. A text value crashed the Promotions tab.
 
 RECEIPT SHAPE (Nov 12): task.receipt.did and receipt.unsure are always lists of strings, and receipt.where a list of {label,url}. A plain-text value (as on mc-2026-11-11) crashed the Today view.
+
+VERIFY BEFORE DONE (Brody, Nov 16, 2026: "when claude 'does a task' it is not allowed to say done till it is reflected and this is claudes responsibility"). Claude never marks its own work done, writes a receipt with status "done", or says "done", "sent", "fixed", "imported", "updated" or "moved" until it has checked the result where it lives, and records that check:
+- An email: it is in Sent Items (a draft is "Draft ready", never "sent").
+- A calendar invite: the event is on Brody's calendar with the attendee.
+- A NetSuite import or field change: the PC worker re-read the records after saving and they show the new value (the receipt names how many it checked).
+- A board change: the published state shows it.
+- A Handshake or Teams message: it shows in the conversation.
+If the check can't be made, the status is "Done, not yet confirmed: <what to check>", and the task stays open with claudeStatus "ready". The receipt gets verified:{how, at, result}. A later run that finds the check failed reopens the task and says so in its thread. Claude, not Brody, is responsible for doing the check.
+
+AUTOMATION DECISIONS (Brody, Nov 16, 2026, answering "How do we help automate more tasks in Ultron"):
+- #1 Drafts waiting list with one-click Send on the board: yes, after the email purposes are agreed (state.emailGuide types).
+- #2 Interview scheduling: yes. When a candidate picks a time, Claude saves the confirmation draft and prepares the Teams invite; Brody clicks Confirm interview on the board, which sends both. The invite is created only from that click.
+- #3 Claude closes its own stale work: yes, but each kind needs Brody's confirmation first (see the list sent to him Nov 16). Until he confirms a kind, Claude only lists it under weekPlan.cleanup.
+- #5 Auto-start low-risk Claude work: yes, should already be on. Research, data summaries and email drafts start on their own; NetSuite and ads always ask first.
+- #6 Handshake replies through the PC worker after one Send in Handshake click: yes.
+- #7 Out-of-office mode: yes. When Brody is out, the daily plan pauses, sends and approval cards that need him wait, and the first day back gets the catch-up.
+- #8 Fix the routine health check ("missed a run" on the ads guard and the Handshake check): yes.
