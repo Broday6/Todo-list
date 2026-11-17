@@ -1,20 +1,30 @@
 {
  "date": "2026-11-12",
- "status": "ready",
+ "status": "held",
  "queuedBy": "Marketing Category Report routine (cloud)",
- "note": "Full report (5,195 rows, under NetSuite's 10,000 email cap). The Assembly file is 5,188 rows, over the PC worker's 5,000-row standing limit: hold it with an OVER_LIMIT card in Ultron state.actions (Routine rules, Actions) and import it on Brody's Go for this sha256. None of the 10,000 Internal IDs in the 2026-11-11 files are blank in today's report.",
+ "note": "Full report (5,195 rows, under NetSuite's 10,000 email cap). The Assembly file is 5,188 rows, over the PC worker's 5,000-row standing limit: hold it with an OVER_LIMIT card in Ultron state.actions (Routine rules, Actions) and import it on Brody's Go for this sha256. None of the 10,000 Internal IDs in the 2026-11-11 files are blank in today's report. | PC worker 2026-11-17 09:50 CT: Inventory Item file (7 rows) not imported because all 7 items already show the target value in NetSuite (Beams x4, Wall Accents x3; checked by record lookup), so nothing to import. Assembly file (5,188 rows) held: over the 5,000-row standing limit; all still blank (14,999 blank active BMW assemblies = 9,811 from the 11-11 file + 5,188 from this one). Waits for Brody's Go on card act-mc-2026-11-12-mc-import.",
  "files": [
   {
    "name": "2026-11-12 Assembly-Bill of Materials.csv",
    "recordType": "Assembly Item (Assembly/Bill of Materials)",
    "rows": 5188,
-   "sha256": "5bdb9fe447ea63bee18601581e3c89484c3538c98edcd06bd45d1aaa39846b72"
+   "sha256": "5bdb9fe447ea63bee18601581e3c89484c3538c98edcd06bd45d1aaa39846b72",
+   "result": {
+    "status": "held",
+    "reason": "over 5,000-row limit",
+    "at": "2026-11-17T15:50:00Z"
+   }
   },
   {
    "name": "2026-11-12 Inventory Item.csv",
    "recordType": "Inventory Item (Inventory Item)",
    "rows": 7,
-   "sha256": "24d37b1da8b27a09d0f2aa3c8c1e54838dbc72c11968037b623e836a9d148926"
+   "sha256": "24d37b1da8b27a09d0f2aa3c8c1e54838dbc72c11968037b623e836a9d148926",
+   "result": {
+    "status": "already-set",
+    "imported": 0,
+    "at": "2026-11-17T15:50:00Z"
+   }
   }
  ]
 }
