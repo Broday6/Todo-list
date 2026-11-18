@@ -1,14 +1,19 @@
 {
  "date": "2026-11-18",
- "status": "ready",
+ "status": "held",
  "queuedBy": "Marketing Category Report routine (cloud)",
- "note": "NetSuite capped the emailed report at 10,000 rows ([TRUNCATED - LIMIT REACHED]); more items remain. All 10,000 are a new batch of RealGrain beam assemblies (BMWA100000 to BMWA109999, Internal IDs 3417059 to 3427058), Product Category BMW to Beams; none overlap the 2026-11-11 or 2026-11-12 files. Over the PC worker's 5,000-row standing limit: hold it with an OVER_LIMIT card (Routine rules, Actions) and import on Brody's Go for this sha256.",
+ "note": "NetSuite capped the emailed report at 10,000 rows ([TRUNCATED - LIMIT REACHED]); more items remain. All 10,000 are a new batch of RealGrain beam assemblies (BMWA100000 to BMWA109999, Internal IDs 3417059 to 3427058), Product Category BMW to Beams; none overlap the 2026-11-11 or 2026-11-12 files. Over the PC worker's 5,000-row standing limit: hold it with an OVER_LIMIT card (Routine rules, Actions) and import on Brody's Go for this sha256. | PC worker 2026-11-18 08:40 CT: file checked against the manifest (sha256 and 10,000 rows match). Held: over the 5,000-row standing limit, nothing imported. Waits for Brody's Go on card act-mc-2026-11-18-mc-import. Blank check not run (no import this run).",
  "files": [
   {
    "name": "2026-11-18 Assembly-Bill of Materials.csv",
    "recordType": "Assembly Item (Assembly/Bill of Materials)",
    "rows": 10000,
-   "sha256": "e377cbc82beec908822c105c1883b6f213e8ec38b8a54a5654a36e4f79340b4d"
+   "sha256": "e377cbc82beec908822c105c1883b6f213e8ec38b8a54a5654a36e4f79340b4d",
+   "result": {
+    "status": "held",
+    "reason": "over 5,000-row limit",
+    "at": "2026-11-18T14:40:00Z"
+   }
   }
  ]
 }
