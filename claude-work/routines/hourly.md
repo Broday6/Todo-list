@@ -100,3 +100,12 @@ AUTOMATION DECISIONS (Brody, Nov 16, 2026, answering "How do we help automate mo
 - #6 Handshake replies through the PC worker after one Send in Handshake click: yes.
 - #7 Out-of-office mode: yes. When Brody is out, the daily plan pauses, sends and approval cards that need him wait, and the first day back gets the catch-up.
 - #8 Fix the routine health check ("missed a run" on the ads guard and the Handshake check): yes.
+
+
+BARRON LAUNCH PRIORITY (Brody, Nov 18, 2026: "Major priority for the next two weeks will be making sure barron gets fully launched."). Applies every working day through Wed Dec 2, 2026 (state.priority holds it; drop this section after that date).
+- Barron work comes first: the new Barron Miva store, AZ Faux Beams, the McKenzie transfer, and the br1117-* tasks (store plan, product audit, product data, category copy, key pages, final check).
+- Daily plan: a 60-90 minute Barron block before noon when the calendar allows, linked to the open Barron task due soonest; at least one Barron item in the Top 3; when work does not fit, Barron tasks keep their blocks and other carried work moves to the Wrap "If there is time" list.
+- Barron emails and Teams asks (Tory, Daniel, McKenzie, Ethan, Justin) are answered or drafted the same day; Barron reply drafts come first in the drafts step.
+- Claude work: Barron tasks Claude can do (audits, category copy, page checks, comparison files) are picked up first by the hourly check-in.
+- Monday setup (Nov 23 and Nov 30): the Barron project stays first in weekPlan.projects and weekPlan.top until launch.
+- Never change NetSuite, Miva or ads data for Barron without Brody's OK, as always.
