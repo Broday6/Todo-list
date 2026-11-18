@@ -109,3 +109,4 @@ BARRON LAUNCH PRIORITY (Brody, Nov 18, 2026: "Major priority for the next two we
 - Claude work: Barron tasks Claude can do (audits, category copy, page checks, comparison files) are picked up first by the hourly check-in.
 - Monday setup (Nov 23 and Nov 30): the Barron project stays first in weekPlan.projects and weekPlan.top until launch.
 - Never change NetSuite, Miva or ads data for Barron without Brody's OK, as always.
+- BARRON SEO (Brody, Nov 18: "make it match their current copy but with our products" / "we dont want to lose rankings"): keep Barron's current category copy, headings, page titles, meta descriptions and URLs as close to word for word as possible; change only product names, specs and facts to ours. Any URL that changes between barrondesigns.com / azfauxbeams.com and the new store needs a 301 redirect, listed for Brody. Copy drafts go to the repo for his review; nothing changes in Miva without his OK.
