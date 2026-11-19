@@ -1,0 +1,14 @@
+{
+ "date": "2026-11-19",
+ "status": "ready",
+ "queuedBy": "Marketing Category Report routine (cloud)",
+ "note": "Full report: 1 row (LS3C12X07400WH_TEST, Product Category Shutters - Vinyl to Shutters). The 10,000 BMW rows from the 2026-11-18 report are not in today's report; this routine can't tell from the email whether they were filled or the search changed.",
+ "files": [
+  {
+   "name": "2026-11-19 Assembly-Bill of Materials.csv",
+   "recordType": "Assembly Item (Assembly/Bill of Materials)",
+   "rows": 1,
+   "sha256": "6f64ae29f85223929ead3019e8b09ae6a57947709c9cd08adb5efb080fcec477"
+  }
+ ]
+}
