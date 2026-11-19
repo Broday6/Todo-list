@@ -1,0 +1,3 @@
+const {chromium}=require('playwright');(async()=>{const b=await chromium.launch();const p=await b.newPage();const errs=[];p.on('pageerror',e=>errs.push(e.message));await p.goto('file://'+process.argv[2]);await p.waitForTimeout(4000);
+for(const t of ['Tasks','Today']){const el=await p.$(`button:has-text("${t}")`);if(el){await el.click();await p.waitForTimeout(600);}}
+const n=await p.evaluate(()=>document.body.innerText.length);console.log(n>500&&errs.length===0?'PASS crash guard: board draws with text receipts':'FAIL crash guard: text '+n+' errors '+errs.join(' | ').slice(0,300));await b.close();})();
