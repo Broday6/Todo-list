@@ -1,6 +1,6 @@
 {
  "note": "Days archived from Brody's board. Each entry is the day exactly as it was on the board.",
- "cut": "2026-11-04",
+ "cut": "2026-11-05",
  "days": {
   "2026-09-02": {
    "blocks": [
@@ -9678,6 +9678,482 @@
        "name": "FauxBeams",
        "orders": 1,
        "dollars": 143.6
+      },
+      {
+       "name": "Other",
+       "orders": 0,
+       "dollars": 0
+      }
+     ]
+    }
+   }
+  },
+  "2026-11-04": {
+   "blocks": [
+    {
+     "id": "n04-1",
+     "start": "08:00",
+     "end": "08:20",
+     "title": "Check and respond to emails",
+     "sub": "Daily · 20 min. 3 to-dos from key people, 5 other actions, 1 draft ready (Daniel on Custom Quoting). Work them from the Inbox section above.",
+     "done": true
+    },
+    {
+     "id": "n04-2",
+     "start": "08:20",
+     "end": "08:40",
+     "title": "Review daily metrics & KPIs",
+     "sub": "Daily · 20 min. Tue $210,547, -15% vs last Tue. Ekena +135%, HomeOver -74%. Details in the Sales section above.",
+     "done": true
+    },
+    {
+     "id": "n04-3",
+     "start": "08:40",
+     "end": "09:00",
+     "title": "Team check-in",
+     "sub": "Daily · 20 min. Lauren was out sick again yesterday. Ryan is out Nov 4 to 6 (Ryan's custom quoting sheet covers quotes). Daniel is out 2 to 3 today. Remind the pod: scan room cleanup is Fri 10:00.",
+     "done": true
+    },
+    {
+     "id": "n04-4",
+     "start": "09:00",
+     "end": "09:30",
+     "title": "Bug Herds — complete 5 (Rock: under 10)",
+     "sub": "Rock time · 30 min. 11 open on your list (0 new, 0 with new comments since yesterday; oldest 14 days). Do these 5: #8334 SAMPLE-FWB order issue; #8393 Brands page logo; #6160 Ekena shipping and return policy page is blank; #5959 A09-P06 thickness and discontinued brass; #8705 SKPVCSHUCOLORS color ring. Image uploads are still on hold (server move). Only you decide what goes to Web Dev.",
+     "done": true
+    },
+    {
+     "id": "n04-5",
+     "start": "09:30",
+     "end": "12:00",
+     "title": "Product Category Group Meetings",
+     "sub": "Creative Lounge, with Emily and the category groups. Tentative. The Leadership group meeting and Product Launch - Quality are canceled.",
+     "done": true,
+     "meeting": true
+    },
+    {
+     "id": "n04-16",
+     "start": "12:00",
+     "end": "12:30",
+     "title": "Learn Google Analytics (GA4)",
+     "sub": "30 min. Your ask today. Start with Reports > Monetization and Acquisition, then the Google Ads link. Claude can build you a primer first; give it to Claude from the Tasks tab.",
+     "done": true,
+     "taskIds": []
+    },
+    {
+     "id": "n04-6",
+     "start": "12:30",
+     "end": "12:50",
+     "title": "Cases — complete 10",
+     "sub": "Daily · 20 min. 2 new cases since Tuesday: Case 0979807 (Drawing Clarification/Revision, CW Ohio Inc.), Case 0979748 (Drawing Clarification/Revision, Alpha Systems LLC). Details in Cases & alerts. Assign them in NetSuite search 16559.",
+     "done": true
+    },
+    {
+     "id": "n04-7",
+     "start": "12:50",
+     "end": "13:10",
+     "title": "Strety",
+     "sub": "Daily · 20 min.",
+     "done": true
+    },
+    {
+     "id": "n04-8",
+     "start": "13:10",
+     "end": "13:40",
+     "title": "Talk custom quoting with Daniel",
+     "sub": "30 min. From the triage: Daniel wants to talk it through today while Ryan is out, using Ryan's Custom Quoting Tool sheet. Your reply offering after noon is in Outlook Drafts. Daniel is out 2 to 3. Use it to settle what the sales team's quote skill needs: where prices come from, the discount rules, and the output.",
+     "done": true,
+     "taskIds": [],
+     "top": true
+    },
+    {
+     "id": "n04-9",
+     "start": "13:40",
+     "end": "14:00",
+     "title": "Answer Daniel: which other sites move to Miva",
+     "sub": "20 min. From the triage. Tory's 5 are already moving (Buyfypon, Corbels.com, BuyAfco, BuyVulcanVents, shop.pacificcolumns.com); Daniel asks which others go live on Miva. Claude can do this; give it to Claude from the Tasks tab to rank the sites from Daniel's sales sheet first.",
+     "done": true,
+     "taskIds": [],
+     "top": true
+    },
+    {
+     "id": "n04-10",
+     "start": "14:00",
+     "end": "14:30",
+     "title": "Find people to interview",
+     "sub": "Daily · 30 min. No E-Commerce candidates waiting on you in Handshake. 5 new E-Commerce applicants since Monday: Chris Gaikwad, Daniela Sanchez, Abigail Smith, Gaurav Maakam, Keni Zhang. Answer Daniel on Victoria Speer (Indeed). Colleges waiting on you: TVCC (send Eric the Inside Sales job description), Dallas College (Virginia's PDFs). Jaden Phung in person tomorrow 1:00, Maryssa Fri 4:00. Your PC's Handshake check hasn't run since Oct 29.",
+     "done": true,
+     "taskIds": [
+      "t7fp22",
+      "w1"
+     ]
+    },
+    {
+     "id": "n04-17",
+     "start": "14:30",
+     "end": "14:50",
+     "title": "Pick a video platform for Daniel",
+     "sub": "20 min. Your ask today. Daniel is out until 3, so settle what the videos are for first. Claude can compare the options; give it to Claude from the Tasks tab.",
+     "done": true,
+     "taskIds": []
+    },
+    {
+     "id": "n04-11",
+     "start": "14:50",
+     "end": "15:00",
+     "title": "Send the procurement name-fix email",
+     "sub": "10 min. From your G5 plan, due yesterday. The draft \"Description Fixes: Beam Samples and Rustic Wood Corbels\" is in your Outlook Drafts; Procurement has the other description fixes open too.",
+     "done": false,
+     "taskIds": [
+      "g5q1-02"
+     ],
+     "top": true
+    },
+    {
+     "id": "n04-12",
+     "start": "15:00",
+     "end": "15:30",
+     "title": "Walk your pod's scan room and back room area",
+     "sub": "30 min. From the triage: Ethan wants each pod's area organized before the Fri 10:00 cleanup.",
+     "done": false,
+     "taskIds": [
+      "in1104-4"
+     ]
+    },
+    {
+     "id": "n04-13",
+     "start": "15:30",
+     "end": "15:50",
+     "title": "Look over the Ekena and Miva fix previews",
+     "sub": "20 min. From the Nov 2 alerts: 68 Ekena and 71 Miva fixes are built and waiting. Nothing is imported until you OK the preview; skip any you don't want.",
+     "done": false,
+     "taskIds": [
+      "al-site_ekena-20261102",
+      "al-site_miva-20261102"
+     ]
+    },
+    {
+     "id": "n04-18",
+     "start": "15:50",
+     "end": "16:20",
+     "title": "Learn Google Merchant Center",
+     "sub": "30 min. Your ask today. Start with Products > Diagnostics for AD: what's disapproved and why. Claude can build you a primer first; give it to Claude from the Tasks tab.",
+     "done": true,
+     "taskIds": []
+    },
+    {
+     "id": "n04-14",
+     "start": "16:20",
+     "end": "16:40",
+     "title": "Follow up with Andrew's ads",
+     "sub": "Daily · 20 min. Check where Andrew is on the G2 cuts (Fiberglass, GVV, Columns - PVC) and the other recommended moves not yet applied. Details on the Ads tab.",
+     "done": false
+    },
+    {
+     "id": "n04-15",
+     "start": "16:40",
+     "end": "17:00",
+     "title": "Wrap",
+     "sub": "Daily · 20 min. Log what got done. Tomorrow gets built from this. If there's time: the Ceiling & Wall Motif emails (Claude can do this), Andrew's CCKETS parent, item group list prices (search 11921), the Default Variant fixes and kit-location rows, try Fable video generation. Tomorrow: E-Commerce L-10 at 11:00, Jaden Phung in-person interview at 1:00 (Power Hour is canceled).",
+     "done": false
+    }
+   ],
+   "log": [
+    {
+     "t": "07:22",
+     "text": "Teams: nothing new. Plan top-up: nothing to add (no 1:1s, no promotion starting this week). Trim: archived Oct 20.",
+     "kind": "claude",
+     "by": "Claude"
+    },
+    {
+     "t": "09:16",
+     "text": "Teams: 1 new (0 ask you). Lauren and Hayden say the portal still isn't working; linked to your running list of broken tools.",
+     "kind": "claude",
+     "by": "Claude"
+    },
+    {
+     "t": "10:15",
+     "text": "Teams: 3 new (1 asks you). Ethan wants the most impactful tools down from the server issue, linked to your running list. Garrett sent 4 practice quotes, linked to the quote skill task.",
+     "kind": "claude",
+     "by": "Claude"
+    },
+    {
+     "t": "12:38",
+     "text": "Done: Tell Lauren and Daniel how to answer Houston Int'l's ask for a product list with PCI costs",
+     "kind": "auto",
+     "ref": "in1103-3"
+    },
+    {
+     "t": "12:40",
+     "text": "Finished: Check and respond to emails",
+     "kind": "auto",
+     "ref": "n04-1"
+    },
+    {
+     "t": "12:41",
+     "text": "Finished: Review daily metrics & KPIs",
+     "kind": "auto",
+     "ref": "n04-2"
+    },
+    {
+     "t": "12:41",
+     "text": "Finished: Team check-in",
+     "kind": "auto",
+     "ref": "n04-3"
+    },
+    {
+     "t": "14:05",
+     "text": "1:12 refresh: Teams nothing new. All routines ran on schedule. Team updated: Hayden is waiting on your thoughts on the Q4 proposal and on new pMax listing groups; Daniel looped you in on the Braintree switch. No new promotions.",
+     "kind": "claude",
+     "by": "Claude"
+    },
+    {
+     "t": "14:24",
+     "text": "Finished: Bug Herds — complete 5 (Rock: under 10)",
+     "kind": "auto",
+     "ref": "n04-4"
+    },
+    {
+     "t": "14:25",
+     "text": "Finished: Learn Google Analytics (GA4)",
+     "kind": "auto",
+     "ref": "n04-16"
+    },
+    {
+     "t": "14:25",
+     "text": "Finished: Talk custom quoting with Daniel",
+     "kind": "auto",
+     "ref": "n04-8"
+    },
+    {
+     "t": "14:25",
+     "text": "Finished: Answer Daniel: which other sites move to Miva",
+     "kind": "auto",
+     "ref": "n04-9"
+    },
+    {
+     "t": "14:25",
+     "text": "Finished: Strety",
+     "kind": "auto",
+     "ref": "n04-7"
+    },
+    {
+     "t": "15:22",
+     "text": "Teams: 3 new asks (Kody on Barron's site, Angelica on arched beams, Andrew on his Q3 bonus); the last two look handled.",
+     "kind": "claude",
+     "by": "Claude"
+    },
+    {
+     "t": "16:08",
+     "text": "Finished: Cases — complete 10",
+     "kind": "auto",
+     "ref": "n04-6"
+    },
+    {
+     "t": "16:08",
+     "text": "Finished: Find people to interview",
+     "kind": "auto",
+     "ref": "n04-10"
+    },
+    {
+     "t": "16:09",
+     "text": "Where did this task come from? Send the procurement name-fix emailTop 3 10 min. From your G5 plan, due yesterday. The draft \"Description Fixes: Beam Samples and Rustic Wood Corbels\" is in your Outlook Drafts; Procurement has the other description fixes open too."
+    },
+    {
+     "t": "18:35",
+     "text": "4:12 refresh (ran late): Teams 3 new (Noah asked to confirm the AWLV shutter lead time; Lauren's search question answered by Andrew). Team: you owe Kody an answer on Barron's site, and Daniel forwarded an applicant worth a call. No new promotions.",
+     "kind": "claude",
+     "by": "Claude"
+    },
+    {
+     "t": "18:32",
+     "text": "Finished: Pick a video platform for Daniel",
+     "kind": "auto",
+     "ref": "n04-17"
+    }
+   ],
+   "inbox": {
+    "found": true,
+    "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJgjqRoAAA%3D&exvsurl=1&viewmodel=ReadMessageItem",
+    "subject": "Inbox triage — Wednesday, Nov 4",
+    "counts": {
+     "people": 3,
+     "other": 5,
+     "waiting": 1,
+     "fyi": 35,
+     "low": 41,
+     "drafts": 0
+    },
+    "people": [
+     {
+      "name": "Daniel M.",
+      "taskIds": [
+       "in1104-3",
+       "in1103-1",
+       "in1020-3"
+      ]
+     },
+     {
+      "name": "Ethan S.",
+      "taskIds": [
+       "in1104-4",
+       "in1103-2",
+       "in1020-4"
+      ]
+     },
+     {
+      "name": "Rob S.",
+      "taskIds": []
+     },
+     {
+      "name": "Tory K.",
+      "taskIds": []
+     },
+     {
+      "name": "Sam P.",
+      "taskIds": []
+     }
+    ],
+    "other": [],
+    "meetings": [],
+    "recap": {
+     "found": true,
+     "subject": "Meeting recap — Tuesday, Nov 3",
+     "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJgjqRcAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    "waiting": [
+     {
+      "who": "Procurement",
+      "what": "SteelTek French Cleat MAP and Big Box pricing (Lauren updated the list and online prices)",
+      "since": "2026-10-30",
+      "mail": {
+       "uri": "mail:///messages/AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU_Hcc2AAAAAAEMAABCgVnAZCBUTa752dU_Hcc2AAJT6hIsAAA%3D",
+       "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJT6hIsAAA%3D&exvsurl=1&viewmodel=ReadMessageItem",
+       "subject": "RE: SteelTek Shutter French Cleat Bracket Kit Clarity",
+       "from": "Ethan Sellek",
+       "on": "2026-10-28T17:00:16Z"
+      }
+     },
+     {
+      "who": "Procurement",
+      "what": "Your Oct 29 requests still open: kick plate, NOVA pack size, test items, Signature Urethane descriptions",
+      "since": "2026-10-30",
+      "mail": {
+       "uri": "mail:///messages/AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU_Hcc2AAAAAAEJAABCgVnAZCBUTa752dU_Hcc2AAJT5gj3AAA%3D",
+       "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEJAABCgVnAZCBUTa752dU%2BHcc2AAJT5gj3AAA%3D&exvsurl=1&viewmodel=ReadMessageItem",
+       "subject": "Add \"Faux Metal\" to the beam strap titles (BugHerd #4549)",
+       "from": "Brody Simpson",
+       "on": "2026-10-29T16:16:19Z"
+      }
+     },
+     {
+      "who": "Cody M. (Procurement)",
+      "what": "Heritage beam stain item records: Cody says done by EOD today",
+      "since": "2026-11-04",
+      "mail": {
+       "uri": "mail:///messages/AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU_Hcc2AAAAAAEMAABCgVnAZCBUTa752dU_Hcc2AAJgjqRGAAA%3D",
+       "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJgjqRGAAA%3D&exvsurl=1&viewmodel=ReadMessageItem",
+       "subject": "RE: New Heritage Beam Stains - Item Creation",
+       "from": "Ethan Sellek",
+       "on": "2026-11-03T19:41:12Z"
+      }
+     }
+    ],
+    "fyi": [
+     "Closed since last digest: Ethan's Q3 TL review answers (you sent them Nov 3); Adobe subscription note (you replied \"I'm good\").",
+     "Ethan says there's flexibility on EnduraCraft PVC column wrap pricing and wants to talk with Andrew this week.",
+     "Alpha is OK to pay the bills with the 17% increase; Lauren is finding out why some were 26%.",
+     "Barron Design & AZ Faux: Cody needs the acoustic wall panel structure to finish; Hayden was asked to do it.",
+     "AFCO Quickship: no separate Ecom and FAM lead times, Andrew is sending it to Procurement. Sam suggests a 3 to 5 day buffer for Large Accounts.",
+     "Porch Post Kits: no process for new item groups, so reuse the kit template. Selina created Two Piece Porch Posts.",
+     "Algolia sent bot-traffic rate-limit options. Daniel: no need to email real wood beam customers. Lauren out sick again. Ryan out Nov 4 to 6. Ethan booked the Creative Lounge Nov 10, 11 to 12.",
+     "Still on the triage's carried list: BugHerd #8641 \"Shaft Width\", and the Americraft/Heritage descriptions wait (you closed it Nov 3, so it stays closed here)."
+    ]
+   },
+   "pulse": {
+    "found": true,
+    "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJgjqRnAAA%3D&exvsurl=1&viewmodel=ReadMessageItem",
+    "label": "Tue vs last Tue. Proxy from order confirmations; NetSuite is the source of truth.",
+    "orders": 376,
+    "dollars": 210547,
+    "ordersPrev": 433,
+    "dollarsPrev": 248190,
+    "ordersPct": -13,
+    "dollarsPct": -15,
+    "sites": [
+     {
+      "name": "AD",
+      "orders": 298,
+      "dollars": 168722.35,
+      "pct": -24
+     },
+     {
+      "name": "Ekena",
+      "orders": 41,
+      "dollars": 29590.8,
+      "pct": 135
+     },
+     {
+      "name": "Millwork.com",
+      "orders": 33,
+      "dollars": 10810.87,
+      "pct": 49
+     },
+     {
+      "name": "HomeOver",
+      "orders": 3,
+      "dollars": 1408.65,
+      "pct": -74
+     },
+     {
+      "name": "FauxBeams",
+      "orders": 1,
+      "dollars": 14.11,
+      "note": "$0 last wk"
+     }
+    ],
+    "flags": [
+     "Largest: Ekena 2101337832, $13,815: Timberthane hand hewn U-beams and L-beams in Espresso (big quantity).",
+     "AD 1757798, $11,483: 8 Classic Series Bahama shutters 99\"x18\" in Federal Brown.",
+     "AD 1757708, $4,978: Endura-Stone and EnduraCraft PVC columns plus install kits and adhesive.",
+     "3 confirmations for older order numbers, $2,160 (edits or re-sends; may double count)."
+    ],
+    "week": {
+     "found": true,
+     "label": "Week to date",
+     "start": "2026-11-02",
+     "end": "2026-11-03",
+     "orders": 809,
+     "dollars": 509526.17,
+     "cmpOrders": 843,
+     "cmpDollars": 483568.19,
+     "days": "2/2",
+     "partial": false,
+     "sites": [
+      {
+       "name": "AD",
+       "orders": 643,
+       "dollars": 411937.03
+      },
+      {
+       "name": "Millwork.com",
+       "orders": 61,
+       "dollars": 26525.43
+      },
+      {
+       "name": "Ekena",
+       "orders": 97,
+       "dollars": 68088.92
+      },
+      {
+       "name": "HomeOver",
+       "orders": 6,
+       "dollars": 2817.08
+      },
+      {
+       "name": "FauxBeams",
+       "orders": 2,
+       "dollars": 157.71
       },
       {
        "name": "Other",
