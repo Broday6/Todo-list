@@ -9804,9 +9804,7 @@
      "title": "Send the procurement name-fix email",
      "sub": "10 min. From your G5 plan, due yesterday. The draft \"Description Fixes: Beam Samples and Rustic Wood Corbels\" is in your Outlook Drafts; Procurement has the other description fixes open too.",
      "done": false,
-     "taskIds": [
-      "g5q1-02"
-     ],
+     "taskIds": [],
      "top": true
     },
     {
@@ -9816,9 +9814,7 @@
      "title": "Walk your pod's scan room and back room area",
      "sub": "30 min. From the triage: Ethan wants each pod's area organized before the Fri 10:00 cleanup.",
      "done": false,
-     "taskIds": [
-      "in1104-4"
-     ]
+     "taskIds": []
     },
     {
      "id": "n04-13",
@@ -9827,10 +9823,7 @@
      "title": "Look over the Ekena and Miva fix previews",
      "sub": "20 min. From the Nov 2 alerts: 68 Ekena and 71 Miva fixes are built and waiting. Nothing is imported until you OK the preview; skip any you don't want.",
      "done": false,
-     "taskIds": [
-      "al-site_ekena-20261102",
-      "al-site_miva-20261102"
-     ]
+     "taskIds": []
     },
     {
      "id": "n04-18",
@@ -9988,15 +9981,12 @@
      {
       "name": "Daniel M.",
       "taskIds": [
-       "in1104-3",
-       "in1103-1",
        "in1020-3"
       ]
      },
      {
       "name": "Ethan S.",
       "taskIds": [
-       "in1104-4",
        "in1103-2",
        "in1020-4"
       ]
