@@ -20,3 +20,30 @@ NEEDS_PERMISSION; `resume` = {kind "mc-import", branch, manifest, file, recordTy
 "I did it myself" on that card is saved on the board; the PC worker's Job 0 imports that one file on a Go (the sha256 must
 match; a Go lifts the 5,000-row limit for that file only, never past 25,000), then sets the file's status here and closes the
 record. Contract: Notion "Routine rules", section "Actions".
+
+## Full export when the report is capped (Nov 20, 2026)
+
+Brody: "Since it is maxed out you have to use the link that is within that email instead it loads a netsuite
+search that has ALL the skus not just the 10k limit." When the email says "[TRUNCATED - LIMIT REACHED]" (or the
+file has exactly 10,000 rows), the cloud routine adds `"fullExport": {"status": "ready", "url": <the email's View
+Results link>}` to that day's manifest. The link is saved search 14260 in results view
+(https://362135.app.netsuite.com/app/common/search/searchresults.nl?searchid=14260). The PC worker, in Job A:
+
+1. Opens the url in the PCI Chrome profile (Chrome lock; Brody is signed in; retry once on a login page, never type
+   a password). Results view only: never Edit or Save the search.
+2. Exports the results as CSV (the export icon on the results page) and saves it as
+   `searchresults-full-YYYY-MM-DD.csv`. Checks the header is
+   `Internal ID,Name,Description,Type,Product Categories,Marketing Product Categories` and the row count is over 10,000.
+3. Runs `python3 marketing-category/split_by_type.py --max-rows 25000 <file> <tmp dir>` (NetSuite takes at most
+   25,000 rows per import file).
+4. Copies each output to `marketing-category/imports/YYYY-MM-DD full <file name>.csv`, writes
+   `marketing-category/imports/YYYY-MM-DD-full.json` (`status` "ready", files with rows and sha256, note "full export
+   of saved search 14260"), and sets `fullExport` in the day's manifest to `{"status": "done", "rows", "at"}`.
+   A non-empty Needs review.csv is committed too, as `YYYY-MM-DD full Needs review.csv`, for the cloud routine.
+5. Marks every earlier held or ready file whose Internal IDs are all in the full export as
+   `"result": {"status": "superseded", "by": "YYYY-MM-DD-full.json"}`, and its Ultron card superseded, so Brody
+   answers one card per full-export file instead of one per daily slice.
+6. Commits and pushes to claude/admiring-mayer-9myyi8, then imports the -full manifest like any other. A file over
+   the 5,000-row standing limit gets one OVER_LIMIT card for Brody's Go (Routine rules, Actions).
+
+A newer full export supersedes an older one that is still waiting.

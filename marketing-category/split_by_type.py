@@ -3,8 +3,10 @@ report into one import-ready CSV per item Type, with Marketing Product
 Categories filled in from the item's Product Category.
 
     python3 split_by_type.py searchresults.csv out/2026-10-19
+    python3 split_by_type.py --max-rows 25000 full-export.csv out/2026-11-20-full
 
 Writes one "<Type>.csv" per item Type (e.g. "Assembly-Bill of Materials.csv")
+(or "<Type> part N of M.csv" pieces of at most --max-rows rows each)
 holding only rows whose category could be filled, plus "Needs review.csv"
 for rows whose Product Category isn't in category_map.json, and prints a
 summary. NetSuite's CSV import takes one record type per file, which is why
@@ -124,7 +126,7 @@ def safe_name(item_type):
     return re.sub(r'[\\/:*?"<>|]+', "-", item_type).strip() or "No Type"
 
 
-def main(src, out_dir):
+def main(src, out_dir, max_rows=0):
     mapping = json.load(open(os.path.join(HERE, "category_map.json")))
     marketing_values = set(mapping.values())
     fields, rows = read_rows(src)
@@ -164,14 +166,26 @@ def main(src, out_dir):
             w.writeheader()
             w.writerows(data)
 
+    written = []
     for t, data in sorted(by_type.items()):
-        write(f"{safe_name(t)}.csv", sorted(data, key=lambda r: r[name_col]))
+        data = sorted(data, key=lambda r: r[name_col])
+        # NetSuite's CSV import takes at most 25,000 rows per file, so a full
+        # saved-search export is split into numbered parts with --max-rows.
+        if max_rows and len(data) > max_rows:
+            parts = [data[i:i + max_rows] for i in range(0, len(data), max_rows)]
+            for n, part in enumerate(parts, 1):
+                fname = f"{safe_name(t)} part {n} of {len(parts)}.csv"
+                write(fname, part)
+                written.append((fname, len(part)))
+        else:
+            write(f"{safe_name(t)}.csv", data)
+            written.append((f"{safe_name(t)}.csv", len(data)))
     if review:
         write("Needs review.csv", review)
 
     print(f"{len(rows)} rows in {os.path.basename(src)}")
-    for t, data in sorted(by_type.items()):
-        print(f"  {safe_name(t)}.csv: {len(data)}")
+    for fname, n in written:
+        print(f"  {fname}: {n}")
     for c, n in cats.most_common():
         print(f"  category {c}: {n}")
     for (pc, mc), n in sorted(inferred.items()):
@@ -181,6 +195,12 @@ def main(src, out_dir):
 
 
 if __name__ == "__main__":
-    if len(sys.argv) != 3:
+    args = sys.argv[1:]
+    max_rows = 0
+    if "--max-rows" in args:
+        i = args.index("--max-rows")
+        max_rows = int(args[i + 1])
+        del args[i:i + 2]
+    if len(args) != 2:
         sys.exit(__doc__)
-    main(sys.argv[1], sys.argv[2])
+    main(args[0], args[1], max_rows)
