@@ -1,6 +1,6 @@
 {
  "note": "Days archived from Brody's board. Each entry is the day exactly as it was on the board.",
- "cut": "2026-11-05",
+ "cut": "2026-11-06",
  "days": {
   "2026-09-02": {
    "blocks": [
@@ -10153,6 +10153,705 @@
      ]
     }
    }
+  },
+  "2026-11-05": {
+   "blocks": [
+    {
+     "id": "n05-1",
+     "start": "08:00",
+     "end": "08:20",
+     "title": "Check and respond to emails",
+     "sub": "Daily · 20 min. 11 to-dos from key people (most already on your list), 5 other actions, 2 waiting. No drafts written. Work them from the Inbox section above.",
+     "done": true,
+     "links": [
+      {
+       "label": "Email: Inbox triage, Nov 5",
+       "href": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJiBJdrAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+      }
+     ]
+    },
+    {
+     "id": "n05-2",
+     "start": "08:20",
+     "end": "08:40",
+     "title": "Review daily metrics & KPIs",
+     "sub": "Daily · 20 min. Wed $269,668, +27% vs last Wed on flat orders. Ekena +38%, HomeOver -68%. Week to date $779K, +12%. Details in the Sales section above.",
+     "done": true
+    },
+    {
+     "id": "n05-3",
+     "start": "08:40",
+     "end": "09:00",
+     "title": "Team check-in",
+     "sub": "Daily · 20 min. Ryan is out through Fri (his custom quoting sheet covers quotes). Remind the pod: scan room cleanup is tomorrow at 10:00. Andrew's EnduraCraft meeting is at 10:00.",
+     "done": true
+    },
+    {
+     "id": "n05-4",
+     "start": "09:00",
+     "end": "09:30",
+     "title": "Bug Herds — complete 5 (Rock: under 10)",
+     "sub": "Rock time · 30 min. 11 open on your list (0 new, 0 with new comments since Wednesday). Work them on the BugHerd tab. Image uploads are still on hold (server move). Only you decide what goes to Web Dev.",
+     "done": true
+    },
+    {
+     "id": "n05-5",
+     "start": "09:30",
+     "end": "09:40",
+     "title": "Send the procurement name-fix email",
+     "sub": "10 min. From your G5 plan, due Nov 3. The draft \"Description Fixes: Beam Samples and Rustic Wood Corbels\" is in your Outlook Drafts. Open it, check it, send it.",
+     "done": true,
+     "taskIds": [],
+     "top": true,
+     "links": [
+      {
+       "label": "Draft: Description Fixes: Beam Samples and Rustic Wood Corbels",
+       "href": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEPAABCgVnAZCBUTa752dU%2BHcc2AAJT5AXDAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+      },
+      {
+       "label": "Email: Group 5 Q1 to-dos",
+       "href": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEPAABCgVnAZCBUTa752dU%2BHcc2AAJd6M7mAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+      }
+     ]
+    },
+    {
+     "id": "n05-6",
+     "start": "09:40",
+     "end": "09:50",
+     "title": "Send Ethan the site search pricing review note",
+     "sub": "10 min. Due today. Ethan sets up the site search pricing review.",
+     "done": true,
+     "taskIds": [],
+     "links": [
+      {
+       "label": "Email: Site search pricing review (sent 10:07)",
+       "href": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEJAABCgVnAZCBUTa752dU%2BHcc2AAJiBI%2BbAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+      }
+     ]
+    },
+    {
+     "id": "n05-7",
+     "start": "09:50",
+     "end": "10:20",
+     "title": "Walk your pod's scan room and back room area",
+     "sub": "30 min. Ethan wants each pod's area organized before tomorrow's 10:00 cleanup.",
+     "done": true,
+     "taskIds": []
+    },
+    {
+     "id": "n05-8",
+     "start": "10:20",
+     "end": "10:40",
+     "title": "Look over the Ekena and Miva fix previews",
+     "sub": "20 min. From the Nov 2 alerts: 68 Ekena and 71 Miva fixes are built and waiting. Nothing is imported until you OK the preview; skip any you don't want.",
+     "done": true,
+     "taskIds": []
+    },
+    {
+     "id": "n05-9",
+     "start": "10:40",
+     "end": "11:00",
+     "title": "Prep for Jaden Phung's interview",
+     "sub": "20 min. In person at 1:00 with Daniel, Alejandra, Andrew and Ethan. Reread Jaden's application and pick your questions.",
+     "done": true,
+     "top": true,
+     "links": [
+      {
+       "label": "Email: candidate recap and priorities",
+       "href": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJT6hHUAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+      },
+      {
+       "label": "Email: Jaden Phung in-person interview",
+       "href": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJT445CAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+      }
+     ]
+    },
+    {
+     "id": "n05-10",
+     "start": "11:00",
+     "end": "12:00",
+     "title": "E-Commerce L-10",
+     "sub": "Creative Lounge. Power Hour is canceled today.",
+     "done": true,
+     "meeting": true
+    },
+    {
+     "id": "n05-11",
+     "start": "12:30",
+     "end": "12:50",
+     "title": "Cases — complete 10",
+     "sub": "Daily · 20 min. 1 open from search 16559, oldest first: 0980079. Details on the Cases tab.",
+     "done": true
+    },
+    {
+     "id": "n05-12",
+     "start": "13:00",
+     "end": "14:00",
+     "title": "Jaden Phung in-person interview",
+     "sub": "Creative Lounge, with Daniel, Alejandra Hernandez, Andrew and Ethan.",
+     "done": true,
+     "meeting": true
+    },
+    {
+     "id": "n05-13",
+     "start": "14:00",
+     "end": "14:20",
+     "title": "Strety",
+     "sub": "Daily · 20 min.",
+     "done": true
+    },
+    {
+     "id": "n05-14",
+     "start": "14:20",
+     "end": "14:50",
+     "title": "Find people to interview",
+     "sub": "Daily · 30 min. Answer Daniel on Victoria Speer and Katherine Cancino (both Indeed). Nothing waiting in Handshake; 6 new E-Commerce applicants since Monday. Maryssa's phone interview is tomorrow at 4:00. Your PC's Handshake check hasn't run since Oct 29.",
+     "done": true,
+     "taskIds": [
+      "t7fp22",
+      "w1"
+     ],
+     "top": true
+    },
+    {
+     "id": "n05-15",
+     "start": "14:50",
+     "end": "15:10",
+     "title": "Ethan's asks: tools list and Andrew's Claude extension",
+     "sub": "20 min. From the triage. Send Ethan the most impactful tools down and the high-priority items (Claude can rank your running list and draft it). Help Andrew Bachman get the Claude Google extension.",
+     "done": true,
+     "taskIds": []
+    },
+    {
+     "id": "n05-16",
+     "start": "15:10",
+     "end": "15:30",
+     "title": "Connect with Matthew Durham on the Barron icons",
+     "sub": "20 min. From the triage: he wants to connect today.",
+     "done": true,
+     "taskIds": []
+    },
+    {
+     "id": "n05-17",
+     "start": "15:30",
+     "end": "16:00",
+     "title": "Merchant Center: Not approved and the Athos feed pause",
+     "sub": "30 min. Find why Not approved grew 3.7K this week (due tomorrow; see the A/B tests tab). Then check why Athos paused ekenamillwork.com indexing after the item count dropped over 25%.",
+     "done": false,
+     "taskIds": [
+      "mcf-02"
+     ],
+     "links": [
+      {
+       "label": "Email: Athos Commerce - Indexing Error",
+       "href": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJgjqR9AAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+      }
+     ]
+    },
+    {
+     "id": "n05-18",
+     "start": "16:00",
+     "end": "16:20",
+     "title": "Follow up with Andrew's ads",
+     "sub": "Daily · 20 min. G2: no true portal numbers today (portal signed out; Monday's read was 9.90% L30 spend and −5.4% growth). Andrew applied Fire Vent on Oct 29; his other proposed cuts (Fiberglass, GVV, Square Columns, Columns - PVC, Ventilation) aren't applied yet. Columns - Square is up 182% on 7-day spend, and FRP Columns - Shopping went dark Nov 2 (new card). Details on the Ads tab.",
+     "done": false
+    },
+    {
+     "id": "n05-19",
+     "start": "16:20",
+     "end": "16:40",
+     "title": "Start the 7 Q1 decisions on the G5 plan",
+     "sub": "20 min. Due tomorrow, along with the Miva one-product category test and the Faux Metal Beams page fix.",
+     "done": false,
+     "taskIds": [
+      "g5q1-01"
+     ]
+    },
+    {
+     "id": "n05-20",
+     "start": "16:40",
+     "end": "17:00",
+     "title": "Wrap",
+     "sub": "Daily · 20 min. Log what got done. Tomorrow gets built from this. If there's time: the Ceiling & Wall Motif emails (Claude can do this), Andrew's CCKETS parent, item group list prices (search 11921), the Default Variant fixes and kit-location rows, try Fable video generation. Tomorrow: Scan Room & Back Room Cleanup 10:00, AI Training 11:00, Team Leads 2:00 (tentative), Maryssa Sayavong phone interview 4:00. Daniel wants the Miva domains answer by tomorrow.",
+     "done": true
+    }
+   ],
+   "log": [
+    {
+     "t": "07:55",
+     "text": "7:12 run (ran late): Teams nothing new. Plan top-up: nothing to add (no 1:1s today, no promotion starting this week, no A/B check due; abt-01 is Nov 11). Trim: archived Oct 21.",
+     "kind": "claude",
+     "by": "Claude"
+    },
+    {
+     "t": "08:56",
+     "text": "Cases & BugHerd check (first run, new routine): 1 pricing (already your task), 4 fix alerts, 3 FYI; BugHerd 0 new, 0 comments, 0 moves. Check-in: nothing queued; 3 alert tasks marked no reply needed; no new meetings or Handshake.",
+     "kind": "claude",
+     "by": "Claude"
+    },
+    {
+     "t": "09:06",
+     "text": "Cases fixed: 6 open case tasks from the search 16559 \"New Case Created\" alerts (4 today, 2 Wed). Live chat got a Skills side tab (34 skills).",
+     "kind": "claude",
+     "by": "Claude"
+    },
+    {
+     "t": "09:01",
+     "text": "Finished: Check and respond to emails",
+     "kind": "auto",
+     "ref": "n05-1"
+    },
+    {
+     "t": "09:02",
+     "text": "Finished: Review daily metrics & KPIs",
+     "kind": "auto",
+     "ref": "n05-2"
+    },
+    {
+     "t": "09:02",
+     "text": "Finished: Team check-in",
+     "kind": "auto",
+     "ref": "n05-3"
+    },
+    {
+     "t": "09:16",
+     "text": "9:12 run: Teams 1 FYI (Andrew and Hayden on variant swatches). Live chat: answered your cases ask; all 6 cases now show SO and PO numbers and the next step.",
+     "kind": "claude",
+     "by": "Claude"
+    },
+    {
+     "t": "09:58",
+     "text": "Done: Case 0979807: Drawing Clarification/Revision · CW Ohio Inc.",
+     "kind": "auto",
+     "ref": "cs0979807"
+    },
+    {
+     "t": "09:58",
+     "text": "Done: Case 0979748: Drawing Clarification/Revision · Alpha Systems LLC",
+     "kind": "auto",
+     "ref": "cs0979748"
+    },
+    {
+     "t": "09:58",
+     "text": "Done: Case 0979931: Drawing Clarification/Revision · AFCO, Industries",
+     "kind": "auto",
+     "ref": "cs0979931"
+    },
+    {
+     "t": "09:58",
+     "text": "Done: Case 0979914: Drawing Clarification/Revision · Alpha Systems LLC",
+     "kind": "auto",
+     "ref": "cs0979914"
+    },
+    {
+     "t": "09:58",
+     "text": "Done: Case 0979913: Drawing Clarification/Revision · Alpha Systems LLC",
+     "kind": "auto",
+     "ref": "cs0979913"
+    },
+    {
+     "t": "09:58",
+     "text": "Done: Case 0979912: Drawing Clarification/Revision · CW Ohio Inc.",
+     "kind": "auto",
+     "ref": "cs0979912"
+    },
+    {
+     "t": "10:03",
+     "text": "Finished: Send the procurement name-fix email",
+     "kind": "auto",
+     "ref": "n05-5"
+    },
+    {
+     "t": "10:07",
+     "text": "Finished: Send Ethan the site search pricing review note",
+     "kind": "auto",
+     "ref": "n05-6"
+    },
+    {
+     "t": "10:09",
+     "text": "Finished: Walk your pod's scan room and back room area",
+     "kind": "auto",
+     "ref": "n05-7"
+    },
+    {
+     "t": "10:18",
+     "text": "10:12 run: Teams 2 asks (Liam Daniels wants your board shared to his Claude; Noah Kratz asks who handles onlays on the 3D team), 4 FYI (Lauren's portal still down for today's meeting; Kody coming by on MLDW01X02BCPP; Garrett shared a sheet; Matthew's Barron icons are on the T drive).",
+     "kind": "claude",
+     "by": "Claude"
+    },
+    {
+     "t": "10:24",
+     "text": "Done: I need another task for tomorrow to go over search terms.",
+     "kind": "auto",
+     "ref": "t19guv"
+    },
+    {
+     "t": "10:24",
+     "text": "Done: BugHerd #8913, #7503, #5039, #8863, #6937: not worked yet",
+     "kind": "auto",
+     "ref": "cl-sg1023-4"
+    },
+    {
+     "t": "10:24",
+     "text": "Done: Review and delegate the 3 new pending cases in NetSuite",
+     "kind": "auto",
+     "ref": "in1026-3"
+    },
+    {
+     "t": "10:24",
+     "text": "Done: Ceiling & Wall Motif emails: get Daniel to send them",
+     "kind": "auto",
+     "ref": "ts8f3qk"
+    },
+    {
+     "t": "10:24",
+     "text": "Done: Send Ryan the 341 open spec conflicts in Notion",
+     "kind": "auto",
+     "ref": "cn1029-8"
+    },
+    {
+     "t": "10:24",
+     "text": "Done: Fix the Jacobean / Espresso image mix-up on AD",
+     "kind": "auto",
+     "ref": "cl1022-4"
+    },
+    {
+     "t": "10:24",
+     "text": "Done: Interviews complete",
+     "kind": "auto",
+     "ref": "t10"
+    },
+    {
+     "t": "10:40",
+     "text": "Added to every task: an About this task box (where it came from, Teams, plan, related tasks, source links), Explain this task (instant) and Dig deeper (searches email, Teams and Notion, answer lands in the task thread). Collapsed rows get a ? button.",
+     "kind": "claude",
+     "by": "Claude"
+    },
+    {
+     "t": "10:50",
+     "text": "BugHerd and Claude-tab answer boxes now have Send to Claude: it saves your answer and hands it to Claude right away instead of waiting for the next check-in.",
+     "kind": "claude",
+     "by": "Claude"
+    },
+    {
+     "t": "10:58",
+     "text": "Plan blocks now show their email and tool links (envelope = email, arrow = tool, plus board tabs) and a More info button with Explain this and Dig deeper.",
+     "kind": "claude",
+     "by": "Claude"
+    },
+    {
+     "t": "11:20",
+     "text": "New: Strety tab; ⚡ Have Claude do it now on every task and plan block; Draft a reply and Claude handles it on Teams messages; Claude drafts the reply on emails; a live progress bar on everything you send to Claude; a louder Needs you panel (answers and drafts to send first).",
+     "kind": "claude",
+     "by": "Claude"
+    },
+    {
+     "t": "11:16",
+     "text": "11:12 run: Teams 1 ask (Angelica Gonzales: lunch next week to talk through her e-commerce launch, any day but Tuesday; you said you'd send a date early next week). Liam's share request looks handled.",
+     "kind": "claude",
+     "by": "Claude"
+    },
+    {
+     "t": "12:09",
+     "text": "Done: #8705 SKPVCSHUCOLORS: color ring",
+     "kind": "auto",
+     "ref": "bh-8705"
+    },
+    {
+     "t": "12:13",
+     "text": "Let go: #8017 E-Commerce Distribution mismatches (Millwork.com, None but live)",
+     "kind": "auto",
+     "ref": "bh-8017"
+    },
+    {
+     "t": "12:14",
+     "text": "Let go: #8260 Ekena stain grade copy is inconsistent",
+     "kind": "auto",
+     "ref": "bh-8260"
+    },
+    {
+     "t": "12:25",
+     "text": "Done on a BugHerd ticket now queues it to close in BugHerd. A scheduled task on your PC closes it there with Claude in Chrome (set it up once in Claude desktop > Scheduled).",
+     "kind": "claude",
+     "by": "Claude"
+    },
+    {
+     "t": "12:40",
+     "text": "Teams messages now have Send in Teams: draft a reply, tap Send twice, and it goes out as you. Claude never posts on its own.",
+     "kind": "claude",
+     "by": "Claude"
+    },
+    {
+     "t": "12:30",
+     "text": "Cases & BugHerd check: 1 new case (0980079, CW Ohio, a Home Depot special order, so it goes to Kody) (1 open), 1 pricing, 0 new fix alerts, 0 FYI; BugHerd 0 new, 0 comments, 0 moves.",
+     "kind": "claude",
+     "by": "Claude"
+    },
+    {
+     "t": "12:34",
+     "text": "Finished: Bug Herds — complete 5 (Rock: under 10)",
+     "kind": "auto",
+     "ref": "n05-4"
+    },
+    {
+     "t": "12:48",
+     "text": "Done: #5959 A09-P06: thickness says 1\", should be 1/16\"; polished brass discontinued",
+     "kind": "auto",
+     "ref": "bh-5959"
+    },
+    {
+     "t": "13:18",
+     "text": "1:12 run: Teams 2 asks (Angelica Gonzales on what the curved beam product images should look like and how many; Alejandra asked if today's interview is still on, looks handled), 1 FYI (Andrew: interview had no Teams link). Refresh: automations synced (old Cases & alerts routine now paused, names updated), Team tab updated for all 5 leads, no new promotions.",
+     "kind": "claude",
+     "by": "Claude"
+    },
+    {
+     "t": "13:57",
+     "text": "Finished: Prep for Jaden Phung's interview",
+     "kind": "auto",
+     "ref": "n05-9"
+    },
+    {
+     "t": "13:57",
+     "text": "Finished: Wrap",
+     "kind": "auto",
+     "ref": "n05-20"
+    },
+    {
+     "t": "13:58",
+     "text": "Finished: Connect with Matthew Durham on the Barron icons",
+     "kind": "auto",
+     "ref": "n05-16"
+    },
+    {
+     "t": "13:58",
+     "text": "Finished: Ethan's asks: tools list and Andrew's Claude extension",
+     "kind": "auto",
+     "ref": "n05-15"
+    },
+    {
+     "t": "13:58",
+     "text": "Finished: Find people to interview",
+     "kind": "auto",
+     "ref": "n05-14"
+    },
+    {
+     "t": "13:58",
+     "text": "Finished: Strety",
+     "kind": "auto",
+     "ref": "n05-13"
+    },
+    {
+     "t": "13:58",
+     "text": "Finished: Cases — complete 10",
+     "kind": "auto",
+     "ref": "n05-11"
+    },
+    {
+     "t": "13:58",
+     "text": "Finished: Look over the Ekena and Miva fix previews",
+     "kind": "auto",
+     "ref": "n05-8"
+    },
+    {
+     "t": "14:15",
+     "text": "Hourly 2:12: Teams 1 new (Daniel FYI on E-Com applicants, no asks). Check-in: 1 new E-Com applicant on Handshake, 2 emails marked no reply needed, no new meetings.",
+     "kind": "claude",
+     "by": "Claude"
+    },
+    {
+     "t": "14:16",
+     "text": "Let go: Claude promised: I",
+     "kind": "auto",
+     "ref": "cp-1793909682936"
+    }
+   ],
+   "inbox": {
+    "found": true,
+    "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJiBJdrAAA%3D&exvsurl=1&viewmodel=ReadMessageItem",
+    "subject": "Inbox triage — Thursday, Nov 5",
+    "counts": {
+     "people": 11,
+     "other": 5,
+     "waiting": 2,
+     "fyi": 16,
+     "low": 31,
+     "drafts": 0
+    },
+    "people": [
+     {
+      "name": "Daniel M.",
+      "taskIds": []
+     },
+     {
+      "name": "Ethan S.",
+      "taskIds": [
+       "in1103-2"
+      ]
+     },
+     {
+      "name": "Rob S.",
+      "taskIds": []
+     },
+     {
+      "name": "Tory K.",
+      "taskIds": []
+     },
+     {
+      "name": "Sam P.",
+      "taskIds": []
+     }
+    ],
+    "other": [],
+    "meetings": [],
+    "recap": {
+     "found": true,
+     "subject": "Meeting recap — Wednesday, Nov 4",
+     "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJgjqSTAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    "waiting": [
+     {
+      "who": "Procurement",
+      "what": "SteelTek French Cleat MAP and Big Box pricing (Lauren updated the list and online prices)",
+      "since": "2026-10-30",
+      "mail": {
+       "uri": "mail:///messages/AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU_Hcc2AAAAAAEMAABCgVnAZCBUTa752dU_Hcc2AAJT6hIsAAA%3D",
+       "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJT6hIsAAA%3D&exvsurl=1&viewmodel=ReadMessageItem",
+       "subject": "RE: SteelTek Shutter French Cleat Bracket Kit Clarity",
+       "from": "Ethan Sellek",
+       "on": "2026-10-28T17:00:16Z"
+      }
+     },
+     {
+      "who": "Procurement",
+      "what": "Your Oct 29 requests still open: kick plate, NOVA pack size, test items, Signature Urethane descriptions",
+      "since": "2026-10-30",
+      "mail": {
+       "uri": "mail:///messages/AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU_Hcc2AAAAAAEJAABCgVnAZCBUTa752dU_Hcc2AAJT5gj3AAA%3D",
+       "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEJAABCgVnAZCBUTa752dU%2BHcc2AAJT5gj3AAA%3D&exvsurl=1&viewmodel=ReadMessageItem",
+       "subject": "Add \"Faux Metal\" to the beam strap titles (BugHerd #4549)",
+       "from": "Brody Simpson",
+       "on": "2026-10-29T16:16:19Z"
+      }
+     },
+     {
+      "who": "Daniel M.",
+      "what": "A time for the Custom Quoting chat",
+      "since": "2026-11-04",
+      "mail": {
+       "uri": "mail:///messages/AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU_Hcc2AAAAAAEMAABCgVnAZCBUTa752dU_Hcc2AAJiBJdrAAA%3D",
+       "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJiBJdrAAA%3D&exvsurl=1&viewmodel=ReadMessageItem",
+       "subject": "Inbox triage — Thursday, Nov 5",
+       "from": "Brody Simpson",
+       "on": "2026-11-05T12:44:37Z"
+      }
+     }
+    ],
+    "fyi": [
+     "Closed since last digest: the Custom Quoting chat moved to waiting on Daniel; Heritage stains are queued in NetSuite, so Cody's waiting entry is dropped.",
+     "Daniel wants the answer on which domains move to Miva by Fri Nov 6. You ticked that task done Nov 4, so it stays closed here.",
+     "The triage still lists items you already closed: Hayden's Barron naming and SKU sheet, the Custom Field Variant approach, Tory's reviews and images, Ryan's MLDW01x04CCPI depth, Justin's MLDW01X05WM163PP width, BugHerd #8641. They stay closed.",
+     "Beam sales hit a record $202K on Nov 4.",
+     "Braintree move announced. Google Merchant images are going to 1200x1200.",
+     "Andrew's EnduraCraft meeting is at 10:00. Ryan's custom quote end caps note. No TN letter needed for marketing roles. FAM lead times were updated.",
+     "Andrew set up a weekly sync. Daniel forwarded another applicant, Laura Storni.",
+     "A Google Drive access request came from an unknown outside account. Don't approve it unless you know who it is.",
+     "Skipped: Brian Thompson's pending cases alert (alert cases never go on the board)."
+    ]
+   },
+   "pulse": {
+    "found": true,
+    "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJiBJdqAAA%3D&exvsurl=1&viewmodel=ReadMessageItem",
+    "label": "Wed vs last Wed. Proxy from order confirmations; NetSuite is the source of truth.",
+    "orders": 382,
+    "dollars": 269668,
+    "ordersPrev": 381,
+    "dollarsPrev": 212621,
+    "ordersPct": 0,
+    "dollarsPct": 27,
+    "sites": [
+     {
+      "name": "AD",
+      "orders": 300,
+      "dollars": 208532.19,
+      "pct": 20
+     },
+     {
+      "name": "Ekena",
+      "orders": 54,
+      "dollars": 44572.09,
+      "pct": 38
+     },
+     {
+      "name": "Millwork.com",
+      "orders": 21,
+      "dollars": 6298.12,
+      "pct": -2
+     },
+     {
+      "name": "HomeOver",
+      "orders": 4,
+      "dollars": 156.5,
+      "pct": -68
+     },
+     {
+      "name": "FauxBeams",
+      "orders": 3,
+      "dollars": 10108.66,
+      "note": "$0 last wk"
+     }
+    ],
+    "flags": [
+     "Largest: AD 1758108, $24,964: Timberthane U-beams in Smoke.",
+     "Ekena 2101337936, $21,456.",
+     "FauxBeams 4109995, $10,054: rough sawn planks.",
+     "3 $0 sample orders. 1 confirmation for an older Ekena order (2101336747, $594), which may double count."
+    ],
+    "week": {
+     "found": true,
+     "label": "Week to date",
+     "start": "2026-11-02",
+     "end": "2026-11-04",
+     "orders": 1191,
+     "dollars": 779193.73,
+     "cmpOrders": 1224,
+     "cmpDollars": 696189,
+     "days": "3/3",
+     "partial": false,
+     "sites": [
+      {
+       "name": "AD",
+       "orders": 943,
+       "dollars": 620469.22
+      },
+      {
+       "name": "Millwork.com",
+       "orders": 82,
+       "dollars": 32823.55
+      },
+      {
+       "name": "Ekena",
+       "orders": 151,
+       "dollars": 112661.01
+      },
+      {
+       "name": "HomeOver",
+       "orders": 10,
+       "dollars": 2973.58
+      },
+      {
+       "name": "FauxBeams",
+       "orders": 5,
+       "dollars": 10266.37
+      },
+      {
+       "name": "Other",
+       "orders": 0,
+       "dollars": 0
+      }
+     ]
+    }
+   }
   }
  },
  "ops": {
@@ -12264,6 +12963,112 @@
      "what": "FAM's average lead time by collection, orders shipped in the past 7 days.",
      "on": "2026-11-15T15:45:42Z",
      "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJovq%2FRAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    }
+   ]
+  },
+  "2026-11-17": {
+   "asOf": "2026-11-17T21:20:00Z",
+   "since": "2026-11-16",
+   "cases": 6,
+   "pricing": [
+    {
+     "name": "Item Group List Prices",
+     "what": "Grouped List Prices that need updating (search 11921). Covered by your open pricing task.",
+     "on": "2026-11-17T17:00:50Z",
+     "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJoyJUnAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    }
+   ],
+   "alerts": [
+    {
+     "name": "Kit Item w/ No Location",
+     "kind": "fix",
+     "what": "Daily search results attached.",
+     "on": "2026-11-17T08:00:14Z",
+     "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJoyJUVAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+     "name": "Parent Item with Default Variant SKU Updates",
+     "kind": "fix",
+     "what": "Daily search results attached.",
+     "on": "2026-11-17T08:41:59Z",
+     "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJoyJUYAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+     "name": "Products Without Marketing Category",
+     "kind": "fix",
+     "what": "Daily list attached (the PC worker imports these within your limits).",
+     "on": "2026-11-17T08:02:26Z",
+     "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJoyJUXAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+     "name": "Inaccurate AD Items",
+     "kind": "fix",
+     "what": "Items on in NetSuite but missing from AD Miva, and the reverse.",
+     "on": "2026-11-16T15:01:15Z",
+     "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJoyJTEAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+     "name": "Inaccurate Miva PCI Items",
+     "kind": "fix",
+     "what": "Items on in NetSuite but missing from Miva PCI, and the reverse.",
+     "on": "2026-11-16T16:02:03Z",
+     "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJoyJTTAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+     "name": "Inaccurate EkenaMillwork Items",
+     "kind": "fix",
+     "what": "Items on in NetSuite but missing from Miva Ekena, and the reverse.",
+     "on": "2026-11-16T16:02:11Z",
+     "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJoyJTUAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+     "name": "Missing Miva.PCI Category Images",
+     "kind": "fix",
+     "what": "Categories missing an image in Miva Admin.",
+     "on": "2026-11-16T16:00:05Z",
+     "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJoyJTRAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+     "name": "Athos indexing errors",
+     "kind": "fix",
+     "what": "Ekena feed indexing paused (product count dropped over 25%); myhomesupply.com indexing failed again. Website back end, Tory owns it.",
+     "on": "2026-11-17T16:58:02Z",
+     "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJoyJUmAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+     "name": "Children without Parents",
+     "kind": "fyi",
+     "what": "Daily list; see the GURU card.",
+     "on": "2026-11-17T08:44:03Z",
+     "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJoyJUZAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+     "name": "FAM Lead Time Updates",
+     "kind": "fyi",
+     "what": "Approved FAM lead times for 11/16 attached.",
+     "on": "2026-11-17T08:02:05Z",
+     "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJoyJUWAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+     "name": "AD Category Images Check",
+     "kind": "fyi",
+     "what": "2 of 696 active categories missing images (Daniel forwarded to Hayden).",
+     "on": "2026-11-16T15:05:05Z",
+     "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJoyJTGAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+     "name": "Daily Backorder List",
+     "kind": "fyi",
+     "what": "Low or backordered inventory items attached.",
+     "on": "2026-11-17T09:11:19Z",
+     "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJoyJUaAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+     "name": "Item Group Prices",
+     "kind": "fyi",
+     "what": "Grouped Price on item groups doesn't match the sum of component online prices (search 11921).",
+     "on": "2026-11-17T16:30:29Z",
+     "link": "https://outlook.office365.com/owa/?ItemID=AAMkADJhMDgxZWU2LTgyOWItNGQ1Yi04ODVlLWM2OWMzNjZiYmNjNwBGAAAAAABmwyNIACz2SpY5pr7g3vkZBwBCgVnAZCBUTa752dU%2BHcc2AAAAAAEMAABCgVnAZCBUTa752dU%2BHcc2AAJoyJUlAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
     }
    ]
   }
