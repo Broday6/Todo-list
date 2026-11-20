@@ -1,8 +1,8 @@
 {
  "date": "2026-11-20",
- "status": "ready",
+ "status": "held",
  "queuedBy": "Marketing Category Report routine (cloud)",
- "note": "NetSuite capped the emailed report at 10,000 rows ([TRUNCATED - LIMIT REACHED]); more items remain. All 10,000 are new RealGrain beam assemblies (Internal IDs 3632056 to 3642140) whose Name is still their Internal ID; Product Category BMW to Beams. No overlap with earlier files. Over the PC worker's 5,000-row standing limit: hold with an OVER_LIMIT card and import on Brody's Go for this sha256. | Full list: the PC worker exports saved search 14260 from the email's View Results link (fullExport below); its files supersede this capped file.",
+ "note": "NetSuite capped the emailed report at 10,000 rows ([TRUNCATED - LIMIT REACHED]); more items remain. All 10,000 are new RealGrain beam assemblies (Internal IDs 3632056 to 3642140) whose Name is still their Internal ID; Product Category BMW to Beams. No overlap with earlier files. Over the PC worker's 5,000-row standing limit: hold with an OVER_LIMIT card and import on Brody's Go for this sha256. | Full list: the PC worker exports saved search 14260 from the email's View Results link (fullExport below); its files supersede this capped file. | PC worker 2026-11-20 08:10 CT: sha256 and 10,000 rows checked against this manifest; held for Brody's Go (OVER_LIMIT card on Ultron). fullExport not run: saved search 14260 is not on the PC worker's page list (ops/url_guard.py) and the step is not in PC_WORKER.md yet, so it waits for a walk-through with Brody.",
  "files": [
   {
    "name": "2026-11-20 Assembly-Bill of Materials.csv",
@@ -16,5 +16,11 @@
   "url": "https://362135.app.netsuite.com/app/common/search/searchresults.nl?searchid=14260",
   "why": "NetSuite capped the emailed report at 10,000 rows. The email's View Results link opens saved search 14260 with every item, not just 10,000 (Brody, Nov 20: \"use the link that is within that email instead it loads a netsuite search that has ALL the skus not just the 10k limit\").",
   "steps": "See marketing-category/imports/README.md, 'Full export when the report is capped'."
+ },
+ "held": {
+  "rows": 10000,
+  "reason": "large-file (over the 5,000-row standing limit)",
+  "at": "2026-11-20T14:10:00Z",
+  "by": "ultron-pc-worker"
  }
 }
