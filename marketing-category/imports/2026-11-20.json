@@ -15,7 +15,14 @@
   "status": "ready",
   "url": "https://362135.app.netsuite.com/app/common/search/searchresults.nl?searchid=14260",
   "why": "NetSuite capped the emailed report at 10,000 rows. The email's View Results link opens saved search 14260 with every item, not just 10,000 (Brody, Nov 20: \"use the link that is within that email instead it loads a netsuite search that has ALL the skus not just the 10k limit\").",
-  "steps": "See marketing-category/imports/README.md, 'Full export when the report is capped'."
+  "steps": "See marketing-category/imports/README.md, 'Full export when the report is capped'.",
+  "approved": {
+   "by": "Brody",
+   "at": "2026-11-20T14:12:00Z",
+   "quote": "just make sure this gets triggered and completed",
+   "scope": "Read-only results view and CSV export of saved search 14260 (never Edit or Save), then the README 'Full export when the report is capped' steps; no walk-through needed."
+  },
+  "setup": "Before running: add https://362135.app.netsuite.com/app/common/search/searchresults.nl?searchid=14260 (results view, read only) to ops/url_guard.py, and add the README steps to ops/PC_WORKER.md Job A as the fullExport step (Routine rules, 'Marketing Category report capped at 10,000')."
  },
  "held": {
   "rows": 10000,
