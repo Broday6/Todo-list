@@ -1,0 +1,14 @@
+{
+ "date": "2026-11-20",
+ "status": "ready",
+ "queuedBy": "Marketing Category Report routine (cloud)",
+ "note": "NetSuite capped the emailed report at 10,000 rows ([TRUNCATED - LIMIT REACHED]); more items remain. All 10,000 are new RealGrain beam assemblies (Internal IDs 3632056 to 3642140) whose Name is still their Internal ID; Product Category BMW to Beams. No overlap with earlier files. Over the PC worker's 5,000-row standing limit: hold with an OVER_LIMIT card and import on Brody's Go for this sha256.",
+ "files": [
+  {
+   "name": "2026-11-20 Assembly-Bill of Materials.csv",
+   "recordType": "Assembly Item (Assembly/Bill of Materials)",
+   "rows": 10000,
+   "sha256": "54392bdaeb59eacead7aa83e12331f31a64ef76c0aaaad27788866568eeb7307"
+  }
+ ]
+}
