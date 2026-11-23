@@ -1,8 +1,8 @@
 {
  "date": "2026-11-23",
- "status": "ready",
+ "status": "held",
  "queuedBy": "Marketing Category Report routine (cloud)",
- "note": "NetSuite capped the emailed report at 10,000 rows ([TRUNCATED - LIMIT REACHED]). The filled file is identical to 2026-11-20 Assembly-Bill of Materials.csv (same sha256 54392bda...), which is still held for Brody's Go, so no new file is queued. The full list still needs the export of saved search 14260 (fullExport below; the Nov 20 one has not run).",
+ "note": "NetSuite capped the emailed report at 10,000 rows ([TRUNCATED - LIMIT REACHED]). The filled file is identical to 2026-11-20 Assembly-Bill of Materials.csv (same sha256 54392bda...), which is still held for Brody's Go, so no new file is queued. The full list still needs the export of saved search 14260 (fullExport below; the Nov 20 one has not run). | PC worker 2026-11-23 08:10 CT: no new file to import; the identical Nov 20 file (sha256 54392bda...) is still held for Brody's Go (OVER_LIMIT card on Ultron). fullExport not run: saved search 14260 is still not on the PC worker's page list (ops/url_guard.py); that change was refused by the PC permission check on Nov 20 and waits on Brody (card on Ultron).",
  "files": [],
  "fullExport": {
   "status": "ready",
@@ -13,5 +13,11 @@
    "quote": "just make sure this gets triggered and completed",
    "at": "2026-11-20T14:12:00Z"
   }
+ },
+ "held": {
+  "rows": 0,
+  "reason": "no new file; same file as 2026-11-20, still held (over the 5,000-row standing limit)",
+  "at": "2026-11-23T14:10:00Z",
+  "by": "ultron-pc-worker"
  }
 }
