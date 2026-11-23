@@ -31,11 +31,15 @@ Results link>}` to that day's manifest. The link is saved search 14260 in result
 
 1. Opens the url in the PCI Chrome profile (Chrome lock; Brody is signed in; retry once on a login page, never type
    a password). Results view only: never Edit or Save the search.
-2. Exports the results as CSV (the export icon on the results page) and saves it as
-   `searchresults-full-YYYY-MM-DD.csv`. Checks the header is
+2. Exports the results as CSV. The Export - CSV button sits inside an iframe the Chrome extension can't click, so
+   open the same URL with `&csv=Export` added
+   (https://362135.app.netsuite.com/app/common/search/searchresults.nl?searchid=14260&csv=Export), which downloads the
+   CSV directly, and take the newest .csv from Chrome Downloads. If that doesn't download, ask Brody to click
+   Export - CSV once. Checks the header is
    `Internal ID,Name,Description,Type,Product Categories,Marketing Product Categories` and the row count is over 10,000.
-3. Runs `python3 marketing-category/split_by_type.py --max-rows 25000 <file> <tmp dir>` (NetSuite takes at most
-   25,000 rows per import file).
+3. Runs `python3 marketing-category/queue_full_export.py <csv> <date>`, which does steps 3 to 5 below in one go:
+   `split_by_type.py --max-rows 25000` (NetSuite takes at most 25,000 rows per import file), the files and manifest,
+   and the superseding.
 4. Copies each output to `marketing-category/imports/YYYY-MM-DD full <file name>.csv`, writes
    `marketing-category/imports/YYYY-MM-DD-full.json` (`status` "ready", files with rows and sha256, note "full export
    of saved search 14260"), and sets `fullExport` in the day's manifest to `{"status": "done", "rows", "at"}`.
