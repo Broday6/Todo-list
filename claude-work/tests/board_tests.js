@@ -173,6 +173,8 @@ async function check(name, fn) {
   // ---- tasks ----
   await check('tasks compact / Full details / show all / search', async () => {
     await go(d, 'tasks');
+    // New look (patch64): the classic list with compact/show all/full details lives under the "All tasks" smart list.
+    await d.evaluate(() => { const a = document.querySelector('[data-tl64="all"]'); a && a.click(); }); await sleep(600);
     const h1 = await d.evaluate(() => ({ cls: document.getElementById('sec-tasks').className, h: document.documentElement.scrollHeight }));
     assert(/\btk-compact\b/.test(h1.cls), 'tk-compact missing by default: ' + h1.cls);
     const btns = await d.evaluate(() => [...document.querySelectorAll('[data-tkall]')].map(b => b.textContent.trim()));
