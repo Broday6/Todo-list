@@ -1,0 +1,17 @@
+{
+ "date": "2026-11-23",
+ "status": "ready",
+ "queuedBy": "Marketing Category Report routine (cloud)",
+ "note": "NetSuite capped the emailed report at 10,000 rows ([TRUNCATED - LIMIT REACHED]). The filled file is identical to 2026-11-20 Assembly-Bill of Materials.csv (same sha256 54392bda...), which is still held for Brody's Go, so no new file is queued. The full list still needs the export of saved search 14260 (fullExport below; the Nov 20 one has not run).",
+ "files": [],
+ "fullExport": {
+  "status": "ready",
+  "url": "https://362135.app.netsuite.com/app/common/search/searchresults.nl?searchid=14260",
+  "steps": "Export the search as CSV in the PCI Chrome profile (results view, never Edit/Save), then run python3 marketing-category/queue_full_export.py <csv> 2026-11-23 and push (README: 'Full export when the report is capped').",
+  "approved": {
+   "by": "Brody",
+   "quote": "just make sure this gets triggered and completed",
+   "at": "2026-11-20T14:12:00Z"
+  }
+ }
+}
